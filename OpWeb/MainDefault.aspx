@@ -27,7 +27,7 @@
     <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
-    <script src="MainFrame.js" type="text/javascript"></script>
+    <script src="/Frame/MainFrame.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
             GetMenu();

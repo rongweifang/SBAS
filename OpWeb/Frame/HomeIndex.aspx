@@ -4,13 +4,287 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>系统首页</title>
-    <link href="/Themes/Styles/Site.css" rel="stylesheet" type="text/css" />
-    <script src="/Themes/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(function () {
-            $("#BeautifulGreetings").text(BeautifulGreetings());
-        })
+
+
+    <link href="/css/bootstrap.min.css?v=3.3.6" rel="stylesheet" />
+    <link href="/css/font-awesome.css?v=4.4.0" rel="stylesheet" />
+
+    <link href="/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
+
+    <link href="/css/animate.css" rel="stylesheet" />
+    <link href="/css/style.css?v=4.1.0" rel="stylesheet" />
+
+</head>
+<body class="gray-bg sidebar-content">
+
+
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        <div>
+
+                            <h1 class="m-b-xs">￥ 50,992万元</h1>
+                            <h3 class="font-bold no-margins">本月贷款金额
+                            </h3>
+                            <small>联社营业部</small>
+                        </div>
+
+                        <div class="flot-chart" style="height: 140px">
+                            <div class="flot-chart-content" id="flot-chart3"></div>
+                        </div>
+
+                        <div class="m-t-md">
+                            <small class="pull-right">
+                                <i class="fa fa-clock-o"></i>
+                                最后更新：2017.6.11
+                            </small>
+                            <small>
+                                <strong>贷款分析：</strong> 该值已随时间发生变化，上个月达到的水平超过50,000万元。
+                            </small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-primary pull-right">今天</span>
+                        <h5>客户</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">22</h1>
+                        <div class="stat-percent font-bold text-navy">
+                            10% <i class="fa fa-level-up"></i>
+                        </div>
+                        <small>新客户</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-info pull-right">月</span>
+                        <h5>合同数量</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">20</h1>
+                        <div class="stat-percent font-bold text-info">
+                            40% <i class="fa fa-level-up"></i>
+                        </div>
+                        <small>新合同</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-warning pull-right">年</span>
+                        <h5>提交审批</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">$ 430,800</h1>
+                        <div class="stat-percent font-bold text-warning">
+                            16% <i class="fa fa-level-up"></i>
+                        </div>
+                        <small>不含作废审批</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>登录情况</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content ibox-heading">
+                       <%=Login_InfoHtml%>
+            <br />
+            <img src="/Themes/Images/exclamation_octagon_fram.png" style="vertical-align: middle;
+                margin-bottom: 3px;" width="16" height="16" alt="tip" />
+            提示：为了账号的安全，如果上面的登录情况不正常，建议您马上 <a href="javascript:void(0);" title="修改登录密码" style="text-decoration: underline;
+                color: Blue;" onclick="editpwd()">密码修改</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>待审批事项</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ibox-content timeline">
+
+                        <div class="timeline-item">
+                            <div class="row">
+                                <div class="col-xs-3 date">
+                                    <i class="fa fa-briefcase"></i>6:00
+                                    <br>
+                                    <small class="text-navy">2 小时前</small>
+                                </div>
+                                <div class="col-xs-7 content no-top-border">
+                                    <p class="m-b-xs">
+                                        <strong>李万年</strong>
+                                    </p>
+
+                                    <p>贷款金额50万元，180期</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="row">
+                                <div class="col-xs-3 date">
+                                    <i class="fa fa-file-text"></i>7:00
+                                    <br>
+                                    <small class="text-navy">3小时前</small>
+                                </div>
+                                <div class="col-xs-7 content">
+                                    <p class="m-b-xs">
+                                        <strong>张军</strong>
+                                    </p>
+                                    <p>贷款金额30万元，150期</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 全局js -->
+    <script src="/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- Flot -->
+    <script src="/js/plugins/flot/jquery.flot.js"></script>
+    <script src="/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="/js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="/js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="/js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="/js/plugins/flot/jquery.flot.symbol.js"></script>
+    <script src="/js/plugins/flot/curvedLines.js"></script>
+    <script src="/js/content.js?v=1.0.0"></script>
+    <!-- jQuery UI -->
+    <script src="/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- EayPIE -->
+    <script src="/js/plugins/easypiechart/jquery.easypiechart.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+
+
+
+            var d1 = [
+                [1262304000000, 1],
+                [1264982400000, 100],
+                [1267401600000, 1],
+                [1270080000000, 200],
+                [1272672000000, 1],
+                [1275350400000, 100],
+                [1277942400000, 1],
+                [1280620800000, 300]
+            ];
+            var d2 = [
+                [1262304000000, 100],
+                [1264982400000, 1],
+                [1267401600000, 150],
+                [1270080000000, 1],
+                [1272672000000, 230],
+
+                [1275350400000, 1],
+                [1277942400000, 150],
+                [1280620800000, 10]
+            ];
+
+            var data3 = [
+                {
+                    label: "Data 1",
+                    data: d1,
+                    color: '#23c6c8'
+                },
+                {
+                    label: "Data 2",
+                    data: d2,
+                    color: '#1ab394'
+                }
+            ];
+            $.plot($("#flot-chart3"), data3, {
+                xaxis: {
+                    tickDecimals: 0
+                },
+                series: {
+                    lines: {
+                        show: true,
+                        fill: true,
+                        fillColor: {
+                            colors: [{
+                                opacity: 1
+                            }, {
+                                opacity: 1
+                            }]
+                        },
+                    },
+                    curvedLines: {
+                        active: true,
+                        fit: true,
+                        apply: true
+                    },
+                    points: {
+                        width: 0.1,
+                        show: false
+                    },
+                },
+                grid: {
+                    show: false,
+                    borderWidth: 0
+                },
+                legend: {
+                    show: false,
+                }
+            });
+        });
+       
         /**修改密码**/
         function editpwd() {
             var url = "/RMBase/SysUser/UpdateUserPwd.aspx";
@@ -26,77 +300,8 @@
             top.NavMenu(url, title);
         }
     </script>
-    <style type="text/css" >
-        .shortcuticons
-        {
-            float: left;
-            border: solid 1px #fff;
-            width: 62px;
-            height: 55px;
-            margin: 5px;
-            padding: 5px;
-            cursor: pointer;
-            vertical-align: middle;
-            text-align: center;
-            word-break: keep-all;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .shortcuticons:hover
-        {
-            color: #FFF;
-            border: solid 1px #3399dd;
-            background: #2288cc;
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bbee', endColorstr='#2288cc');
-            background: linear-gradient(top, #33bbee, #2288cc);
-            background: -moz-linear-gradient(top, #33bbee, #2288cc);
-            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#33bbee), to(#2288cc));
-            text-shadow: -1px -1px 1px #1c6a9e;
-            width: 62px;
-            height: 55px;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div class="box">
-        <div class="box-title">
-            <img src="/Themes/Images/sun_2.png" alt="" width="20" height="20" />
-            <label id="BeautifulGreetings">
-            </label>
-            <%=_UserName.ToString()%>，内蒙古电力（集团）有限责任公司-招聘平台系统
-        </div>
-        <div class="box-content">
-            <%--快捷功能--%>
-            <%=sbHomeShortcouHtml.ToString() %>
-            <br />
-            <br />
-            <br />
-            <br />
-            <a href="javascript:void(0)" onclick="add_HomeShortcut()" class="button green"><span
-                class="icon-botton" style="background: url('/Themes/images/world_add.png') no-repeat scroll 0px 4px;">
-            </span>添加新的快捷功能</a>
-        </div>
-    </div>
-    <div class="blank10">
-    </div>
-    <div class="box">
-        <div class="box-title">
-            <img src="/Themes/Images/milestone.png" alt="" width="20" height="20" />当前登录情况
-        </div>
-        <div class="box-content">
-            <%=Login_InfoHtml%>
-            <br />
-            <img src="/Themes/Images/exclamation_octagon_fram.png" style="vertical-align: middle;
-                margin-bottom: 3px;" width="16" height="16" alt="tip" />
-            提示：为了账号的安全，如果上面的登录情况不正常，建议您马上 <a href="javascript:void(0);" title="修改登录密码" style="text-decoration: underline;
-                color: Blue;" onclick="editpwd()">密码修改</a>
-        </div>
-    </div>
-    <div class="blank10">
-    </div>
-    </form>
+
+
+
 </body>
 </html>

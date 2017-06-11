@@ -3207,7 +3207,7 @@ a.forum-item-title:hover {
 
 .sidebar-content .wrapper,
 .wrapper.sidebar-content {
-    padding-right: 240px !important;
+   /* padding-right: 240px !important;*/
 }
 
 #right-sidebar {
