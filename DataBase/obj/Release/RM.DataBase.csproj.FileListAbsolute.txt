@@ -1,0 +1,13 @@
+D:\盛仁科技电力安全两票系统\Website\RM.DataBase\bin\Release\RM.DataBase.dll
+D:\盛仁科技电力安全两票系统\Website\RM.DataBase\bin\Release\RM.DataBase.pdb
+D:\盛仁科技电力安全两票系统\Website\RM.DataBase\bin\Release\Interop.SQLDMO.dll
+D:\盛仁科技电力安全两票系统\Website\RM.DataBase\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\盛仁科技电力安全两票系统\Website\RM.DataBase\bin\Release\RM.Common.dll
+D:\盛仁科技电力安全两票系统\Website\RM.DataBase\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\盛仁科技电力安全两票系统\Website\RM.DataBase\bin\Release\Microsoft.Practices.ServiceLocation.dll
+D:\盛仁科技电力安全两票系统\Website\RM.DataBase\bin\Release\Microsoft.Practices.Unity.dll
+D:\盛仁科技电力安全两票系统\Website\RM.DataBase\bin\Release\Microsoft.Practices.Unity.Interception.dll
+D:\盛仁科技电力安全两票系统\Website\RM.DataBase\bin\Release\RM.Common.pdb
+D:\盛仁科技电力安全两票系统\Website\RM.DataBase\obj\Release\RM.DataBase.csprojResolveAssemblyReference.cache
+D:\盛仁科技电力安全两票系统\Website\RM.DataBase\obj\Release\RM.DataBase.dll
+D:\盛仁科技电力安全两票系统\Website\RM.DataBase\obj\Release\RM.DataBase.pdb

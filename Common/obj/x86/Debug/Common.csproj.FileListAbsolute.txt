@@ -1,0 +1,10 @@
+E:\标准化作业管控系统\APPWebservice\Common\bin\x86\Debug\Common.dll
+E:\标准化作业管控系统\APPWebservice\Common\bin\x86\Debug\Common.pdb
+E:\标准化作业管控系统\APPWebservice\Common\obj\x86\Debug\Common.csprojResolveAssemblyReference.cache
+E:\标准化作业管控系统\APPWebservice\Common\obj\x86\Debug\Common.dll
+E:\标准化作业管控系统\APPWebservice\Common\obj\x86\Debug\Common.pdb
+D:\Zhaopin\Common\bin\x86\Debug\Common.dll
+D:\Zhaopin\Common\bin\x86\Debug\Common.pdb
+D:\Zhaopin\Common\obj\x86\Debug\Common.csprojResolveAssemblyReference.cache
+D:\Zhaopin\Common\obj\x86\Debug\Common.dll
+D:\Zhaopin\Common\obj\x86\Debug\Common.pdb

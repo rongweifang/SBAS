@@ -1,0 +1,5 @@
+D:\盛仁科技电力安全两票系统\Website\RM.Common\bin\x86\Debug\RM.Common.dll
+D:\盛仁科技电力安全两票系统\Website\RM.Common\bin\x86\Debug\RM.Common.pdb
+D:\盛仁科技电力安全两票系统\Website\RM.Common\obj\x86\Debug\RM.Common.csprojResolveAssemblyReference.cache
+D:\盛仁科技电力安全两票系统\Website\RM.Common\obj\x86\Debug\RM.Common.dll
+D:\盛仁科技电力安全两票系统\Website\RM.Common\obj\x86\Debug\RM.Common.pdb

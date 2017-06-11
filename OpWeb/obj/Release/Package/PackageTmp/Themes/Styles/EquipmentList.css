@@ -1,0 +1,42 @@
+@charset "utf-8";
+.EquipmentType {
+	width: 600px;
+	margin-bottom: 1px;
+	clear: both;
+	background-color: #00706b;
+}
+.EquipmentType .EquipmentTypeName {
+	float: left;
+	width: 99px;
+	font-size: 14px;
+	color: #FFF;
+	text-align: center;
+	line-height: 24px;
+}
+.EquipmentType ul {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #FFF;
+	width: 500px;
+	min-height: 24px;
+}
+.EquipmentType ul li {
+	margin: 1px;
+	float: left;
+	border: 1px solid #FFF;
+	height: 22px;
+	width: 120px;
+	color: #FFF;
+	line-height: 22px;
+	text-align: center;
+	list-style-type: none;
+	cursor: pointer;
+	overflow: hidden;
+	background-color: #FC3;
+}
+.cls {
+	clear: both;
+}

@@ -1,0 +1,808 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B104911C-B484-45EE-97A3-E5920A56D36B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zhaopin</RootNamespace>
+    <AssemblyName>Zhaopin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.SQLDMO, Version=8.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Lib\Interop.SQLDMO.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCode">
+      <HintPath>..\Lib\QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickMark">
+      <HintPath>..\Lib\QuickMark.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.3990.25764, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ajax\Common_Ajax.ashx" />
+    <Content Include="Ajax\Common_States.ashx" />
+    <Content Include="Ajax\QRCode.ashx" />
+    <Content Include="Ajax\Verify_code.ashx" />
+    <Content Include="CompanNews\Default.aspx" />
+    <Content Include="CompanNews\NewsShowView.aspx" />
+    <Content Include="company\CompanyNewsView.aspx" />
+    <Content Include="company\Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="favicon.png" />
+    <Content Include="Frame\Frame.ashx" />
+    <Content Include="Ajax\Common_UserValidate.ashx" />
+    <Content Include="Ajax\area_data.ashx" />
+    <Content Include="Ajax\Common_UserApply.ashx" />
+    <Content Include="Ajax\University_data.ashx" />
+    <Content Include="Ajax\Common_UserRecord.ashx" />
+    <Content Include="image\image001.png" />
+    <Content Include="image\image002.png" />
+    <Content Include="Manager\CompanyForm.aspx" />
+    <Content Include="Manager\Default.aspx" />
+    <Content Include="Manager\NewsForm.aspx" />
+    <Content Include="Manager\NewsList.aspx" />
+    <Content Include="Manager\SpecialtyForm.aspx" />
+    <Content Include="Manager\UserList.aspx" />
+    <Content Include="news\GongGao629.html" />
+    <Content Include="news\GongGao706.html" />
+    <Content Include="news\GongGao713_1.html" />
+    <Content Include="news\GongGao713_0.html" />
+    <Content Include="news\GongGao717_0.html" />
+    <Content Include="news\GongGao717_1.html" />
+    <Content Include="news\zhaopingonggao.html" />
+    <Content Include="scripts\artDialog\skins\mini.css" />
+    <Content Include="scripts\jwysiwyg\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\Pe.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Default.aspx" />
+    <Content Include="Error\ErrorPage.aspx" />
+    <Content Include="guide\Default.aspx" />
+    <Content Include="help\default.aspx" />
+    <Content Include="image\banner.jpg" />
+    <Content Include="news\Default.aspx" />
+    <Content Include="news\NewsShowView.aspx" />
+    <Content Include="Notice\Default.aspx" />
+    <Content Include="Notice\NoticeShowView.aspx" />
+    <Content Include="sample\contents\autocomplete\jquery.autocomplete.css" />
+    <Content Include="sample\contents\autocomplete\jquery.autocomplete.js" />
+    <Content Include="scripts\artDialog\artDialog.js" />
+    <Content Include="scripts\artDialog\artDialog.source.js" />
+    <Content Include="scripts\artDialog\iframeTools.source.js" />
+    <Content Include="scripts\artDialog\jquery.artDialog.js" />
+    <Content Include="scripts\artDialog\jquery.artDialog.source.js" />
+    <Content Include="scripts\artDialog\skins\blue.css" />
+    <Content Include="scripts\artDialog\skins\blue\bg.png" />
+    <Content Include="scripts\artDialog\skins\blue\bg2.png" />
+    <Content Include="scripts\artDialog\skins\blue\bg_css3.png" />
+    <Content Include="scripts\artDialog\skins\blue\bg_css3_2.png" />
+    <Content Include="scripts\artDialog\skins\blue\ie6\close.hover.png" />
+    <Content Include="scripts\artDialog\skins\blue\ie6\close.png" />
+    <Content Include="scripts\artDialog\skins\blue\ie6\e.png" />
+    <Content Include="scripts\artDialog\skins\blue\ie6\n.png" />
+    <Content Include="scripts\artDialog\skins\blue\ie6\ne.png" />
+    <Content Include="scripts\artDialog\skins\blue\ie6\nw.png" />
+    <Content Include="scripts\artDialog\skins\blue\ie6\s.png" />
+    <Content Include="scripts\artDialog\skins\blue\ie6\se.png" />
+    <Content Include="scripts\artDialog\skins\blue\ie6\sw.png" />
+    <Content Include="scripts\artDialog\skins\blue\ie6\w.png" />
+    <Content Include="scripts\artDialog\skins\icons\error.png" />
+    <Content Include="scripts\artDialog\skins\icons\face-sad.png" />
+    <Content Include="scripts\artDialog\skins\icons\face-smile.png" />
+    <Content Include="scripts\artDialog\skins\icons\loading.gif" />
+    <Content Include="scripts\artDialog\skins\icons\question.png" />
+    <Content Include="scripts\artDialog\skins\icons\succeed.png" />
+    <Content Include="scripts\artDialog\skins\icons\warning.png" />
+    <Content Include="scripts\Barrett.js" />
+    <Content Include="scripts\BigInt.js" />
+    <Content Include="scripts\effects.js" />
+    <Content Include="scripts\extend\layer.ext.js" />
+    <Content Include="scripts\FunctionJS.js" />
+    <Content Include="scripts\jquery-1.4.4.min.js" />
+    <Content Include="scripts\jquery.bgiframe.js" />
+    <Content Include="scripts\jquery.blockUI.js" />
+    <Content Include="scripts\jquery.common.js" />
+    <Content Include="scripts\jquery.form.js" />
+    <Content Include="scripts\jquery.js" />
+    <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\jquery.pullbox.js" />
+    <Content Include="scripts\jquery.selectbox.js" />
+    <Content Include="scripts\jquery.ui.js" />
+    <Content Include="scripts\jquery.validate.js" />
+    <Content Include="scripts\jwysiwyg\jquery.wysiwyg.css" />
+    <Content Include="scripts\jwysiwyg\jquery.wysiwyg.gif" />
+    <Content Include="scripts\jwysiwyg\jquery.wysiwyg.jpg" />
+    <Content Include="scripts\jwysiwyg\jquery.wysiwyg.js" />
+    <Content Include="scripts\layer.js" />
+    <Content Include="scripts\prototype_for_validation.js" />
+    <Content Include="scripts\RSA.js" />
+    <Content Include="scripts\ShowMsg\gb_tip_layer.png" />
+    <Content Include="scripts\ShowMsg\msgbox.css" />
+    <Content Include="scripts\ShowMsg\msgbox.js" />
+    <Content Include="scripts\skin\default\icon_ext.png" />
+    <Content Include="scripts\skin\default\textbg.png" />
+    <Content Include="scripts\skin\default\xubox_ico0.png" />
+    <Content Include="scripts\skin\default\xubox_loading0.gif" />
+    <Content Include="scripts\skin\default\xubox_loading1.gif" />
+    <Content Include="scripts\skin\default\xubox_loading2.gif" />
+    <Content Include="scripts\skin\layer.css" />
+    <Content Include="scripts\skin\layer.ext.css" />
+    <Content Include="scripts\validation_cn.js" />
+    <Content Include="themes\default\css\memberglobal.css" />
+    <Content Include="themes\default\css\style.css" />
+    <Content Include="themes\default\css\style_detail.css" />
+    <Content Include="themes\default\css\style_others.css" />
+    <Content Include="themes\default\images\active-1.png" />
+    <Content Include="themes\default\images\body.jpg" />
+    <Content Include="themes\default\images\employ_process.jpg" />
+    <Content Include="themes\default\images\main\close_x.gif" />
+    <Content Include="themes\default\images\main\detail_bg.gif" />
+    <Content Include="themes\default\images\main\list_point.gif" />
+    <Content Include="themes\default\images\main\logo.gif" />
+    <Content Include="themes\default\images\main\logo_others.gif" />
+    <Content Include="themes\default\images\main\n_left_title_01.gif" />
+    <Content Include="themes\default\images\main\n_left_title_02_01.gif" />
+    <Content Include="themes\default\images\main\n_left_title_02_02.gif" />
+    <Content Include="themes\default\images\main\n_left_title_02_03.gif" />
+    <Content Include="themes\default\images\main\n_left_title_03.gif" />
+    <Content Include="themes\default\images\main\n_right_title_bg.gif" />
+    <Content Include="themes\default\images\main\n_title_bg.gif" />
+    <Content Include="themes\default\images\main\reg_open_win_bg.png" />
+    <Content Include="themes\default\images\me_icon_02.gif" />
+    <Content Include="themes\default\images\me_icon_02.png" />
+    <Content Include="themes\default\images\me_icon_04.gif" />
+    <Content Include="themes\default\images\me_icon_04_.gif" />
+    <Content Include="themes\default\images\me_icon_10.gif" />
+    <Content Include="themes\default\images\me_icon_13.gif" />
+    <Content Include="themes\default\images\me_icon_16.gif" />
+    <Content Include="themes\default\images\me_icon_20.gif" />
+    <Content Include="themes\default\images\me_icon_23.gif" />
+    <Content Include="themes\default\images\me_icon_23_long.gif" />
+    <Content Include="themes\default\images\me_icon_23_long_long.gif" />
+    <Content Include="themes\default\images\me_left_05.gif" />
+    <Content Include="themes\default\images\me_loc_bg.gif" />
+    <Content Include="themes\default\images\active-0.png" />
+    <Content Include="themes\default\images\process_bj_1.gif" />
+    <Content Include="themes\default\images\triangle_left.png" />
+    <Content Include="themes\default\images\ui-icons_222222_256x240.png" />
+    <Content Include="themes\default\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="themes\default\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="themes\default\images\welcom_bg.gif" />
+    <Content Include="themes\default\js\CJL.0.1.min.js" />
+    <Content Include="themes\default\js\ImagePreviewd.js" />
+    <Content Include="themes\default\js\QuickUpload.js" />
+    <Content Include="themes\demo\css\jquery-ui.css" />
+    <Content Include="themes\demo\css\style.css" />
+    <Content Include="themes\demo\css\ui_100buy.css" />
+    <Content Include="themes\demo\css\validate.css" />
+    <Content Include="themes\demo\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="themes\demo\images\ui-icons_222222_256x240.png" />
+    <Content Include="themes\demo\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="themes\demo\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="themes\index\css\css.css" />
+    <Content Include="themes\index\css\job.css" />
+    <Content Include="themes\index\image\first.gif" />
+    <Content Include="themes\index\image\last.gif" />
+    <Content Include="themes\index\image\li.jpg" />
+    <Content Include="themes\index\image\logo.jpg" />
+    <Content Include="themes\index\image\logo.png" />
+    <Content Include="themes\index\image\nav_active.png" />
+    <Content Include="themes\index\image\next.gif" />
+    <Content Include="themes\index\image\prev.gif" />
+    <Content Include="themes\index\image\search.jpg" />
+    <Content Include="themes\new\css\style.css" />
+    <Content Include="UserCenter\academy.aspx" />
+    <Content Include="UserCenter\account_appeal.aspx" />
+    <Content Include="UserCenter\activity.aspx" />
+    <Content Include="UserCenter\activityView.aspx" />
+    <Content Include="UserCenter\actresult.aspx" />
+    <Content Include="UserCenter\apply.aspx" />
+    <Content Include="UserCenter\attachment.aspx" />
+    <Content Include="UserCenter\award.aspx" />
+    <Content Include="UserCenter\CertOtherForm.aspx" />
+    <Content Include="UserCenter\CompayApplyList.aspx" />
+    <Content Include="UserCenter\CompayApplyView.aspx" />
+    <Content Include="UserCenter\ComputerForm.aspx" />
+    <Content Include="UserCenter\Default.aspx" />
+    <Content Include="UserCenter\degree_authcode.aspx" />
+    <Content Include="UserCenter\education.aspx" />
+    <Content Include="UserCenter\family.aspx" />
+    <Content Include="UserCenter\favorites.aspx" />
+    <Content Include="UserCenter\feedback.aspx" />
+    <Content Include="UserCenter\forget.aspx" />
+    <Content Include="UserCenter\language.aspx" />
+    <Content Include="UserCenter\LanguageForm.aspx" />
+    <Content Include="UserCenter\login.aspx" />
+    <Content Include="UserCenter\logout.aspx" />
+    <Content Include="UserCenter\othercase.aspx" />
+    <Content Include="UserCenter\PaperForm.aspx" />
+    <Content Include="UserCenter\password.aspx" />
+    <Content Include="UserCenter\PhotoUpload.aspx" />
+    <Content Include="UserCenter\practice.aspx" />
+    <Content Include="UserCenter\preview.aspx" />
+    <Content Include="UserCenter\profile.aspx" />
+    <Content Include="UserCenter\register_xz.aspx" />
+    <Content Include="UserCenter\reg_agreement.aspx" />
+    <Content Include="UserCenter\ResearchForm.aspx" />
+    <Content Include="UserControl\DateMonthSelect.ascx" />
+    <Content Include="UserControl\employee_foot.ascx" />
+    <Content Include="UserControl\employee_left.ascx" />
+    <Content Include="UserControl\employee_process.ascx" />
+    <Content Include="UserControl\foot.ascx" />
+    <Content Include="UserControl\help_left.ascx" />
+    <Content Include="UserControl\head.ascx" />
+    <Content Include="UserControl\PageControl.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ajax\area_data.ashx.cs">
+      <DependentUpon>area_data.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Common_Ajax.ashx.cs">
+      <DependentUpon>Common_Ajax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Common_States.ashx.cs">
+      <DependentUpon>Common_States.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Common_UserApply.ashx.cs">
+      <DependentUpon>Common_UserApply.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Common_UserRecord.ashx.cs">
+      <DependentUpon>Common_UserRecord.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Common_UserValidate.ashx.cs">
+      <DependentUpon>Common_UserValidate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\QRCode.ashx.cs">
+      <DependentUpon>QRCode.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\University_data.ashx.cs">
+      <DependentUpon>University_data.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Verify_code.ashx.cs">
+      <DependentUpon>Verify_code.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CompanNews\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanNews\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CompanNews\NewsShowView.aspx.cs">
+      <DependentUpon>NewsShowView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanNews\NewsShowView.aspx.designer.cs">
+      <DependentUpon>NewsShowView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="company\CompanyNewsView.aspx.cs">
+      <DependentUpon>CompanyNewsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\CompanyNewsView.aspx.designer.cs">
+      <DependentUpon>CompanyNewsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\CompanyForm.aspx.cs">
+      <DependentUpon>CompanyForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\CompanyForm.aspx.designer.cs">
+      <DependentUpon>CompanyForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\NewsForm.aspx.cs">
+      <DependentUpon>NewsForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\NewsForm.aspx.designer.cs">
+      <DependentUpon>NewsForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\NewsList.aspx.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\NewsList.aspx.designer.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\SpecialtyForm.aspx.cs">
+      <DependentUpon>SpecialtyForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\SpecialtyForm.aspx.designer.cs">
+      <DependentUpon>SpecialtyForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="news\NewsShowView.aspx.cs">
+      <DependentUpon>NewsShowView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="news\NewsShowView.aspx.designer.cs">
+      <DependentUpon>NewsShowView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notice\NoticeShowView.aspx.cs">
+      <DependentUpon>NoticeShowView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notice\NoticeShowView.aspx.designer.cs">
+      <DependentUpon>NoticeShowView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\activityView.aspx.cs">
+      <DependentUpon>activityView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\activityView.aspx.designer.cs">
+      <DependentUpon>activityView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\attachment.aspx.cs">
+      <DependentUpon>attachment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\attachment.aspx.designer.cs">
+      <DependentUpon>attachment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\CertOtherForm.aspx.cs">
+      <DependentUpon>CertOtherForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\CertOtherForm.aspx.designer.cs">
+      <DependentUpon>CertOtherForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\ComputerForm.aspx.cs">
+      <DependentUpon>ComputerForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\ComputerForm.aspx.designer.cs">
+      <DependentUpon>ComputerForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\family.aspx.cs">
+      <DependentUpon>family.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\family.aspx.designer.cs">
+      <DependentUpon>family.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\forget.aspx.cs">
+      <DependentUpon>forget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\forget.aspx.designer.cs">
+      <DependentUpon>forget.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\language.aspx.cs">
+      <DependentUpon>language.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\language.aspx.designer.cs">
+      <DependentUpon>language.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\LanguageForm.aspx.cs">
+      <DependentUpon>LanguageForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\LanguageForm.aspx.designer.cs">
+      <DependentUpon>LanguageForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\othercase.aspx.cs">
+      <DependentUpon>othercase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\othercase.aspx.designer.cs">
+      <DependentUpon>othercase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\PaperForm.aspx.cs">
+      <DependentUpon>PaperForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\PaperForm.aspx.designer.cs">
+      <DependentUpon>PaperForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\PhotoUpload.aspx.cs">
+      <DependentUpon>PhotoUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\PhotoUpload.aspx.designer.cs">
+      <DependentUpon>PhotoUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\practice.aspx.cs">
+      <DependentUpon>practice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\practice.aspx.designer.cs">
+      <DependentUpon>practice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\reg_agreement.aspx.cs">
+      <DependentUpon>reg_agreement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\reg_agreement.aspx.designer.cs">
+      <DependentUpon>reg_agreement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\ResearchForm.aspx.cs">
+      <DependentUpon>ResearchForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\ResearchForm.aspx.designer.cs">
+      <DependentUpon>ResearchForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PageControl.ascx.cs">
+      <DependentUpon>PageControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="App_Code\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Compile Include="company\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frame\Frame.ashx.cs">
+      <DependentUpon>Frame.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="guide\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guide\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="help\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="help\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="news\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="news\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notice\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notice\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserCenter\academy.aspx.cs">
+      <DependentUpon>academy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\academy.aspx.designer.cs">
+      <DependentUpon>academy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\account_appeal.aspx.cs">
+      <DependentUpon>account_appeal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\account_appeal.aspx.designer.cs">
+      <DependentUpon>account_appeal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\activity.aspx.cs">
+      <DependentUpon>activity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\activity.aspx.designer.cs">
+      <DependentUpon>activity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\actresult.aspx.cs">
+      <DependentUpon>actresult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\actresult.aspx.designer.cs">
+      <DependentUpon>actresult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\apply.aspx.cs">
+      <DependentUpon>apply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\apply.aspx.designer.cs">
+      <DependentUpon>apply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\award.aspx.cs">
+      <DependentUpon>award.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\award.aspx.designer.cs">
+      <DependentUpon>award.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\CompayApplyList.aspx.cs">
+      <DependentUpon>CompayApplyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\CompayApplyList.aspx.designer.cs">
+      <DependentUpon>CompayApplyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\CompayApplyView.aspx.cs">
+      <DependentUpon>CompayApplyView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\CompayApplyView.aspx.designer.cs">
+      <DependentUpon>CompayApplyView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\degree_authcode.aspx.cs">
+      <DependentUpon>degree_authcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\degree_authcode.aspx.designer.cs">
+      <DependentUpon>degree_authcode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\education.aspx.cs">
+      <DependentUpon>education.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\education.aspx.designer.cs">
+      <DependentUpon>education.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\favorites.aspx.cs">
+      <DependentUpon>favorites.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\favorites.aspx.designer.cs">
+      <DependentUpon>favorites.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\feedback.aspx.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\feedback.aspx.designer.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\password.aspx.cs">
+      <DependentUpon>password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\password.aspx.designer.cs">
+      <DependentUpon>password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\preview.aspx.cs">
+      <DependentUpon>preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\preview.aspx.designer.cs">
+      <DependentUpon>preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCenter\register_xz.aspx.cs">
+      <DependentUpon>register_xz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCenter\register_xz.aspx.designer.cs">
+      <DependentUpon>register_xz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DateMonthSelect.ascx.cs">
+      <DependentUpon>DateMonthSelect.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\DateMonthSelect.ascx.designer.cs">
+      <DependentUpon>DateMonthSelect.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\employee_foot.ascx.cs">
+      <DependentUpon>employee_foot.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\employee_foot.ascx.designer.cs">
+      <DependentUpon>employee_foot.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\employee_left.ascx.cs">
+      <DependentUpon>employee_left.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\employee_left.ascx.designer.cs">
+      <DependentUpon>employee_left.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\employee_process.ascx.cs">
+      <DependentUpon>employee_process.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\employee_process.ascx.designer.cs">
+      <DependentUpon>employee_process.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\foot.ascx.cs">
+      <DependentUpon>foot.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\foot.ascx.designer.cs">
+      <DependentUpon>foot.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\help_left.ascx.cs">
+      <DependentUpon>help_left.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\help_left.ascx.designer.cs">
+      <DependentUpon>help_left.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\head.ascx.cs">
+      <DependentUpon>head.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\head.ascx.designer.cs">
+      <DependentUpon>head.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Busines\Busines.csproj">
+      <Project>{585cc600-7a83-4805-9f68-0c249db6ad36}</Project>
+      <Name>Busines</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{f1dac157-5cf0-4abe-ab30-e1b0eada5354}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataBase\DataBase.csproj">
+      <Project>{2fb84b5f-82ab-43ed-bebd-8a4944e9e1d8}</Project>
+      <Name>DataBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1042</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1042/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
