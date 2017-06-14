@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Menu_List.aspx.cs" Inherits="Manage.RMBase.SysMenu.Menu_List1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Menu_List.aspx.cs" Inherits="OpWeb.RMBase.SysMenu.Menu_List1" %>
 
 <%@ Register Src="/UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -38,14 +38,14 @@
         //新增
         function add() {
             var url = "/RMBase/SysMenu/Menu_Form.aspx?ParentId=" + Menu_Id;
-            top.openDialog(url, 'Menu_Form', '导航菜单信息 - 添加', 450, 305, 50, 50);
+            top.openDialog(url, 'Menu_Form', '导航菜单信息 - 添加', 450, 325, 50, 50);
         }
         //编辑
         function edit() {
             var key = Menu_Id;
             if (IsEditdata(key)) {
                 var url = "/RMBase/SysMenu/Menu_Form.aspx?key=" + key;
-                top.openDialog(url, 'Menu_Form', '导航菜单信息 - 编辑', 450, 305, 50, 50);
+                top.openDialog(url, 'Menu_Form', '导航菜单信息 - 编辑', 450, 325, 50, 50);
             }
         }
         //删除

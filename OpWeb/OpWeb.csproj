@@ -162,7 +162,6 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Frame\HomeIndex.aspx" />
-    <Content Include="Frame\Login.htm" />
     <Content Include="Frame\MainDefault.aspx" />
     <Content Include="Frame\MainFrame.js" />
     <Content Include="Frame\MainIndex.aspx" />
@@ -180,6 +179,7 @@
     <Content Include="img\a9.jpg" />
     <Content Include="img\bg.png" />
     <Content Include="img\browser.png" />
+    <Content Include="img\CardHead.jpg" />
     <Content Include="img\iconfont-logo.png" />
     <Content Include="img\icons.png" />
     <Content Include="img\index.jpg" />
@@ -3415,8 +3415,10 @@
     <Content Include="User\Message_index.aspx" />
     <Content Include="User\Message_SendList.aspx" />
     <Content Include="User\myflag.aspx" />
+    <Content Include="User\UserForm.aspx" />
     <Content Include="User\UserInfoView.aspx" />
     <Content Include="User\UserList.aspx" />
+    <Content Include="User\User_Spouse.aspx" />
     <Content Include="User\Verify.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -3885,6 +3887,13 @@
     <Compile Include="User\myflag.aspx.designer.cs">
       <DependentUpon>myflag.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User\UserForm.aspx.cs">
+      <DependentUpon>UserForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserForm.aspx.designer.cs">
+      <DependentUpon>UserForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\UserInfoView.aspx.cs">
       <DependentUpon>UserInfoView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3898,6 +3907,13 @@
     </Compile>
     <Compile Include="User\UserList.aspx.designer.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_Spouse.aspx.cs">
+      <DependentUpon>User_Spouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_Spouse.aspx.designer.cs">
+      <DependentUpon>User_Spouse.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\Verify.aspx.cs">
       <DependentUpon>Verify.aspx</DependentUpon>
@@ -3919,7 +3935,6 @@
     <Content Include="Ajax\Common_States.ashx" />
     <Content Include="Themes\IPScaner\QQWry.Dat" />
     <Content Include="User\Common_UserInfo.ashx" />
-    <Content Include="Themes\Scripts\jwysiwyg\Thumbs.db" />
     <Content Include="User\MessageSend.ashx" />
     <Content Include="css\plugins\footable\fonts\footable.eot" />
     <Content Include="css\plugins\footable\fonts\footable.ttf" />
@@ -4003,11 +4018,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17067</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:11390/</IISUrl>
+          <IISUrl>http://localhost:17117/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

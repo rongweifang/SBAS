@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HomeShortcut_List.aspx.cs"
-    Inherits="Manage.RMBase.SysPersonal.HomeShortcut_List" %>
+    Inherits="OpWeb.RMBase.SysPersonal.HomeShortcut_List" %>
 
 <%@ Register Src="../../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc2" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

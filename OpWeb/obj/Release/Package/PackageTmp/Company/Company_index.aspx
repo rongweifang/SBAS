@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Company_index.aspx.cs" Inherits="Manage.Company.Company_index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Company_index.aspx.cs" Inherits="OpWeb.Company.Company_index" %>
 
 <%@ Register Src="../UserControl/PageControl.ascx" TagName="PageControl" TagPrefix="uc1" %>
 <%@ Register Src="../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc2" %>
@@ -103,7 +103,7 @@
     <form id="form1" runat="server">
         <div class="btnbartitle">
             <div>
-                企业信息列表
+                客户信息列表
             </div>
         </div>
         <div class="btnbarcontetn">

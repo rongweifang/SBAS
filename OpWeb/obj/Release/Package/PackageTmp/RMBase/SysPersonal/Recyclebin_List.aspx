@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Recyclebin_List.aspx.cs"
-    Inherits="Manage.RMBase.SysPersonal.Recyclebin_List" %>
+    Inherits="OpWeb.RMBase.SysPersonal.Recyclebin_List" %>
 
 <%@ Register Src="../../UserControl/PageControl.ascx" TagName="PageControl" TagPrefix="uc1" %>
 <%@ Register Src="../../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc2" %>

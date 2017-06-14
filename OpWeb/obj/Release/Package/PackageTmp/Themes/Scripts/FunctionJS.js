@@ -44,14 +44,14 @@ function Urlhref(url) {
 中间加载对话窗
 **/
 function Loading(bool) {
-    if (bool) {
-        top.$("#loading").show();
-    } else {
-        setInterval(loadinghide, 800);
-    }
+    //if (bool) {
+    //    top.$("#loading").show();
+    //} else {
+    //    setInterval(loadinghide, 800);
+    //}
 }
 function loadinghide() {
-    top.$("#loading").hide();
+   // top.$("#loading").hide();
 }
 /**
 Top 加载对话窗

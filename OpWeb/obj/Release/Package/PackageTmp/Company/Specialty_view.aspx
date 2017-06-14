@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Specialty_view.aspx.cs" Inherits="Manage.Company.Specialty_view" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Specialty_view.aspx.cs" Inherits="OpWeb.Company.Specialty_view" %>
 
 <!DOCTYPE html>
 

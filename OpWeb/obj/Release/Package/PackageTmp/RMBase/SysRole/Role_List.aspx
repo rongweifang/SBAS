@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Role_List.aspx.cs" Inherits="Manage.RMBase.SysRole.Role_List" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Role_List.aspx.cs" Inherits="OpWeb.RMBase.SysRole.Role_List" %>
 
 <%@ Register Src="../../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

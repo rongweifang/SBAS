@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Config_Form.aspx.cs" Inherits="Manage.RMBase.SysConfig.Config_Form" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Config_Form.aspx.cs" Inherits="OpWeb.RMBase.SysConfig.Config_Form" %>
 
 <%@ Register Src="../../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc2" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

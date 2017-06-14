@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Feedback_Form.aspx.cs" Inherits="Manage.User.Feedback_Form" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Feedback_Form.aspx.cs" Inherits="OpWeb.User.Feedback_Form" %>
 
 <!DOCTYPE html>
 

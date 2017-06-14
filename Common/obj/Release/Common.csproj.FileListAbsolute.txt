@@ -8,3 +8,8 @@ D:\Zhaopin\Common\bin\Release\Common.pdb
 D:\Zhaopin\Common\obj\Release\Common.csprojResolveAssemblyReference.cache
 D:\Zhaopin\Common\obj\Release\Common.dll
 D:\Zhaopin\Common\obj\Release\Common.pdb
+D:\信用社\SBAS_OP\Common\bin\Release\Common.dll
+D:\信用社\SBAS_OP\Common\bin\Release\Common.pdb
+D:\信用社\SBAS_OP\Common\obj\Release\Common.csprojResolveAssemblyReference.cache
+D:\信用社\SBAS_OP\Common\obj\Release\Common.dll
+D:\信用社\SBAS_OP\Common\obj\Release\Common.pdb

@@ -33,6 +33,6 @@ D:\信用社\SBAS_OP\OpWeb\bin\Microsoft.Practices.Unity.Interception.dll
 D:\信用社\SBAS_OP\OpWeb\bin\Busines.pdb
 D:\信用社\SBAS_OP\OpWeb\bin\Common.pdb
 D:\信用社\SBAS_OP\OpWeb\bin\DataBase.pdb
-D:\信用社\SBAS_OP\OpWeb\obj\Debug\OpWeb.csprojResolveAssemblyReference.cache
 D:\信用社\SBAS_OP\OpWeb\obj\Debug\OpWeb.dll
 D:\信用社\SBAS_OP\OpWeb\obj\Debug\OpWeb.pdb
+D:\信用社\SBAS_OP\OpWeb\obj\Debug\OpWeb.csprojResolveAssemblyReference.cache

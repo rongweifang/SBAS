@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="new_index.aspx.cs" Inherits="Manage.Company.new_index" %>
+﻿<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="new_index.aspx.cs" Inherits="OpWeb.Company.new_index" %>
 <%@ Register Src="../UserControl/PageControl.ascx" TagName="PageControl" TagPrefix="uc1" %>
 <%@ Register Src="../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc2" %>
 <!DOCTYPE html>

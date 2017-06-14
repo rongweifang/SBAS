@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="myflag.aspx.cs" Inherits="Manage.User.myflag" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="myflag.aspx.cs" Inherits="OpWeb.User.myflag" %>
 <%@ Register Src="../UserControl/PageControl.ascx" TagName="PageControl" TagPrefix="uc1" %>
 <%@ Register Src="../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc2" %>
 <!DOCTYPE html>

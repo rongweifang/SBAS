@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="operate.aspx.cs" Inherits="Manage.Log.operate" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="operate.aspx.cs" Inherits="OpWeb.Log.operate" %>
 
 <!DOCTYPE html>
 

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PageControl.ascx.cs" Inherits="Manage.UserControl.PageControl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PageControl.ascx.cs" Inherits="OpWeb.UserControl.PageControl" %>
 <link href="/Themes/Styles/pagination.css" rel="stylesheet" type="text/css" />
 <%--自定义用户分页控件--%>
 <script type="text/javascript">
@@ -63,14 +63,12 @@
                     <td>
                         <div class="pagination-btn-separator" />
                     </td>
-                    <td>
-                        &nbsp;
+                    <td>&nbsp;
                         <asp:LinkButton ID="hlkFirst" title="首 页" runat="server" OnClick="hlkFirst_Click">
                         <span id="spfirst" class="first">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         </asp:LinkButton>
                     </td>
-                    <td>
-                        &nbsp;
+                    <td>&nbsp;
                         <asp:LinkButton ID="hlkPrev" title="上 页" runat="server" OnClick="hlkPrev_Click"> 
                             <span id="spprev" class="prev">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         </asp:LinkButton>
@@ -78,8 +76,7 @@
                     <td>
                         <div class="pagination-btn-separator" />
                     </td>
-                    <td>
-                        &nbsp; 第
+                    <td>&nbsp; 第
                         <asp:Label ID="lblCurrentPageIndex" runat="server" Text="1"></asp:Label>
                         页&nbsp;/&nbsp;共
                         <asp:Label ID="lblPageCount" runat="server"></asp:Label>
@@ -88,14 +85,12 @@
                     <td>
                         <div class="pagination-btn-separator" />
                     </td>
-                    <td>
-                        &nbsp;
+                    <td>&nbsp;
                         <asp:LinkButton ID="hlkNext" title="下 页" runat="server" OnClick="hlkNext_Click">
                          <span id="spnext" class="next" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         </asp:LinkButton>
                     </td>
-                    <td>
-                        &nbsp;
+                    <td>&nbsp;
                         <asp:LinkButton ID="hlkLast" title="尾 页" runat="server" OnClick="hlkLast_Click">
                        <span id="splast" class="last" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         </asp:LinkButton>
@@ -106,12 +101,12 @@
                     <td>
                         <asp:DropDownList ID="ddlpageList" CssClass="select" runat="server" AutoPostBack="true"
                             OnSelectedIndexChanged="ddlpageList_SelectedIndexChanged">
-                             <asp:ListItem>200</asp:ListItem>
-                            <asp:ListItem>100</asp:ListItem>
-                            <asp:ListItem>500</asp:ListItem>
-                            <asp:ListItem>15</asp:ListItem>
                             <asp:ListItem>30</asp:ListItem>
+                            <asp:ListItem>10</asp:ListItem>
                             <asp:ListItem>50</asp:ListItem>
+                            <asp:ListItem>100</asp:ListItem>
+                            <asp:ListItem>200</asp:ListItem>
+
                         </asp:DropDownList>
                     </td>
                 </tr>

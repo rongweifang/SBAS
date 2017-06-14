@@ -24,3 +24,16 @@ D:\Zhaopin\DataBase\bin\Release\Common.pdb
 D:\Zhaopin\DataBase\obj\Release\DataBase.csprojResolveAssemblyReference.cache
 D:\Zhaopin\DataBase\obj\Release\DataBase.dll
 D:\Zhaopin\DataBase\obj\Release\DataBase.pdb
+D:\信用社\SBAS_OP\DataBase\bin\Release\DataBase.dll
+D:\信用社\SBAS_OP\DataBase\bin\Release\DataBase.pdb
+D:\信用社\SBAS_OP\DataBase\bin\Release\Common.dll
+D:\信用社\SBAS_OP\DataBase\bin\Release\Interop.SQLDMO.dll
+D:\信用社\SBAS_OP\DataBase\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\信用社\SBAS_OP\DataBase\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\信用社\SBAS_OP\DataBase\bin\Release\Microsoft.Practices.ServiceLocation.dll
+D:\信用社\SBAS_OP\DataBase\bin\Release\Microsoft.Practices.Unity.dll
+D:\信用社\SBAS_OP\DataBase\bin\Release\Microsoft.Practices.Unity.Interception.dll
+D:\信用社\SBAS_OP\DataBase\bin\Release\Common.pdb
+D:\信用社\SBAS_OP\DataBase\obj\Release\DataBase.csprojResolveAssemblyReference.cache
+D:\信用社\SBAS_OP\DataBase\obj\Release\DataBase.dll
+D:\信用社\SBAS_OP\DataBase\obj\Release\DataBase.pdb

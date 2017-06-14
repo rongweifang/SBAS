@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SearchControl.ascx.cs" Inherits="Manage.UserControl.SearchControl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SearchControl.ascx.cs" Inherits="OpWeb.UserControl.SearchControl" %>
 单位:
             <select id="Organization_ID" name="Organization_ID" class="select" runat="server" style="width: 160px;"></select>
                 状态:

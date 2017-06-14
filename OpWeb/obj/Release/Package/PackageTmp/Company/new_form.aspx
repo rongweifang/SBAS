@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="new_form.aspx.cs" Inherits="Manage.Company.new_form" %>
+﻿<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="new_form.aspx.cs" Inherits="OpWeb.Company.new_form" %>
 
 <!DOCTYPE html>
 

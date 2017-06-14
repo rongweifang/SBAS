@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserLeftMenu.ascx.cs" Inherits="Manage.UserControl.UserLeftMenu" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserLeftMenu.ascx.cs" Inherits="OpWeb.UserControl.UserLeftMenu" %>
 <div class="admin-sidebar">
     <ul class="am-list admin-sidebar-list">
         <li><a href="/default.aspx"><span class="am-icon-home"></span>首页</a></li>

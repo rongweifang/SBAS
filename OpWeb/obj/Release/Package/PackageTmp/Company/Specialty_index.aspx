@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Specialty_index.aspx.cs" Inherits="Manage.Company.Specialty_index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Specialty_index.aspx.cs" Inherits="OpWeb.Company.Specialty_index" %>
 
 <%@ Register Src="../UserControl/PageControl.ascx" TagName="PageControl" TagPrefix="uc1" %>
 <%@ Register Src="../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc2" %>

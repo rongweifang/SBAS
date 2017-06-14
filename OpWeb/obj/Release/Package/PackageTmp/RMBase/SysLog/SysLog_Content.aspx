@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SysLog_Content.aspx.cs"
-    Inherits="Manage.RMBase.SysLog.SysLog_Content" %>
+    Inherits="OpWeb.RMBase.SysLog.SysLog_Content" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

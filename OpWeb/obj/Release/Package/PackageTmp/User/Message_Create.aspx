@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Message_Create.aspx.cs" Inherits="Manage.User.Message_Create" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Message_Create.aspx.cs" Inherits="OpWeb.User.Message_Create" %>
 
 <%@ Register Src="../UserControl/PageControl.ascx" TagName="PageControl" TagPrefix="uc1" %>
 <%@ Register Src="../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc2" %>

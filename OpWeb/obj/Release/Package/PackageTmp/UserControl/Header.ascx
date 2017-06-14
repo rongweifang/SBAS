@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="Manage.UserControl.Header" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="OpWeb.UserControl.Header" %>
 <header class="am-topbar admin-header">
   <div class="am-topbar-brand">
     <strong> 内蒙古电力（集团）有限责任公司-招聘平台后台管理</strong> <small></small>

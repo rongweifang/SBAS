@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Menu_Form.aspx.cs" Inherits="Manage.RMBase.SysMenu.Menu_Form" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Menu_Form.aspx.cs" Inherits="OpWeb.RMBase.SysMenu.Menu_Form" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -65,6 +65,15 @@
                 <img id="Img_Menu_Img" src="/Themes/Images/illustration.png" runat="server" alt=""
                     style="vertical-align: middle; padding-right: 10px;" />
                 <a href="javascript:void(0)" class="button green" onclick="SelectOpenImg()">图标全取</a>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                ICON图标：
+            </th>
+            <td>
+                <input id="IconClass" type="text" class="txt" runat="server" />
+                
             </td>
         </tr>
         <tr>

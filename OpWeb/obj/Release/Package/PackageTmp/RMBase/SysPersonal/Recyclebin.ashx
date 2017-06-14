@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="Recyclebin.ashx.cs" Class="Manage.RMBase.SysPersonal.Recyclebin" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="Recyclebin.ashx.cs" Class="OpWeb.RMBase.SysPersonal.Recyclebin" %>

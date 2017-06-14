@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserInfoView.aspx.cs" Inherits="Manage.User.UserInfoView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserInfoView.aspx.cs" Inherits="OpWeb.User.UserInfoView" %>
 
 <!DOCTYPE html>
 

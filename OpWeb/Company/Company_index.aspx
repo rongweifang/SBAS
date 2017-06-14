@@ -103,7 +103,7 @@
     <form id="form1" runat="server">
         <div class="btnbartitle">
             <div>
-                企业信息列表
+                客户信息列表
             </div>
         </div>
         <div class="btnbarcontetn">

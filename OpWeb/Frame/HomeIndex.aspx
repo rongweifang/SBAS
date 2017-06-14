@@ -25,7 +25,7 @@
                     <div class="ibox-content">
                         <div>
 
-                            <h1 class="m-b-xs">￥ 50,992万元</h1>
+                            <h1 class="m-b-xs">￥ 0万元</h1>
                             <h3 class="font-bold no-margins">本月贷款金额
                             </h3>
                             <small>联社营业部</small>
@@ -41,7 +41,7 @@
                                 最后更新：2017.6.11
                             </small>
                             <small>
-                                <strong>贷款分析：</strong> 该值已随时间发生变化，上个月达到的水平超过50,000万元。
+                                <strong>贷款分析：</strong> 该值已随时间发生变化，上个月达到的水平超过0万元。
                             </small>
                         </div>
 
@@ -60,9 +60,9 @@
                         <h5>客户</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">22</h1>
+                        <h1 class="no-margins">0</h1>
                         <div class="stat-percent font-bold text-navy">
-                            10% <i class="fa fa-level-up"></i>
+                            0% <i class="fa fa-level-up"></i>
                         </div>
                         <small>新客户</small>
                     </div>
@@ -75,9 +75,9 @@
                         <h5>合同数量</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">20</h1>
+                        <h1 class="no-margins">0</h1>
                         <div class="stat-percent font-bold text-info">
-                            40% <i class="fa fa-level-up"></i>
+                            0% <i class="fa fa-level-up"></i>
                         </div>
                         <small>新合同</small>
                     </div>
@@ -90,9 +90,9 @@
                         <h5>提交审批</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">$ 430,800</h1>
+                        <h1 class="no-margins">￥ 0</h1>
                         <div class="stat-percent font-bold text-warning">
-                            16% <i class="fa fa-level-up"></i>
+                            0% <i class="fa fa-level-up"></i>
                         </div>
                         <small>不含作废审批</small>
                     </div>

@@ -17,3 +17,8 @@ D:\信用社\SBAS\Common\bin\Debug\Common.pdb
 D:\信用社\SBAS\Common\obj\Debug\Common.dll
 D:\信用社\SBAS\Common\obj\Debug\Common.pdb
 D:\信用社\SBAS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\信用社\SBAS_OP\Common\bin\Debug\Common.dll
+D:\信用社\SBAS_OP\Common\bin\Debug\Common.pdb
+D:\信用社\SBAS_OP\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\信用社\SBAS_OP\Common\obj\Debug\Common.dll
+D:\信用社\SBAS_OP\Common\obj\Debug\Common.pdb

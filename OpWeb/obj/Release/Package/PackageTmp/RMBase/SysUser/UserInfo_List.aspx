@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserInfo_List.aspx.cs"
-    Inherits="Manage.RMBase.SysUser.UserInfo_List" %>
+    Inherits="OpWeb.RMBase.SysUser.UserInfo_List" %>
 
 <%@ Register Src="../../UserControl/PageControl.ascx" TagName="PageControl" TagPrefix="uc1" %>
 <%@ Register Src="../../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc2" %>

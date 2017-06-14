@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="userlogin.aspx.cs" Inherits="Manage.Log.userlogin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="userlogin.aspx.cs" Inherits="OpWeb.Log.userlogin" %>
 
 <!DOCTYPE html>
 

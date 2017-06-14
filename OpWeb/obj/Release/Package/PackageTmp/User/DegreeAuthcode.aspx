@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DegreeAuthcode.aspx.cs" Inherits="Manage.User.DegreeAuthcode" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DegreeAuthcode.aspx.cs" Inherits="OpWeb.User.DegreeAuthcode" %>
 
 <!DOCTYPE html>
 
