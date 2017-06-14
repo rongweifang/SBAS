@@ -62,7 +62,7 @@
                             <td>
                                 <input id="U_Age" name="U_Age" class="form-control" type="text" runat="server" /></td>
                             <td>
-                                <label class="control-label">出生年月</label></td>
+                                <label class="control-label">出生年月：</label></td>
                             <td>
 
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">

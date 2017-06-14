@@ -179,7 +179,13 @@
     <Content Include="img\a9.jpg" />
     <Content Include="img\bg.png" />
     <Content Include="img\browser.png" />
+    <Content Include="img\Browser_pen.png" />
     <Content Include="img\CardHead.jpg" />
+    <Content Include="img\contract_740.png" />
+    <Content Include="img\family.png" />
+    <Content Include="img\fingerprint_default.png" />
+    <Content Include="img\fingerprint_fail.png" />
+    <Content Include="img\fingerprint_OK.png" />
     <Content Include="img\iconfont-logo.png" />
     <Content Include="img\icons.png" />
     <Content Include="img\index.jpg" />
@@ -190,6 +196,8 @@
     <Content Include="img\Login_Flash.gif" />
     <Content Include="img\Login_Head.png" />
     <Content Include="img\Login_Title.png" />
+    <Content Include="img\matte_white.png" />
+    <Content Include="img\matte_white_square.png" />
     <Content Include="img\p1.jpg" />
     <Content Include="img\p2.jpg" />
     <Content Include="img\p3.jpg" />
@@ -3418,7 +3426,11 @@
     <Content Include="User\UserForm.aspx" />
     <Content Include="User\UserInfoView.aspx" />
     <Content Include="User\UserList.aspx" />
+    <Content Include="User\User_Contract.aspx" />
+    <Content Include="User\User_Extra.aspx" />
     <Content Include="User\User_Spouse.aspx" />
+    <Content Include="User\User_Symbiosis.aspx" />
+    <Content Include="User\User_Warrantor.aspx" />
     <Content Include="User\Verify.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -3908,12 +3920,40 @@
     <Compile Include="User\UserList.aspx.designer.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User\User_Contract.aspx.cs">
+      <DependentUpon>User_Contract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_Contract.aspx.designer.cs">
+      <DependentUpon>User_Contract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_Extra.aspx.cs">
+      <DependentUpon>User_Extra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_Extra.aspx.designer.cs">
+      <DependentUpon>User_Extra.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\User_Spouse.aspx.cs">
       <DependentUpon>User_Spouse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="User\User_Spouse.aspx.designer.cs">
       <DependentUpon>User_Spouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_Symbiosis.aspx.cs">
+      <DependentUpon>User_Symbiosis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_Symbiosis.aspx.designer.cs">
+      <DependentUpon>User_Symbiosis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_Warrantor.aspx.cs">
+      <DependentUpon>User_Warrantor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_Warrantor.aspx.designer.cs">
+      <DependentUpon>User_Warrantor.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\Verify.aspx.cs">
       <DependentUpon>Verify.aspx</DependentUpon>
