@@ -3428,7 +3428,9 @@
     <Content Include="User\UserList.aspx" />
     <Content Include="User\User_Contract.aspx" />
     <Content Include="User\User_Extra.aspx" />
+    <Content Include="User\User_Finger.aspx" />
     <Content Include="User\User_Spouse.aspx" />
+    <Content Include="User\User_Spouse2.aspx" />
     <Content Include="User\User_Symbiosis.aspx" />
     <Content Include="User\User_Warrantor.aspx" />
     <Content Include="User\Verify.aspx" />
@@ -3934,12 +3936,26 @@
     <Compile Include="User\User_Extra.aspx.designer.cs">
       <DependentUpon>User_Extra.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User\User_Finger.aspx.cs">
+      <DependentUpon>User_Finger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_Finger.aspx.designer.cs">
+      <DependentUpon>User_Finger.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\User_Spouse.aspx.cs">
       <DependentUpon>User_Spouse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="User\User_Spouse.aspx.designer.cs">
       <DependentUpon>User_Spouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_Spouse2.aspx.cs">
+      <DependentUpon>User_Spouse2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_Spouse2.aspx.designer.cs">
+      <DependentUpon>User_Spouse2.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\User_Symbiosis.aspx.cs">
       <DependentUpon>User_Symbiosis.aspx</DependentUpon>

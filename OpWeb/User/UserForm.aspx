@@ -98,7 +98,7 @@
                                                 <input id="Card_Apply_Year" name="Card_Apply_Year" class="form-control" type="text" style="width: 80px;" runat="server" /></td>
                                             <td>－</td>
                                             <td>
-                                                <input id="Card_Apply_Month" name="Card_Apply_Month" class="form-control" type="text"  style="width: 45px;" runat="server" /></td>
+                                                <input id="Card_Apply_Month" name="Card_Apply_Month" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
                                             <td>－</td>
                                             <td>
                                                 <input id="Card_Apply_Day" name="Card_Apply_Day" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
@@ -152,11 +152,11 @@
                             <td>
                                 <label class="control-label">联系电话:</label></td>
                             <td>
-                                <input id="U_Tel" name="U_Tel" class="form-control" type="text" runat="server"/></td>
+                                <input id="U_Tel" name="U_Tel" class="form-control" type="text" runat="server" /></td>
                             <td>
                                 <label class="control-label">邮    编：</label></td>
                             <td>
-                                <input id="U_Zip" name="U_Zip" class="form-control" type="text" runat="server"/></td>
+                                <input id="U_Zip" name="U_Zip" class="form-control" type="text" runat="server" /></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -170,7 +170,7 @@
                 </table>
                 <div class="form-group">
                     <div class="col-sm-8 col-sm-offset-3">
-                        <asp:LinkButton ID="Save" runat="server" class="btn btn-w-m btn-primary" OnClick="Save_Click">保 存</asp:LinkButton>&nbsp;
+                        <asp:LinkButton ID="Save" runat="server" class="btn btn-w-m btn-primary" OnClick="Save_Click">下一步</asp:LinkButton>&nbsp;
                                         <button type="button" class="btn btn-w-m btn-warning" onclick="OpenClose();">取  消</button>
                     </div>
                 </div>
@@ -186,7 +186,7 @@
     <!-- jQuery Validation plugin javascript-->
     <script src="/js/plugins/validate/jquery.validate.min.js"></script>
     <script src="/js/plugins/validate/messages_zh.min.js"></script>
-   <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
+    <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
@@ -209,11 +209,9 @@
             },
             errorClass: "help-block m-b-none",
             validClass: "help-block m-b-none"
-
-
         });
 
-		 $().ready(function () {
+        $().ready(function () {
             // validate the comment form when it is submitted
             $("#commentForm").validate();
 
@@ -225,14 +223,9 @@
                 },
                 messages: {
                     Card_ID: icon + "身份证号不能为空"
-                    
                 }
             });
-});
-		
-       
-
-
+        });
     </script>
 
 </body>

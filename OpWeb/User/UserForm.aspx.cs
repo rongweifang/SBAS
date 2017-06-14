@@ -3,6 +3,7 @@ using Busines.DAL;
 using Busines.IDAO;
 using Common.DotNetBean;
 using Common.DotNetUI;
+using OpWeb.App_Code;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,12 +14,17 @@ using System.Web.UI.WebControls;
 
 namespace OpWeb.User
 {
-    public partial class UserForm : System.Web.UI.Page
+    public partial class UserForm : PageBase
     {
         private string _key;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(base.Request["key"]))
+            {
+                return;
+            }
             this._key = base.Request["key"];
+
             if (!base.IsPostBack)
             {
                 if (!string.IsNullOrEmpty(this._key))
@@ -41,7 +47,6 @@ namespace OpWeb.User
         {
             Hashtable ht = new Hashtable();
 
-            
             ht = ControlBindHelper.GetWebControls(this.Page);
             ht["User_ID"] = RequestSession.GetSessionUser().UserId.ToString();
             ht["User_Name"] = RequestSession.GetSessionUser().UserName.ToString();
@@ -58,9 +63,8 @@ namespace OpWeb.User
             bool IsOk = DataFactory.SqlDataBase().Submit_AddOrEdit("Base_User", "Card_ID", this._key, ht);
             if (IsOk)
             {
-                //OpenClose();
-                ShowMsgHelper.ParmAlertMsg("操作成功！");
-                ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('操作成功！');OpenClose();</script>");
+                string Url = PageHelper.UrlEncrypt( this.Card_ID.Value.Trim());
+                ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>self.location='User_Extra.aspx?Card_ID=" + Url + "';</script>");
             }
             else
             {

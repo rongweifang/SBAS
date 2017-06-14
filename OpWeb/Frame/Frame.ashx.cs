@@ -78,9 +78,10 @@ namespace OpWeb.Frame
                                         UserName = dtlogin.Rows[0]["User_Name"].ToString(),
                                         User_Account=dtlogin.Rows[0]["User_Account"].ToString(),
                                         UserPwd = dtlogin.Rows[0]["User_Pwd"].ToString(),
-                                        Organization_IDs = ticket_idao.GetOrganization_IDs(dtlogin.Rows[0]["User_ID"].ToString()),
-                                        OrganizationID = getFisrOrganization(ticket_idao.GetOrganization_IDs(dtlogin.Rows[0]["User_ID"].ToString())),
-                                        Organization_Fax = ticket_idao.GetOrganization_Fax(getFisrOrganization(ticket_idao.GetOrganization_IDs(dtlogin.Rows[0]["User_ID"].ToString())))
+                                        Organization_IDs = "",
+                                        OrganizationID = "",
+                                        Organization_Fax = "",
+                                        DESKey = CommonHelper.GetRandomString(9)
                                     });
                                     context.Response.Write("3");
                                     context.Response.End();

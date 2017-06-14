@@ -48,7 +48,12 @@ namespace Common.DotNetBean
             set;
         }
 
-        public SessionUser(object userId, object userAccount, object userPwd, object userName, object User_Account,object Organization_IDs, object Organization_Fax)
+        public object DESKey
+        {
+            get;
+            set;
+        }
+        public SessionUser(object userId, object userAccount, object userPwd, object userName, object User_Account, object Organization_IDs, object Organization_Fax, object DESKey)
         {
             this.UserId = userId;
             this.UserAccount = userAccount;
@@ -58,6 +63,7 @@ namespace Common.DotNetBean
             this.Organization_IDs = Organization_IDs;
             this.OrganizationID = OrganizationID;
             this.Organization_Fax = Organization_Fax;
+            this.DESKey = DESKey;
         }
 
         public SessionUser()

@@ -8,6 +8,8 @@ using System.Threading;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Net.Mail;
+using Common.DotNetEncrypt;
+using Common.DotNetBean;
 
 
  public class PageHelper
@@ -63,6 +65,18 @@ using System.Net.Mail;
             return true;
         }
         #endregion
+
+
+        public static string UrlEncrypt(string Text)
+        {
+            return RequestSession.GetSessionUser() == null ? Text : DESEncrypt.Encrypt(Text, RequestSession.GetSessionUser().DESKey.ToString());
+        }
+
+        public static string UrlDecrypt(string Text)
+        {
+            return RequestSession.GetSessionUser() == null ? Text : DESEncrypt.Decrypt(Text, RequestSession.GetSessionUser().DESKey.ToString());
+        }
+
         /// <summary> 
         /// 取得客户端真实IP。如果有代理则取第一个非内网地址 
         /// </summary> 

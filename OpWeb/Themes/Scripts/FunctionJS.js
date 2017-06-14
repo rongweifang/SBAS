@@ -433,7 +433,9 @@ function CheckboxValue() {
     var reVal = '';
     $('[type = checkbox]').each(function () {
         if ($(this).attr("checked")) {
-            reVal += $(this).val() + ",";
+            if ($(this).val()!="on") {
+                reVal += $(this).val() + ",";
+            }
         }
     });
     reVal = reVal.substr(0, reVal.length - 1);

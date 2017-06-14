@@ -170,7 +170,7 @@
                 </table>
                 <div class="form-group">
                     <div class="col-sm-8 col-sm-offset-3">
-                        <asp:LinkButton ID="Save" runat="server" class="btn btn-w-m btn-primary" OnClick="Save_Click">保 存</asp:LinkButton>&nbsp;
+                        <asp:LinkButton ID="Save" runat="server" class="btn btn-w-m btn-primary" OnClick="Save_Click">下一步</asp:LinkButton>&nbsp;
                                         <button type="button" class="btn btn-w-m btn-warning" onclick="OpenClose();">取  消</button>
                     </div>
                 </div>

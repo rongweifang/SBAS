@@ -14,8 +14,15 @@ namespace OpWeb
         public string User_Account = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-            UserName = Common.DotNetBean.RequestSession.GetSessionUser().UserName.ToString();
-            User_Account = Common.DotNetBean.RequestSession.GetSessionUser().User_Account.ToString();
+            if (RequestSession.GetSessionUser()!=null)
+            {
+                UserName = RequestSession.GetSessionUser().UserName.ToString();
+                User_Account = RequestSession.GetSessionUser().User_Account.ToString();
+            }
+            else
+            {
+                Response.Redirect("/login.html", false); 
+            }
         }
     }
 }

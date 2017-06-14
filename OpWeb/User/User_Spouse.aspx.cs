@@ -13,5 +13,10 @@ namespace OpWeb.User
         {
 
         }
+
+        protected void Save_Click(object sender, EventArgs e)
+        {
+            ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>self.location='User_Spouse2.aspx'; </script>");
+        }
     }
 }
