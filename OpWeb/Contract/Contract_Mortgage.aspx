@@ -1,13 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserList.aspx.cs" Inherits="OpWeb.User.UserList" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contract_Mortgage.aspx.cs" Inherits="OpWeb.Contract.Contract_Mortgage" %>
 <%@ Register Src="../UserControl/PageControl.ascx" TagName="PageControl" TagPrefix="uc1" %>
 <%@ Register Src="../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc2" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>用户信息</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>按揭贷款合同</title>
     <link href="/Themes/Styles/Site.css" rel="stylesheet" type="text/css" />
     <script src="/Themes/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/jquery.pullbox.js" type="text/javascript"></script>
@@ -34,12 +33,8 @@
             location.reload();
         }
 
-        //添加
-        function add() {
-            var url = "/User/UserForm.aspx";
-            top.openDialog(url, 'UserForm', '客户管理 - 添加', 800, 510, 50, 50);
-        }
-        //修改
+       
+        //编辑
         function edit() {
             var key = CheckboxValue();
             if (IsEditdata(key)) {
@@ -47,76 +42,37 @@
                 top.openDialog(url, 'UserForm', '客户管理 - 编辑', 800, 510, 50, 50);
             }
         }
-
+        //打印预览
         function EditFinger(Card_ID) {
             if (IsEditdata(Card_ID)) {
                 var url = "/User/User_Finger.aspx?Card_ID=" + Card_ID;
                 top.openDialog(url, 'User_Extra', '指纹录入', 700, 630, 50, 50);
             }
         }
-        //配偶
+        //打印
         function EditSpouse(Card_ID) {
             if (IsEditdata(Card_ID)) {
                 var url = "/User/User_Spouse.aspx?Card_ID=" + Card_ID;
                 top.openDialog(url, 'User_Spouse', '配偶信息管理 ', 800, 510, 50, 50);
             }
         }
-        //共同居住人
+        //锁定
         function EditSymbiosis(Card_ID) {
             if (IsEditdata(Card_ID)) {
-                var url = "/User/User_Symbiosis.aspx?Card_ID= " + Card_ID;
-                top.openDialog(url, 'User_Symbiosis', '共同居住人信息', 950, 560, 50, 50);
+                var url = "/User/User_Symbiosis.aspx?Card_ID= "+ Card_ID;
+                top.openDialog(url, 'User_Symbiosis', '共同居住人信息', 700, 630, 50, 50);
             }
         }
-        //保证人
+        //作废
         function EditWarrantor(Card_ID) {
             if (IsEditdata(Card_ID)) {
                 var url = "/User/User_Warrantor.aspx?Card_ID=" + Card_ID;
                 top.openDialog(url, 'User_Warrantor', '保证人信息', 800, 630, 50, 50);
             }
         }
-        //申请人信息
-        function EditExtra(Card_ID) {
-            if (IsEditdata(Card_ID)) {
-                var url = "/User/User_Extra.aspx?Card_ID=" + Card_ID;
-                top.openDialog(url, 'User_Extra', '申请人信息 - 编辑', 700, 630, 50, 50);
-            }
-        }
-        //签订合同
-        function EditContract(Card_ID, Card_Name) {
-            if (IsEditdata(Card_ID)) {
-                var url = "/User/User_Contract.aspx?Card_ID=" + Card_ID;
-                top.openDialog(url, 'User_Contract', '合同管理 - ' + Card_Name, 700, 330, 50, 50);
-            }
-        }
-        //照片管理
-        function EditPhoto(Card_ID) {
-            if (IsEditdata(Card_ID)) {
-                var url = "/User/User_Photo.aspx?Card_ID=" + Card_ID;
-                top.openDialog(url, 'User_Photo', '照片管理', 700, 580, 50, 50);
-            }
-        }
-
-        function Onflag() {
-            //var key = CheckboxValue();
-            //if (IsDelData(key)) {
-            //    var parm = 'action=flag&user_ID=' + key;
-            //    getAjax('Common_UserInfo.ashx', parm, function (rs) {
-            //        if (parseInt(rs) > 0) {
-            //            showTipsMsg("标记成功！在【用户管理】-【我的标记】里查看详细！", 2000, 4);
-            //            windowload();
-            //        }
-            //        else {
-            //            showTipsMsg("<span style='color:red'>标记失败，请稍后重试！</span>", 4000, 5);
-            //        }
-            //    });
-
-            //}
-        }
+        
 
     </script>
-
-
 </head>
 <body class="gray-bg">
     <div class="wrapper animated fadeInRight">
@@ -143,15 +99,15 @@
                             </td>
                             <td style="width: 80px; text-align: center;">姓名</td>
                             <td style="width: 140px; text-align: center;">身份证号</td>
-                            <td style="width: 40px; text-align: center;">性别</td>
-                            <td style="width: 40px; text-align: center;">年龄</td>
-                            <td style="width: 100px; text-align: center;">联系电话</td>
-                            <td style="width: 70px; text-align: center;">指纹采集</td>
-                            <td style="width: 60px; text-align: center;">配偶信息</td>
-                            <td style="width: 70px; text-align: center;">共同居住人</td>
-                            <td style="width: 60px; text-align: center;">照片采集</td>
-                            <td style="width: 70px; text-align: center;">签订合同</td>
-                            <td style="width: 70px; text-align: center;">状态</td>
+                            <td style="width: 80px; text-align: center;">授信金额(万)</td>
+                            <td style="width: 60px; text-align: center;">授信期限</td>
+                            <td style="width: 100px; text-align: center;">贷款利率</td>
+                            <td style="width: 70px; text-align: center;">指纹签名</td>
+                            <td style="width: 60px; text-align: center;">配偶签名</td>
+                            <td style="width: 70px; text-align: center;">保证人签名</td>
+                             <td style="width: 60px; text-align: center;">操作员</td>
+                            <td style="width: 70px; text-align: center;">审批状态</td>
+                            <td style="width: 70px; text-align: center;">合同状态</td>
                             <td>创建日期</td>
                         </tr>
                     </thead>
@@ -160,17 +116,15 @@
                             <ItemTemplate>
                                 <tr>
                                     <td style="width: 20px; text-align: left;">
-                                        <input id="CID" type="checkbox" value="<%#Eval("Card_ID")%>" name="checkbox" />
+                                        <input type="checkbox" value="<%#Eval("Card_ID")%>" name="checkbox"  />
                                     </td>
                                     <td style="width: 80px; text-align: center;"><%#Eval("Card_Name")%></td>
                                     <td style="width: 140px; text-align: center;"><%#Eval("Card_ID")%></td>
-                                    <td style="width: 40px; text-align: center;"><%#Eval("Card_Sex")%></td>
-                                    <td style="width: 40px; text-align: center;"><%#Eval("U_Age")%></td>
+                                    <td style="width: 80px; text-align: center;"><%#Eval("Card_Sex")%></td>
+                                    <td style="width: 60px; text-align: center;"><%#Eval("U_Age")%></td>
                                     <td style="width: 100px; text-align: center;"><%#Eval("U_Tel")%></td>
                                     <td style="width: 70px; text-align: center;">
-                                        <a onclick="EditFinger('<%#Eval("Card_ID")%>')">
                                             <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />
-                                        </a>
                                     </td>
                                     <td style="width: 60px; text-align: center;">
                                         <a onclick="EditSpouse('<%#Eval("Card_ID")%>')">
@@ -183,12 +137,12 @@
                                         </a>
                                     </td>
                                     <td style="width: 60px; text-align: center;">
-                                        <a onclick="EditPhoto('<%#Eval("Card_ID")%>')">
-                                            <img src="../img/sonyericsson_camera.png" width="35" height="35" alt="" />
+                                        <a onclick="EditWarrantor('<%#Eval("Card_ID")%>')">
+                                            <img src="../img/matte_white.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>
                                     <td style="width: 70px; text-align: center;">
-                                        <a onclick="EditContract('<%#Eval("Card_ID")%>','<%#Eval("Card_Name")%>')">
+                                        <a onclick="EditContract('<%#Eval("Card_ID")%>')">
                                             <img src="../img/contract_740.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>

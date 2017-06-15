@@ -6,7 +6,6 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>客户基本信息</title>
-
     <link href="/css/bootstrap.min.css?v=3.3.6" rel="stylesheet" />
     <link href="/css/font-awesome.css?v=4.4.0" rel="stylesheet" />
     <link href="/css/style.css?v=4.1.0" rel="stylesheet" />
@@ -187,8 +186,7 @@
     <script src="/js/plugins/validate/jquery.validate.min.js"></script>
     <script src="/js/plugins/validate/messages_zh.min.js"></script>
     <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
+       <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
     <script>

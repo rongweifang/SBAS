@@ -11,6 +11,11 @@
     <link href="/css/plugins/iCheck/custom.css" rel="stylesheet" />
     <link href="/css/animate.css" rel="stylesheet" />
     <link href="/css/style.css?v=4.1.0" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            height: 20px;
+        }
+    </style>
 </head>
 <body class="gray-bg">
     <form class="form-horizontal m-t" id="signupForm" runat="server">
@@ -78,8 +83,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td colspan="3">&nbsp;</td>
+                            <td class="auto-style1"></td>
+                            <td colspan="3" class="auto-style1"></td>
                         </tr>
                         <tr>
                             <td>
@@ -141,7 +146,7 @@
                 </table>
                 <div class="form-group">
                     <div class="col-sm-8 col-sm-offset-3">
-                        <asp:LinkButton ID="Save" runat="server" class="btn btn-w-m btn-primary" OnClick="Save_Click">下一步</asp:LinkButton>&nbsp;
+                        <asp:LinkButton ID="Save" runat="server" class="btn btn-w-m btn-primary" OnClick="Save_Click">完　成</asp:LinkButton>&nbsp;
                                         <button type="button" class="btn btn-w-m btn-warning" onclick="OpenClose();">取  消</button>
                     </div>
                 </div>
