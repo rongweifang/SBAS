@@ -26,7 +26,7 @@
                     <td>
                         <asp:Label ID="LB_Jie" runat="server" Text=""></asp:Label></td>
                     <td class="client-status">
-                       <asp:Button ID="Btn_Jie" class="btn btn-primary btn-xs" runat="server" Text="已创建" OnClick="Btn_Jie_Click" />
+                       <asp:Button ID="Btn_Jie" class="btn btn-primary btn-xs" runat="server" Text="创　建" OnClick="Btn_Jie_Click" />
                     </td>
                 </tr>
                 <tr>

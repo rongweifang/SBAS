@@ -1809,5 +1809,14 @@ namespace Busines.DAL
             return FilePath;
         }
 
+        public DataTable GetMortgageListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT *  ");
+            strSql.Append("FROM Contract_Mortgage U");
+            strSql.Append(SqlWhere);
+            return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "createdate", "DESC", pageIndex, pageSize, ref count);
+        }
+
     }
 }

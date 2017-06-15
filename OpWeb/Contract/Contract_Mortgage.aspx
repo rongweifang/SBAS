@@ -1,11 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contract_Mortgage.aspx.cs" Inherits="OpWeb.Contract.Contract_Mortgage" %>
+
 <%@ Register Src="../UserControl/PageControl.ascx" TagName="PageControl" TagPrefix="uc1" %>
 <%@ Register Src="../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc2" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>按揭贷款合同</title>
     <link href="/Themes/Styles/Site.css" rel="stylesheet" type="text/css" />
     <script src="/Themes/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
@@ -33,13 +34,13 @@
             location.reload();
         }
 
-       
+
         //编辑
         function edit() {
             var key = CheckboxValue();
             if (IsEditdata(key)) {
-                var url = "/User/UserForm.aspx?key=" + key;
-                top.openDialog(url, 'UserForm', '客户管理 - 编辑', 800, 510, 50, 50);
+                var url = "/Contract/Contract_MortgageForm.aspx?UID=" + key;
+                top.openDialog(url, 'Contract_MortgageForm', '合同管理 - 按揭合同', 800, 510, 50, 50);
             }
         }
         //打印预览
@@ -59,7 +60,7 @@
         //锁定
         function EditSymbiosis(Card_ID) {
             if (IsEditdata(Card_ID)) {
-                var url = "/User/User_Symbiosis.aspx?Card_ID= "+ Card_ID;
+                var url = "/User/User_Symbiosis.aspx?Card_ID= " + Card_ID;
                 top.openDialog(url, 'User_Symbiosis', '共同居住人信息', 700, 630, 50, 50);
             }
         }
@@ -70,7 +71,7 @@
                 top.openDialog(url, 'User_Warrantor', '保证人信息', 800, 630, 50, 50);
             }
         }
-        
+
 
     </script>
 </head>
@@ -100,12 +101,11 @@
                             <td style="width: 80px; text-align: center;">姓名</td>
                             <td style="width: 140px; text-align: center;">身份证号</td>
                             <td style="width: 80px; text-align: center;">授信金额(万)</td>
-                            <td style="width: 60px; text-align: center;">授信期限</td>
-                            <td style="width: 100px; text-align: center;">贷款利率</td>
+                            <td style="width: 60px; text-align: center;">授信期数</td>
+                            <td style="width: 200px; text-align: center;">起止日期</td>
                             <td style="width: 70px; text-align: center;">指纹签名</td>
                             <td style="width: 60px; text-align: center;">配偶签名</td>
-                            <td style="width: 70px; text-align: center;">保证人签名</td>
-                             <td style="width: 60px; text-align: center;">操作员</td>
+                            <td style="width: 60px; text-align: center;">操作员</td>
                             <td style="width: 70px; text-align: center;">审批状态</td>
                             <td style="width: 70px; text-align: center;">合同状态</td>
                             <td>创建日期</td>
@@ -116,37 +116,28 @@
                             <ItemTemplate>
                                 <tr>
                                     <td style="width: 20px; text-align: left;">
-                                        <input type="checkbox" value="<%#Eval("Card_ID")%>" name="checkbox"  />
+                                        <input type="checkbox" value="<%#Eval("UID")%>" name="checkbox" />
                                     </td>
                                     <td style="width: 80px; text-align: center;"><%#Eval("Card_Name")%></td>
                                     <td style="width: 140px; text-align: center;"><%#Eval("Card_ID")%></td>
-                                    <td style="width: 80px; text-align: center;"><%#Eval("Card_Sex")%></td>
-                                    <td style="width: 60px; text-align: center;"><%#Eval("U_Age")%></td>
-                                    <td style="width: 100px; text-align: center;"><%#Eval("U_Tel")%></td>
+                                    <td style="width: 80px; text-align: center;"><%#Eval("M_Loan")%></td>
+                                    <td style="width: 60px; text-align: center;"><%#Eval("M_Loan_Months")%></td>
+                                    <td style="width: 200px; text-align: center;"><%#Eval("M_Reply_Begin")%>至<%#Eval("M_Reply_End")%></td>
                                     <td style="width: 70px; text-align: center;">
-                                            <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />
+                                        <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />
                                     </td>
                                     <td style="width: 60px; text-align: center;">
                                         <a onclick="EditSpouse('<%#Eval("Card_ID")%>')">
-                                            <img src="../img/matte_white_square.png" width="35" height="35" alt="" />
-                                        </a>
-                                    </td>
-                                    <td style="width: 70px; text-align: center;">
-                                        <a onclick="EditSymbiosis('<%#Eval("Card_ID")%>')">
-                                            <img src="../img/family.png" width="35" height="35" alt="" />
+                                            <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>
                                     <td style="width: 60px; text-align: center;">
-                                        <a onclick="EditWarrantor('<%#Eval("Card_ID")%>')">
-                                            <img src="../img/matte_white.png" width="35" height="35" alt="" />
-                                        </a>
+                                        <%#Eval("User_Name")%>
                                     </td>
                                     <td style="width: 70px; text-align: center;">
-                                        <a onclick="EditContract('<%#Eval("Card_ID")%>')">
-                                            <img src="../img/contract_740.png" width="35" height="35" alt="" />
-                                        </a>
+                                        <%#Eval("Approve_State")%>
                                     </td>
-                                    <td style="width: 70px; text-align: center;"><%#Eval("status")%></td>
+                                    <td style="width: 70px; text-align: center;"><%#Eval("State")%></td>
                                     <td><%#Eval("CreateDate")%></td>
                                 </tr>
                             </ItemTemplate>
