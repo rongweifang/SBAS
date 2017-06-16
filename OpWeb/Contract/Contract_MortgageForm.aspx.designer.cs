@@ -22,22 +22,31 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlForm signupForm;
         
         /// <summary>
-        /// U_Marry 控件。
+        /// DropDownList1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect U_Marry;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// U_Education 控件。
+        /// U_Company4 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect U_Education;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Company4;
+        
+        /// <summary>
+        /// U_Duties2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Duties2;
         
         /// <summary>
         /// U_Company 控件。
@@ -49,6 +58,15 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText U_Company;
         
         /// <summary>
+        /// U_Company2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Company2;
+        
+        /// <summary>
         /// U_Duties 控件。
         /// </summary>
         /// <remarks>
@@ -58,13 +76,13 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText U_Duties;
         
         /// <summary>
-        /// U_CompanyAddress 控件。
+        /// U_Company3 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_CompanyAddress;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Company3;
         
         /// <summary>
         /// U_CompanyTel 控件。
@@ -76,15 +94,6 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText U_CompanyTel;
         
         /// <summary>
-        /// U_CompanyZip 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_CompanyZip;
-        
-        /// <summary>
         /// U_Income 控件。
         /// </summary>
         /// <remarks>
@@ -94,13 +103,31 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText U_Income;
         
         /// <summary>
-        /// U_Accumulation 控件。
+        /// U_Area4 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Accumulation;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Area4;
+        
+        /// <summary>
+        /// U_Area3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Area3;
+        
+        /// <summary>
+        /// U_Area5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Area5;
         
         /// <summary>
         /// U_Area 控件。
@@ -121,13 +148,13 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText U_PropertyRight;
         
         /// <summary>
-        /// U_ParentAddress 控件。
+        /// U_Area2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_ParentAddress;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Area2;
         
         /// <summary>
         /// Save 控件。

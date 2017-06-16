@@ -86,7 +86,7 @@
         function EditContract(Card_ID, Card_Name) {
             if (IsEditdata(Card_ID)) {
                 var url = "/User/User_Contract.aspx?Card_ID=" + Card_ID + "&Card_Name=" + Card_Name;
-                top.openDialog(url, 'User_Contract', '合同管理 - ' + Card_Name, 700, 330, 50, 50);
+                top.openDialog(url, 'User_Contract', '合同管理 - ' + Card_Name, 780, 330, 50, 50);
             }
         }
         //照片管理

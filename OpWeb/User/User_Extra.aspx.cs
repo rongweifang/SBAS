@@ -47,6 +47,23 @@ namespace OpWeb.User
 
             ht = ControlBindHelper.GetWebControls(this.Page);
             ht["Card_ID"] = this.Card_ID;
+
+            switch (ht["U_Marry"].ToString())
+            {
+                case "未婚":
+                    ht["U_Marry_SM"] = "1";
+                    break;
+                case "离婚":
+                    ht["U_Marry_SM"] = "2";
+                    break;
+                case "丧偶":
+                    ht["U_Marry_SM"] = "3";
+                    break;
+                default:
+                    ht["U_Marry_SM"] = "";
+                    break;
+            }
+
             if (string.IsNullOrEmpty(this.U_Income.Value.Trim()))
             {
                 ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('[月收入金额]需要填写！');</script>");
@@ -58,7 +75,7 @@ namespace OpWeb.User
             if (IsOk)
             {
                 string Url = PageHelper.UrlEncrypt(this.Card_ID);
-                ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('保存成功！');</script>");
+                ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('保存成功！');setTimeout('OpenClose()','3000');</script>");
             }
             else
             {

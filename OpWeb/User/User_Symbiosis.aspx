@@ -11,6 +11,19 @@
     <link href="/css/plugins/iCheck/custom.css" rel="stylesheet" />
     <link href="/css/animate.css" rel="stylesheet" />
     <link href="/css/style.css?v=4.1.0" rel="stylesheet" />
+     <!-- 全局js -->
+    <script src="/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
+    <!-- 自定义js -->
+    <script src="/js/content.js?v=1.0.0"></script>
+    <!-- jQuery Validation plugin javascript-->
+    <script src="/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="/js/plugins/validate/messages_zh.min.js"></script>
+    <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
+    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
+    <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
+    <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
+    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
     <style type="text/css">
         .auto-style1 {
             height: 20px;
@@ -185,19 +198,7 @@
 
 
     </form>
-    <!-- 全局js -->
-    <script src="/js/jquery.min.js?v=2.1.4"></script>
-    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
-    <!-- 自定义js -->
-    <script src="/js/content.js?v=1.0.0"></script>
-    <!-- jQuery Validation plugin javascript-->
-    <script src="/js/plugins/validate/jquery.validate.min.js"></script>
-    <script src="/js/plugins/validate/messages_zh.min.js"></script>
-    <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
+   
     <script>
         $.validator.setDefaults({
             highlight: function (element) {

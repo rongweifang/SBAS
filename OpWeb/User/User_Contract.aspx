@@ -15,6 +15,22 @@
     <form id="form1" runat="server">
         <table class="table table-striped table-hover">
             <tbody>
+                 <tr>
+                    <td class="client-avatar">
+                      
+                    </td>
+                    <td><a data-toggle="tab" href="#contact-1" class="client-link">合同名称</a>
+                    </td>
+                    <td class="contact-type"><i class="fa fa-clock-o"></i>
+                    </td>
+                    <td>
+                       创建时间</td>
+                    <td  class="contact-type">&nbsp;</td>
+                    <td >修改时间</td>
+                    <td >
+                      操作
+                    </td>
+                </tr>
                 <tr>
                     <td class="client-avatar">
                         <img alt="image" src="/img/Contract_Jie.png" />
@@ -25,6 +41,8 @@
                     </td>
                     <td>
                         <asp:Label ID="LB_Jie" runat="server" Text=""></asp:Label></td>
+                    <td class="client-status">&nbsp;</td>
+                    <td class="client-status"><asp:Label ID="LB_Jie2" runat="server" Text=""></asp:Label></td>
                     <td class="client-status">
                        <asp:Button ID="Btn_Jie" class="btn btn-primary btn-xs" runat="server" Text="创　建" OnClick="Btn_Jie_Click" />
                     </td>
@@ -39,6 +57,8 @@
                     </td>
                     <td>
                         <asp:Label ID="LB_Bao" runat="server" Text=""></asp:Label></td>
+                    <td class="client-status">&nbsp;</td>
+                    <td class="client-status">&nbsp;</td>
                     <td class="client-status">
                         <asp:Button ID="Btn_Bao" class="btn btn-primary btn-xs" runat="server" Text="已创建" OnClick="Btn_Bao_Click" />
                     </td>
@@ -53,6 +73,8 @@
                     </td>
                     <td>
                         <asp:Label ID="LB_Ya" runat="server" Text=""></asp:Label></td>
+                    <td class="client-status">&nbsp;</td>
+                    <td class="client-status">&nbsp;</td>
                     <td class="client-status">
                         <asp:Button ID="Btn_Ya" class="btn btn-primary btn-xs" runat="server" Text="已创建" OnClick="Btn_Ya_Click" /></td>
                 </tr>
@@ -66,6 +88,8 @@
                     </td>
                     <td>
                         <asp:Label ID="LB_Ka" runat="server" Text=""></asp:Label></td>
+                    <td class="client-status">&nbsp;</td>
+                    <td class="client-status">&nbsp;</td>
                     <td class="client-status">
                         <asp:Button ID="Btn_Ka" class="btn btn-warning btn-xs" runat="server" Text="创　建" OnClick="Btn_Ka_Click" />
                     </td>
@@ -80,6 +104,8 @@
                     </td>
                     <td>
                         <asp:Label ID="LB_Xin" runat="server" Text=""></asp:Label></td>
+                    <td class="client-status">&nbsp;</td>
+                    <td class="client-status">&nbsp;</td>
                     <td class="client-status">
                        <asp:Button ID="Btn_Xin" class="btn btn-primary btn-xs" runat="server" Text="已创建" OnClick="Btn_Xin_Click" /></td>
                 </tr>

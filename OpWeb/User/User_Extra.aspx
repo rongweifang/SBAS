@@ -11,12 +11,20 @@
     <link href="/css/plugins/iCheck/custom.css" rel="stylesheet" />
     <link href="/css/animate.css" rel="stylesheet" />
     <link href="/css/style.css?v=4.1.0" rel="stylesheet" />
-    <style type="text/css">
-        .auto-style1 {
-            height: 20px;
-        }
-    </style>
-</head>
+       <!-- 全局js -->
+    <script src="/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
+    <!-- 自定义js -->
+    <script src="/js/content.js?v=1.0.0"></script>
+    <!-- jQuery Validation plugin javascript-->
+    <script src="/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="/js/plugins/validate/messages_zh.min.js"></script>
+    <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
+    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
+    <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
+    <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
+    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
+    </head>
 <body class="gray-bg">
     <form class="form-horizontal m-t" id="signupForm" runat="server">
         <div class="ibox float-e-margins">
@@ -28,8 +36,7 @@
                             <td width="120">
                                 <label class="control-label">婚烟状况：</label></td>
                             <td width="250">
-
-                                <select class="form-control m-b" id="U_Marry" name="U_Marry" runat="server">
+                                <select class="form-control m-b" id="U_Marry" name="U_Marry" runat="server" onchange="">
                                     <option>已婚</option>
                                     <option>未婚</option>
                                     <option>离婚</option>
@@ -39,7 +46,8 @@
 
                             </td>
                             <td width="120">
-                                <label class="control-label">学　　历：</label></td>
+                               <label class="control-label">学　　历：</label>
+                            </td>
                             <td>
                                 <select class="form-control m-b" id="U_Education" name="U_Education" runat="server">
                                     <option>小学</option>
@@ -49,13 +57,12 @@
                                     <option>硕士研究生</option>
                                     <option>博士研究生</option>
                                     <option>本科</option>
-                                </select></td>
+                                </select>
+
+                            </td>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td></td>
-                            <td>&nbsp;</td>
-                            <td></td>
+                            <td colspan="4" style="height: 5px;"></td>
                         </tr>
                         <tr>
                             <td>
@@ -69,11 +76,8 @@
                             <td>
                                 <input id="U_Duties" name="U_Duties" class="form-control" type="text" runat="server" /></td>
                         </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                         <tr>
+                            <td colspan="4" style="height: 5px;"></td>
                         </tr>
                         <tr>
                             <td>
@@ -83,8 +87,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style1"></td>
-                            <td colspan="3" class="auto-style1"></td>
+                            <td colspan="4" style="height: 5px;"></td>
                         </tr>
                         <tr>
                             <td>
@@ -96,9 +99,8 @@
                             <td>
                                 <input id="U_CompanyZip" name="U_CompanyZip" class="form-control" type="text" runat="server" /></td>
                         </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td colspan="3">&nbsp;</td>
+                         <tr>
+                            <td colspan="4" style="height: 5px;"></td>
                         </tr>
                         <tr>
                             <td>
@@ -106,13 +108,25 @@
                             <td>
                                 <input id="U_Income" name="U_Income" class="form-control" type="text" runat="server" /></td>
                             <td>
+                                <label class="control-label">收入来源：</label></td>
+                            <td>
+                                <input id="U_Earn" name="U_Earn" class="form-control" type="text" runat="server" /></td>
+                        </tr>
+                         <tr>
+                            <td colspan="4" style="height: 5px;"></td>
+                        </tr>
+                        <tr>
+                            <td>
                                 <label class="control-label">个人公积金帐号：</label></td>
                             <td>
                                 <input id="U_Accumulation" name="U_Accumulation" class="form-control" type="text" runat="server" /></td>
+                            <td>
+                               </td>
+                            <td>
+                               </td>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td colspan="3">&nbsp;</td>
+                            <td colspan="4" style="height: 5px;"></td>
                         </tr>
                         <tr>
                             <td>
@@ -124,11 +138,8 @@
                             <td>
                                 <input id="U_PropertyRight" name="U_PropertyRight" class="form-control" type="text" runat="server" /></td>
                         </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                         <tr>
+                            <td colspan="4" style="height: 5px;"></td>
                         </tr>
                         <tr>
                             <td>
@@ -154,19 +165,7 @@
         </div>
 
     </form>
-    <!-- 全局js -->
-    <script src="/js/jquery.min.js?v=2.1.4"></script>
-    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
-    <!-- 自定义js -->
-    <script src="/js/content.js?v=1.0.0"></script>
-    <!-- jQuery Validation plugin javascript-->
-    <script src="/js/plugins/validate/jquery.validate.min.js"></script>
-    <script src="/js/plugins/validate/messages_zh.min.js"></script>
-    <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
+ 
     <script>
         $.validator.setDefaults({
             highlight: function (element) {

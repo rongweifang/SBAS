@@ -40,7 +40,7 @@
             var key = CheckboxValue();
             if (IsEditdata(key)) {
                 var url = "/Contract/Contract_MortgageForm.aspx?UID=" + key;
-                top.openDialog(url, 'Contract_MortgageForm', '合同管理 - 按揭合同', 800, 510, 50, 50);
+                top.openDialog(url, 'Contract_MortgageForm', '合同管理 - 按揭合同', 900, 610, 50, 50);
             }
         }
         //打印预览
@@ -101,7 +101,7 @@
                             <td style="width: 80px; text-align: center;">姓名</td>
                             <td style="width: 140px; text-align: center;">身份证号</td>
                             <td style="width: 80px; text-align: center;">授信金额(万)</td>
-                            <td style="width: 60px; text-align: center;">授信期数</td>
+                            <td style="width: 100px; text-align: center;">授信期数</td>
                             <td style="width: 200px; text-align: center;">起止日期</td>
                             <td style="width: 70px; text-align: center;">指纹签名</td>
                             <td style="width: 60px; text-align: center;">配偶签名</td>
@@ -121,7 +121,7 @@
                                     <td style="width: 80px; text-align: center;"><%#Eval("Card_Name")%></td>
                                     <td style="width: 140px; text-align: center;"><%#Eval("Card_ID")%></td>
                                     <td style="width: 80px; text-align: center;"><%#Eval("M_Loan")%></td>
-                                    <td style="width: 60px; text-align: center;"><%#Eval("M_Loan_Months")%></td>
+                                    <td style="width: 100px; text-align: center;"><%#Eval("M_Loan_Months")%></td>
                                     <td style="width: 200px; text-align: center;"><%#Eval("M_Reply_Begin")%>至<%#Eval("M_Reply_End")%></td>
                                     <td style="width: 70px; text-align: center;">
                                         <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />

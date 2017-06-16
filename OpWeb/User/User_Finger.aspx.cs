@@ -18,7 +18,7 @@ namespace OpWeb.User
             {
                 return;
             }
-            this.Card_ID = PageHelper.UrlDecrypt(base.Request["Card_ID"]);
+            this.Card_ID = base.Request["Card_ID"];
 
         }
     }

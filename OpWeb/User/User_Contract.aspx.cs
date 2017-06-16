@@ -37,6 +37,7 @@ namespace OpWeb.User
                 if (ht.Count > 0 && ht != null)
                 {
                     LB_Jie.Text = ht["CREATEDATE"].ToString();
+                    LB_Jie2.Text = ht["MODIFYDATE"].ToString();
                     Btn_Jie.Text = "已创建";
                     Btn_Jie.CssClass = "btn btn-primary btn-xs";
                 }

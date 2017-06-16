@@ -25,56 +25,48 @@
                 <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
                     <tbody>
                         <tr>
-                            <td width="120">
+                            <td>
                                 <label class="control-label">购房地址：</label></td>
-                            <td width="250">&nbsp;</td>
-                            <td width="120">楼层：</td>
-                            <td>&nbsp;</td>
-                            <td>合同号：</td>
-                            <td>&nbsp;</td>
+                            <td >
+                                <asp:DropDownList ID="DropDownList1" runat="server">
+                                </asp:DropDownList>
+                            </td>
+                            <td ><label class="control-label">楼　　层：</label></td>
+                            <td><input id="U_Company4" name="U_Company4" class="form-control" type="text" runat="server" /></td>
+                            <td><label class="control-label">合同号：</label></td>
+                            <td><input id="U_Duties2" name="U_Duties2" class="form-control" type="text" runat="server" /></td>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td></td>
-                            <td>&nbsp;</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td colspan="6" style="height: 5px;"></td>
                         </tr>
                         <tr>
                             <td>
-                                <label class="control-label">用途：</label></td>
+                                <label class="control-label">用　　途：</label></td>
                             <td>
                                 <input id="U_Company" name="U_Company" class="form-control" type="text" runat="server" />
 
                             </td>
                             <td>
                                 <label class="control-label">房屋形式：</label></td>
-                            <td>&nbsp;</td>
-                            <td>房屋类型：</td>
+                            <td><input id="U_Company2" name="U_Company2" class="form-control" type="text" runat="server" /></td>
+                            <td><label class="control-label">房屋类型：</label></td>
                             <td>
                                 <input id="U_Duties" name="U_Duties" class="form-control" type="text" runat="server" /></td>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td colspan="6" style="height: 5px;"></td>
                         </tr>
                         <tr>
                             <td>
                                 <label class="control-label">建筑面积：</label></td>
+                            <td><input id="U_Company3" name="U_Company3" class="form-control" type="text" runat="server" /></td>
+                            <td> <label class="control-label">单位售价：</label></td>
                             <td>&nbsp;</td>
-                            <td>单位售价：</td>
-                            <td>&nbsp;</td>
-                            <td>住房总金额：</td>
+                            <td> <label class="control-label">住房总金额：</label></td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="auto-style1"></td>
-                            <td colspan="5" class="auto-style1"></td>
+                            <td colspan="6" style="height: 5px;"></td>
                         </tr>
                         <tr>
                             <td>
@@ -84,24 +76,22 @@
                             <td>
                                 <label class="control-label">借款金额：</label></td>
                             <td>&nbsp;</td>
-                            <td>贷款占总价比例：</td>
+                            <td><label class="control-label">贷款占总价比例：</label></td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
-                          <td>&nbsp;</td>
-                          <td colspan="5">&nbsp;</td>
+                            <td colspan="6" style="height: 5px;"></td>
                         </tr>
                         <tr>
-                          <td>贷款利率：</td>
+                          <td><label class="control-label">贷款利率：</label></td>
                           <td>&nbsp;</td>
-                          <td>利率上浮：</td>
+                          <td><label class="control-label">利率上浮：</label></td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td colspan="5">&nbsp;</td>
+                            <td colspan="6" style="height: 5px;"></td>
                         </tr>
                         <tr>
                             <td>
@@ -109,26 +99,24 @@
                             <td>
                                 <input id="U_Income" name="U_Income" class="form-control" type="text" runat="server" /></td>
                             <td>
-                                <label class="control-label">分期：</label></td>
+                                <label class="control-label">开始日期：：</label></td>
                             <td>&nbsp;</td>
-                            <td>起止日期：</td>
+                            <td><label class="control-label">结束日期：</label></td>
                             <td>&nbsp;</td>
                         </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                          <td colspan="5">&nbsp;</td>
+                       <tr>
+                            <td colspan="6" style="height: 5px;"></td>
                         </tr>
                         <tr>
-                          <td>还款方式：</td>
-                          <td>&nbsp;</td>
-                          <td>还款账号：</td>
-                          <td>&nbsp;</td>
-                          <td>开户行：</td>
-                          <td>&nbsp;</td>
+                          <td> <label class="control-label">还款方式：</label></td>
+                          <td><input id="U_Area4" name="U_Area4" class="form-control" type="text" runat="server" /></td>
+                          <td> <label class="control-label">还款账号：</label></td>
+                          <td><input id="U_Area3" name="U_Area3" class="form-control" type="text" runat="server" /></td>
+                          <td> <label class="control-label">开户行：</label></td>
+                          <td><input id="U_Area5" name="U_Area5" class="form-control" type="text" runat="server" /></td>
                         </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td colspan="5">&nbsp;</td>
+                      <tr>
+                            <td colspan="6" style="height: 5px;"></td>
                         </tr>
                         <tr>
                             <td>
@@ -138,34 +126,58 @@
                             <td>
                                 <label class="control-label">土地性质：</label></td>
                             <td>&nbsp;</td>
-                            <td>房屋结构：</td>
+                            <td><label class="control-label">房屋结构：</label></td>
                             <td>
                                 <input id="U_PropertyRight" name="U_PropertyRight" class="form-control" type="text" runat="server" /></td>
                         </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                       <tr>
+                            <td colspan="6" style="height: 5px;"></td>
                         </tr>
+                       
                         <tr>
                             <td>
                                 <label class="control-label">抵押物价值:</label></td>
                             <td>&nbsp;</td>
-                            <td>产权证号：</td>
-                            <td>&nbsp;</td>
+                            <td><label class="control-label">产权证号：</label></td>
+                            <td><input id="U_Area2" name="U_Area2" class="form-control" type="text" runat="server" /></td>
                             <td>&nbsp;</td>
                             <td>&nbsp;</td>
                         </tr>
+                         <tr>
+                            <td colspan="6" style="height: 5px;"></td>
+                        </tr>
+                         <tr>
+                           <td><label class="control-label">合同份数：</label></td>
+                           <td>&nbsp;</td>
+                           <td><label class="control-label">持有人：</label></td>
+                           <td>&nbsp;</td>
+                           <td><label class="control-label">合同签署日期：</label></td>
+                           <td>&nbsp;</td>
+                         </tr>
+                          <tr>
+                            <td colspan="6" style="height: 5px;"></td>
+                        </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                           <td><label class="control-label">合同签署地点：</label></td>
+                           <td>&nbsp;</td>
+                           <td>&nbsp;</td>
+                           <td>&nbsp;</td>
+                           <td>&nbsp;</td>
+                           <td>&nbsp;</td>
+                      </tr>
+                        <tr>
+                            <td colspan="6" style="height: 5px;"></td>
+                        </tr>
+                        <tr>
+                          <td><label class="control-label">家庭月收入</label></td>
+                          <td>&nbsp;</td>
+                          <td><label class="control-label">每月拟还款</label></td>
+                          <td>&nbsp;</td>
+                          <td><label class="control-label">占家庭月收入比例</label></td>
+                          <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" style="height: 25px;"></td>
                         </tr>
                     </tbody>
                 </table>
