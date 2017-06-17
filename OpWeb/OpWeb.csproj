@@ -42,6 +42,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentData">
+      <HintPath>..\..\Libs\FluentData.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -3545,6 +3548,9 @@
     <Compile Include="Error\ErrorPage.aspx.designer.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Frame\Com_Acquire.ashx.cs">
+      <DependentUpon>Com_Acquire.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Frame\Frame.ashx.cs">
       <DependentUpon>Frame.ashx</DependentUpon>
     </Compile>
@@ -3555,6 +3561,7 @@
     <Compile Include="Frame\HomeIndex.aspx.designer.cs">
       <DependentUpon>HomeIndex.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Frame\JsonTool.cs" />
     <Compile Include="Frame\MainDefault.aspx.cs">
       <DependentUpon>MainDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4056,6 +4063,7 @@
     <Content Include="JS\plugins\suggest\data.json" />
     <Content Include="JS\plugins\webuploader\.DS_Store" />
     <Content Include="JS\plugins\webuploader\README.md" />
+    <Content Include="Frame\Com_Acquire.ashx" />
     <None Include="Properties\PublishProfiles\M.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

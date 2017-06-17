@@ -22,139 +22,319 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlForm signupForm;
         
         /// <summary>
-        /// DropDownList1 控件。
+        /// M_Address 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Address;
         
         /// <summary>
-        /// U_Company4 控件。
+        /// M_Floor 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Company4;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Floor;
         
         /// <summary>
-        /// U_Duties2 控件。
+        /// M_NO 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Duties2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_NO;
         
         /// <summary>
-        /// U_Company 控件。
+        /// M_Use 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Company;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect M_Use;
         
         /// <summary>
-        /// U_Company2 控件。
+        /// M_Class 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Company2;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect M_Class;
         
         /// <summary>
-        /// U_Duties 控件。
+        /// M_Form 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Duties;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect M_Form;
         
         /// <summary>
-        /// U_Company3 控件。
+        /// M_Area 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Company3;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Area;
         
         /// <summary>
-        /// U_CompanyTel 控件。
+        /// M_Price 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_CompanyTel;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Price;
         
         /// <summary>
-        /// U_Income 控件。
+        /// M_Value 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Income;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Value;
         
         /// <summary>
-        /// U_Area4 控件。
+        /// M_Pay 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Area4;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Pay;
         
         /// <summary>
-        /// U_Area3 控件。
+        /// M_Pay_Cap 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Area3;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden M_Pay_Cap;
         
         /// <summary>
-        /// U_Area5 控件。
+        /// M_Loan 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Area5;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Loan;
         
         /// <summary>
-        /// U_Area 控件。
+        /// M_Ratio 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Area;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Ratio;
         
         /// <summary>
-        /// U_PropertyRight 控件。
+        /// M_Rate_Year 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_PropertyRight;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Rate_Year;
         
         /// <summary>
-        /// U_Area2 控件。
+        /// M_Rate_Month 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_Area2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Rate_Month;
+        
+        /// <summary>
+        /// M_Rate_Up 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Rate_Up;
+        
+        /// <summary>
+        /// M_Loan_Years 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect M_Loan_Years;
+        
+        /// <summary>
+        /// M_Loan_Months 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden M_Loan_Months;
+        
+        /// <summary>
+        /// M_Reply_Begin 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Reply_Begin;
+        
+        /// <summary>
+        /// M_Reply_End 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Reply_End;
+        
+        /// <summary>
+        /// M_Replay_Type 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect M_Replay_Type;
+        
+        /// <summary>
+        /// M_Account 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Account;
+        
+        /// <summary>
+        /// M_Bank 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Bank;
+        
+        /// <summary>
+        /// M_Type 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect M_Type;
+        
+        /// <summary>
+        /// M_LandStatus 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect M_LandStatus;
+        
+        /// <summary>
+        /// M_Struct 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect M_Struct;
+        
+        /// <summary>
+        /// M_Loan_Cap 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Loan_Cap;
+        
+        /// <summary>
+        /// M_PropertyNO 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_PropertyNO;
+        
+        /// <summary>
+        /// M_Copies 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Copies;
+        
+        /// <summary>
+        /// M_People 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_People;
+        
+        /// <summary>
+        /// M_SignDate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_SignDate;
+        
+        /// <summary>
+        /// M_Signed 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Signed;
+        
+        /// <summary>
+        /// M_Income 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Income;
+        
+        /// <summary>
+        /// M_Reply 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Reply;
+        
+        /// <summary>
+        /// M_Re_Ratio 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Re_Ratio;
         
         /// <summary>
         /// Save 控件。

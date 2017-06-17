@@ -44,6 +44,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentData">
+      <HintPath>..\..\Libs\FluentData.dll</HintPath>
+    </Reference>
     <Reference Include="Interop.SQLDMO">
       <HintPath>..\Lib\Interop.SQLDMO.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
@@ -52,15 +55,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Data" />
     <Reference Include="System" />
+    <Reference Include="System.Web" />
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDAL.cs" />
+    <Compile Include="DFsystemDal.cs" />
+    <Compile Include="ItemTableField.cs" />
+    <Compile Include="ResTableField.cs" />
     <Compile Include="SqlServerBackup.cs" />
     <Compile Include="SqlServerHelper.cs" />
     <Compile Include="IDbHelperExpand.cs" />

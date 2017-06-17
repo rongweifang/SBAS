@@ -55,7 +55,7 @@
                             <td>
                                 <label class="control-label">性　　别：</label></td>
                             <td>
-                                <select class="form-control m-b" name="UL_Sex" id="UL_Sex" runat="server">
+                                <select class="form-control" name="UL_Sex" id="UL_Sex" runat="server">
                                     <option selected></option>
                                     <option>男</option>
                                     <option>女</option>
@@ -107,7 +107,7 @@
                             <td>
                                 <label class="control-label">性　　别：</label></td>
                             <td>
-                                <select class="form-control m-b" name="UL_Sex1" id="UL_Sex1" runat="server">
+                                <select class="form-control" name="UL_Sex1" id="UL_Sex1" runat="server">
                                     <option selected></option>
                                     <option>男</option>
                                     <option>女</option>
@@ -159,7 +159,7 @@
                             <td>
                                 <label class="control-label">性　　别：</label></td>
                             <td>
-                                <select class="form-control m-b" name="UL_Sex2" id="UL_Sex2" runat="server">
+                                <select class="form-control" name="UL_Sex2" id="UL_Sex2" runat="server">
                                     <option selected></option>
                                     <option>男</option>
                                     <option>女</option>
@@ -199,42 +199,6 @@
 
     </form>
    
-    <script>
-        $.validator.setDefaults({
-            highlight: function (element) {
-                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
-            },
-            success: function (element) {
-                element.closest('.form-group').removeClass('has-error').addClass('has-success');
-            },
-            errorElement: "span",
-            errorPlacement: function (error, element) {
-                if (element.is(":radio") || element.is(":checkbox")) {
-                    error.appendTo(element.parent().parent().parent());
-                } else {
-                    error.appendTo(element.parent());
-                }
-            },
-            errorClass: "help-block m-b-none",
-            validClass: "help-block m-b-none"
-        });
-
-        $().ready(function () {
-            // validate the comment form when it is submitted
-            $("#commentForm").validate();
-
-            // validate signup form on keyup and submit
-            var icon = "<i class='fa fa-times-circle'></i> ";
-            $("#signupForm").validate({
-                rules: {
-                    Card_ID: "required"
-                },
-                messages: {
-                    Card_ID: icon + "身份证号不能为空"
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>

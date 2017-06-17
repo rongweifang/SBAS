@@ -73,7 +73,7 @@ namespace OpWeb.User
             bool IsOk = DataFactory.SqlDataBase().Submit_AddOrEdit("Contract_MortGage", "Card_ID", this.ID0, ht);
             if (IsOk)
             {
-                ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('保存成功！');</script>");
+                ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('保存成功！');setTimeout('OpenClose()','3000');</script>");
             }
             else
             {

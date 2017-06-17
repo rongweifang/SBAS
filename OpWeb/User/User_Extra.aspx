@@ -36,7 +36,7 @@
                             <td width="120">
                                 <label class="control-label">婚烟状况：</label></td>
                             <td width="250">
-                                <select class="form-control m-b" id="U_Marry" name="U_Marry" runat="server" onchange="">
+                                <select class="form-control" id="U_Marry" name="U_Marry" runat="server" onchange="">
                                     <option>已婚</option>
                                     <option>未婚</option>
                                     <option>离婚</option>
@@ -49,7 +49,7 @@
                                <label class="control-label">学　　历：</label>
                             </td>
                             <td>
-                                <select class="form-control m-b" id="U_Education" name="U_Education" runat="server">
+                                <select class="form-control" id="U_Education" name="U_Education" runat="server">
                                     <option>小学</option>
                                     <option>初中</option>
                                     <option>高中</option>
@@ -186,21 +186,7 @@
             validClass: "help-block m-b-none"
         });
 
-        $().ready(function () {
-            // validate the comment form when it is submitted
-            $("#commentForm").validate();
-
-            // validate signup form on keyup and submit
-            var icon = "<i class='fa fa-times-circle'></i> ";
-            $("#signupForm").validate({
-                rules: {
-                    Card_ID: "required"
-                },
-                messages: {
-                    Card_ID: icon + "身份证号不能为空"
-                }
-            });
-        });
+        
     </script>
 
 </body>

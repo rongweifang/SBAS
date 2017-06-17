@@ -191,42 +191,7 @@
     </form>
    
 
-    <script>
-        $.validator.setDefaults({
-            highlight: function (element) {
-                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
-            },
-            success: function (element) {
-                element.closest('.form-group').removeClass('has-error').addClass('has-success');
-            },
-            errorElement: "span",
-            errorPlacement: function (error, element) {
-                if (element.is(":radio") || element.is(":checkbox")) {
-                    error.appendTo(element.parent().parent().parent());
-                } else {
-                    error.appendTo(element.parent());
-                }
-            },
-            errorClass: "help-block m-b-none",
-            validClass: "help-block m-b-none"
-        });
-
-        $().ready(function () {
-            // validate the comment form when it is submitted
-            $("#commentForm").validate();
-
-            // validate signup form on keyup and submit
-            var icon = "<i class='fa fa-times-circle'></i> ";
-            $("#signupForm").validate({
-                rules: {
-                    Card_ID: "required"
-                },
-                messages: {
-                    Card_ID: icon + "身份证号不能为空"
-                }
-            });
-        });
-    </script>
+    
 
 </body>
 </html>

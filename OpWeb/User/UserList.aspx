@@ -58,7 +58,7 @@
         function EditSpouse(Card_ID) {
             if (IsEditdata(Card_ID)) {
                 var url = "/User/User_Spouse.aspx?Card_ID=" + Card_ID;
-                top.openDialog(url, 'User_Spouse', '配偶信息管理 ', 800, 510, 50, 50);
+                top.openDialog(url, 'User_Spouse', '配偶信息管理 ', 800, 560, 50, 50);
             }
         }
         //共同居住人
