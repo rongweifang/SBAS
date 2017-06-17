@@ -50,13 +50,15 @@ namespace OpWeb.User
                 ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('信息不完整！');</script>");
                 return;
             }
-            ht["Card_Id"] = this.Card_ID;
-
+           
             if (!string.IsNullOrEmpty(this._key))
             {
                 ht["ModifyDate"] = DateTime.Now.ToString();
             }
-
+            else
+            {
+                ht["Card_Id"] = this.Card_ID;
+            }
             bool IsOk = DataFactory.SqlDataBase().Submit_AddOrEdit("Base_User_Spouses", "Card_ID", this._key, ht);
             if (IsOk)
             {

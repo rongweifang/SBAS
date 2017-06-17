@@ -5044,8 +5044,8 @@ ul.notes li div {
 
 .file-box {
     float: left;
-    width: 220px;
-}
+    width: 105px;
+	margin: 5px;}
 
 .file-manager h5 {
     text-transform: uppercase;
@@ -5132,9 +5132,7 @@ ul.notes li div {
     border: 1px solid #e7eaec;
     padding: 0;
     background-color: #ffffff;
-    position: relative;
-    margin-bottom: 20px;
-    margin-right: 20px;
+    
 }
 
 .file-manager .hr-line-dashed {
@@ -5145,7 +5143,9 @@ ul.notes li div {
 .file .image {
     height: 100px;
     overflow: hidden;
+	margin-bottom: 5px;
 }
+.file .Sign{height: 40px;}
 
 .file .icon {
     padding: 15px 10px;
@@ -5168,9 +5168,9 @@ ul.notes li div {
 }
 
 .file .file-name {
-    padding: 10px;
     background-color: #f8f8f8;
     border-top: 1px solid #e7eaec;
+	text-align: center;line-height: 30px; font-weight: bold;
 }
 
 .file-name small {

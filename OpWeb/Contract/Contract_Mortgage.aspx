@@ -44,10 +44,11 @@
             }
         }
         //打印预览
-        function EditFinger(Card_ID) {
-            if (IsEditdata(Card_ID)) {
-                var url = "/User/User_Finger.aspx?Card_ID=" + Card_ID;
-                top.openDialog(url, 'User_Extra', '指纹录入', 700, 630, 50, 50);
+        function detail() {
+            var key = CheckboxValue();
+            if (IsEditdata(key)) {
+                var url = "/Contract/Contract_PrintView.aspx?UID=" + key + "&documentType=1";
+                top.openDialog(url, 'Contract_PrintView', '打印预览', 1000, 800, 50, 50);
             }
         }
         //打印
@@ -71,7 +72,14 @@
                 top.openDialog(url, 'User_Warrantor', '保证人信息', 800, 630, 50, 50);
             }
         }
+        //EditUSFinger
 
+        function EditUFinger(UID, ClassID) {
+            if (IsEditdata(UID)) {
+                var url = "/Contract/Contract_Finger.aspx?UID=" + UID + "&ClassID=" + ClassID;
+                top.openDialog(url, 'Contract_Finger', '指纹签名', 970, 630, 50, 50);
+            }
+        }
 
     </script>
 </head>
@@ -124,11 +132,13 @@
                                     <td style="width: 100px; text-align: center;"><%#Eval("M_Loan_Months")%></td>
                                     <td style="width: 200px; text-align: center;"><%#Eval("M_Reply_Begin","{0:yyyy年M月d日}")%> 至 <%#Eval("M_Reply_End","{0:yyyy年M月d日}")%></td>
                                     <td style="width: 70px; text-align: center;">
+                                        <a onclick="EditUFinger('<%#Eval("UID")%>',1)">
                                         <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />
+                                            </a>
                                     </td>
                                     <td style="width: 60px; text-align: center;">
-                                        <a onclick="EditSpouse('<%#Eval("Card_ID")%>')">
-                                            <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />
+                                       <a onclick="EditUFinger('<%#Eval("UID")%>',2)">
+                                            <img src="../img/pen_128.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>
                                     <td style="width: 60px; text-align: center;">

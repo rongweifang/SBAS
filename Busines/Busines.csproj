@@ -78,11 +78,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Contract_Dal.cs" />
     <Compile Include="DAL\IMPC_Person_DAL.cs" />
     <Compile Include="DAL\RM_System_Dal.cs" />
     <Compile Include="DAL\RM_UserInfo_Dal.cs" />
     <Compile Include="DAL\SR_Tickets_Dal.cs" />
     <Compile Include="DAL\SR_WorkFlow_Dal.cs" />
+    <Compile Include="IDAO\Contract_IDAO.CS" />
     <Compile Include="IDAO\IMPC_Person_IDAO.cs" />
     <Compile Include="IDAO\RM_System_IDAO.cs" />
     <Compile Include="IDAO\RM_UserInfo_IDAO.cs" />

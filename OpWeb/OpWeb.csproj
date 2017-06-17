@@ -42,6 +42,12 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\..\Libs\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\..\Libs\Aspose.Words.dll</HintPath>
+    </Reference>
     <Reference Include="FluentData">
       <HintPath>..\..\Libs\FluentData.dll</HintPath>
     </Reference>
@@ -56,6 +62,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -77,8 +84,14 @@
     <Content Include="Company\Specialty_form.aspx" />
     <Content Include="Company\Specialty_index.aspx" />
     <Content Include="Company\Specialty_view.aspx" />
+    <Content Include="Contract\Contract_Finger.aspx" />
+    <Content Include="Contract\Contract_Finger_Temp.aspx" />
+    <Content Include="Contract\Contract_Finger_TempForm.aspx" />
     <Content Include="Contract\Contract_Mortgage.aspx" />
     <Content Include="Contract\Contract_MortgageForm.aspx" />
+    <Content Include="Contract\Contract_Mortgage_Finger.aspx" />
+    <Content Include="Contract\Contract_PrintView.aspx" />
+    <Content Include="Contract\Contract_Type.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap-rtl.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -192,6 +205,8 @@
     <Content Include="img\Contract_Ka.png" />
     <Content Include="img\Contract_Xin.png" />
     <Content Include="img\Contract_Ya.png" />
+    <Content Include="img\Default_Fingerprint.png" />
+    <Content Include="img\Default_Signature.png" />
     <Content Include="img\family.png" />
     <Content Include="img\fingerprint_default.png" />
     <Content Include="img\fingerprint_fail.png" />
@@ -212,6 +227,7 @@
     <Content Include="img\p2.jpg" />
     <Content Include="img\p3.jpg" />
     <Content Include="img\pay.png" />
+    <Content Include="img\pen_128.png" />
     <Content Include="img\profile.jpg" />
     <Content Include="img\profile_big.jpg" />
     <Content Include="img\profile_small.jpg" />
@@ -3527,6 +3543,28 @@
     <Compile Include="Company\Specialty_view.aspx.designer.cs">
       <DependentUpon>Specialty_view.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Contract\Contract_Finger.aspx.cs">
+      <DependentUpon>Contract_Finger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_Finger.aspx.designer.cs">
+      <DependentUpon>Contract_Finger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_Finger_Temp.aspx.cs">
+      <DependentUpon>Contract_Finger_Temp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_Finger_Temp.aspx.designer.cs">
+      <DependentUpon>Contract_Finger_Temp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_Finger_TempForm.aspx.cs">
+      <DependentUpon>Contract_Finger_TempForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_Finger_TempForm.aspx.designer.cs">
+      <DependentUpon>Contract_Finger_TempForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_Manage.cs" />
     <Compile Include="Contract\Contract_Mortgage.aspx.cs">
       <DependentUpon>Contract_Mortgage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3540,6 +3578,27 @@
     </Compile>
     <Compile Include="Contract\Contract_MortgageForm.aspx.designer.cs">
       <DependentUpon>Contract_MortgageForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_Mortgage_Finger.aspx.cs">
+      <DependentUpon>Contract_Mortgage_Finger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_Mortgage_Finger.aspx.designer.cs">
+      <DependentUpon>Contract_Mortgage_Finger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_PrintView.aspx.cs">
+      <DependentUpon>Contract_PrintView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_PrintView.aspx.designer.cs">
+      <DependentUpon>Contract_PrintView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_Type.aspx.cs">
+      <DependentUpon>Contract_Type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_Type.aspx.designer.cs">
+      <DependentUpon>Contract_Type.aspx</DependentUpon>
     </Compile>
     <Compile Include="Error\ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
@@ -4064,6 +4123,17 @@
     <Content Include="JS\plugins\webuploader\.DS_Store" />
     <Content Include="JS\plugins\webuploader\README.md" />
     <Content Include="Frame\Com_Acquire.ashx" />
+    <Content Include="License.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="License.lic">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FileTemplate\个人保证担保贷款合同书.docx" />
+    <Content Include="FileTemplate\个人抵押合同.docx" />
+    <Content Include="FileTemplate\按揭贷款资料清单终极版（装订版）.docx" />
+    <Content Include="Contract\License.dat" />
+    <Content Include="Contract\License.lic" />
     <None Include="Properties\PublishProfiles\M.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
