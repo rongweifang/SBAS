@@ -20,6 +20,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,10 +44,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Cells">
-      <HintPath>..\..\Libs\Aspose.Cells.dll</HintPath>
+      <HintPath>..\Lib\Aspose.Cells.dll</HintPath>
     </Reference>
     <Reference Include="Aspose.Words">
-      <HintPath>..\..\Libs\Aspose.Words.dll</HintPath>
+      <HintPath>..\Lib\Aspose.Words.dll</HintPath>
     </Reference>
     <Reference Include="FluentData">
       <HintPath>..\..\Libs\FluentData.dll</HintPath>
@@ -68,6 +69,9 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="YesHJ.Rest">
+      <HintPath>..\Lib\YesHJ.Rest.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.html" />
@@ -3443,6 +3447,7 @@
     <Content Include="UserControl\SearchControl.ascx" />
     <Content Include="UserControl\SubmitCheck.ascx" />
     <Content Include="UserControl\UserLeftMenu.ascx" />
+    <Content Include="User\BlackUserEdit.aspx" />
     <Content Include="User\DegreeAuthcode.aspx" />
     <Content Include="User\Feedback_Form.aspx" />
     <Content Include="User\feedback_index.aspx" />
@@ -3450,6 +3455,7 @@
     <Content Include="User\Message_index.aspx" />
     <Content Include="User\Message_SendList.aspx" />
     <Content Include="User\myflag.aspx" />
+    <Content Include="User\UserBlackList.aspx" />
     <Content Include="User\UserForm.aspx" />
     <Content Include="User\UserInfoView.aspx" />
     <Content Include="User\UserList.aspx" />
@@ -3648,6 +3654,9 @@
     </Compile>
     <Compile Include="App_Code\PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Handler\BlackUserHandler.ashx.cs">
+      <DependentUpon>BlackUserHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Log\apply.aspx.cs">
       <DependentUpon>apply.aspx</DependentUpon>
@@ -3936,6 +3945,13 @@
     <Compile Include="UserControl\UserLeftMenu.ascx.designer.cs">
       <DependentUpon>UserLeftMenu.ascx</DependentUpon>
     </Compile>
+    <Compile Include="User\BlackUserEdit.aspx.cs">
+      <DependentUpon>BlackUserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\BlackUserEdit.aspx.designer.cs">
+      <DependentUpon>BlackUserEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\Common_UserInfo.ashx.cs">
       <DependentUpon>Common_UserInfo.ashx</DependentUpon>
     </Compile>
@@ -3990,6 +4006,13 @@
     </Compile>
     <Compile Include="User\myflag.aspx.designer.cs">
       <DependentUpon>myflag.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserBlackList.aspx.cs">
+      <DependentUpon>UserBlackList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserBlackList.aspx.designer.cs">
+      <DependentUpon>UserBlackList.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\UserForm.aspx.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
@@ -4134,6 +4157,7 @@
     <Content Include="FileTemplate\按揭贷款资料清单终极版（装订版）.docx" />
     <Content Include="Contract\License.dat" />
     <Content Include="Contract\License.lic" />
+    <Content Include="Handler\BlackUserHandler.ashx" />
     <None Include="Properties\PublishProfiles\M.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -4190,16 +4214,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>17067</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:17117/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

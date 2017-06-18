@@ -45,7 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FluentData">
-      <HintPath>..\..\Libs\FluentData.dll</HintPath>
+      <HintPath>..\Lib\FluentData.dll</HintPath>
     </Reference>
     <Reference Include="Interop.SQLDMO">
       <HintPath>..\Lib\Interop.SQLDMO.dll</HintPath>
@@ -67,8 +67,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDAL.cs" />
+    <Compile Include="Dal\BlackUserService.cs" />
     <Compile Include="DFsystemDal.cs" />
     <Compile Include="ItemTableField.cs" />
+    <Compile Include="Model\BlackUser.cs" />
     <Compile Include="ResTableField.cs" />
     <Compile Include="SqlServerBackup.cs" />
     <Compile Include="SqlServerHelper.cs" />

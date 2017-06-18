@@ -16,7 +16,7 @@ namespace Common.DotNetBean
         public static SessionUser GetSessionUser()
         {
             HttpContext rq = HttpContext.Current;
-            return (SessionUser)rq.Session[RequestSession.SESSION_USER];
+            return rq.Session[RequestSession.SESSION_USER] as SessionUser;
         }
     }
 }
