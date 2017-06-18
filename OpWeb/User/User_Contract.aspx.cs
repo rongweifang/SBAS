@@ -75,7 +75,7 @@ namespace OpWeb.User
             bool IsOk = DataFactory.SqlDataBase().Submit_AddOrEdit("Contract_MortGage", "Card_ID", this.ID0, ht);
             if (IsOk)
             {
-                Hashtable htt = DataFactory.SqlDataBase().GetHashtableById("Contract_MortGage", "Card_ID", this.ID0);
+                Hashtable htt = DataFactory.SqlDataBase().GetHashtableById("Contract_MortGage", "Card_ID", this.Card_ID);
                 string _UID = htt["UID"].ToString();
 
                 int FingerNum = DataFactory.SqlDataBase().IsExist("Contract_Finger", "UID", _UID);
