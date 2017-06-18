@@ -10,6 +10,15 @@
     <link href="/css/font-awesome.css?v=4.4.0" rel="stylesheet" />
     <link href="/css/animate.css" rel="stylesheet" />
     <link href="/css/style.css?v=4.1.0" rel="stylesheet" />
+     <!-- 全局js -->
+    <script src="/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
+     <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
+    <script src="/js/content.js?v=1.0.0"></script>
+
+    <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
+    <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
+    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
 </head>
 <body class="gray-bg">
     <form id="form1" runat="server">
@@ -117,15 +126,7 @@
             </div>
         </div>
     </form>
-    <!-- 全局js -->
-    <script src="/js/jquery.min.js?v=2.1.4"></script>
-    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
-
-    <script src="/js/content.js?v=1.0.0"></script>
-
-    <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
+   
 
 </body>
 </html>

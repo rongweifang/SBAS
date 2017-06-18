@@ -20,7 +20,6 @@
     <script src="/js/plugins/validate/jquery.validate.min.js"></script>
     <script src="/js/plugins/validate/messages_zh.min.js"></script>
     <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
