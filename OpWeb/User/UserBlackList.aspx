@@ -67,6 +67,10 @@
             });
         }
 
+        function refresh() {
+            windowload();
+        }
+
         function saveSuccess(msg) {
             showTipsMsg("<span style='color:red'>" + msg + "</span>", 500, 4);
             window.setTimeout(windowload, 1000);
@@ -90,7 +94,7 @@
         }
         $(document).ready(function () {
             $("#btn_refresh").click(function () {
-                windowload();
+               
             });
         });
     </script>
@@ -108,7 +112,6 @@
                         <span class="icon-botton"
             style="background: url('../../Themes/images/Search.png') no-repeat scroll 0px 4px;">
         </span>查 询</asp:LinkButton>
-                    <input  type="button" value="刷新" class="button green" id="btn_refresh"/>
                 </div>
                 <div style="text-align: right">
                     <uc2:LoadButton ID="LoadButton1" runat="server" />
