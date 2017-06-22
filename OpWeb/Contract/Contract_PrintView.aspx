@@ -9,9 +9,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
+    <div style="width: 649px;">
+    <%=PageContent %>
     </div>
+
     </form>
 </body>
 </html>

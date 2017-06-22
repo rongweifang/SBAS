@@ -11,6 +11,7 @@ namespace OpWeb.Contract
     public partial class Contract_PrintView : PageBase
     {
         private string UID;
+        public string PageContent = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(base.Request["UID"]))
@@ -30,7 +31,10 @@ namespace OpWeb.Contract
 
         private void InitData()
         {
-            Contract_Manage.CreateMortgageFile(UID, "1");
+            //Contract_Manage.CreateMortgageFile(UID, "1");
+
+             PageContent = Contract_Manage.GetHtmlContent(UID, "Contract_Mortgage");
+
         }
 
     }

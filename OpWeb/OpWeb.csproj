@@ -49,10 +49,12 @@
     <Reference Include="Aspose.Words">
       <HintPath>..\Lib\Aspose.Words.dll</HintPath>
     </Reference>
-    <Reference Include="FluentData">
+    <Reference Include="FluentData, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\FluentData.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.JScript" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
@@ -95,6 +97,8 @@
     <Content Include="Contract\Contract_MortgageForm.aspx" />
     <Content Include="Contract\Contract_Mortgage_Finger.aspx" />
     <Content Include="Contract\Contract_PrintView.aspx" />
+    <Content Include="Contract\Contract_Template.aspx" />
+    <Content Include="Contract\Contract_TemplateForm.aspx" />
     <Content Include="Contract\Contract_Type.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap-rtl.css" />
@@ -215,6 +219,11 @@
     <Content Include="img\fingerprint_default.png" />
     <Content Include="img\fingerprint_fail.png" />
     <Content Include="img\fingerprint_OK.png" />
+    <Content Include="img\Hand_R_1.png" />
+    <Content Include="img\Hand_R_2.png" />
+    <Content Include="img\Hand_R_3.png" />
+    <Content Include="img\Hand_R_4.png" />
+    <Content Include="img\Hand_R_5.png" />
     <Content Include="img\iconfont-logo.png" />
     <Content Include="img\icons.png" />
     <Content Include="img\index.jpg" />
@@ -3598,6 +3607,20 @@
     </Compile>
     <Compile Include="Contract\Contract_PrintView.aspx.designer.cs">
       <DependentUpon>Contract_PrintView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_Template.aspx.cs">
+      <DependentUpon>Contract_Template.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_Template.aspx.designer.cs">
+      <DependentUpon>Contract_Template.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_TemplateForm.aspx.cs">
+      <DependentUpon>Contract_TemplateForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_TemplateForm.aspx.designer.cs">
+      <DependentUpon>Contract_TemplateForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contract\Contract_Type.aspx.cs">
       <DependentUpon>Contract_Type.aspx</DependentUpon>

@@ -1818,5 +1818,13 @@ namespace Busines.DAL
             return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "createdate", "DESC", pageIndex, pageSize, ref count);
         }
 
+        public DataTable GetContract_TemplateListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT *  ");
+            strSql.Append("FROM (SELECT CT.CTID,CT.CONTRACTTYPE,CT.CTCONTENT,CT.CTPAGE,CT.CREATEDATE,CT.CREATEUSER,CT.MODIFYUSER,CT.MODIFYDATE,CTY.ContractName FROM Contract_Template CT LEFT JOIN Contract_Type CTY ON CT.ContRACTTYPE=CTY.ContractType) U");
+            strSql.Append(SqlWhere);
+            return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), " ContractType,CTPage", "ASC", pageIndex, pageSize, ref count);
+        }
     }
 }

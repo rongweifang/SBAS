@@ -19,7 +19,6 @@
     <script src="/js/plugins/validate/jquery.validate.min.js"></script>
     <script src="/js/plugins/validate/messages_zh.min.js"></script>
     <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
@@ -236,7 +235,7 @@
                 </table>
                 <div class="form-group">
                     <div class="col-sm-8 col-sm-offset-3">
-                        <asp:LinkButton ID="Save" runat="server" class="btn btn-w-m btn-primary" OnClick="Save_Click">下一步</asp:LinkButton>&nbsp;
+                        <asp:LinkButton ID="Save" runat="server" class="btn btn-w-m btn-primary" OnClick="Save_Click">确　定</asp:LinkButton>&nbsp;
                                         <button type="button" class="btn btn-w-m btn-warning" onclick="OpenClose();">取  消</button>
                     </div>
                 </div>

@@ -44,8 +44,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentData">
-      <HintPath>..\Lib\FluentData.dll</HintPath>
+    <Reference Include="FluentData, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\FluentData.dll</HintPath>
     </Reference>
     <Reference Include="Interop.SQLDMO">
       <HintPath>..\Lib\Interop.SQLDMO.dll</HintPath>

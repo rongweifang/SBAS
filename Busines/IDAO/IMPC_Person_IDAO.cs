@@ -120,7 +120,7 @@ namespace Busines.IDAO
 
         string ExportExcelFilebySQL(StringBuilder strsql);
 
-
         DataTable GetMortgageListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
+        DataTable GetContract_TemplateListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
     }
 }
