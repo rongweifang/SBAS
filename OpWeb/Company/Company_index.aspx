@@ -132,9 +132,9 @@
 
                         <td style="width: 50px; text-align: center;">状态
                         </td>
-                        <td style="width: 130px; text-align: center;">招聘开始时间
+                        <td style="width: 130px; text-align: center;">开始时间
                         </td>
-                        <td style="width: 130px; text-align: center;">招聘结束时间
+                        <td style="width: 130px; text-align: center;">结束时间
                         </td>
                         <td>创建时间
                         </td>

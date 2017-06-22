@@ -47,11 +47,11 @@
                 top.openDialog(url, 'UserForm', '客户管理 - 编辑', 800, 510, 50, 50);
             }
         }
-
-        function EditFinger(Card_ID) {
+        //指纹录入
+        function EditFinger(Card_ID, Card_Name) {
             if (IsEditdata(Card_ID)) {
                 var url = "/User/User_Finger.aspx?Card_ID=" + Card_ID;
-                top.openDialog(url, 'User_Extra', '指纹录入', 700, 630, 50, 50);
+                top.openDialog(url, 'User_Extra', '指纹录入-' + Card_Name, 800, 680, 50, 50);
             }
         }
         //配偶
@@ -168,7 +168,7 @@
                                     <td style="width: 40px; text-align: center;"><%#Eval("U_Age")%></td>
                                     <td style="width: 100px; text-align: center;"><%#Eval("U_Tel")%></td>
                                     <td style="width: 70px; text-align: center;">
-                                        <a onclick="EditFinger('<%#Eval("Card_ID")%>')">
+                                        <a onclick="EditFinger('<%#Eval("Card_ID")%>','<%#Eval("Card_Name")%>')">
                                             <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>

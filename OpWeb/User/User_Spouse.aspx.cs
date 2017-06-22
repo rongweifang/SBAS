@@ -63,7 +63,9 @@ namespace OpWeb.User
             if (IsOk)
             {
                 string Url = PageHelper.UrlEncrypt(this.Card_ID);
-                ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>self.location='User_Spouse2.aspx?Card_ID=" + Url + "';</script>");
+              // ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>self.location='User_Spouse2.aspx?Card_ID=" + Url + "';</script>");
+                ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('保存成功！');setTimeout('OpenClose()','2000');</script>");
+
             }
             else
             {

@@ -178,7 +178,33 @@ namespace OpWeb.Contract
             _height = h;
         }
 
+        public static string GetHtmlContent(string UID, string documentType)
+        {
+            StringBuilder sb = new StringBuilder();
+            string sTable = string.Format("(SELECT CTContent,CTPage FROM Contract_Template WHERE ContractType='{0}') T", documentType);
+            DataTable dt = DataFactory.SqlDataBase().GetDataTable(sTable, "CTPage", "ASC");
+            if (DataTableHelper.IsExistRows(dt))
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    sb.Append(GetPage(dt.Rows[i]["CTContent"].ToString(), dt.Rows[i]["CTPage"].ToString()));
+                }
+            }
 
+            return sb.ToString();
+        }
+
+        private static string GetPage(string CTContent, string CTPage)
+        {
+
+            //Microsoft.JScript.GlobalObject.escape("");
+            //Microsoft.JScript.GlobalObject.unescape("");
+            StringBuilder sb = new StringBuilder();
+            sb.Append(Microsoft.JScript.GlobalObject.unescape(CTContent));
+
+
+            return sb.ToString();
+        }
 
 
     }

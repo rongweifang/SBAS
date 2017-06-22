@@ -47,8 +47,8 @@
         function detail() {
             var key = CheckboxValue();
             if (IsEditdata(key)) {
-                var url = "/Contract/Contract_PrintView.aspx?UID=" + key + "&documentType=1";
-                top.openDialog(url, 'Contract_PrintView', '打印预览', 1000, 800, 50, 50);
+                var url = "/Contract/Contract_PrintView.aspx?UID=" + key + "&documentType=Contract_Mortgage";
+                top.openDialog(url, 'Contract_PrintView', '按揭合同-打印预览', 1000, 800, 50, 50);
             }
         }
         //打印
