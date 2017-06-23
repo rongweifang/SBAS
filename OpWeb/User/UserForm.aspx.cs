@@ -17,6 +17,7 @@ namespace OpWeb.User
     public partial class UserForm : PageBase
     {
         private string _key;
+        public string LoadJs = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(base.Request["key"]))
@@ -30,8 +31,14 @@ namespace OpWeb.User
                 if (!string.IsNullOrEmpty(this._key))
                 {
                     this.InitData();
+                    LoadJs = "";
+                }
+                else
+                {
+                    LoadJs = "onload=\"Load()\" onunload=\"Unload()\"";
                 }
             }
+           
         }
 
         private void InitData()
@@ -50,7 +57,7 @@ namespace OpWeb.User
             ht = ControlBindHelper.GetWebControls(this.Page);
             ht["User_ID"] = RequestSession.GetSessionUser().UserId.ToString();
             ht["User_Name"] = RequestSession.GetSessionUser().UserName.ToString();
-            if (string.IsNullOrEmpty(this.Card_Name.Value.Trim()) ||string.IsNullOrEmpty(this.Card_ID.Value.Trim()) ||string.IsNullOrEmpty(this.U_Age.Value.Trim()) )
+            if (string.IsNullOrEmpty(this.Card_Name.Value.Trim()) || string.IsNullOrEmpty(this.Card_ID.Value.Trim()) || string.IsNullOrEmpty(this.U_Age.Value.Trim()))
             {
                 ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('信息不完整！');</script>");
                 return;
@@ -63,7 +70,7 @@ namespace OpWeb.User
             bool IsOk = DataFactory.SqlDataBase().Submit_AddOrEdit("Base_User", "Card_ID", this._key, ht);
             if (IsOk)
             {
-                string Url = PageHelper.UrlEncrypt( this.Card_ID.Value.Trim());
+                string Url = PageHelper.UrlEncrypt(this.Card_ID.Value.Trim());
                 ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>self.location='User_Extra.aspx?Card_ID=" + Url + "';</script>");
             }
             else

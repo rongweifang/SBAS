@@ -256,7 +256,6 @@
     <Content Include="img\webuploader.png" />
     <Content Include="img\wenku_logo.png" />
     <Content Include="index.htm" />
-    <Content Include="index.html" />
     <Content Include="JS\bootstrap.min.js" />
     <Content Include="JS\contabs.js" />
     <Content Include="JS\content.js" />
@@ -3636,6 +3635,9 @@
     <Compile Include="Error\ErrorPage.aspx.designer.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Frame\Common_Files.ashx.cs">
+      <DependentUpon>Common_Files.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Frame\Com_Acquire.ashx.cs">
       <DependentUpon>Com_Acquire.ashx</DependentUpon>
     </Compile>
@@ -4181,6 +4183,7 @@
     <Content Include="Contract\License.dat" />
     <Content Include="Contract\License.lic" />
     <Content Include="Handler\BlackUserHandler.ashx" />
+    <Content Include="Frame\Common_Files.ashx" />
     <None Include="Properties\PublishProfiles\M.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -4215,7 +4218,7 @@
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>

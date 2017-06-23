@@ -51,7 +51,7 @@
         function EditFinger(Card_ID, Card_Name) {
             if (IsEditdata(Card_ID)) {
                 var url = "/User/User_Finger.aspx?Card_ID=" + Card_ID;
-                top.openDialog(url, 'User_Extra', '指纹录入-' + Card_Name, 800, 680, 50, 50);
+                top.openDialog(url, 'User_Extra', '指纹录入-' + Card_Name, 800, 400, 50, 50);
             }
         }
         //配偶

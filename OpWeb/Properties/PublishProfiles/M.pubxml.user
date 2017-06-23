@@ -37,7 +37,7 @@
       <publishTime>03/17/2015 13:24:36</publishTime>
     </File>
     <File Include="bin/Busines.dll">
-      <publishTime>06/20/2017 16:17:18</publishTime>
+      <publishTime>06/22/2017 10:38:05</publishTime>
     </File>
     <File Include="bin/Common.dll">
       <publishTime>06/20/2017 15:54:48</publishTime>
@@ -76,7 +76,7 @@
       <publishTime>03/25/2013 16:25:50</publishTime>
     </File>
     <File Include="bin/OpWeb.dll">
-      <publishTime>06/20/2017 16:17:20</publishTime>
+      <publishTime>06/22/2017 15:37:50</publishTime>
     </File>
     <File Include="bin/QRCode.dll">
       <publishTime>10/31/2014 11:18:19</publishTime>
@@ -130,7 +130,7 @@
       <publishTime>06/17/2017 18:13:54</publishTime>
     </File>
     <File Include="Contract/Contract_Mortgage.aspx">
-      <publishTime>06/17/2017 21:34:49</publishTime>
+      <publishTime>06/21/2017 15:04:53</publishTime>
     </File>
     <File Include="Contract/Contract_MortgageForm.aspx">
       <publishTime>06/17/2017 11:59:34</publishTime>
@@ -139,7 +139,13 @@
       <publishTime>06/17/2017 15:53:37</publishTime>
     </File>
     <File Include="Contract/Contract_PrintView.aspx">
-      <publishTime>06/17/2017 12:21:11</publishTime>
+      <publishTime>06/22/2017 09:26:22</publishTime>
+    </File>
+    <File Include="Contract/Contract_Template.aspx">
+      <publishTime>06/21/2017 13:31:25</publishTime>
+    </File>
+    <File Include="Contract/Contract_TemplateForm.aspx">
+      <publishTime>06/21/2017 14:42:00</publishTime>
     </File>
     <File Include="Contract/Contract_Type.aspx">
       <publishTime>06/17/2017 17:24:26</publishTime>
@@ -157,7 +163,7 @@
       <publishTime>06/10/2017 15:13:05</publishTime>
     </File>
     <File Include="css/bootstrap.min.css">
-      <publishTime>06/18/2017 16:14:22</publishTime>
+      <publishTime>06/22/2017 17:19:13</publishTime>
     </File>
     <File Include="css/demo/webuploader-demo.css">
       <publishTime>06/10/2017 15:13:05</publishTime>
@@ -169,7 +175,7 @@
       <publishTime>06/10/2017 15:13:05</publishTime>
     </File>
     <File Include="css/login.css">
-      <publishTime>06/10/2017 15:13:05</publishTime>
+      <publishTime>06/22/2017 17:00:45</publishTime>
     </File>
     <File Include="css/patterns/header-profile-skin-1.png">
       <publishTime>06/10/2017 15:13:05</publishTime>
@@ -1792,7 +1798,7 @@
       <publishTime>06/10/2017 10:43:52</publishTime>
     </File>
     <File Include="login.html">
-      <publishTime>06/13/2017 21:31:47</publishTime>
+      <publishTime>06/22/2017 17:17:34</publishTime>
     </File>
     <File Include="MainDefault.aspx">
       <publishTime>06/11/2017 11:19:45</publishTime>
@@ -1870,7 +1876,7 @@
       <publishTime>06/10/2017 14:59:40</publishTime>
     </File>
     <File Include="RMBase/SysMenu/Menu_List.aspx">
-      <publishTime>06/10/2017 19:24:54</publishTime>
+      <publishTime>06/21/2017 01:19:53</publishTime>
     </File>
     <File Include="RMBase/SysOrg/Organization_Form.aspx">
       <publishTime>06/10/2017 10:43:53</publishTime>
@@ -10351,7 +10357,7 @@
       <publishTime>06/18/2017 19:45:08</publishTime>
     </File>
     <File Include="User/UserForm.aspx">
-      <publishTime>06/16/2017 16:18:39</publishTime>
+      <publishTime>06/22/2017 18:42:29</publishTime>
     </File>
     <File Include="User/UserInfoView.aspx">
       <publishTime>06/10/2017 10:43:53</publishTime>

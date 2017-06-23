@@ -15,8 +15,8 @@ namespace OpWeb.Contract
 {
     public partial class Contract_Finger : System.Web.UI.Page
     {
-        //UID,ClassID
         private string UID, ClassID;
+        public string _Vis = "block";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(base.Request["UID"]) || string.IsNullOrEmpty(base.Request["ClassID"]))
@@ -41,9 +41,18 @@ namespace OpWeb.Contract
             if (DataTableHelper.IsExistRows(dt))
             {
                 ControlBindHelper.BindRepeaterList(dt, this.rp_Item);
+                this.FID.Value = dt.Rows[0]["FID"].ToString();
             }
-            
-            
+            else
+            {
+                this.FReg.Visible = false;
+                _Vis = "none";
+            }
+        }
+
+        protected void Save_Click(object sender, EventArgs e)
+        {
+
         }
 
 
