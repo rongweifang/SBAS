@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ApproveFlow.aspx.cs" Inherits="OpWeb.Contract.ApproveFlow" %>
-
+<%@ Register Src="~/UserControl/WorkFlowInfo.ascx" TagPrefix="uc" TagName="WorkFlowTool" %>
 <!DOCTYPE html>
 
 <head runat="server">
@@ -103,7 +103,7 @@
         <form id="form1" runat="server">
             <div class="div-body">
                 <div>
-                    
+                    <uc:WorkFlowTool id="wfTool" runnut="server"/>
                 </div>
             </div>
         </form>
