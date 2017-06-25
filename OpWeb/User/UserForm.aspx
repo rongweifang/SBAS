@@ -10,7 +10,7 @@
     <link href="/css/font-awesome.css?v=4.4.0" rel="stylesheet" />
     <link href="/css/style.css?v=4.1.0" rel="stylesheet" />
     <script src="/Themes/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
-     <!-- 全局js -->
+    <!-- 全局js -->
     <script src="/js/bootstrap.min.js?v=3.3.6"></script>
     <!-- 自定义js -->
     <script src="/js/content.js?v=1.0.0"></script>
@@ -21,8 +21,84 @@
     <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+
+        function Load() {
+            show.OpenIdCard();
+        }
+
+        function Unload() {
+            CloseDevice();
+            show.CloseIdCard();
+        }
+
+        function CloseDevice() {
+            show.CloseDevice();
+        }
+
+        function GetIdCardResult() {
+
+            Unload();
+            Load();
+        }
+
+
+    </script>
+
+    <script language="Javascript" event="IdCardEvent()" for="show">
+
+        //show.UnFaceDetect();//
+
+        var name = show.GetTempFileName(".bmp");
+        show.GetIdCardImage(name, 1);
+        //var feature = show.GetFaceTemplFromFile(name);
+        show.DeleteFile(name);
+
+        // show.FaceDetect(feature, 45, 1);
+        //[in] 整数，表示结果信息代号。目前支持的值为1~15，其中
+        //1	表示姓名，	
+        //2表示性别，
+        //3表示民族，
+        //4表示出生年，
+        //5表示出生月，
+        //6表示出生日，
+        //7表示住址，
+        //8表示身份证号，
+        //9表示发证机关，
+        //10表示有效期起始年，	
+        //11表示有效期起始月，
+        //12表示有效	期起始日，
+        //13表示表示有效期结束	年，
+        //14表示表示有效期结束月，
+        //15表示表示有效期结束日。
+        $('#Card_Name').val(show.GetIdCardResult(1));
+        $('#Card_ID').val(show.GetIdCardResult(8));
+        $('#Card_Sex').val(show.GetIdCardResult(2));
+        $('#Card_Nation').val(show.GetIdCardResult(3));
+        $('#Card_Year').val(show.GetIdCardResult(4));
+        $('#Card_Month').val(show.GetIdCardResult(5));
+        $('#Card_Day').val(show.GetIdCardResult(6));
+        $('#Card_Address').val(show.GetIdCardResult(7));
+        $('#Card_Apply_Year').val(show.GetIdCardResult(10));
+        $('#Card_Apply_Month').val(show.GetIdCardResult(11));
+        $('#Card_Apply_Day').val(show.GetIdCardResult(12));
+        $('#Card_Valid_Year').val(show.GetIdCardResult(13));
+        $('#Card_Valid_Month').val(show.GetIdCardResult(14));
+        $('#Card_Valid_Day').val(show.GetIdCardResult(15));
+        d = new Date();
+        var nowYear = d.getFullYear();
+        var ageDiff = nowYear - show.GetIdCardResult(4);
+        $("#U_Age").val(ageDiff);
+    </script>
+
 </head>
-<body class="gray-bg">
+<body class="gray-bg" <%=LoadJs %>>
+    <div style="display: none;">
+        <object id="show" classid="clsid:E77E4CC8-E879-4A72-850A-B824742EC5B7" width="600" height="400">
+        </object>
+    </div>
     <form class="form-horizontal m-t" id="signupForm" runat="server">
         <div class="ibox float-e-margins">
 
@@ -33,15 +109,15 @@
                             <td width="100">
                                 <label class="control-label">姓　　名：</label></td>
                             <td width="140">
-                                <input id="Card_Name" name="Card_Name" class="form-control" type="text" runat="server" />
+                                <input id="Card_Name" readonly name="Card_Name" class="form-control" type="text" runat="server" />
                             </td>
                             <td width="100">
                                 <label class="control-label">身份证号：</label></td>
                             <td width="220">
-                                <input id="Card_ID" name="Card_ID" class="form-control valid" type="text" aria-required="true" aria-invalid="false" runat="server" />
+                                <input id="Card_ID" readonly name="Card_ID" class="form-control valid" type="text" aria-required="true" aria-invalid="false" runat="server" />
                             </td>
                             <td colspan="2" rowspan="5">
-                                <img src="../img/CardHead.jpg" width="102" height="126" alt="" /></td>
+                                <img src="../img/CardHead.jpg" id="Card_Head" width="102" height="126" alt="" runat="server" /></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -53,13 +129,13 @@
                             <td>
                                 <label class="control-label">性　　别：</label></td>
                             <td>
-                                <input id="Card_Sex" name="Card_Sex" class="form-control" type="text" runat="server" />
+                                <input id="Card_Sex" readonly name="Card_Sex" class="form-control" type="text" runat="server" />
 
                             </td>
                             <td>
                                 <label class="control-label">民　　族：</label></td>
                             <td>
-                                <input id="Card_Nation" name="Card_Nation" class="form-control" type="text" runat="server" /></td>
+                                <input id="Card_Nation" readonly name="Card_Nation" class="form-control" type="text" runat="server" /></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -71,7 +147,7 @@
                             <td>
                                 <label class="control-label">年　　龄：</label></td>
                             <td>
-                                <input id="U_Age" name="U_Age" class="form-control" type="text" runat="server" /></td>
+                                <input id="U_Age" readonly name="U_Age" class="form-control" type="text" runat="server" /></td>
                             <td>
                                 <label class="control-label">出生年月：</label></td>
                             <td>
@@ -80,13 +156,13 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <input id="Card_Year" name="Card_Year" class="form-control" type="text" style="width: 80px;" runat="server" /></td>
+                                                <input id="Card_Year" readonly name="Card_Year" class="form-control" type="text" style="width: 80px;" runat="server" /></td>
                                             <td>－</td>
                                             <td>
-                                                <input id="Card_Month" name="Card_Month" class="form-control" style="width: 45px;" type="text" runat="server" /></td>
+                                                <input id="Card_Month" readonly name="Card_Month" class="form-control" style="width: 45px;" type="text" runat="server" /></td>
                                             <td>－</td>
                                             <td>
-                                                <input id="Card_Day" name="Card_Day" class="form-control" style="width: 45px;" type="text" runat="server" /></td>
+                                                <input id="Card_Day" readonly name="Card_Day" class="form-control" style="width: 45px;" type="text" runat="server" /></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -106,22 +182,22 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <input id="Card_Apply_Year" name="Card_Apply_Year" class="form-control" type="text" style="width: 80px;" runat="server" /></td>
+                                                <input id="Card_Apply_Year" readonly name="Card_Apply_Year" class="form-control" type="text" style="width: 80px;" runat="server" /></td>
                                             <td>－</td>
                                             <td>
-                                                <input id="Card_Apply_Month" name="Card_Apply_Month" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
+                                                <input id="Card_Apply_Month" readonly name="Card_Apply_Month" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
                                             <td>－</td>
                                             <td>
-                                                <input id="Card_Apply_Day" name="Card_Apply_Day" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
+                                                <input id="Card_Apply_Day" readonly name="Card_Apply_Day" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
                                             <td>至 </td>
                                             <td>
-                                                <input id="Card_Valid_Year" name="Card_Valid_Year" class="form-control" type="text" style="width: 80px;" runat="server" /></td>
+                                                <input id="Card_Valid_Year" readonly name="Card_Valid_Year" class="form-control" type="text" style="width: 80px;" runat="server" /></td>
                                             <td>－</td>
                                             <td>
-                                                <input id="Card_Valid_Month" name="Card_Valid_Month" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
+                                                <input id="Card_Valid_Month" readonly name="Card_Valid_Month" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
                                             <td>－</td>
                                             <td>
-                                                <input id="Card_Valid_Day" name="Card_Valid_Day" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
+                                                <input id="Card_Valid_Day" readonly name="Card_Valid_Day" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -141,7 +217,7 @@
                             <td>
                                 <label class="control-label">户籍地址：</label></td>
                             <td colspan="3">
-                                <input id="Card_Address" name="Card_Address" class="form-control" type="text" runat="server" /></td>
+                                <input id="Card_Address" readonly name="Card_Address" class="form-control" type="text" runat="server" /></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -189,9 +265,5 @@
         </div>
 
     </form>
-   
-
-    
-
 </body>
 </html>
