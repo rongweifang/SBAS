@@ -9,6 +9,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 
 namespace OpWeb.Contract
@@ -17,9 +18,10 @@ namespace OpWeb.Contract
     {
         private static string _Path = System.AppDomain.CurrentDomain.BaseDirectory + "FileTemplate\\";
 
+        private static Regex MortageRegex = new Regex(@"{Mortage:+[\w]+}");
         public static void CreateMortgageFile(string UID, string documentType)
         {
-        //    Document_Template
+            //    Document_Template
             Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("Document_Template", "documentType", documentType);
 
             string _documentName = "";
@@ -135,13 +137,13 @@ namespace OpWeb.Contract
                 doc.MailMerge.DeleteFields();
 
                 #region
-                
+
                 #endregion
                 if (!Directory.Exists(_Upath))
                     Directory.CreateDirectory(_Upath);
 
                 doc.Save(_Upath + _UserFileName);
-               // OpenDoc(_documentName);
+                // OpenDoc(_documentName);
             }
 
         }
@@ -187,11 +189,57 @@ namespace OpWeb.Contract
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
+                    sb.Append("<div class=\"PageBody\">");
                     sb.Append(GetPage(dt.Rows[i]["CTContent"].ToString(), dt.Rows[i]["CTPage"].ToString()));
+                    sb.AppendFormat("<div class=\"PageNum\">{0}/{1}</div>", i + 1, dt.Rows.Count);
+                    sb.Append("</div>");
+                    sb.Append("<div class=\"PageNext\"></div>");
                 }
             }
 
-            return sb.ToString();
+            return ClearHtmlExchange(GetHtmlExchange(UID, sb.ToString(), documentType));
+        }
+
+
+        public static string GetHtmlExchange(string UID,string HtmlContent,string documentType)
+        {
+            //{Mortage:Card_Id}{Mortage:+[\w]+}//{Mortage:+[a-zA-Z0-9_-]+}
+           
+            string htmls = HtmlContent;
+            Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("V_" + documentType, "UID", UID);
+            if (ht.Count > 0 && ht != null)
+            {
+                MatchCollection userMatchColl = MortageRegex.Matches(htmls);
+                if (userMatchColl.Count > 0)
+                {
+                    foreach (Match matchItem in userMatchColl)
+                    {
+                        string ContentDeal = matchItem.Value.Trim();
+                        string FieldDeal = ContentDeal.Replace("{Mortage:", "").Replace("}", "");
+                        if (ht.Contains(FieldDeal.ToUpper()))
+                        {
+                            htmls = htmls.Replace(ContentDeal, "<span style=\"font-family: 'xinwei','华文新魏'\">" + ht[FieldDeal.ToUpper()].ToString() + "</span>");
+                        }
+                    }
+                }
+            }
+            return htmls;
+        }
+
+        public static string ClearHtmlExchange(string HtmlContent)
+        {
+            MatchCollection userMatchColl = MortageRegex.Matches(HtmlContent);
+            if (userMatchColl.Count > 0)
+            {
+                foreach (Match matchItem in userMatchColl)
+                {
+                    string ContentDeal = matchItem.Value.Trim();
+                    string FieldDeal = ContentDeal.Replace("{Mortage:", "").Replace("}", "");
+
+                    HtmlContent = HtmlContent.Replace(ContentDeal, "");
+                }
+            }
+            return HtmlContent;
         }
 
         private static string GetPage(string CTContent, string CTPage)

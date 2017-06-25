@@ -129,7 +129,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon">&yen;</span>
                                     <input type="text" class="form-control" id="M_Price" name="M_Price" onkeyup="Calc_Value()" runat="server" />
-                                    <span class="input-group-addon">.00</span>
+                                    
                                 </div>
                             </td>
                             <td>
@@ -137,7 +137,7 @@
                             <td>
                                 <div class="input-group">
                                     <span class="input-group-addon">&yen;</span>
-                                    <input type="text" readonly class="form-control" id="M_Value" name="M_Value" runat="server" />
+                                    <input type="text" class="form-control" id="M_Value" name="M_Value" runat="server" />
                                     <span class="input-group-addon">.00</span>
                                 </div>
                             </td>
@@ -161,7 +161,7 @@
                             <td>
                                 <div class="input-group">
                                     <span class="input-group-addon">&yen;</span>
-                                    <input type="text" readonly class="form-control" id="M_Loan" name="M_Loan" runat="server" />
+                                    <input type="text" class="form-control" id="M_Loan" name="M_Loan" runat="server" />
                                     <span class="input-group-addon">.00</span>
                                 </div>
                             </td>
@@ -190,7 +190,7 @@
                                 <label class="control-label">贷款利率(月)：</label></td>
                             <td>
                                 <div class="input-group">
-                                    <input type="text" readonly class="form-control" id="M_Rate_Month" value="" name="M_Rate_Month" runat="server" />
+                                    <input type="text" class="form-control" id="M_Rate_Month" value="" name="M_Rate_Month" runat="server" />
                                     <span class="input-group-addon">‰</span>
                                 </div>
                             </td>
@@ -227,7 +227,7 @@
                             <td>
                                 <label class="control-label">结束日期：</label></td>
                             <td>
-                                <input id="M_Reply_End" readonly name="M_Reply_End" class="form-control" type="text" runat="server" /></td>
+                                <input id="M_Reply_End" name="M_Reply_End" class="form-control" type="text" runat="server" /></td>
                         </tr>
                         <tr>
                             <td colspan="6" style="height: 5px;"></td>
@@ -485,18 +485,20 @@
             if (Area.length > 0 && Price.length > 0) {
                 if (!isNaN(Area)) {
 
-                    if (/^(\+|-)?\d+$/.test(Price)) {
-                        $("#M_Value").attr("value", (Area * Price).toFixed(0));
+                    if (!isNaN(Price)) {
+                        $("#M_Value").attr("value", Math.ceil(Area * Price));
+
+                        //  $("#M_Rate_Month").val((Math.ceil(Rate * 100000 / 12) / 10000).toFixed(4));
                     }
                     else {
-                        layer.msg("请输入正确的数值");
+                        layer.msg("请输入正确的售价");
                         $("#M_Price").val(Price.substring(0, Price.length - 1));
                         $("#M_Value").attr("value", "");
                         $("#M_Price").focus();
                     }
 
                 } else {
-                    layer.msg("请输入正确的数值");
+                    layer.msg("请输入正确的面积数");
                     $("#M_Area").val(Area.substring(0, Area.length - 1));
                     $("#M_Value").attr("value", "");
                     $("#M_Area").focus();
