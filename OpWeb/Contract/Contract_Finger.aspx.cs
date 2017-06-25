@@ -1,4 +1,5 @@
 ﻿using Busines;
+using Common.DotNetBean;
 using Common.DotNetData;
 using Common.DotNetUI;
 using System;
@@ -17,6 +18,7 @@ namespace OpWeb.Contract
     {
         private string UID, ClassID;
         public string _Vis = "block";
+        public string FistFingerName = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(base.Request["UID"]) || string.IsNullOrEmpty(base.Request["ClassID"]))
@@ -42,6 +44,7 @@ namespace OpWeb.Contract
             {
                 ControlBindHelper.BindRepeaterList(dt, this.rp_Item);
                 this.FID.Value = dt.Rows[0]["FID"].ToString();
+                this.FistFingerName = dt.Rows[0]["FingerName"].ToString();
             }
             else
             {
@@ -52,7 +55,28 @@ namespace OpWeb.Contract
 
         protected void Save_Click(object sender, EventArgs e)
         {
+            Hashtable ht = new Hashtable();
 
+            ht = ControlBindHelper.GetWebControls(this.Page);
+            ht["ModifyUserID"] = RequestSession.GetSessionUser().UserId.ToString();
+            ht["ModifyUser"] = RequestSession.GetSessionUser().UserName.ToString();
+            ht["ModifyDate"] = DateTime.Now.ToString();
+            if (string.IsNullOrEmpty(this.FID.Value.Trim()) || string.IsNullOrEmpty(this.FingerBase.Value.Trim()) || string.IsNullOrEmpty(this.SignBase.Value.Trim()))
+            {
+                ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('信息不完整！');</script>");
+                return;
+            }
+            ht.Remove("FID");
+            bool IsOk = DataFactory.SqlDataBase().Submit_AddOrEdit("Contract_Finger", "FID", this.FID.Value.Trim(), ht);
+            if (IsOk)
+            {
+                ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('保存成功！');</script>");
+                InitData();
+            }
+            else
+            {
+                ShowMsgHelper.Alert_Error("操作失败！");
+            }
         }
 
 

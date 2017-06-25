@@ -103,6 +103,8 @@
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap-rtl.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\ContactTemp.css" />
+    <Content Include="css\ContractPrint.css" />
     <Content Include="css\demo\webuploader-demo.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="css\font-awesome.min.css" />
@@ -187,6 +189,7 @@
     <Content Include="Error\ErrorPage.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\huawenxinwei-webfont.svg" />
     <Content Include="Frame\HomeIndex.aspx" />
     <Content Include="Frame\MainDefault.aspx" />
     <Content Include="Frame\MainFrame.js" />
@@ -260,10 +263,14 @@
     <Content Include="JS\contabs.js" />
     <Content Include="JS\content.js" />
     <Content Include="JS\hplus.js" />
+    <Content Include="JS\jquery-1.9.0.js" />
+    <Content Include="JS\jquery-3.2.1.js" />
+    <Content Include="JS\jquery-3.2.1.min.js" />
     <Content Include="JS\jquery-ui-1.10.4.min.js" />
     <Content Include="JS\jquery-ui.custom.min.js" />
     <Content Include="JS\jquery.cookie.js" />
     <Content Include="JS\jquery.min.js" />
+    <Content Include="JS\jquery.PrintArea.js" />
     <Content Include="JS\plugins\beautifyhtml\beautifyhtml.js" />
     <Content Include="JS\plugins\blueimp\jquery.blueimp-gallery.min.js" />
     <Content Include="JS\plugins\bootstrap-table\bootstrap-table-mobile.min.js" />
@@ -3463,6 +3470,7 @@
     <Content Include="User\Message_index.aspx" />
     <Content Include="User\Message_SendList.aspx" />
     <Content Include="User\myflag.aspx" />
+    <Content Include="User\ShowPictures.aspx" />
     <Content Include="User\UserBlackList.aspx" />
     <Content Include="User\UserForm.aspx" />
     <Content Include="User\UserInfoView.aspx" />
@@ -3634,9 +3642,6 @@
     </Compile>
     <Compile Include="Error\ErrorPage.aspx.designer.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Frame\Common_Files.ashx.cs">
-      <DependentUpon>Common_Files.ashx</DependentUpon>
     </Compile>
     <Compile Include="Frame\Com_Acquire.ashx.cs">
       <DependentUpon>Com_Acquire.ashx</DependentUpon>
@@ -4032,6 +4037,13 @@
     <Compile Include="User\myflag.aspx.designer.cs">
       <DependentUpon>myflag.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User\ShowPictures.aspx.cs">
+      <DependentUpon>ShowPictures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ShowPictures.aspx.designer.cs">
+      <DependentUpon>ShowPictures.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\UserBlackList.aspx.cs">
       <DependentUpon>UserBlackList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4183,7 +4195,10 @@
     <Content Include="Contract\License.dat" />
     <Content Include="Contract\License.lic" />
     <Content Include="Handler\BlackUserHandler.ashx" />
-    <Content Include="Frame\Common_Files.ashx" />
+    <Content Include="fonts\huawenxinwei-webfont.woff" />
+    <Content Include="fonts\huawenxinwei-webfont.woff2" />
+    <Content Include="fonts\huawenxinwei-webfont.eot" />
+    <Content Include="fonts\STXINWEI.TTF" />
     <None Include="Properties\PublishProfiles\M.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

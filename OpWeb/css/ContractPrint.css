@@ -1,0 +1,22 @@
+﻿
+
+.Noprint {
+    display: none;
+}
+
+.PageNext {
+    page-break-after: always;
+}
+
+.PageNum {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    position: absolute;
+    bottom: 0px;
+}
+#PrintBody {height:100%;width:100%;overflow: hidden;
+}
+.PageBody{height:970px; overflow: hidden;position:relative;}
+.form-group {display:none;
+}
