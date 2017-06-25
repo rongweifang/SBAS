@@ -19,9 +19,9 @@
   <!-- 是否写日志-->
   <add key="LogIsWrite" value="true" />
   <!-- 系统日志保存路径-->
-  <add key="LogFilePath" value="D:\SysLog" />
+  <add key="LogFilePath" value="C:\Project\SBAS\SysLog" />
   <!-- 文件上传路径-->
-  <add key="UploadFilePath" value="D:\Upload\" />
+  <add key="UploadFilePath" value="C:\Project\SBAS\Upload\" />
   <!-- 文件Web路径-->
   <add key="WebFilePath" value="http://127.0.0.1:82/" />
   <!-- 允许恢复数据库-->
@@ -31,7 +31,7 @@
   <!-- 自动启动备份数据库设置时间（每天凌晨05点）-->
   <add key="BackupsDataTime" value="05:00:00" />
   <!-- 备份数据库设置保存路径 -->
-  <add key="BackupsDataPath" value="D:\DataBackups" />
+  <add key="BackupsDataPath" value="C:\Project\SBAS\DataBackups" />
   <!-- 发出系统异常错误邮箱的地址 -->
   <add key="ErrorReportMailUserName" value="5iday@163.com" />
   <!-- 软件注册码 -->
