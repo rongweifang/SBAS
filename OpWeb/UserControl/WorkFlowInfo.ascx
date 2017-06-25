@@ -3,7 +3,7 @@
     .activity_box {
         width: 100px;
         height: 50px;
-        margin: 0 10px;
+        margin: 0 5px;
         border-radius: 5px;
         display: inline-block;
     }
@@ -20,9 +20,9 @@
         padding:5px;
         background-image:url("/Themes/Images/arrow.png");
         background-repeat:no-repeat;
-        margin:0 10px;
-        width:90px;
-        height:35px;
+        margin:0 5px;
+        width:40px;
+        height:25px;
         display:inline-block;
     }
 </style>

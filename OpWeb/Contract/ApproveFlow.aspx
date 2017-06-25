@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ApproveFlow.aspx.cs" Inherits="OpWeb.Contract.ApproveFlow" %>
-<%@ Register Src="~/UserControl/WorkFlowInfo.ascx" TagPrefix="uc" TagName="WorkFlowTool" %>
+<%@ Register Src="~/UserControl/WorkFlowInfo.ascx" TagPrefix="uc1" TagName="WorkFlowTool" %>
 <!DOCTYPE html>
-
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>用户信息</title>
@@ -103,7 +103,7 @@
         <form id="form1" runat="server">
             <div class="div-body">
                 <div>
-                    <uc:WorkFlowTool id="wfTool" runnut="server"/>
+                    <uc1:WorkFlowTool id="wfTool" runat="server"/>
                 </div>
             </div>
         </form>
