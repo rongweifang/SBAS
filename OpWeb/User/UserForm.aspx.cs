@@ -20,10 +20,10 @@ namespace OpWeb.User
         public string LoadJs = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(base.Request["key"]))
-            {
-                return;
-            }
+            //if (string.IsNullOrEmpty(base.Request["key"]))
+            //{
+            //    return;
+            //}
             this._key = base.Request["key"];
 
             if (!base.IsPostBack)
