@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="OpWeb.UserControl.Header" %>
 <header class="am-topbar admin-header">
   <div class="am-topbar-brand">
-    <strong> 内蒙古电力（集团）有限责任公司-招聘平台后台管理</strong> <small></small>
+    <strong> 后台管理</strong> <small></small>
   </div>
 
   <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>

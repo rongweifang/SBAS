@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>内蒙古电力（集团）有限责任公司招聘平台</title>
+    <title>合同管理平台</title>
     <link href="/Themes/Styles/Site.css" rel="stylesheet" type="text/css" />
     <link href="/Themes/Styles/Menu.css" rel="stylesheet" type="text/css" />
     <script src="/Themes/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
