@@ -194,7 +194,7 @@ namespace DataBase.Dal
             }
             using (var context = WDbContext())
             {
-                retList = context.Sql(@"sselect u.User_ID,u.User_Name,u.User_Code 
+                retList = context.Sql(@"select u.User_ID,u.User_Name,u.User_Code 
                                         from Base_UserInfo u join Base_UserRole ur on u.User_ID=ur.User_ID
                                         join Base_Roles r on r.Roles_ID=ur.Roles_ID
                                         where u.DeleteMark=1 and r.Roles_ID=@roleId")
@@ -216,7 +216,7 @@ namespace DataBase.Dal
             {
                 var workFlowInfo = context.Select<WF_WorkFlowInfo>("ID,WFName,Descript,AmountFrom,AmountTo,CreateTime")
                                           .From("WF_WorkFlowInfo")
-                                          .Where("AmountFrom>@amFrom and @amTo<@amFrom")
+                                          .Where("AmountFrom<@amFrom and (AmountTo>@amFrom or AmountTo=0)")
                                           .Parameter("amFrom", amount)
                                           .QuerySingle();
                 return workFlowInfo;

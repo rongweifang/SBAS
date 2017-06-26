@@ -69,9 +69,18 @@
   <ItemGroup>
     <Compile Include="BaseDAL.cs" />
     <Compile Include="Dal\BlackUserService.cs" />
+    <Compile Include="Dal\WorkFlowService.cs" />
     <Compile Include="DFsystemDal.cs" />
+    <Compile Include="Enums\ApproveType.cs" />
+    <Compile Include="Enums\OperateEnum.cs" />
+    <Compile Include="Enums\WorkFlowStatus.cs" />
     <Compile Include="ItemTableField.cs" />
     <Compile Include="Model\BlackUser.cs" />
+    <Compile Include="Model\UserInfo.cs" />
+    <Compile Include="Model\WF_Activity.cs" />
+    <Compile Include="Model\WF_Process.cs" />
+    <Compile Include="Model\WF_WorkFlow.cs" />
+    <Compile Include="Model\WF_WorkFlowInfo.cs" />
     <Compile Include="ResTableField.cs" />
     <Compile Include="SqlServerBackup.cs" />
     <Compile Include="SqlServerHelper.cs" />

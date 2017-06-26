@@ -105,6 +105,7 @@
                 <div>
                     <uc1:WorkFlowTool id="wfTool" runat="server"/>
                 </div>
+                <asp:Button  ID="btn_addContract" runat="server"  Text="addNew" OnClick="btn_addContract_Click"/>
             </div>
         </form>
     </div>
