@@ -17,6 +17,7 @@ namespace DataBase.Model
         public string GroupId { get; set; }
         public int ApproverCount { get; set; }
         public int ApproveType { get; set; }
+        public int ActType { get; set; }
         public DateTime CreateTime { get; set; }
     }
 }

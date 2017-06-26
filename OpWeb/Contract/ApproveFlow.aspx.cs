@@ -11,7 +11,9 @@ namespace OpWeb.Contract
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack) {
+                this.wfTool.WorkFlowID = "4881a8ce-ce89-47af-a7bf-cb73b7f90ef9";
+            }
         }
 
         protected void btn_addContract_Click(object sender, EventArgs e)

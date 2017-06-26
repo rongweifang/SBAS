@@ -130,7 +130,13 @@ namespace DataBase.Dal
                         .Column("CreateTime", DateTime.Now)
                         .Execute();
                 }
+                //更新流程状态
+                context.Update("WF_WorkFlow")
+                    .Column("CurrentActivityId", activity.Id)
+                    .Where("Id", workFlow.Id)
+                    .Execute();
             }
+            
             return execResult;
 
         }
@@ -237,7 +243,7 @@ namespace DataBase.Dal
             }
             using (var context = WDbContext())
             {
-                retList = context.Select<WF_Activity>("Id,FlowInfoId,ActName,Step,RoleId,GroupId,ApproverCount,ApproveType,CreateTime")
+                retList = context.Select<WF_Activity>("Id,FlowInfoId,ActName,Step,RoleId,GroupId,ApproverCount,ApproveType,ActType,CreateTime")
                                                .From("WF_Activity")
                                                .Where("FlowInfoId=@followId")
                                                .OrderBy("step asc")
@@ -248,6 +254,25 @@ namespace DataBase.Dal
 
         }
 
+        /// <summary>
+        /// 根据ID获取流程信息
+        /// </summary>
+        /// <param name="flowInfoId"></param>
+        /// <returns></returns>
+        public WF_WorkFlow  GetWorkFlow(string flowInfoId) {
+            WF_WorkFlow retData = null;
+            if (string.IsNullOrEmpty(flowInfoId)) {
+                return retData;
+            }
+            using (var context = WDbContext()) {
+                retData = context.Sql(@"select id,WorkInfoId,ContractId,CurrentActivityId,NextActivityId,StatusDescrip,WFStatus,IsFinish,Requester,Creater,CreateTime
+                            from WF_WorkFlow
+                            where id=@id")
+                            .Parameter("id",flowInfoId)
+                            .QuerySingle<WF_WorkFlow>();
+                return retData;
+            }
+        }
 
     }
 }

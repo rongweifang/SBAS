@@ -17,6 +17,7 @@ namespace DataBase.Model
         public string Requester{ get; set; }
         public string Creater { get; set; }
         public int WFStatus { get; set; }
+        public bool IsFinish { get; set; }
         public DateTime CreateTime { get; set; }
 
     }
