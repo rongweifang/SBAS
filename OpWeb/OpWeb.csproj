@@ -90,6 +90,7 @@
     <Content Include="Company\Specialty_form.aspx" />
     <Content Include="Company\Specialty_index.aspx" />
     <Content Include="Company\Specialty_view.aspx" />
+    <Content Include="Contract\ApproveFlow.aspx" />
     <Content Include="Contract\Contract_Finger.aspx" />
     <Content Include="Contract\Contract_Finger_Temp.aspx" />
     <Content Include="Contract\Contract_Finger_TempForm.aspx" />
@@ -3254,6 +3255,7 @@
     <Content Include="Themes\Images\32\userregedit.png" />
     <Content Include="Themes\Images\32\users_business_32.png" />
     <Content Include="Themes\Images\4963_home.png" />
+    <Content Include="Themes\Images\arrow.png" />
     <Content Include="Themes\Images\arrow_down.png" />
     <Content Include="Themes\Images\arrow_left.png" />
     <Content Include="Themes\Images\arrow_right.png" />
@@ -3462,6 +3464,7 @@
     <Content Include="UserControl\SearchControl.ascx" />
     <Content Include="UserControl\SubmitCheck.ascx" />
     <Content Include="UserControl\UserLeftMenu.ascx" />
+    <Content Include="UserControl\WorkFlowInfo.ascx" />
     <Content Include="User\BlackUserEdit.aspx" />
     <Content Include="User\DegreeAuthcode.aspx" />
     <Content Include="User\Feedback_Form.aspx" />
@@ -3564,6 +3567,13 @@
     </Compile>
     <Compile Include="Company\Specialty_view.aspx.designer.cs">
       <DependentUpon>Specialty_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\ApproveFlow.aspx.cs">
+      <DependentUpon>ApproveFlow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\ApproveFlow.aspx.designer.cs">
+      <DependentUpon>ApproveFlow.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contract\Contract_Finger.aspx.cs">
       <DependentUpon>Contract_Finger.aspx</DependentUpon>
@@ -3974,6 +3984,13 @@
     </Compile>
     <Compile Include="UserControl\UserLeftMenu.ascx.designer.cs">
       <DependentUpon>UserLeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WorkFlowInfo.ascx.cs">
+      <DependentUpon>WorkFlowInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\WorkFlowInfo.ascx.designer.cs">
+      <DependentUpon>WorkFlowInfo.ascx</DependentUpon>
     </Compile>
     <Compile Include="User\BlackUserEdit.aspx.cs">
       <DependentUpon>BlackUserEdit.aspx</DependentUpon>
