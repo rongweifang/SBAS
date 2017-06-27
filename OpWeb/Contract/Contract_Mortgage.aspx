@@ -48,7 +48,16 @@
             var key = CheckboxValue();
             if (IsEditdata(key)) {
                 var url = "/Contract/Contract_PrintView.aspx?UID=" + key + "&documentType=Contract_Mortgage";
-                top.openDialog(url, 'Contract_PrintView', '按揭合同-打印预览', 1000, 800, 50, 50);
+                window.open(url);
+                //top.Urlhref(url, 'Contract_PrintView', '按揭合同-打印预览', 1000, 800, 50, 50);
+            }
+        }
+        function detailA3() {
+            var key = CheckboxValue();
+            if (IsEditdata(key)) {
+                var url = "/Contract/Contract_PrintViewA3.aspx?UID=" + key + "&documentType=Contract_Mortgage";
+                window.open(url);
+                //top.Urlhref(url, 'Contract_PrintView', '按揭合同A3-打印预览', 1000, 800, 50, 50);
             }
         }
         //打印

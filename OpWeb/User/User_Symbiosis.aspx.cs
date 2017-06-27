@@ -21,7 +21,7 @@ namespace OpWeb.User
             {
                 return;
             }
-            this.Card_ID = base.Request["Card_ID"];
+            this.Card_ID = base.Request["Card_ID"].Trim();
             _key = DataFactory.SqlDataBase().IsExist("Base_User_LiveWith", "Card_ID", this.Card_ID) > 0 ? Card_ID : "";
             if (!base.IsPostBack)
             {

@@ -61,10 +61,17 @@
                 top.openDialog(url, 'User_Spouse', '配偶信息管理 ', 800, 560, 50, 50);
             }
         }
+        //监护人
+        function EditGuardian(Card_ID) {
+            if (IsEditdata(Card_ID)) {
+                var url = "/User/User_Guardian.aspx?Card_ID=" + Card_ID;
+                top.openDialog(url, 'User_Guardian', '共同还款人信息管理 ', 800, 560, 50, 50);
+            }
+        }
         //共同居住人
         function EditSymbiosis(Card_ID) {
             if (IsEditdata(Card_ID)) {
-                var url = "/User/User_Symbiosis.aspx?Card_ID= " + Card_ID;
+                var url = "/User/User_Symbiosis.aspx?Card_ID=" + Card_ID;
                 top.openDialog(url, 'User_Symbiosis', '共同居住人信息', 950, 560, 50, 50);
             }
         }
@@ -148,6 +155,7 @@
                             <td style="width: 100px; text-align: center;">联系电话</td>
                             <td style="width: 70px; text-align: center;">指纹采集</td>
                             <td style="width: 60px; text-align: center;">配偶信息</td>
+                            <td style="width: 70px; text-align: center;">共同还款人</td>
                             <td style="width: 70px; text-align: center;">共同居住人</td>
                             <td style="width: 60px; text-align: center;">照片采集</td>
                             <td style="width: 70px; text-align: center;">签订合同</td>
@@ -174,6 +182,11 @@
                                     </td>
                                     <td style="width: 60px; text-align: center;">
                                         <a onclick="EditSpouse('<%#Eval("Card_ID")%>')">
+                                            <img src="../img/matte_white.png" width="35" height="35" alt="" />
+                                        </a>
+                                    </td>
+                                    <td style="width: 70px; text-align: center;">
+                                        <a onclick="EditGuardian('<%#Eval("Card_ID")%>')">
                                             <img src="../img/matte_white_square.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>

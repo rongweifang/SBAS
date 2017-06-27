@@ -28,17 +28,14 @@
     <script src="/js/plugins/layer/laydate/laydate.js"></script>
     <script src="/js/demo/form-advanced-demo.js"></script>
     <style type="text/css">
-        .auto-style1 {
-            height: 20px;
-        }
-
+        
         .ULine {
             padding: 2px;
-            margin: 0px;
+            margin: 0;
         }
 
             .ULine label {
-                padding: 0px;
+                padding: 0;
                 margin: 3px;
             }
 
@@ -47,8 +44,8 @@
                 list-style: none;
                 line-height: 25px;
                 display: block;
-                margin: 0px;
-                padding: 0px;
+                margin: 0;
+                padding: 0;
             }
     </style>
 </head>
@@ -129,7 +126,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon">&yen;</span>
                                     <input type="text" class="form-control" id="M_Price" name="M_Price" onkeyup="Calc_Value()" runat="server" />
-                                    
+
                                 </div>
                             </td>
                             <td>
@@ -296,8 +293,11 @@
                                 <label class="control-label">产权证号：</label></td>
                             <td>
                                 <input id="M_PropertyNO" name="M_PropertyNO" class="form-control" type="text" runat="server" /></td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td><label class="control-label">开 发 商:</label></td>
+                            <td>
+                                <select class="form-control" id="BV_ID" name="BV_ID" runat="server">
+                                   
+                                </select></td>
                         </tr>
                         <tr>
                             <td colspan="6" style="height: 5px;"></td>
@@ -411,7 +411,7 @@
 
         });
 
-       
+
         var baiduBsSuggest = $("#M_Address").bsSuggest({
             allowNoKeyword: true, //是否允许无关键字时请求数据
             multiWord: true, //以分隔符号分割的多关键字支持
@@ -444,8 +444,8 @@
                 return data;
             }
         });
-		
-		var baiduBsSuggest = $("#M_Signed").bsSuggest({
+
+        var baiduBsSuggest = $("#M_Signed").bsSuggest({
             allowNoKeyword: true, //是否允许无关键字时请求数据
             multiWord: true, //以分隔符号分割的多关键字支持
             separator: ",", //多关键字支持时的分隔符，默认为空格
@@ -477,8 +477,8 @@
                 return data;
             }
         });
-		
-               function Calc_Value() {
+
+        function Calc_Value() {
             var Area = $("#M_Area").val();
             var Price = $("#M_Price").val();
 

@@ -382,7 +382,6 @@ namespace Busines.DAL
 
                 StringBuilder strsql = new StringBuilder();
 
-                //用户服务、输电线路检修 两个专业的报名时间设置为 2014年~2015年（相应的时间，顺延2015年的）
                 if (UsergradType == "1")
                 {
                     //SELECT * FROM Specialty WHERE '1988-01-01'>=USERAGE AND '2014-06-07' BETWEEN StartIndate AND overIndate AND ID='{2}'
@@ -432,7 +431,6 @@ namespace Busines.DAL
 
                 StringBuilder strsql = new StringBuilder();
 
-                //用户服务、输电线路检修 两个专业的报名时间设置为 2014年~2015年（相应的时间，顺延2015年的）
                 if (UsergradType == "1")
                 {
                     strsql.AppendFormat("SELECT COUNT(*) FROM SelectBetween WHERE '{0}' BETWEEN BeginDate AND EndDate AND IsUse=1", UsergradDate);
@@ -1604,8 +1602,8 @@ namespace Busines.DAL
                     string SendDate = dr["SendDate"].ToString();
                     string mail = dr["email"].ToString();
 
-                    string str = string.Format("{0}，你好：<br/<br/> 你在内蒙古电力（集团）有限责任公司招聘平台有新消息，请登录招聘平台查看！<br/<br/>---------------------------------------------------------------------------<br/<br/>[内蒙古电力（集团）有限责任公司]<br/>http://zhaopin.impc.com.cn<br/><br/>{1}", uName, SendDate);
-                    string sendresult = SMTPManager.MailSending(mail, "审核通知-内蒙古电力（集团）有限责任公司", str, "");
+                    string str = string.Format("{0}，你好：<br/<br/> 你有新消息，请登录招聘平台查看！<br/<br/>---------------------------------------------------------------------------<br/<br/>{1}", uName, SendDate);
+                    string sendresult = SMTPManager.MailSending(mail, "审核通知-", str, "");
 
                     StringBuilder updatesql = new StringBuilder();
                     updatesql.AppendFormat("UPDATE View_MessageMailSend SET MailStates='{0}' WHERE ID='{1}'", "已发送", dr["ID"].ToString());

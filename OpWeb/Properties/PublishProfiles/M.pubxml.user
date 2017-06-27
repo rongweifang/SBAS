@@ -37,13 +37,13 @@
       <publishTime>03/17/2015 13:24:36</publishTime>
     </File>
     <File Include="bin/Busines.dll">
-      <publishTime>06/22/2017 10:38:05</publishTime>
+      <publishTime>06/27/2017 13:50:35</publishTime>
     </File>
     <File Include="bin/Common.dll">
-      <publishTime>06/20/2017 15:54:48</publishTime>
+      <publishTime>06/27/2017 13:50:34</publishTime>
     </File>
     <File Include="bin/DataBase.dll">
-      <publishTime>06/20/2017 16:17:17</publishTime>
+      <publishTime>06/27/2017 13:50:34</publishTime>
     </File>
     <File Include="bin/FluentData.dll">
       <publishTime>04/07/2016 23:14:44</publishTime>
@@ -76,7 +76,7 @@
       <publishTime>03/25/2013 16:25:50</publishTime>
     </File>
     <File Include="bin/OpWeb.dll">
-      <publishTime>06/22/2017 15:37:50</publishTime>
+      <publishTime>06/27/2017 13:50:37</publishTime>
     </File>
     <File Include="bin/QRCode.dll">
       <publishTime>10/31/2014 11:18:19</publishTime>
@@ -121,7 +121,7 @@
       <publishTime>06/10/2017 10:43:52</publishTime>
     </File>
     <File Include="Contract/Contract_Finger.aspx">
-      <publishTime>06/18/2017 16:08:19</publishTime>
+      <publishTime>06/26/2017 16:16:00</publishTime>
     </File>
     <File Include="Contract/Contract_Finger_Temp.aspx">
       <publishTime>06/17/2017 18:27:25</publishTime>
@@ -130,22 +130,25 @@
       <publishTime>06/17/2017 18:13:54</publishTime>
     </File>
     <File Include="Contract/Contract_Mortgage.aspx">
-      <publishTime>06/21/2017 15:04:53</publishTime>
+      <publishTime>06/26/2017 02:10:39</publishTime>
     </File>
     <File Include="Contract/Contract_MortgageForm.aspx">
-      <publishTime>06/17/2017 11:59:34</publishTime>
+      <publishTime>06/27/2017 09:27:43</publishTime>
     </File>
     <File Include="Contract/Contract_Mortgage_Finger.aspx">
       <publishTime>06/17/2017 15:53:37</publishTime>
     </File>
     <File Include="Contract/Contract_PrintView.aspx">
-      <publishTime>06/22/2017 09:26:22</publishTime>
+      <publishTime>06/26/2017 02:31:42</publishTime>
+    </File>
+    <File Include="Contract/Contract_PrintViewA3.aspx">
+      <publishTime>06/26/2017 02:20:43</publishTime>
     </File>
     <File Include="Contract/Contract_Template.aspx">
       <publishTime>06/21/2017 13:31:25</publishTime>
     </File>
     <File Include="Contract/Contract_TemplateForm.aspx">
-      <publishTime>06/21/2017 14:42:00</publishTime>
+      <publishTime>06/25/2017 11:02:21</publishTime>
     </File>
     <File Include="Contract/Contract_Type.aspx">
       <publishTime>06/17/2017 17:24:26</publishTime>
@@ -163,16 +166,22 @@
       <publishTime>06/10/2017 15:13:05</publishTime>
     </File>
     <File Include="css/bootstrap.min.css">
-      <publishTime>06/22/2017 17:19:13</publishTime>
+      <publishTime>06/24/2017 21:42:57</publishTime>
+    </File>
+    <File Include="css/ContactTemp.css">
+      <publishTime>06/26/2017 12:45:10</publishTime>
+    </File>
+    <File Include="css/ContractPrint.css">
+      <publishTime>06/24/2017 14:14:39</publishTime>
     </File>
     <File Include="css/demo/webuploader-demo.css">
       <publishTime>06/10/2017 15:13:05</publishTime>
     </File>
     <File Include="css/font-awesome.css">
-      <publishTime>06/10/2017 15:13:05</publishTime>
+      <publishTime>06/24/2017 21:43:53</publishTime>
     </File>
     <File Include="css/font-awesome.min.css">
-      <publishTime>06/10/2017 15:13:05</publishTime>
+      <publishTime>06/24/2017 21:43:53</publishTime>
     </File>
     <File Include="css/login.css">
       <publishTime>06/22/2017 17:00:45</publishTime>
@@ -298,7 +307,7 @@
       <publishTime>06/10/2017 15:13:05</publishTime>
     </File>
     <File Include="css/plugins/footable/footable.core.css">
-      <publishTime>06/10/2017 15:13:05</publishTime>
+      <publishTime>06/24/2017 21:38:14</publishTime>
     </File>
     <File Include="css/plugins/fullcalendar/fullcalendar.css">
       <publishTime>06/10/2017 15:13:05</publishTime>
@@ -394,7 +403,7 @@
       <publishTime>06/10/2017 15:13:05</publishTime>
     </File>
     <File Include="css/plugins/summernote/summernote-bs3.css">
-      <publishTime>06/10/2017 15:13:05</publishTime>
+      <publishTime>06/24/2017 21:39:16</publishTime>
     </File>
     <File Include="css/plugins/summernote/summernote.css">
       <publishTime>06/10/2017 15:13:05</publishTime>
@@ -462,6 +471,21 @@
     <File Include="fonts/glyphicons-halflings-regular.woff2">
       <publishTime>06/10/2017 15:15:46</publishTime>
     </File>
+    <File Include="fonts/huawenxinwei-webfont.eot">
+      <publishTime>06/24/2017 23:41:02</publishTime>
+    </File>
+    <File Include="fonts/huawenxinwei-webfont.svg">
+      <publishTime>06/24/2017 23:41:03</publishTime>
+    </File>
+    <File Include="fonts/huawenxinwei-webfont.woff">
+      <publishTime>06/24/2017 23:41:04</publishTime>
+    </File>
+    <File Include="fonts/huawenxinwei-webfont.woff2">
+      <publishTime>06/24/2017 22:02:05</publishTime>
+    </File>
+    <File Include="fonts/STXINWEI.TTF">
+      <publishTime>06/24/2017 22:34:37</publishTime>
+    </File>
     <File Include="Frame/Com_Acquire.ashx">
       <publishTime>06/17/2017 10:30:52</publishTime>
     </File>
@@ -475,13 +499,13 @@
       <publishTime>05/14/2015 09:05:36</publishTime>
     </File>
     <File Include="Frame/MainDefault.aspx">
-      <publishTime>06/10/2017 17:27:06</publishTime>
+      <publishTime>06/25/2017 23:02:18</publishTime>
     </File>
     <File Include="Frame/MainFrame.js">
       <publishTime>08/27/2013 10:05:01</publishTime>
     </File>
     <File Include="Frame/MainIndex.aspx">
-      <publishTime>06/10/2017 10:43:52</publishTime>
+      <publishTime>06/25/2017 23:02:34</publishTime>
     </File>
     <File Include="Frame/MainSwitch.aspx">
       <publishTime>06/10/2017 10:43:52</publishTime>
@@ -616,7 +640,7 @@
       <publishTime>06/10/2017 16:54:01</publishTime>
     </File>
     <File Include="img/Login_Title.png">
-      <publishTime>06/10/2017 16:54:01</publishTime>
+      <publishTime>06/26/2017 00:42:47</publishTime>
     </File>
     <File Include="img/matte_white.png">
       <publishTime>06/14/2017 21:22:53</publishTime>
@@ -699,6 +723,15 @@
     <File Include="JS/hplus.js">
       <publishTime>06/10/2017 15:46:02</publishTime>
     </File>
+    <File Include="JS/jquery-1.9.0.js">
+      <publishTime>06/24/2017 13:33:36</publishTime>
+    </File>
+    <File Include="JS/jquery-3.2.1.js">
+      <publishTime>06/24/2017 13:35:21</publishTime>
+    </File>
+    <File Include="JS/jquery-3.2.1.min.js">
+      <publishTime>06/24/2017 13:35:21</publishTime>
+    </File>
     <File Include="JS/jquery-ui-1.10.4.min.js">
       <publishTime>06/10/2017 15:46:01</publishTime>
     </File>
@@ -713,6 +746,9 @@
     </File>
     <File Include="JS/jquery.min.map">
       <publishTime>06/10/2017 15:46:02</publishTime>
+    </File>
+    <File Include="JS/jquery.PrintArea.js">
+      <publishTime>06/24/2017 13:28:36</publishTime>
     </File>
     <File Include="JS/plugins/.DS_Store">
       <publishTime>06/10/2017 15:46:01</publishTime>
@@ -1699,7 +1735,7 @@
       <publishTime>06/10/2017 15:46:02</publishTime>
     </File>
     <File Include="JS/plugins/summernote/summernote-zh-CN.js">
-      <publishTime>06/10/2017 15:46:02</publishTime>
+      <publishTime>06/24/2017 10:54:11</publishTime>
     </File>
     <File Include="JS/plugins/summernote/summernote.min.js">
       <publishTime>06/10/2017 15:46:02</publishTime>
@@ -1798,7 +1834,7 @@
       <publishTime>06/10/2017 10:43:52</publishTime>
     </File>
     <File Include="login.html">
-      <publishTime>06/22/2017 17:17:34</publishTime>
+      <publishTime>06/26/2017 00:43:13</publishTime>
     </File>
     <File Include="MainDefault.aspx">
       <publishTime>06/11/2017 11:19:45</publishTime>
@@ -10353,17 +10389,20 @@
     <File Include="User/myflag.aspx">
       <publishTime>06/10/2017 10:43:53</publishTime>
     </File>
+    <File Include="User/ShowPictures.aspx">
+      <publishTime>06/24/2017 00:03:14</publishTime>
+    </File>
     <File Include="User/UserBlackList.aspx">
       <publishTime>06/18/2017 19:45:08</publishTime>
     </File>
     <File Include="User/UserForm.aspx">
-      <publishTime>06/22/2017 18:42:29</publishTime>
+      <publishTime>06/26/2017 12:47:43</publishTime>
     </File>
     <File Include="User/UserInfoView.aspx">
       <publishTime>06/10/2017 10:43:53</publishTime>
     </File>
     <File Include="User/UserList.aspx">
-      <publishTime>06/18/2017 23:19:48</publishTime>
+      <publishTime>06/27/2017 11:35:58</publishTime>
     </File>
     <File Include="User/User_Contract.aspx">
       <publishTime>06/18/2017 09:35:55</publishTime>
@@ -10372,7 +10411,7 @@
       <publishTime>06/18/2017 09:35:13</publishTime>
     </File>
     <File Include="User/User_Finger.aspx">
-      <publishTime>06/18/2017 23:21:54</publishTime>
+      <publishTime>06/23/2017 19:56:11</publishTime>
     </File>
     <File Include="User/User_Photo.aspx">
       <publishTime>06/15/2017 13:55:31</publishTime>
@@ -10396,10 +10435,10 @@
       <publishTime>06/10/2017 10:43:53</publishTime>
     </File>
     <File Include="UserControl/foot.ascx">
-      <publishTime>06/10/2017 10:43:53</publishTime>
+      <publishTime>06/25/2017 23:05:40</publishTime>
     </File>
     <File Include="UserControl/Header.ascx">
-      <publishTime>06/10/2017 10:43:53</publishTime>
+      <publishTime>06/25/2017 23:05:52</publishTime>
     </File>
     <File Include="UserControl/LoadButton.ascx">
       <publishTime>06/10/2017 10:43:53</publishTime>

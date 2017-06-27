@@ -18,7 +18,11 @@ namespace OpWeb.Contract
     {
         private static string _Path = System.AppDomain.CurrentDomain.BaseDirectory + "FileTemplate\\";
 
-        private static Regex MortageRegex = new Regex(@"{Mortage:+[\w]+}");
+        private static Regex MortageRegexAll = new Regex(@"{Mortage+[\w]+:+[\w]+}");//所有标签
+        private static Regex MortageRegex = new Regex(@"{Mortage:+[\w]+}");//文字信息
+        private static Regex MortageFRegex = new Regex(@"{MortageF:+[\w]+}");//指纹签名
+        //婚姻状况声明
+
         public static void CreateMortgageFile(string UID, string documentType)
         {
             //    Document_Template
@@ -182,29 +186,72 @@ namespace OpWeb.Contract
 
         public static string GetHtmlContent(string UID, string documentType)
         {
+            return GetHtmlContent(UID, documentType, "A4");
+        }
+
+        public static string GetHtmlContent(string UID, string documentType, string PrintType)
+        {
+
             StringBuilder sb = new StringBuilder();
-            string sTable = string.Format("(SELECT CTContent,CTPage FROM Contract_Template WHERE ContractType='{0}') T", documentType);
-            DataTable dt = DataFactory.SqlDataBase().GetDataTable(sTable, "CTPage", "ASC");
+            int PageNuam = 0;
+
+            string sTable = string.Format("SELECT CTContent,CTPage FROM Contract_Template WHERE ContractType='{0}' ", documentType);
+            string sqlwhere = string.Empty;
+            if (PrintType.ToUpper().Equals("A3"))
+            {
+                StringBuilder sbsql = new StringBuilder();
+                sbsql.AppendFormat("SELECT COUNT(1) FROM Contract_Template WHERE ContractType='{0}'", documentType);
+                PageNuam = int.Parse(DataFactory.SqlDataBase().GetDataTableBySQL(sbsql).Rows[0][0].ToString());
+
+                if (PageNuam > 0)
+                {
+                    StringBuilder pglist = new StringBuilder();
+                    for (int i = 0; i < PageNuam / 4; i++)
+                    {
+                        pglist.AppendFormat("{0},{1},{2},{3},", PageNuam - 2 * i, 1 + 2 * i, PageNuam - 2 * i - 1, 1 + 2 * i + 1);
+                    }
+
+                    sqlwhere = string.Format(" AND CTPage IN ({0}) ORDER BY CHARINDEX(',' + CONVERT(VARCHAR, CTPage) + ',' , '{1}') ", pglist.ToString().TrimEnd(','), pglist.ToString().Trim());
+                }
+            }
+            else
+            {
+                sqlwhere = " ORDER BY CTPage ASC";
+            }
+
+            StringBuilder sbsqlstr = new StringBuilder();
+            sbsqlstr.Append(sTable + sqlwhere);
+            // DataTable dt = DataFactory.SqlDataBase().GetDataTable(sTable, "CTPage", "ASC");
+            DataTable dt = DataFactory.SqlDataBase().GetDataTableBySQL(sbsqlstr);
+
             if (DataTableHelper.IsExistRows(dt))
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     sb.Append("<div class=\"PageBody\">");
                     sb.Append(GetPage(dt.Rows[i]["CTContent"].ToString(), dt.Rows[i]["CTPage"].ToString()));
-                    sb.AppendFormat("<div class=\"PageNum\">{0}/{1}</div>", i + 1, dt.Rows.Count);
+                    sb.AppendFormat("<div class=\"PageNum\">{0}/{1}</div>", dt.Rows[i]["CTPage"].ToString(), dt.Rows.Count);
                     sb.Append("</div>");
-                    sb.Append("<div class=\"PageNext\"></div>");
+                    if (i != dt.Rows.Count - 1)
+                    {
+                        sb.Append("<div class=\"PageNext\"></div>");
+                    }
                 }
             }
 
-            return ClearHtmlExchange(GetHtmlExchange(UID, sb.ToString(), documentType));
+            string ResultCotent = GetHtmlExchange(UID, sb.ToString(), documentType);//替换基本信息
+            //替换指纹签名
+            ResultCotent = GetFingerExchange(UID, ResultCotent);
+            //替换身份证，及其它拍照图片
+            ResultCotent = ClearHtmlExchange(ResultCotent);//清除标记
+            return ResultCotent;
         }
 
 
-        public static string GetHtmlExchange(string UID,string HtmlContent,string documentType)
+        public static string GetHtmlExchange(string UID, string HtmlContent, string documentType)
         {
             //{Mortage:Card_Id}{Mortage:+[\w]+}//{Mortage:+[a-zA-Z0-9_-]+}
-           
+
             string htmls = HtmlContent;
             Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("V_" + documentType, "UID", UID);
             if (ht.Count > 0 && ht != null)
@@ -228,7 +275,7 @@ namespace OpWeb.Contract
 
         public static string ClearHtmlExchange(string HtmlContent)
         {
-            MatchCollection userMatchColl = MortageRegex.Matches(HtmlContent);
+            MatchCollection userMatchColl = MortageRegexAll.Matches(HtmlContent);
             if (userMatchColl.Count > 0)
             {
                 foreach (Match matchItem in userMatchColl)
@@ -254,6 +301,70 @@ namespace OpWeb.Contract
             return sb.ToString();
         }
 
+        public static string GetFingerExchange(string UID, string HtmlContent)
+        {
+           // string result = string.Empty;
+            //  MortageFRegex--{MortageF:F_M_S_3}-{MortageF:F2_M_S_3}F2--Size
 
+            MatchCollection FMatchColl = MortageFRegex.Matches(HtmlContent);
+            if (FMatchColl.Count > 0)
+            {
+                foreach (Match matchItem in FMatchColl)
+                {
+                    string ContentDeal = matchItem.Value.Trim();
+                    string PictureCode = ContentDeal.Replace("{MortageF:", "").Replace("}", "");
+                    string PictureType = PictureCode.Substring(0, 1);
+                    string PictureSize = PictureType;
+
+                    string ImageData = GetFinger(UID,PictureType,PictureCode,PictureSize);
+
+                    HtmlContent = HtmlContent.Replace(ContentDeal, ImageData);
+                }
+            }
+            return HtmlContent;
+        }
+
+        public static string GetFinger(string UID, string PictureType, string PictureCode, string PictureSize)
+        {
+            string result = string.Empty;
+            string Sign = PictureType.Equals("F") ? "FingerImage" : PictureType.Equals("S") ? "SignBase" : "";
+            string PictureTypes = PictureType.Equals("F") ? "FingerCode" : PictureType.Equals("S") ? "SignCode" : "";
+            string SignData = "";
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("SELECT {0} FROM Contract_Finger WHERE [UID]='{1}' AND {2}='{3}'", Sign, UID, PictureTypes, PictureCode);
+            DataTable dt = DataFactory.SqlDataBase().GetDataTableBySQL(sb);
+            if (DataTableHelper.IsExistRows(dt))
+            {
+                SignData = dt.Rows[0][0].ToString();
+            }
+            if (!string.IsNullOrEmpty(SignData))
+            {
+                Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("Contract_PictureSize", "PSize", PictureSize);
+                string PWidth = "100";
+                string PHeight = "100";
+                if (ht.Count > 0 && ht != null)
+                {
+                    if (ht.Contains("PWIDTH"))
+                    {
+                        PWidth = ht["PWIDTH"].ToString();
+                    }
+                    if (ht.Contains("PHEIGHT"))
+                    {
+                        PHeight = ht["PHEIGHT"].ToString();
+                    }
+                }
+                try
+                {
+                    // <img src="data:image/png;base64,。。。。。"  width="100" height="40" />
+                    result = string.Format("<span style=\"display: inline\"><img src=\"data:image/png;base64,{0}\"  width=\"{1}\" height=\"{2}\" /></span>", SignData, PWidth, PHeight);
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            return result;
+        }
     }
 }

@@ -20,24 +20,27 @@ h1 {
 
 }
 u{font-family:'华文新魏',xinwei;font-size:12pt;}
-#PrintBody {height:700px;width:auto;overflow:auto; 
+#PrintBody {height:100%;width:auto;overflow:auto; 
 }
-.PageBody{height:970px; overflow:auto;position:relative;}
-.MPage2 p {font-size: 16pt; line-height: 180%; font-family:'宋体';text-indent:30pt;
+.PageBody{height:970px; overflow:hidden;position:relative;}
+.MPage1 table{width:100%; text-align: center; margin: 0; padding: 0;}
+.MPage1 td{line-height: 180%;}
+
+.MPage2 p {font-size: 16pt; line-height: 150%; font-family:'宋体';text-indent:30pt;
 }
-.MPage3 table td{font-size:10pt;line-height:180%; text-align:center;}
-.MPage3 table p{margin:0;padding:0;line-height:180%;}
-.MPage4 p {font-size: 15pt; line-height: 180%; font-family:'宋体';text-indent:30pt;
+.MPage3 table td{font-size:10pt;line-height:150%; text-align:center;}
+.MPage3 table p{margin:0;padding:0;line-height:150%;margin:0;padding:0;}
+.MPage4 p {font-size: 15pt; line-height: 150%; font-family:'宋体';text-indent:30pt;
 }
-.MPage5 p {font-size: 14pt; line-height: 160%; font-family:'宋体';text-indent:28pt;
+.MPage5 p {font-size: 14pt; line-height: 180%; font-family:'宋体';text-indent:28pt;margin:0;padding:0;
 }
-.MPage6,.MPage6 td{text-align:center;font-size: 14pt;line-height: 150%; font-family:'宋体';
+.MPage6 td{text-align:center;font-size: 14pt;line-height: 150%; font-family:'宋体';
 }
-.MPage6 p { text-align:left;font-size: 14pt;line-height: 100%;
+.MPage6 p { text-align:left;font-size: 14pt;line-height: 150%;margin:0;padding:0;
 }
-.MPage7,.MPage7 td{text-align:center;font-size: 10.5pt;line-height: 120%; font-family:'宋体';
+.MPage7,.MPage7 td{text-align:center;font-size: 10.5pt;line-height: 150%; font-family:'宋体';margin:0;padding:0;
 }
-.MPage7 p { text-align:left;font-size: 10.5pt;line-height: 90%;font-family:'宋体';
+.MPage7 p { text-align:left;font-size: 10.5pt;line-height: 150%;font-family:'宋体';margin:0;padding:0;
 }
 .MPage8 p { text-align:left;font-size: 10.5pt;line-height:150%;font-family:'宋体';margin:0;padding:0;
 }
@@ -49,7 +52,7 @@ u{font-family:'华文新魏',xinwei;font-size:12pt;}
 }
 .MPage11 p{ text-align:left;font-size: 10.5pt;line-height:180%;font-family:'宋体';margin:0;padding:0;
 }
-.MPage12 p{ text-align:left;font-size: 10.5pt;line-height:220%;font-family:'宋体';margin:0;padding:0;text-indent:21pt;
+.MPage12 p{ text-align:left;font-size: 10.5pt;line-height:250%;font-family:'宋体';margin:0;padding:0;text-indent:21pt;
 }
 .MPage13 p{ text-align:left;font-size: 10.5pt;line-height:250%;font-family:'宋体';margin:0;padding:0;text-indent:21pt;
 }
@@ -92,9 +95,9 @@ u{font-family:'华文新魏',xinwei;font-size:12pt;}
 .MPage30 td{padding: 4px;text-align:center;font-family:'宋体';}
 .MPage31 p{ text-align:left;font-size: 14pt;line-height:200%;font-family:'宋体';margin:0;padding:0;text-indent:0;
 }
-.MPage33 p{ text-align:left;font-size: 10.5pt;line-height:180%;font-family:'宋体';margin:0;padding:0;text-indent:0;
+.MPage33 p{ text-align:left;font-size: 10.5pt;line-height:170%;font-family:'宋体';margin:0;padding:0;text-indent:0;
 }
-.MPage34 p{ text-align:left;font-size: 10.5pt;line-height:180%;font-family:'宋体';margin:0;padding:0;text-indent:0;
+.MPage34 p{ text-align:left;font-size: 10.5pt;line-height:170%;font-family:'宋体';margin:0;padding:0;text-indent:0;
 }
 .MPage35 p{ text-align:left;font-size: 12pt;line-height:200%;font-family:'宋体';margin:0;padding:0;text-indent:0;
 }

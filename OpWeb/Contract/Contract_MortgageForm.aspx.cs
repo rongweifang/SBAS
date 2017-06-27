@@ -4,6 +4,7 @@ using Common.DotNetUI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -32,6 +33,8 @@ namespace OpWeb.Contract
         }
         private void InitData()
         {
+            DataTable dt = DataFactory.SqlDataBase().GetDataTable("Base_Vendor");
+            ControlBindHelper.BindHtmlSelect(dt, this.BV_ID, "BV_Name", "BV_ID", "开发商");
             Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("Contract_Mortgage", "UID", this.UID);
             if (ht.Count > 0 && ht != null)
             {

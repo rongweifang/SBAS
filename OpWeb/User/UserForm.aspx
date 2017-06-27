@@ -9,7 +9,7 @@
     <link href="/css/bootstrap.min.css?v=3.3.6" rel="stylesheet" />
     <link href="/css/font-awesome.css?v=4.4.0" rel="stylesheet" />
     <link href="/css/style.css?v=4.1.0" rel="stylesheet" />
-    <script src="/Themes/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="/js/jquery.min.js?v=2.1.4" type="text/javascript"></script>
     <!-- 全局js -->
     <script src="/js/bootstrap.min.js?v=3.3.6"></script>
     <!-- 自定义js -->
