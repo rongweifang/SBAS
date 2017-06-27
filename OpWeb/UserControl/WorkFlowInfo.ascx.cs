@@ -61,5 +61,24 @@ namespace OpWeb.UserControl
             }
         }
 
+        protected void btn_approve_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_return_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_resubmit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_cancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
