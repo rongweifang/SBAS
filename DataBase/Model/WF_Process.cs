@@ -11,6 +11,7 @@ namespace DataBase.Model
         public int Id { get; set; }
         public string WorFlowId { get; set; }
         public string ActivityId { get; set; }
+        public int Step { get; set; }
         public string ApproverID { get; set; }
         public int Operate { get; set; }
         public DateTime OperateTime { get; set; }

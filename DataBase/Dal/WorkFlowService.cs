@@ -274,5 +274,23 @@ namespace DataBase.Dal
             }
         }
 
+        public List<WF_Process> GetProcessByWorkFlowId(string flowId,int isFinish) {
+            List<WF_Process> retList = null;
+            if (string.IsNullOrWhiteSpace(flowId)) {
+                return retList;
+            }
+            using (var context = WDbContext())
+            {
+                retList = context.Sql(@"select id,WorFlowId,ActivityId,Step,ApproverID,Operate,OperateTime,Remark,IsFinish,CreateTime
+                                     from WF_Process
+                                    where WorFlowId = @wfid and IsFinish = @isFinish")
+                                    .Parameter("wfid", flowId)
+                                    .Parameter("isFinish", isFinish)
+                                    .QueryMany<WF_Process>();
+                return retList;
+            }
+        }
+        
+
     }
 }

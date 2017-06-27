@@ -6,6 +6,11 @@
         margin: 0 5px;
         border-radius: 5px;
         display: inline-block;
+        line-height:50px;
+        text-align:center;
+        color:white;
+        font-size:14px;
+        font-weight:bold;
     }
 
     .curr_activity {
@@ -27,6 +32,8 @@
         width: 40px;
         height: 25px;
         display: inline-block;
+        line-height:50px;
+        margin-bottom:-20px;
     }
 </style>
 <div>
@@ -36,7 +43,7 @@
                 foreach (var itm in this.allActivity)
                 {
         %>
-        <div class="activity_box  passed_activity">
+        <div class="activity_box <%=itm.Step<=this.step?"passed_activity":"unpassed_activity" %>">
             <%=itm.ActName %>
         </div>
         <%if (itm.ActType != 3)
@@ -51,10 +58,10 @@
             } %>
     </div>
     <div id="buttons" style="margin-top: 10px;">
-        <asp:Button ID="btn_approve" runat="server" Text="通过" />
+        <asp:Button ID="btn_approve" runat="server" Text="通过" OnClick="btn_approve_Click"  Visible="false"/>
         <%--        <asp:Button  ID="btn_reject" runat="server" Text="拒绝"/>--%>
-        <asp:Button ID="btn_return" runat="server" Text="退回" />
-        <asp:Button ID="btn_resubmit" runat="server" Text="重新提交" />
-        <asp:Button ID="btn_cancel" runat="server" Text="撤销" />
+        <asp:Button ID="btn_return" runat="server" Text="退回" OnClick="btn_return_Click"  Visible="false"/>
+        <asp:Button ID="btn_resubmit" runat="server" Text="重新提交"  OnClick="btn_resubmit_Click" Visible="false"/>
+        <asp:Button ID="btn_cancel" runat="server" Text="撤销" OnClick="btn_cancel_Click"  Visible="false"/>
     </div>
 </div>
