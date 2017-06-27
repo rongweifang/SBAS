@@ -1,9 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserBlackList.aspx.cs" Inherits="OpWeb.User.UserBlackList" %>
-
-<%@ Register Src="../UserControl/PageControl.ascx" TagName="PageControl" TagPrefix="uc1" %>
-<%@ Register Src="../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ApproveFlow.aspx.cs" Inherits="OpWeb.Contract.ApproveFlow" %>
+<%@ Register Src="~/UserControl/WorkFlowInfo.ascx" TagPrefix="uc1" TagName="WorkFlowTool" %>
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -57,7 +54,7 @@
                 alert("删除失败");
                 return;
             }
-            getAjax('/Handler/BlackUserHandler.ashx?op=deleteBlackUser&id='+key,"", function (rs) {
+            getAjax('/Handler/BlackUserHandler.ashx?op=deleteBlackUser&id=' + key, "", function (rs) {
                 if (parseInt(rs) <= 0) {
                     showTipsMsg("<span style='color:red'>删除失败！</span>", 4000, 5);
                 }
@@ -94,7 +91,7 @@
         }
         $(document).ready(function () {
             $("#btn_refresh").click(function () {
-               
+
             });
         });
     </script>
@@ -104,57 +101,12 @@
 <body class="gray-bg">
     <div class="wrapper animated fadeInRight">
         <form id="form1" runat="server">
-
-            <div class="btnbarcontetn">
-                <div style="float: left;">
-                    <input type="text" id="txt_Search" class="txtSearch SearchImg" runat="server" style="width: 180px;" />
-                    <asp:LinkButton ID="lbtSearch" runat="server" class="button green" OnClick="lbtSearch_Click">
-                        <span class="icon-botton"
-            style="background: url('../../Themes/images/Search.png') no-repeat scroll 0px 4px;">
-        </span>查 询</asp:LinkButton>
-                </div>
-                <div style="text-align: right">
-                    <uc2:LoadButton ID="LoadButton1" runat="server" />
-                </div>
-            </div>
             <div class="div-body">
-                <table id="table1" class="grid" singleselect="false">
-                    <tbody style="line-height: 35px;">
-                        <tr>
-                            <td style="width: 20px; text-align: left;">
-                                <label id="checkAllOff" onclick="CheckAllLine()" title="全选"></label>
-                            </td>
-                            <td style="width: 80px; text-align: center;">姓名</td>
-                            <td style="width: 140px; text-align: center;">身份证号</td>
-                            <td style="width: 100px; text-align: center;">联系电话</td>
-                            <td style="width: 70px; text-align: center;">添加日期</td>
-                        </tr>
-                        <asp:Repeater ID="rp_Item" runat="server">
-                            <ItemTemplate>
-                                <tr>
-                                    <td style="width: 20px; text-align: left;">
-                                        <input id="CID" type="checkbox" value="<%#Eval("BlackID") %>" name="checkbox" />
-                                    </td>
-                                    <td style="width: 80px; text-align: center;"><%#Eval("Card_Name") %></td>
-                                    <td style="width: 140px; text-align: center;"><%#Eval("Card_Id") %></td>
-                                    <td style="width: 100px; text-align: center;"><%#Eval("U_Tel") %></td>
-                                    <td style="width: 70px; text-align: center;"><%#Eval("AddDate") %></td>
-                                </tr>
-                            </ItemTemplate>
-                            <FooterTemplate>
-                                <% if (rp_Item != null)
-                                    {
-                                        if (rp_Item.Items.Count == 0)
-                                        {
-                                            Response.Write("<tr><td colspan='8' style='color:red;text-align:center'>没有找到您要的相关数据！</td></tr>");
-                                        }
-                                    } %>
-                            </FooterTemplate>
-                        </asp:Repeater>
-                    </tbody>
-                </table>
+                <div>
+                    <uc1:WorkFlowTool id="wfTool" runat="server"/>
+                </div>
+                <asp:Button  ID="btn_addContract" runat="server"  Text="addNew" OnClick="btn_addContract_Click"/>
             </div>
-            <uc1:PageControl ID="PageControl1" runat="server" />
         </form>
     </div>
 </body>
