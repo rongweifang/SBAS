@@ -37,9 +37,21 @@
   <!-- 软件注册码 -->
   <add key="RegistrationCode" value="2A1B132C0E64FA299B014B39F7DE5C2F" />
   <!-- 公司信息 -->
-  <add key="CustomerCompanyName" value=" 察哈尔右翼中旗农村信用合作联社营业部" />
+  <add key="CustomerCompanyName" value="察哈尔右翼中旗农村信用合作联社营业部" />
+  <!-- 法定代表人 -->
+  <add key="CustomerCompanyPerson" value="何汝峰" />
+  <!-- 开户账号 -->
+  <add key="CustomerCompanyAccount" value="" />
+  <!-- 电话 -->
+  <add key="CustomerCompanyTel" value="0474-5690635" />
+  <!-- 地址 -->
+  <add key="CustomerCompanyAddress" value="察哈尔右翼中旗科布尔镇镶蓝大街北侧" />
+  <!-- 传真 -->
+  <add key="CustomerCompanyFax" value="0474-5690635" />
+  <!-- 邮编 -->
+  <add key="CustomerCompanyZip" value="013550" />
   <!-- 软件名称 -->
-  <add key="SoftName" value=" 察哈尔右翼中旗农村信用合作联社营业部" />
+  <add key="SoftName" value=" 察哈尔右翼中旗农村信用合作联社信贷合同管理系统" />
   <!-- 当前软件版本 -->
   <add key="Version" value="1.0" />
   <add key="MailUser" value="5iday@163.com"/>

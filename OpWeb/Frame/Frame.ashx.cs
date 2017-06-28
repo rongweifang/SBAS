@@ -63,7 +63,7 @@ namespace OpWeb.Frame
                         objScan.DataPath = context.Server.MapPath("/Themes/IPScaner/QQWry.Dat");
                         objScan.IP = RequestHelper.GetIP();
                         string OWNER_address = objScan.IPLocation();
-                       // string OWNER_address = RequestHelper.GetIP();
+                        // string OWNER_address = RequestHelper.GetIP();
                         if (dtlogin.Rows.Count != 0)
                         {
                             user_idao.SysLoginLog(user_Account, "1", OWNER_address);
@@ -76,7 +76,7 @@ namespace OpWeb.Frame
                                         UserId = dtlogin.Rows[0]["User_ID"].ToString(),
                                         UserAccount = dtlogin.Rows[0]["User_Account"].ToString(),
                                         UserName = dtlogin.Rows[0]["User_Name"].ToString(),
-                                        User_Account=dtlogin.Rows[0]["User_Account"].ToString(),
+                                        User_Account = dtlogin.Rows[0]["User_Account"].ToString(),
                                         UserPwd = dtlogin.Rows[0]["User_Pwd"].ToString(),
                                         Organization_IDs = "",
                                         OrganizationID = "",
@@ -117,8 +117,8 @@ namespace OpWeb.Frame
 
         public string getFisrOrganization(string Organization_IDs)
         {
-            string[] arr=Organization_IDs.Split(',');
-            if (arr.Length>0)
+            string[] arr = Organization_IDs.Split(',');
+            if (arr.Length > 0)
             {
                 return arr[0].ToString().Trim('\'');
             }

@@ -94,6 +94,8 @@
     <Content Include="Contract\Contract_Finger.aspx" />
     <Content Include="Contract\Contract_Finger_Temp.aspx" />
     <Content Include="Contract\Contract_Finger_TempForm.aspx" />
+    <Content Include="Contract\Contract_Guarantee.aspx" />
+    <Content Include="Contract\Contract_GuaranteeForm.aspx" />
     <Content Include="Contract\Contract_Mortgage.aspx" />
     <Content Include="Contract\Contract_MortgageForm.aspx" />
     <Content Include="Contract\Contract_Mortgage_Finger.aspx" />
@@ -3598,6 +3600,20 @@
     </Compile>
     <Compile Include="Contract\Contract_Finger_TempForm.aspx.designer.cs">
       <DependentUpon>Contract_Finger_TempForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_Guarantee.aspx.cs">
+      <DependentUpon>Contract_Guarantee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_Guarantee.aspx.designer.cs">
+      <DependentUpon>Contract_Guarantee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_GuaranteeForm.aspx.cs">
+      <DependentUpon>Contract_GuaranteeForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_GuaranteeForm.aspx.designer.cs">
+      <DependentUpon>Contract_GuaranteeForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contract\Contract_Manage.cs" />
     <Compile Include="Contract\Contract_Mortgage.aspx.cs">
