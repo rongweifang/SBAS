@@ -25,30 +25,10 @@
     </style>
     <script type="text/javascript">
 
-        var fingerTempl;
-        var fingerflag;
-        var faceTempl;
-        var faceflag;
-
-        function Load() {
-            show.InitFingerMgr();
-            show.InitFaceMgr();
-            show.OpenIdCard();
-            show.SetGetFingerTemplTimes(1);
-            OpenDevice1();
-        }
-
         function OpenDevice1() {
             show.CloseDevice();
             show.OpenDevice(1);
             show.OpenVideo();
-        }
-
-        function Unload() {
-            CloseDevice();
-            show.CloseIdCard();
-            show.DeinitFaceMgr();
-            show.DeinitFingerMgr();
         }
 
         function CloseDevice() {
@@ -80,7 +60,7 @@
     </script>
 
 </head>
-<body onload="Load();OpenDevice1()" onunload="Unload()">
+<body onload="OpenDevice1()" onunload="CloseDevice()">
     <table width="690" border="0" cellspacing="3" cellpadding="3">
         <tbody>
             <tr>
@@ -131,8 +111,8 @@
                     <form id="form1" runat="server">
                         <div class="form-group">
                             <div class="col-sm-8 col-sm-offset-3">
-                                <input type="hidden" id="ID01" runat="server"/>
-                                <input type="hidden" id="ID02" runat="server"/>
+                                <input type="hidden" id="ID01" runat="server" />
+                                <input type="hidden" id="ID02" runat="server" />
                                 <asp:LinkButton ID="Save" runat="server" class="btn btn-w-m btn-primary" OnClick="Save_Click">下一步</asp:LinkButton>&nbsp;
                                         <button type="button" class="btn btn-w-m btn-warning" onclick="OpenClose();">取  消</button>
                             </div>

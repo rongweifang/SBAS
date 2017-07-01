@@ -60,7 +60,7 @@ namespace OpWeb.User
                     ht["U_Marry_SM"] = "3";
                     break;
                 default:
-                    ht["U_Marry_SM"] = "";
+                    ht["U_Marry_SM"] = "0";
                     break;
             }
 

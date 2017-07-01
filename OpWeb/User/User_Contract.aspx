@@ -67,9 +67,9 @@
                     <td>
                         <asp:Label ID="LB_Bao" runat="server" Text=""></asp:Label></td>
                     <td class="client-status">&nbsp;</td>
-                    <td class="client-status">&nbsp;</td>
+                    <td class="client-status"> <asp:Label ID="LB_Bao2" runat="server" Text=""></asp:Label></td>
                     <td class="client-status">
-                        <asp:Button ID="Btn_Bao" class="btn btn-primary btn-xs" runat="server" Text="已创建" OnClick="Btn_Bao_Click" />
+                        <asp:Button ID="Btn_Bao" class="btn btn-primary btn-xs" runat="server" Text="创　建" OnClick="Btn_Bao_Click" />
                     </td>
                 </tr>
                 <tr>
@@ -85,7 +85,7 @@
                     <td class="client-status">&nbsp;</td>
                     <td class="client-status">&nbsp;</td>
                     <td class="client-status">
-                        <asp:Button ID="Btn_Ya" class="btn btn-primary btn-xs" runat="server" Text="已创建" OnClick="Btn_Ya_Click" /></td>
+                        <asp:Button ID="Btn_Ya" class="btn btn-primary btn-xs" runat="server" Text="创　建" OnClick="Btn_Ya_Click" /></td>
                 </tr>
                 <tr>
                     <td class="client-avatar">
@@ -116,7 +116,7 @@
                     <td class="client-status">&nbsp;</td>
                     <td class="client-status">&nbsp;</td>
                     <td class="client-status">
-                       <asp:Button ID="Btn_Xin" class="btn btn-primary btn-xs" runat="server" Text="已创建" OnClick="Btn_Xin_Click" /></td>
+                       <asp:Button ID="Btn_Xin" class="btn btn-primary btn-xs" runat="server" Text="创　建" OnClick="Btn_Xin_Click" /></td>
                 </tr>
             </tbody>
         </table>

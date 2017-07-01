@@ -1824,5 +1824,13 @@ namespace Busines.DAL
             strSql.Append(SqlWhere);
             return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), " ContractType,CTPage", "ASC", pageIndex, pageSize, ref count);
         }
+        public DataTable GetGuaranteeListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT *  ");
+            strSql.Append("FROM Contract_Guarantee U");
+            strSql.Append(SqlWhere);
+            return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "createdate", "DESC", pageIndex, pageSize, ref count);
+        }
     }
 }

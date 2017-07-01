@@ -21,11 +21,16 @@ namespace OpWeb.Contract
         private static Regex MortageRegexAll = new Regex(@"{Mortage+[\w]+:+[\w]+}");//所有标签
         private static Regex MortageRegex = new Regex(@"{Mortage:+[\w]+}");//文字信息
         private static Regex MortageFRegex = new Regex(@"{MortageF:+[\w]+}");//指纹签名
-        //婚姻状况声明
+        private static Regex MortageMRegex = new Regex(@"{MortageM:+[\w]+}");//婚姻状况声明
+        private static Regex MortageMFRegex = new Regex(@"{MortageMF:+[\w]+}");//婚姻状况声明指纹
+
+        private static string Card_ID = string.Empty;
+        private static string Marry = string.Empty;
+
+        private static Hashtable hu = new Hashtable();//用户基本信息
 
         public static void CreateMortgageFile(string UID, string documentType)
         {
-            //    Document_Template
             Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("Document_Template", "documentType", documentType);
 
             string _documentName = "";
@@ -52,11 +57,6 @@ namespace OpWeb.Contract
                 StringBuilder sb = new StringBuilder();
                 sb.AppendFormat("SELECT * FROM Contract_Mortgage WHERE UID='{0}'", UID);
                 DataTable dt = DataFactory.SqlDataBase().GetDataTableBySQL(sb);
-                //sb.Clear();
-
-                //DataTable dtc = DataFactory.SqlDataBase().GetDataTableBySQL(sb);
-
-                //DataTable dtp = DataFactory.SqlDataBase().GetDataTableBySQL(sb);
 
                 if (DataTableHelper.IsExistRows(dt))
                 {
@@ -140,14 +140,10 @@ namespace OpWeb.Contract
                 }
                 doc.MailMerge.DeleteFields();
 
-                #region
-
-                #endregion
                 if (!Directory.Exists(_Upath))
                     Directory.CreateDirectory(_Upath);
 
                 doc.Save(_Upath + _UserFileName);
-                // OpenDoc(_documentName);
             }
 
         }
@@ -208,7 +204,7 @@ namespace OpWeb.Contract
                     StringBuilder pglist = new StringBuilder();
                     for (int i = 0; i < PageNuam / 4; i++)
                     {
-                        pglist.AppendFormat("{0},{1},{2},{3},", PageNuam - 2 * i, 1 + 2 * i, PageNuam - 2 * i - 1, 1 + 2 * i + 1);
+                        pglist.AppendFormat("{0},{1},{2},{3},", PageNuam - 2 * i, 1 + 2 * i,  1 + 2 * i + 1, PageNuam - 2 * i - 1);
                     }
 
                     sqlwhere = string.Format(" AND CTPage IN ({0}) ORDER BY CHARINDEX(',' + CONVERT(VARCHAR, CTPage) + ',' , '{1}') ", pglist.ToString().TrimEnd(','), pglist.ToString().Trim());
@@ -251,11 +247,12 @@ namespace OpWeb.Contract
         public static string GetHtmlExchange(string UID, string HtmlContent, string documentType)
         {
             //{Mortage:Card_Id}{Mortage:+[\w]+}//{Mortage:+[a-zA-Z0-9_-]+}
-
             string htmls = HtmlContent;
             Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("V_" + documentType, "UID", UID);
             if (ht.Count > 0 && ht != null)
             {
+                Card_ID = ht.Contains("CARD_ID") ? ht["CARD_ID"].ToString() : "";
+                Marry = ht.Contains("U_MARRY") ? ht["U_MARRY"].ToString() : "";
                 MatchCollection userMatchColl = MortageRegex.Matches(htmls);
                 if (userMatchColl.Count > 0)
                 {
@@ -268,6 +265,11 @@ namespace OpWeb.Contract
                             htmls = htmls.Replace(ContentDeal, "<span style=\"font-family: 'xinwei','华文新魏'\">" + ht[FieldDeal.ToUpper()].ToString() + "</span>");
                         }
                     }
+                }
+                if (Marry.Equals("已婚")&& documentType.Equals("Contract_Mortgage"))
+                {
+                    htmls = GetMarryExchange(ht, htmls);
+                    htmls = GetMarryFingerExchange(UID, htmls);
                 }
             }
             return htmls;
@@ -366,5 +368,47 @@ namespace OpWeb.Contract
             }
             return result;
         }
+
+        public static string GetMarryExchange(Hashtable hm, string htmls)
+        {
+            MatchCollection MarryMatchColl = MortageMRegex.Matches(htmls);
+            if (MarryMatchColl.Count > 0)
+            {
+                foreach (Match matchItem in MarryMatchColl)
+                {
+                    string ContentDeal = matchItem.Value.Trim();
+                    string FieldDeal = ContentDeal.Replace("{MortageM:", "").Replace("}", "");
+                    if (hm.Contains(FieldDeal.ToUpper()))
+                    {
+                        htmls = htmls.Replace(ContentDeal, "<span style=\"font-family: 'xinwei','华文新魏'\">" + hm[FieldDeal.ToUpper()].ToString() + "</span>");
+                    }
+                }
+            }
+
+            return htmls;
+        }
+
+        public static string GetMarryFingerExchange(string UID, string HtmlContent)
+        {
+            //  MortageMFRegex--{MortageMF:F_M_S_3}-{MortageMF:F2_M_S_3}F2--Size
+
+            MatchCollection MFMatchColl = MortageMFRegex.Matches(HtmlContent);
+            if (MFMatchColl.Count > 0)
+            {
+                foreach (Match matchItem in MFMatchColl)
+                {
+                    string ContentDeal = matchItem.Value.Trim();
+                    string PictureCode = ContentDeal.Replace("{MortageMF:", "").Replace("}", "");
+                    string PictureType = PictureCode.Substring(0, 1);
+                    string PictureSize = PictureType;
+
+                    string ImageData = GetFinger(UID, PictureType, PictureCode, PictureSize);
+
+                    HtmlContent = HtmlContent.Replace(ContentDeal, ImageData);
+                }
+            }
+            return HtmlContent;
+        }
+
     }
 }

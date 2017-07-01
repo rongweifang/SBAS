@@ -11,6 +11,7 @@ namespace OpWeb.Contract
     {
         private string UID;
         public string PageContent = string.Empty;
+        private string documentType;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(base.Request["UID"]))
@@ -18,10 +19,10 @@ namespace OpWeb.Contract
                 return;
             }
             this.UID = base.Request["UID"];
-
+            this.documentType = Request["documentType"];
             if (!base.IsPostBack)
             {
-                if (!string.IsNullOrEmpty(this.UID))
+                if (!string.IsNullOrEmpty(this.UID) && !string.IsNullOrEmpty(documentType))
                 {
                     this.InitData();
                 }
@@ -31,7 +32,7 @@ namespace OpWeb.Contract
         private void InitData()
         {
 
-            PageContent = Contract_Manage.GetHtmlContent(UID, "Contract_Mortgage","A3");
+            PageContent = Contract_Manage.GetHtmlContent(UID, documentType, "A3");
 
         }
 
