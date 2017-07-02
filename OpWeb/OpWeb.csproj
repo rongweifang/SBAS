@@ -625,6 +625,7 @@
     <Content Include="Log\operate.aspx" />
     <Content Include="Log\userlogin.aspx" />
     <Content Include="MainDefault.aspx" />
+    <Content Include="PT.html" />
     <Content Include="RMBase\SysAppend\AppendProperty_Form.aspx" />
     <Content Include="RMBase\SysAppend\AppendProperty_Function.aspx" />
     <Content Include="RMBase\SysAppend\AppendProperty_Function_Form.aspx" />

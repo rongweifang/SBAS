@@ -49,14 +49,12 @@
 
     <script language="Javascript" event="IdCardEvent()" for="show">
 
-        //show.UnFaceDetect();//
-
-        var name = show.GetTempFileName(".bmp");
-        show.GetIdCardImage(name, 1);
-        //var feature = show.GetFaceTemplFromFile(name);
-        show.DeleteFile(name);
-
-        // show.FaceDetect(feature, 45, 1);
+        var HeadSrc = show.GetTempFileName(".bmp");
+        show.GetIdCardImage(HeadSrc, 1);
+        
+        //show.DeleteFile(name);
+        
+        
         //[in] 整数，表示结果信息代号。目前支持的值为1~15，其中
         //1	表示姓名，	
         //2表示性别，
@@ -91,8 +89,15 @@
         var nowYear = d.getFullYear();
         var ageDiff = nowYear - show.GetIdCardResult(4);
         $("#U_Age").val(ageDiff);
-    </script>
 
+       // $("#Card_Head").attr({ 'src': name });
+        //document.getElementById("Card_Head").src = name;
+        //alert(getBase64(name));
+      
+     
+      
+</script>
+    
 </head>
 <body class="gray-bg" <%=LoadJs %>>
     <div style="display: none;">
@@ -171,7 +176,7 @@
                         <tr>
                             <td>&nbsp;</td>
                             <td colspan="3">&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td><input id="H" name="H" class="form-control" type="text" runat="server" /></td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
@@ -204,7 +209,7 @@
 
                             </td>
                             <td colspan="2" rowspan="7">
-                                <button class="btn btn-primary dim btn-large-dim" type="button" runat="server" title="扫描身份证">
+                                <button class="btn btn-primary dim btn-large-dim" type="button" title="扫描身份证" <%=LoadJs %>>
                                     <i class="fa fa-money"></i>
                                 </button>
                             </td>

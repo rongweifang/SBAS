@@ -15,6 +15,7 @@ namespace OpWeb.User
     {
         private string Card_ID;
         private string _key;
+        public string LoadJs = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(base.Request["Card_ID"]))
@@ -27,7 +28,15 @@ namespace OpWeb.User
             {
                 if (!string.IsNullOrEmpty(this.Card_ID))
                 {
-                    this.InitData();
+                    if (!string.IsNullOrEmpty(this._key))
+                    {
+                        this.InitData();
+                        LoadJs = "";
+                    }
+                    else
+                    {
+                        LoadJs = "onload=\"Load()\" onunload=\"Unload()\"";
+                    }
                 }
             }
         }
