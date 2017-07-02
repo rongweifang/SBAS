@@ -632,6 +632,8 @@
     <Content Include="RMBase\SysAppend\AppendProperty_Info.aspx" />
     <Content Include="RMBase\SysAppend\AppendProperty_Left.aspx" />
     <Content Include="RMBase\SysAppend\AppendProperty_List.aspx" />
+    <Content Include="RMBase\SysBase\CustomType.aspx" />
+    <Content Include="RMBase\SysBase\ModifyCustomType.aspx" />
     <Content Include="RMBase\SysConfig\Config_Form.aspx" />
     <Content Include="RMBase\SysDataCenter\Backup_Confirm.aspx" />
     <Content Include="RMBase\SysDataCenter\Backup_List.aspx" />
@@ -3780,6 +3782,20 @@
     <Compile Include="RMBase\SysAppend\AppendProperty_List.aspx.cs">
       <DependentUpon>AppendProperty_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RMBase\SysBase\CustomType.aspx.cs">
+      <DependentUpon>CustomType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RMBase\SysBase\CustomType.aspx.designer.cs">
+      <DependentUpon>CustomType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RMBase\SysBase\ModifyCustomType.aspx.cs">
+      <DependentUpon>ModifyCustomType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RMBase\SysBase\ModifyCustomType.aspx.designer.cs">
+      <DependentUpon>ModifyCustomType.aspx</DependentUpon>
     </Compile>
     <Compile Include="RMBase\SysConfig\Config_Form.aspx.cs">
       <DependentUpon>Config_Form.aspx</DependentUpon>

@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="BaseDAL.cs" />
     <Compile Include="Dal\BlackUserService.cs" />
+    <Compile Include="Dal\CustomTypeService.cs" />
     <Compile Include="Dal\WorkFlowService.cs" />
     <Compile Include="DFsystemDal.cs" />
     <Compile Include="Enums\ApproveType.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Enums\WorkFlowStatus.cs" />
     <Compile Include="ItemTableField.cs" />
     <Compile Include="Model\BlackUser.cs" />
+    <Compile Include="Model\CustomType.cs" />
     <Compile Include="Model\UserInfo.cs" />
     <Compile Include="Model\WF_Activity.cs" />
     <Compile Include="Model\WF_Process.cs" />
