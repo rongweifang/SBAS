@@ -11,14 +11,19 @@ namespace OpWeb.Handler
     /// </summary>
     public class BlackUserHandler : RestHandler
     {
-
-        BlackUserService blackService = new BlackUserService();
+       
         public int deleteBlackUser(string id) {
+            BlackUserService blackService = new BlackUserService();
             var retData = 0;
             if (string.IsNullOrWhiteSpace(id)) {
                 return retData;
             }
             return blackService.deleteBlackUser(id);
+        }
+
+        public int deleteClientType(int id) {
+            CustomTypeService typeService = new CustomTypeService();
+            return typeService.RemoveCustomType(id);
         }
     }
 }

@@ -35,15 +35,15 @@
 
         //添加
         function add() {
-            var url = "/User/BlackUserEdit.aspx";
-            top.openDialog(url, 'UserForm', '黑名单 - 添加', 800, 510, 50, 50);
+            var url = "/RMBase/SysBase/ModifyCustomType.aspx";
+            top.openDialog(url, 'UserForm', '客户分类 - 添加', 800, 510, 50, 50);
         }
         //修改
         function edit() {
             var key = CheckboxValue();
             if (IsEditdata(key)) {
-                var url = "/User/BlackUserEdit.aspx?userId=" + key;
-                top.openDialog(url, 'UserForm', '黑名单 - 编辑', 800, 510, 50, 50);
+                var url = "/RMBase/SysBase/ModifyCustomType.aspx?Id=" + key;
+                top.openDialog(url, 'UserForm', '客户分类 - 编辑', 800, 510, 50, 50);
             }
         }
         //删除
@@ -56,7 +56,7 @@
                 alert("删除失败");
                 return;
             }
-            getAjax('/Handler/BlackUserHandler.ashx?op=deleteBlackUser&id='+key,"", function (rs) {
+            getAjax('/Handler/BlackUserHandler.ashx?op=deleteClientType&id='+key,"", function (rs) {
                 if (parseInt(rs) <= 0) {
                     showTipsMsg("<span style='color:red'>删除失败！</span>", 4000, 5);
                 }
