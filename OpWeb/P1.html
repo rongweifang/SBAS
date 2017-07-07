@@ -1,0 +1,274 @@
+﻿
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+        合同预览
+    </title>
+
+
+    <link href="/css/ContactTemp.css" rel="stylesheet" />
+    <link href="/css/ContractPrint.css" media="print" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="MPage3">
+        <h1>借  款 人 申 请 表 </h1>
+        <table align="center" border="1" cellspacing="0" cellpadding="0" style="width: 100%">
+            <tbody>
+                <tr>
+                    <td width="28" rowspan="7">
+                        <br>
+                        申 <br>
+                        请 <br>
+                        人 <br>
+                        情 <br>
+                        况
+                    </td>
+                    <td width="88">姓　　名</td>
+                    <td width="72">{Mortage:Card_Name}</td>
+                    <td width="105">性　　别</td>
+                    <td width="66">{Mortage:Card_SEX}</td>
+                    <td width="54" colspan="2">年　　龄</td>
+                    <td width="51" colspan="2">{Mortage:U_Age}</td>
+                    <td width="81" colspan="2">学　　历</td>
+                    <td width="79">{Mortage:U_Education}</td>
+                </tr>
+                <tr>
+                    <td width="88">婚烟状况</td>
+                    <td width="72">{Mortage:U_Marry}</td>
+                    <td width="105">工作单位 </td>
+                    <td width="171" colspan="5">{Mortage:U_Company}</td>
+                    <td width="81" colspan="2">行政职务 </td>
+                    <td width="79">{Mortage:U_Duties}</td>
+                </tr>
+                <tr>
+                    <td width="88">单位电话 </td>
+                    <td width="72">{Mortage:U_CompanyTel}</td>
+                    <td width="105">单位地址 </td>
+                    <td width="171" colspan="5">{Mortage:U_CompanyAddress}</td>
+                    <td width="81" colspan="2">单位邮编 </td>
+                    <td width="79">{Mortage:U_CompanyZip}</td>
+                </tr>
+                <tr>
+                    <td width="88">月收入金额 </td>
+                    <td width="72">{Mortage:U_Income}</td>
+                    <td width="105">个人公积金账号 </td>
+                    <td width="171" colspan="5">{Mortage:U_Accumulation}</td>
+                    <td width="81" colspan="2">现居住面积 </td>
+                    <td width="79">{Mortage:U_Area}</td>
+                </tr>
+                <tr>
+                    <td width="88">现居住地址 </td>
+                    <td width="348" colspan="7">{Mortage:U_Address}</td>
+                    <td width="81" colspan="2">产权情况 </td>
+                    <td width="79">{Mortage:U_PropertyRight}</td>
+                </tr>
+                <tr>
+                    <td width="88">身份证号码 </td>
+                    <td width="348" colspan="7">{Mortage:Card_ID}</td>
+                    <td width="81" colspan="2">邮编 </td>
+                    <td width="79">{Mortage:U_Zip}</td>
+                </tr>
+                <tr>
+                    <td width="88">联系电话 </td>
+                    <td width="177" colspan="2">{Mortage:U_Tel}</td>
+                    <td width="66">父母住址 </td>
+                    <td width="265" colspan="7">{Mortage:U_ParentAddress}</td>
+                </tr>
+                <tr>
+                    <td width="28" rowspan="5">
+                        配 <br>
+                        偶 <br>
+                        情 <br>
+                        况
+                    </td>
+                    <td width="88">姓名 </td>
+                    <td width="72">{Mortage:US_Card_Name}</td>
+                    <td width="105">性别 </td>
+                    <td width="66">{Mortage:US_Card_Sex}</td>
+                    <td width="54" colspan="2">年龄 </td>
+                    <td width="51" colspan="2">{Mortage:US_Age}</td>
+                    <td width="81" colspan="2">学历 </td>
+                    <td width="79">{Mortage:US_Education}</td>
+                </tr>
+                <tr>
+                    <td width="88">月收入金额 </td>
+                    <td width="72">{Mortage:US_Income}</td>
+                    <td width="105">工作单位 </td>
+                    <td width="171" colspan="5">{Mortage:US_Company}</td>
+                    <td width="81" colspan="2">行政职务 </td>
+                    <td width="79">{Mortage:US_Duties}</td>
+                </tr>
+                <tr>
+                    <td width="88">单位地址 </td>
+                    <td width="243" colspan="3">{Mortage:US_CompanyAddress}</td>
+                    <td width="54" colspan="2">邮编 </td>
+                    <td width="51" colspan="2">{Mortage:US_CompanyZip}</td>
+                    <td width="81" colspan="2">单位电话 </td>
+                    <td width="79">{Mortage:US_CompanyTel}</td>
+                </tr>
+                <tr>
+                    <td width="88">身份证号码 </td>
+                    <td width="508" colspan="10">{Mortage:US_Card_ID}</td>
+                </tr>
+                <tr>
+                    <td width="88">联系电话 </td>
+                    <td width="177" colspan="2">{Mortage:US_Tel}</td>
+                    <td width="66">父母住址 </td>
+                    <td width="265" colspan="7">{Mortage:US_ParentAddress}</td>
+                </tr>
+                <tr>
+                    <td width="28" rowspan="4" style="line-height: 90%">
+                        共 <br>
+                        同 <br>
+                        居 <br>
+                        住 <br>
+                        人 <br>
+                        员 <br>
+                        情 <br>
+                        况
+                    </td>
+                    <td width="160" colspan="2">姓名 </td>
+                    <td width="105">性别 </td>
+                    <td width="66">年龄 </td>
+                    <td width="94" colspan="3">与申请人关系 </td>
+                    <td width="170" colspan="4">月收入金额 </td>
+                </tr>
+                <tr>
+                    <td width="160" colspan="2">{Mortage:UL_Name}</td>
+                    <td width="105">{Mortage:UL_Sex}</td>
+                    <td width="66">{Mortage:UL_Age}</td>
+                    <td width="94" colspan="3">{Mortage:UL_Releation}</td>
+                    <td width="170" colspan="4">{Mortage:UL_Income}</td>
+                </tr>
+                <tr>
+                    <td width="160" colspan="2">{Mortage:UL_Name1}</td>
+                    <td width="105">{Mortage:UL_Sex1}</td>
+                    <td width="66">{Mortage:UL_Age1}</td>
+                    <td width="94" colspan="3">{Mortage:UL_Releation1}</td>
+                    <td width="170" colspan="4">{Mortage:UL_Income1}</td>
+                </tr>
+                <tr>
+                    <td width="160" colspan="2">{Mortage:UL_Name2}</td>
+                    <td width="105">{Mortage:UL_Sex2}</td>
+                    <td width="66">{Mortage:UL_Age2}</td>
+                    <td width="94" colspan="3">{Mortage:UL_Releation2}</td>
+                    <td width="170" colspan="4">{Mortage:UL_Income2}</td>
+                </tr>
+                <tr>
+                    <td width="28" rowspan="6">
+                        拟 <br>
+                        购 <br>
+                        住 <br>
+                        房 <br>
+                        情 <br>
+                        况
+                    </td>
+                    <td width="160" colspan="2">售房人（单位）名称 </td>
+                    <td width="436" colspan="9">{Mortage:BV_Name}</td>
+                </tr>
+                <tr>
+                    <td width="425" colspan="7">
+                        <ul style="margin: 0;padding: 0; list-style: none;">
+                            <li style="float: left; padding-left: 20px;padding-right: 5px;">房屋类别：</li>
+                            <li style="float: left;padding-left: 20px;padding-right: 5px;">□住宅</li>
+                            <li style="float: left;padding-left: 20px;padding-right: 5px;">□商铺</li>
+                            <li style="float: left;padding-left: 20px;padding-right: 5px;">□车位</li>
+                            <li style="float: left;padding-left: 20px;padding-right: 5px;">□其它</li>
+                        </ul>
+                    </td>
+                    <td width="170" colspan="4">房屋形式：□现房&nbsp;&nbsp; □期房 </td>
+                </tr>
+                <tr>
+                    <td width="160" colspan="2">拟购住房坐落位置 </td>
+                    <td width="436" colspan="9">{Mortage:M_Address}</td>
+                </tr>
+                <tr>
+                    <td width="160" colspan="2">拟购住房建筑面积 </td>
+                    <td width="105">{Mortage:M_Area}</td>
+                    <td width="161" colspan="4">拟购住房总金额 </td>
+                    <td width="170" colspan="4">{Mortage:M_Value}</td>
+                </tr>
+                <tr>
+                    <td width="160" colspan="2">已付购房款 </td>
+                    <td width="105">{Mortage:M_Pay}</td>
+                    <td width="161" colspan="4">单位售价 </td>
+                    <td width="170" colspan="4">{Mortage:M_Price}</td>
+                </tr>
+                <tr>
+                    <td width="88">售房合同编号 </td>
+                    <td width="177" colspan="2">{Mortage:M_NO}</td>
+                    <td width="161" colspan="4">房屋所有权证号 </td>
+                    <td width="170" colspan="4">{Mortage:M_PropertyNO}</td>
+                </tr>
+                <tr>
+                    <td width="116" colspan="2">申请借款金额 </td>
+                    <td width="72">{Mortage:M_Loan_Cap}万 </td>
+                    <td width="105">申请借款期限 </td>
+                    <td width="66">{Mortage:M_Loan_Years}年 </td>
+                    <td width="132" colspan="5">借款占总价的比例 </td>
+                    <td width="132" colspan="2">{Mortage:M_Ratio} %</td>
+                </tr>
+                <tr>
+                    <td width="116" colspan="2">家庭月收入 </td>
+                    <td width="72">{Mortage:M_Income}</td>
+                    <td width="105">每月拟还款金额 </td>
+                    <td width="66">{Mortage:M_Reply}</td>
+                    <td width="132" colspan="5">占家庭月收入比例 </td>
+                    <td width="132" colspan="2">{Mortage:M_Re_Ratio} %</td>
+                </tr>
+                <tr>
+                    <td width="116" colspan="2">还款来源 </td>
+                    <td width="243" colspan="3">□个人收入&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; □家庭收入 </td>
+                    <td width="94" colspan="3">还款账号 </td>
+                    <td width="170" colspan="4">{Mortage:M_Account}</td>
+                </tr>
+                <tr>
+                    <td width="116" colspan="2">还款方式 </td>
+                    <td width="508" colspan="10">□等额本息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; □等额本金&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; □其他 </td>
+                </tr>
+                <tr>
+                    <td width="28" rowspan="5">
+                        收 <br>
+                        入 <br>
+                        来 <br>
+                        源 <br>
+                        依 <br>
+                        据
+                    </td>
+                    <td width="160" colspan="2">申请人月收入来源依据 </td>
+                    <td width="436" colspan="9">{Mortage:U_Earn} </td>
+                </tr>
+                <tr>
+                    <td width="160" colspan="2">配偶月收入来源依据 </td>
+                    <td width="436" colspan="9">{Mortage:US_Earn}</td>
+                </tr>
+                <tr>
+                    <td width="160" colspan="2">家庭成员月收入来源依据 </td>
+                    <td width="436" colspan="9">{Mortage:UL_Earn}</td>
+                </tr>
+                <tr>
+                    <td width="160" colspan="2">家庭成员月收入来源依据 </td>
+                    <td width="436" colspan="9">{Mortage:UL_Earn1}</td>
+                </tr>
+                <tr>
+                    <td width="160" colspan="2">家庭成员月收入来源依据 </td>
+                    <td width="436" colspan="9">{Mortage:UL_Earn2}</td>
+                </tr>
+                <tr>
+                    <td width="116" colspan="2">借款申请人签名： </td>
+                    <td width="177" colspan="2">&nbsp;</td>
+                    <td width="111" colspan="2">财产共有人签名： </td>
+                    <td width="220" colspan="6">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="12" style="text-align: right;padding-right: 25px;">{Mortage:M_YEAR}年&nbsp;{Mortage:M_MONTH}月&nbsp;{Mortage:M_DAY}日</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>

@@ -54,9 +54,8 @@ namespace OpWeb.User
         {
             Hashtable ht = new Hashtable();
 
-            ht = ControlBindHelper.GetWebControls(this.Page);
-            ht["User_ID"] = RequestSession.GetSessionUser().UserId.ToString();
-            ht["User_Name"] = RequestSession.GetSessionUser().UserName.ToString();
+            
+           
             if (string.IsNullOrEmpty(this.Card_Name.Value.Trim()) || string.IsNullOrEmpty(this.Card_ID.Value.Trim()) || string.IsNullOrEmpty(this.U_Age.Value.Trim()))
             {
                 ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('信息不完整！');</script>");
@@ -64,9 +63,20 @@ namespace OpWeb.User
             }
             if (!string.IsNullOrEmpty(this._key))
             {
-                ht["ModifyDate"] = DateTime.Now.ToString();
-            }
 
+                ht["ModifyDate"] = DateTime.Now.ToString();
+                ht["U_Address"] = this.U_Address.Value.Trim();
+                ht["U_Tel"] = this.U_Tel.Value.Trim();
+                ht["U_Zip"] = this.U_Zip.Value.Trim(); 
+
+
+            }
+            else
+            {
+                ht = ControlBindHelper.GetWebControls(this.Page);
+                ht["User_ID"] = RequestSession.GetSessionUser().UserId.ToString();
+                ht["User_Name"] = RequestSession.GetSessionUser().UserName.ToString();
+            }
             bool IsOk = DataFactory.SqlDataBase().Submit_AddOrEdit("Base_User", "Card_ID", this._key, ht);
             if (IsOk)
             {

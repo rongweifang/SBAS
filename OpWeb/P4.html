@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+
+<script>function localImgLoad() {
+	var src = this.files[0];
+	var self = $(this);
+	var read = new FileReader();
+	read.onload = function(e) {
+		var html = "<img src=" + e.target.result + " alt='' />";
+		self.parent().append(html);
+		document.getElementById('localBase64StrContainer').value = e.target.result;
+	}
+	read.readAsDataURL(src)
+};
+
+function convertImgToBase64(url, callback, outputFormat) {
+	var canvas = document.createElement('CANVAS');
+	ctx = canvas.getContext('2d');
+	img = new Image;
+	img.crossOrigin = 'Anonymous';
+	img.onload = function() {
+		canvas.height = img.height;
+		canvas.width = img.width;
+		ctx.drawImage(img, 0, 0);
+		var dataURL = canvas.toDataURL(outputFormat || 'image/jpg');
+		callback.call(this, dataURL);
+		//alert(this);
+		canvas = null;
+	};
+	img.src = url;
+}
+
+function onlineButtonGetImg(imgUrl) {
+	convertImgToBase64(imgUrl,
+	function(base64Img) {
+		document.getElementById('onlineBase64StrContainer').value = base64Img;
+		$('#onlineBase64StrContainer').parent().append("<img src=" + base64Img + " />");
+	},
+	'image/png')
+}</script>
+
+</head>
+
+<body>
+<div class="MPage4">
+<h1>婚  姻 状 况 声 明 书 </h1>
+	<p style="text-indent: 0px;"><u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</u>：</p>
+ <p>本人姓名：<u>&nbsp; &nbsp;{MortageM:Card_Name}&nbsp; &nbsp;</u>，性别：<u>&nbsp;&nbsp;{MortageM:Card_Sex}&nbsp; &nbsp; </u>，<u>&nbsp; &nbsp; {MortageM:Card_Year}&nbsp;&nbsp;</u>年<u>&nbsp; &nbsp; {MortageM:Card_Month}&nbsp; &nbsp;</u>月<u>&nbsp; &nbsp;{MortageM:Card_Day} &nbsp; &nbsp;</u>日出生，现住址：<u>&nbsp; &nbsp; {MortageM:U_Address} &nbsp;&nbsp;</u>，证件类型：<u>&nbsp;&nbsp;{MortageM:Card_Type} &nbsp;&nbsp; </u>，证件号码：<u>&nbsp; &nbsp; {MortageM:Card_Id}&nbsp;&nbsp;</u>。 </p>
+  <p>本人因购买位于<u>&nbsp;&nbsp;{MortageM:M_Address}&nbsp;&nbsp; </u>的房屋，向察右中旗农村信用联社（部）申请个人住房贷款。现根据《中华人民共和国民法通则》及司法解释、《中华人民共和国担保法》及司法解释、《中华人民共和国城市房地产管理法》、《中华人民共和国婚姻法》和《中华人民共和国婚姻登记条例》及相关规定，郑重声明： </p>
+ <p> 本人无配偶，（声明人从下列情况中选择填写：1、本人从未结婚。2、本人离婚后至今未再婚。3、本人丧偶后至今未再婚。） </p>
+  <p> 本人自愿同意将上述房屋抵押给察右中旗农村信用联社（部）并办理抵押担保手续。 </p>
+   <p>本人对上述声明内容的真实性负责，并对由此引起的系列问题承担法律责任。 </p>
+  
+<table border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td width="250" valign="top"><p>&nbsp;</p></td>
+    <td width="200" valign="top"><p align="right" style="text-align: right">声明人（签名）：</p></td>
+    <td width="139" valign="top" rowspan="2"><p align="left">{MortageMF:F_M_U_2}</p></td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p></td>
+    <td style="text-align: right">{MortageMF:S_M_U_2}</td>
+    
+  </tr>
+</tbody></table>
+<p style="width: 100%; text-align: right; margin-right: 10px;">{MortageM:M_YEAR}年　{MortageM:M_MONTH}　月　{MortageM:M_DAY}　日 </p>
+</div>
+</body>
+</html>
