@@ -58,7 +58,7 @@
             } %>
     </div>
     <div id="buttons" style="margin-top: 10px;">
-        <asp:Button ID="btn_approve" runat="server" Text="通过" OnClick="btn_approve_Click"  Visible="false"/>
+        <asp:Button ID="btn_approve" runat="server" Text="通过" OnClick="btn_approve_Click"  Visible="false" style="height: 21px"/>
         <%--        <asp:Button  ID="btn_reject" runat="server" Text="拒绝"/>--%>
         <asp:Button ID="btn_return" runat="server" Text="退回" OnClick="btn_return_Click"  Visible="false"/>
         <asp:Button ID="btn_resubmit" runat="server" Text="重新提交"  OnClick="btn_resubmit_Click" Visible="false"/>

@@ -21,6 +21,7 @@
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
     <UseGlobalApplicationHostFile />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,6 +57,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.JScript" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -78,6 +82,18 @@
   <ItemGroup>
     <Content Include="404.html" />
     <Content Include="500.html" />
+    <Content Include="Approve\Approve_Center.aspx" />
+    <Content Include="Approve\Approve_CenterForm.aspx" />
+    <Content Include="Approve\Approve_MyCenter.aspx" />
+    <Content Include="Approve\Approve_Over.aspx" />
+    <Content Include="Approve\Approve_OverForm.aspx" />
+    <Content Include="Approve\Approve_Scrap.aspx" />
+    <Content Include="Approve\Approve_ScrapForm.aspx" />
+    <Content Include="Approve\WorkFlow_Manage.aspx" />
+    <Content Include="Approve\WorkFlow_ManageForm.aspx" />
+    <Content Include="Approve\WorkFlow_PointManage.aspx" />
+    <Content Include="Approve\WorkFlow_PointManageForm.aspx" />
+    <Content Include="Approve\WorkFlow_PointManageRoles.aspx" />
     <Content Include="App_Code\Config.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -3483,11 +3499,16 @@
     <Content Include="User\ShowPictures.aspx" />
     <Content Include="User\UserBlackList.aspx" />
     <Content Include="User\UserForm.aspx" />
+    <Content Include="User\UserInfo.aspx" />
     <Content Include="User\UserInfoView.aspx" />
     <Content Include="User\UserList.aspx" />
     <Content Include="User\User_Contract.aspx" />
+    <Content Include="User\User_Datas.aspx" />
+    <Content Include="User\User_DatasForm.aspx" />
     <Content Include="User\User_Extra.aspx" />
     <Content Include="User\User_Finger.aspx" />
+    <Content Include="User\User_Guardian.aspx" />
+    <Content Include="User\User_Guardian2.aspx" />
     <Content Include="User\User_Photo.aspx" />
     <Content Include="User\User_Photo2.aspx" />
     <Content Include="User\User_Spouse.aspx" />
@@ -3512,6 +3533,90 @@
     </Compile>
     <Compile Include="Ajax\Verify_code.ashx.cs">
       <DependentUpon>Verify_code.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Approve\Approve_Center.aspx.cs">
+      <DependentUpon>Approve_Center.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\Approve_Center.aspx.designer.cs">
+      <DependentUpon>Approve_Center.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approve\Approve_CenterForm.aspx.cs">
+      <DependentUpon>Approve_CenterForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\Approve_CenterForm.aspx.designer.cs">
+      <DependentUpon>Approve_CenterForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approve\Approve_MyCenter.aspx.cs">
+      <DependentUpon>Approve_MyCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\Approve_MyCenter.aspx.designer.cs">
+      <DependentUpon>Approve_MyCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approve\Approve_Over.aspx.cs">
+      <DependentUpon>Approve_Over.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\Approve_Over.aspx.designer.cs">
+      <DependentUpon>Approve_Over.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approve\Approve_OverForm.aspx.cs">
+      <DependentUpon>Approve_OverForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\Approve_OverForm.aspx.designer.cs">
+      <DependentUpon>Approve_OverForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approve\Approve_Scrap.aspx.cs">
+      <DependentUpon>Approve_Scrap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\Approve_Scrap.aspx.designer.cs">
+      <DependentUpon>Approve_Scrap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approve\Approve_ScrapForm.aspx.cs">
+      <DependentUpon>Approve_ScrapForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\Approve_ScrapForm.aspx.designer.cs">
+      <DependentUpon>Approve_ScrapForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approve\WorkFlow_Manage.aspx.cs">
+      <DependentUpon>WorkFlow_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\WorkFlow_Manage.aspx.designer.cs">
+      <DependentUpon>WorkFlow_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approve\WorkFlow_ManageForm.aspx.cs">
+      <DependentUpon>WorkFlow_ManageForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\WorkFlow_ManageForm.aspx.designer.cs">
+      <DependentUpon>WorkFlow_ManageForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approve\WorkFlow_PointManage.aspx.cs">
+      <DependentUpon>WorkFlow_PointManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\WorkFlow_PointManage.aspx.designer.cs">
+      <DependentUpon>WorkFlow_PointManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approve\WorkFlow_PointManageForm.aspx.cs">
+      <DependentUpon>WorkFlow_PointManageForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\WorkFlow_PointManageForm.aspx.designer.cs">
+      <DependentUpon>WorkFlow_PointManageForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approve\WorkFlow_PointManageRoles.aspx.cs">
+      <DependentUpon>WorkFlow_PointManageRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\WorkFlow_PointManageRoles.aspx.designer.cs">
+      <DependentUpon>WorkFlow_PointManageRoles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Company\Company_form.aspx.cs">
       <DependentUpon>Company_form.aspx</DependentUpon>
@@ -3681,6 +3786,9 @@
     </Compile>
     <Compile Include="Error\ErrorPage.aspx.designer.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frame\ApproveDispose.ashx.cs">
+      <DependentUpon>ApproveDispose.ashx</DependentUpon>
     </Compile>
     <Compile Include="Frame\Com_Acquire.ashx.cs">
       <DependentUpon>Com_Acquire.ashx</DependentUpon>
@@ -4118,6 +4226,13 @@
     <Compile Include="User\UserForm.aspx.designer.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User\UserInfo.aspx.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserInfo.aspx.designer.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\UserInfoView.aspx.cs">
       <DependentUpon>UserInfoView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4139,6 +4254,20 @@
     <Compile Include="User\User_Contract.aspx.designer.cs">
       <DependentUpon>User_Contract.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User\User_Datas.aspx.cs">
+      <DependentUpon>User_Datas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_Datas.aspx.designer.cs">
+      <DependentUpon>User_Datas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_DatasForm.aspx.cs">
+      <DependentUpon>User_DatasForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_DatasForm.aspx.designer.cs">
+      <DependentUpon>User_DatasForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\User_Extra.aspx.cs">
       <DependentUpon>User_Extra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4152,6 +4281,20 @@
     </Compile>
     <Compile Include="User\User_Finger.aspx.designer.cs">
       <DependentUpon>User_Finger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_Guardian.aspx.cs">
+      <DependentUpon>User_Guardian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_Guardian.aspx.designer.cs">
+      <DependentUpon>User_Guardian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_Guardian2.aspx.cs">
+      <DependentUpon>User_Guardian2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_Guardian2.aspx.designer.cs">
+      <DependentUpon>User_Guardian2.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\User_Photo.aspx.cs">
       <DependentUpon>User_Photo.aspx</DependentUpon>
@@ -4266,6 +4409,7 @@
     <Content Include="fonts\huawenxinwei-webfont.woff2" />
     <Content Include="fonts\huawenxinwei-webfont.eot" />
     <Content Include="fonts\STXINWEI.TTF" />
+    <Content Include="Frame\ApproveDispose.ashx" />
     <None Include="Properties\PublishProfiles\M.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

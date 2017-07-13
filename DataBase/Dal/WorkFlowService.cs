@@ -2,13 +2,50 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using TestAndroid.DAL;
 using DataBase.Model;
 using DataBase.Enums;
+using Common.DotNetBean;
+using Common.DotNetCode;
+using Common.DotNetData;
+using Common.DotNetUI;
+using Common.DotNetConfig;
+using PDA_Service.DataBase.DataBase.SqlServer;
+
 namespace DataBase.Dal
 {
     public class WorkFlowService:BaseDAL
     {
+        public string CreateWorkFlow(string contractId)
+        {
+            string UserId = RequestSession.GetSessionUser().UserId.ToString();
+            double loan = GetLoan(contractId);
+
+            return CreateWorkFlow(contractId, UserId, loan);
+        }
+        public double GetLoan(string ContractID)
+        {
+            double loan = 0d;
+            StringBuilder sb = new StringBuilder();
+            sb.Append(@"SELECT M_Loan  FROM View_Contract  WHERE [UID]=@ContractID");
+
+            DataTable dt = SqlDataBase().GetDataTableBySQL(sb, new SqlParam[] { new SqlParam("@ContractID", ContractID) });
+            if (DataTableHelper.IsExistRows(dt))
+            {
+                if (double.TryParse(dt.Rows[0][0].ToString(), out loan))
+                {
+
+                }
+            }
+            return loan;
+        }
+
+        public IDbHelper SqlDataBase()
+        {
+            return new SqlServerHelper(ConfigHelper.GetAppSettings("SqlServer_RM_DB"));
+        }
+
         /// <summary>
         /// 创建工作流
         /// </summary>
@@ -16,7 +53,7 @@ namespace DataBase.Dal
         /// <param name="contractAmount">合同金额</param>
         /// <returns></returns>
         public string CreateWorkFlow(string contractId,string currentUserId,double contractAmount) {
-            string retMsg = string.Empty;
+            string retMsg = "true";
             if (string.IsNullOrWhiteSpace(contractId) || contractAmount <= 0) {
                 retMsg = "合同不存在或合同金额错误";
                 return retMsg;
@@ -60,9 +97,9 @@ namespace DataBase.Dal
             }
             foreach (var itm in activities) {
                 AddProcess(itm, workFlow);
-                if (itm.ApproveType != (int)ApproveType.Skip) {
-                    break;
-                }
+                //if (itm.ApproveType != (int)ApproveType.Skip) {
+                //    break;
+                //}
             }
             return retMsg;
         }
@@ -230,7 +267,7 @@ namespace DataBase.Dal
         }
 
         /// <summary>
-        /// 根据工作刘ID获取对应的步骤
+        /// 根据工作流ID获取对应的步骤
         /// </summary>
         /// <param name="flowInfoId">工作流ID</param>
         /// <returns></returns>

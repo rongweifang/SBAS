@@ -163,7 +163,7 @@
 </head>
 <body onload="loads()" onunload="unloads()">
 
-    <div class="col-sm-12" style="height: 190px;">
+    <div class="col-sm-12" style="height: 190px; overflow:scroll">
         <asp:Repeater ID="rp_Item" runat="server">
             <ItemTemplate>
                 <div class="file-box">

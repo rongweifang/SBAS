@@ -37,3 +37,4 @@ D:\信用社\SBAS_OP\DataBase\bin\Release\Common.pdb
 D:\信用社\SBAS_OP\DataBase\obj\Release\DataBase.csprojResolveAssemblyReference.cache
 D:\信用社\SBAS_OP\DataBase\obj\Release\DataBase.dll
 D:\信用社\SBAS_OP\DataBase\obj\Release\DataBase.pdb
+D:\信用社\SBAS_OP\DataBase\bin\Release\FluentData.dll

@@ -47,25 +47,32 @@
                 top.openDialog(url, 'UserForm', '客户管理 - 编辑', 800, 510, 50, 50);
             }
         }
-
-        function EditFinger(Card_ID) {
+        //指纹录入
+        function EditFinger(Card_ID, Card_Name) {
             if (IsEditdata(Card_ID)) {
                 var url = "/User/User_Finger.aspx?Card_ID=" + Card_ID;
-                top.openDialog(url, 'User_Extra', '指纹录入', 700, 630, 50, 50);
+                top.openDialog(url, 'User_Extra', '指纹录入-' + Card_Name, 800, 400, 50, 50);
             }
         }
         //配偶
         function EditSpouse(Card_ID) {
             if (IsEditdata(Card_ID)) {
                 var url = "/User/User_Spouse.aspx?Card_ID=" + Card_ID;
-                top.openDialog(url, 'User_Spouse', '配偶信息管理 ', 800, 510, 50, 50);
+                top.openDialog(url, 'User_Spouse', '配偶信息管理 ', 800, 560, 50, 50);
+            }
+        }
+        //监护人
+        function EditGuardian(Card_ID) {
+            if (IsEditdata(Card_ID)) {
+                var url = "/User/User_Guardian.aspx?Card_ID=" + Card_ID;
+                top.openDialog(url, 'User_Guardian', '共同还款人信息管理 ', 800, 560, 50, 50);
             }
         }
         //共同居住人
         function EditSymbiosis(Card_ID) {
             if (IsEditdata(Card_ID)) {
                 var url = "/User/User_Symbiosis.aspx?Card_ID=" + Card_ID;
-                top.openDialog(url, 'User_Symbiosis', '共同居住人信息', 700, 630, 50, 50);
+                top.openDialog(url, 'User_Symbiosis', '共同居住人信息', 950, 560, 50, 50);
             }
         }
         //保证人
@@ -83,12 +90,20 @@
             }
         }
         //签订合同
-        function EditContract(Card_ID) {
+        function EditContract(Card_ID, Card_Name) {
             if (IsEditdata(Card_ID)) {
-                var url = "/User/User_Contract.aspx?Card_ID=" + Card_ID;
-                top.openDialog(url, 'User_Contract', '合同管理 - 编辑', 700, 630, 50, 50);
+                var url = "/User/User_Contract.aspx?Card_ID=" + Card_ID + "&Card_Name=" + Card_Name;
+                top.openDialog(url, 'User_Contract', '合同管理 - ' + Card_Name, 780, 330, 50, 50);
             }
         }
+        //照片管理
+        function EditPhoto(Card_ID) {
+            if (IsEditdata(Card_ID)) {
+                var url = "/User/User_Photo.aspx?Card_ID=" + Card_ID;
+                top.openDialog(url, 'User_Photo', '照片管理', 700, 580, 50, 50);
+            }
+        }
+
         function Onflag() {
             //var key = CheckboxValue();
             //if (IsDelData(key)) {
@@ -140,8 +155,9 @@
                             <td style="width: 100px; text-align: center;">联系电话</td>
                             <td style="width: 70px; text-align: center;">指纹采集</td>
                             <td style="width: 60px; text-align: center;">配偶信息</td>
+                            <td style="width: 70px; text-align: center;">共同还款人</td>
                             <td style="width: 70px; text-align: center;">共同居住人</td>
-                            <td style="width: 50px; text-align: center;">保证人</td>
+                            <td style="width: 60px; text-align: center;">照片采集</td>
                             <td style="width: 70px; text-align: center;">签订合同</td>
                             <td style="width: 70px; text-align: center;">状态</td>
                             <td>创建日期</td>
@@ -152,7 +168,7 @@
                             <ItemTemplate>
                                 <tr>
                                     <td style="width: 20px; text-align: left;">
-                                        <input type="checkbox" value="<%#Eval("Card_ID")%>" name="checkbox" />
+                                        <input id="CID" type="checkbox" value="<%#Eval("Card_ID")%>" name="checkbox" />
                                     </td>
                                     <td style="width: 80px; text-align: center;"><%#Eval("Card_Name")%></td>
                                     <td style="width: 140px; text-align: center;"><%#Eval("Card_ID")%></td>
@@ -160,12 +176,17 @@
                                     <td style="width: 40px; text-align: center;"><%#Eval("U_Age")%></td>
                                     <td style="width: 100px; text-align: center;"><%#Eval("U_Tel")%></td>
                                     <td style="width: 70px; text-align: center;">
-                                        <a onclick="EditFinger('<%#Eval("Card_ID")%>')">
+                                        <a onclick="EditFinger('<%#Eval("Card_ID")%>','<%#Eval("Card_Name")%>')">
                                             <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>
                                     <td style="width: 60px; text-align: center;">
                                         <a onclick="EditSpouse('<%#Eval("Card_ID")%>')">
+                                            <img src="../img/matte_white.png" width="35" height="35" alt="" />
+                                        </a>
+                                    </td>
+                                    <td style="width: 70px; text-align: center;">
+                                        <a onclick="EditGuardian('<%#Eval("Card_ID")%>')">
                                             <img src="../img/matte_white_square.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>
@@ -174,13 +195,13 @@
                                             <img src="../img/family.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>
-                                    <td style="width: 50px; text-align: center;">
-                                        <a onclick="EditWarrantor('<%#Eval("Card_ID")%>')">
-                                            <img src="../img/matte_white.png" width="35" height="35" alt="" />
+                                    <td style="width: 60px; text-align: center;">
+                                        <a onclick="EditPhoto('<%#Eval("Card_ID")%>')">
+                                            <img src="../img/sonyericsson_camera.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>
                                     <td style="width: 70px; text-align: center;">
-                                        <a onclick="EditContract('<%#Eval("Card_ID")%>')">
+                                        <a onclick="EditContract('<%#Eval("Card_ID")%>','<%#Eval("Card_Name")%>')">
                                             <img src="../img/contract_740.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>

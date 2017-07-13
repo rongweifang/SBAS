@@ -241,7 +241,7 @@
                         </tr>
                         <tr>
                             <td height="24">
-                                <label class="control-label">月收入金额：</label></td>
+                                <label class="control-label">月收入金额<span style="color:red">*</span>：</label></td>
                             <td>
                                 <input id="US_Income" name="US_Income" class="form-control" type="text" runat="server" /></td>
                             <td>

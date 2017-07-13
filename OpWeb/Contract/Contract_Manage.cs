@@ -22,7 +22,10 @@ namespace OpWeb.Contract
         private static Regex MortageRegex = new Regex(@"{Mortage:+[\w]+}");//文字信息
         private static Regex MortageFRegex = new Regex(@"{MortageF:+[\w]+}");//指纹签名
         private static Regex MortageMRegex = new Regex(@"{MortageM:+[\w]+}");//婚姻状况声明
+        private static Regex MortageUNMRegex = new Regex(@"{MortageUNM:+[\w]+}");//单身声明
         private static Regex MortageMFRegex = new Regex(@"{MortageMF:+[\w]+}");//婚姻状况声明指纹
+        private static Regex MortageUNMFRegex = new Regex(@"{MortageUNMF:+[\w]+}");//单身声明指纹
+        private static Regex MortageSRegex = new Regex(@"{MortageS:+[\w]+}");//值输出
 
         private static string Card_ID = string.Empty;
         private static string Marry = string.Empty;
@@ -204,7 +207,7 @@ namespace OpWeb.Contract
                     StringBuilder pglist = new StringBuilder();
                     for (int i = 0; i < PageNuam / 4; i++)
                     {
-                        pglist.AppendFormat("{0},{1},{2},{3},", PageNuam - 2 * i, 1 + 2 * i,  1 + 2 * i + 1, PageNuam - 2 * i - 1);
+                        pglist.AppendFormat("{0},{1},{2},{3},", PageNuam - 2 * i, 1 + 2 * i, 1 + 2 * i + 1, PageNuam - 2 * i - 1);
                     }
 
                     sqlwhere = string.Format(" AND CTPage IN ({0}) ORDER BY CHARINDEX(',' + CONVERT(VARCHAR, CTPage) + ',' , '{1}') ", pglist.ToString().TrimEnd(','), pglist.ToString().Trim());
@@ -238,7 +241,7 @@ namespace OpWeb.Contract
             string ResultCotent = GetHtmlExchange(UID, sb.ToString(), documentType);//替换基本信息
             //替换指纹签名
             ResultCotent = GetFingerExchange(UID, ResultCotent);
-            //替换身份证，及其它拍照图片
+           
             ResultCotent = ClearHtmlExchange(ResultCotent);//清除标记
             return ResultCotent;
         }
@@ -266,11 +269,19 @@ namespace OpWeb.Contract
                         }
                     }
                 }
-                if (Marry.Equals("已婚")&& documentType.Equals("Contract_Mortgage"))
+                if (Marry.Equals("已婚") && documentType.Equals("Contract_Mortgage"))
                 {
                     htmls = GetMarryExchange(ht, htmls);
                     htmls = GetMarryFingerExchange(UID, htmls);
                 }
+                else
+                {
+                    htmls = GetUnmarriedExchange(ht, htmls);
+                    htmls = GetUnmarriedFingerExchange(UID, htmls);
+                }
+
+                //值输出，替换身份证，及其它拍照图片
+                htmls = GetSingleExchange(ht,htmls);
             }
             return htmls;
         }
@@ -305,7 +316,7 @@ namespace OpWeb.Contract
 
         public static string GetFingerExchange(string UID, string HtmlContent)
         {
-           // string result = string.Empty;
+            // string result = string.Empty;
             //  MortageFRegex--{MortageF:F_M_S_3}-{MortageF:F2_M_S_3}F2--Size
 
             MatchCollection FMatchColl = MortageFRegex.Matches(HtmlContent);
@@ -318,7 +329,7 @@ namespace OpWeb.Contract
                     string PictureType = PictureCode.Substring(0, 1);
                     string PictureSize = PictureType;
 
-                    string ImageData = GetFinger(UID,PictureType,PictureCode,PictureSize);
+                    string ImageData = GetFinger(UID, PictureType, PictureCode, PictureSize);
 
                     HtmlContent = HtmlContent.Replace(ContentDeal, ImageData);
                 }
@@ -387,6 +398,25 @@ namespace OpWeb.Contract
 
             return htmls;
         }
+        //单身
+        public static string GetUnmarriedExchange(Hashtable hm, string htmls)
+        {
+            MatchCollection MarryMatchColl = MortageUNMRegex.Matches(htmls);
+            if (MarryMatchColl.Count > 0)
+            {
+                foreach (Match matchItem in MarryMatchColl)
+                {
+                    string ContentDeal = matchItem.Value.Trim();
+                    string FieldDeal = ContentDeal.Replace("{MortageUNM:", "").Replace("}", "");
+                    if (hm.Contains(FieldDeal.ToUpper()))
+                    {
+                        htmls = htmls.Replace(ContentDeal, "<span style=\"font-family: 'xinwei','华文新魏'\">" + hm[FieldDeal.ToUpper()].ToString() + "</span>");
+                    }
+                }
+            }
+
+            return htmls;
+        }
 
         public static string GetMarryFingerExchange(string UID, string HtmlContent)
         {
@@ -408,6 +438,48 @@ namespace OpWeb.Contract
                 }
             }
             return HtmlContent;
+        }
+        //单身
+        public static string GetUnmarriedFingerExchange(string UID, string HtmlContent)
+        {
+            //  MortageMFRegex--{MortageMF:F_M_S_3}-{MortageMF:F2_M_S_3}F2--Size
+
+            MatchCollection MFMatchColl = MortageUNMFRegex.Matches(HtmlContent);
+            if (MFMatchColl.Count > 0)
+            {
+                foreach (Match matchItem in MFMatchColl)
+                {
+                    string ContentDeal = matchItem.Value.Trim();
+                    string PictureCode = ContentDeal.Replace("{MortageUNMF:", "").Replace("}", "");
+                    string PictureType = PictureCode.Substring(0, 1);
+                    string PictureSize = PictureType;
+
+                    string ImageData = GetFinger(UID, PictureType, PictureCode, PictureSize);
+
+                    HtmlContent = HtmlContent.Replace(ContentDeal, ImageData);
+                }
+            }
+            return HtmlContent;
+        }
+
+        //值输出
+        public static string GetSingleExchange(Hashtable hm, string htmls)
+        {
+            MatchCollection MarryMatchColl = MortageSRegex.Matches(htmls);
+            if (MarryMatchColl.Count > 0)
+            {
+                foreach (Match matchItem in MarryMatchColl)
+                {
+                    string ContentDeal = matchItem.Value.Trim();
+                    string FieldDeal = ContentDeal.Replace("{MortageS:", "").Replace("}", "");
+                    if (hm.Contains(FieldDeal.ToUpper()))
+                    {
+                        htmls = htmls.Replace(ContentDeal, hm[FieldDeal.ToUpper()].ToString());
+                    }
+                }
+            }
+
+            return htmls;
         }
 
     }

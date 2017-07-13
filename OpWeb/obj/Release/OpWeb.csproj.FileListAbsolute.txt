@@ -17,3 +17,7 @@ D:\信用社\SBAS_OP\OpWeb\bin\DataBase.pdb
 D:\信用社\SBAS_OP\OpWeb\obj\Release\OpWeb.csprojResolveAssemblyReference.cache
 D:\信用社\SBAS_OP\OpWeb\obj\Release\OpWeb.dll
 D:\信用社\SBAS_OP\OpWeb\obj\Release\OpWeb.pdb
+D:\信用社\SBAS_OP\OpWeb\bin\License.dat
+D:\信用社\SBAS_OP\OpWeb\bin\License.lic
+D:\信用社\SBAS_OP\OpWeb\bin\FluentData.dll
+D:\信用社\SBAS_OP\OpWeb\bin\YesHJ.Rest.dll

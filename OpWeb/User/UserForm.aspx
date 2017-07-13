@@ -52,9 +52,7 @@
         var HeadSrc = show.GetTempFileName(".bmp");
         show.GetIdCardImage(HeadSrc, 1);
         
-        //show.DeleteFile(name);
-        
-        
+        show.DeleteFile(name);
         //[in] 整数，表示结果信息代号。目前支持的值为1~15，其中
         //1	表示姓名，	
         //2表示性别，
@@ -93,8 +91,6 @@
        // $("#Card_Head").attr({ 'src': name });
         //document.getElementById("Card_Head").src = name;
         //alert(getBase64(name));
-      
-     
       
 </script>
     
@@ -176,7 +172,7 @@
                         <tr>
                             <td>&nbsp;</td>
                             <td colspan="3">&nbsp;</td>
-                            <td><input id="H" name="H" class="form-control" type="text" runat="server" /></td>
+                            <td></td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>

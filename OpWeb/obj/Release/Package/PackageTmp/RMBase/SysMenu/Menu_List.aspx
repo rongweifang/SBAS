@@ -35,6 +35,10 @@
                 initialState: "expanded" //collapsed 收缩 expanded展开的
             });
         }
+        function refresh() {
+            location.reload();
+        }
+
         //新增
         function add() {
             var url = "/RMBase/SysMenu/Menu_Form.aspx?ParentId=" + Menu_Id;

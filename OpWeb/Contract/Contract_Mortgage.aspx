@@ -16,6 +16,12 @@
     <link href="/css/plugins/iCheck/custom.css" rel="stylesheet" />
     <link href="/css/animate.css" rel="stylesheet" />
     <link href="/css/style.css?v=4.1.0" rel="stylesheet" />
+
+    <script src="/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
+
+    <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
+
     <script type="text/javascript">
         //回车键
         document.onkeydown = function (e) {
@@ -81,6 +87,24 @@
                 top.openDialog(url, 'User_Warrantor', '保证人信息', 800, 630, 50, 50);
             }
         }
+
+        function submitaudit() {
+            var key = CheckboxValue();
+            if (IsEditdata(key)) {
+                var parm = 'action=SUBMIT&ContractId=' + key + '&ContractType=Contract_Mortgage';
+                getAjax('/frame/ApproveDispose.ashx', parm, function (rs) {
+                    if (rs == "TRUE") {
+
+                        layer.msg('提交成功！');
+                        return false;
+                    }
+                    else {
+                        layer.msg('提交失败，请重试！');
+                        return false;
+                    }
+                });
+            }
+        }
         //EditUSFinger
 
         function EditUFinger(UID, ClassID) {
@@ -125,7 +149,7 @@
                             <td style="width: 60px; text-align: center;">操作员</td>
                             <td style="width: 70px; text-align: center;">审批状态</td>
                             <td style="width: 70px; text-align: center;">合同状态</td>
-                            <td style="min-width:100px; overflow:hidden;">创建日期</td>
+                            <td style="min-width: 100px; overflow: hidden;">创建日期</td>
                         </tr>
                     </thead>
                     <tbody style="line-height: 35px;">
@@ -142,11 +166,11 @@
                                     <td style="width: 200px; text-align: center;"><%#Eval("M_Reply_Begin","{0:yyyy年M月d日}")%> 至 <%#Eval("M_Reply_End","{0:yyyy年M月d日}")%></td>
                                     <td style="width: 70px; text-align: center;">
                                         <a onclick="EditUFinger('<%#Eval("UID")%>',1)">
-                                        <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />
-                                            </a>
+                                            <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />
+                                        </a>
                                     </td>
                                     <td style="width: 60px; text-align: center;">
-                                       <a onclick="EditUFinger('<%#Eval("UID")%>',2)">
+                                        <a onclick="EditUFinger('<%#Eval("UID")%>',2)">
                                             <img src="../img/pen_128.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>
@@ -157,17 +181,17 @@
                                         <%#Eval("Approve_State")%>
                                     </td>
                                     <td style="width: 70px; text-align: center;"><%#Eval("State")%></td>
-                                    <td style="min-width:100px; overflow:hidden;"><%#Eval("CreateDate")%></td>
+                                    <td style="min-width: 100px; overflow: hidden;"><%#Eval("CreateDate")%></td>
                                 </tr>
                             </ItemTemplate>
                             <FooterTemplate>
                                 <% if (rp_Item != null)
-                                   {
-                                       if (rp_Item.Items.Count == 0)
-                                       {
-                                           Response.Write("<tr><td colspan='8' style='color:red;text-align:center'>没有找到您要的相关数据！</td></tr>");
-                                       }
-                                   } %>
+                                    {
+                                        if (rp_Item.Items.Count == 0)
+                                        {
+                                            Response.Write("<tr><td colspan='8' style='color:red;text-align:center'>没有找到您要的相关数据！</td></tr>");
+                                        }
+                                    } %>
                             </FooterTemplate>
                         </asp:Repeater>
                     </tbody>

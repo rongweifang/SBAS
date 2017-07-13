@@ -50,8 +50,10 @@ u{font-family:'华文新魏',xinwei;font-size:12pt;}
 }
 .MPage10 td { text-align:center;font-size: 10.5pt;line-height:180%;font-family:'宋体';margin:0;padding:0;
 }
-.MPage11 p{ text-align:left;font-size: 10.5pt;line-height:180%;font-family:'宋体';margin:0;padding:0;
-}
+.MPage11 p{ text-align:left;font-size: 10.5pt;line-height:180%;font-family:'宋体';margin:0;padding:0;width:100%; clear: both;display: inline-block;position:relative;}
+.MPage11 label{width:150px; float: left;text-align: justify;position:absolute;height: 100%;}
+.MPage11 u{width: 100%;padding-left: 150px; display: block;  text-decoration: none;}
+.MPage11 u span{ width: 100%; display: block; border-bottom: solid 1px #000000;text-decoration:none;}
 .MPage12 p{ text-align:left;font-size: 10.5pt;line-height:250%;font-family:'宋体';margin:0;padding:0;text-indent:21pt;
 }
 .MPage13 p{ text-align:left;font-size: 10.5pt;line-height:250%;font-family:'宋体';margin:0;padding:0;text-indent:21pt;
@@ -74,8 +76,16 @@ u{font-family:'华文新魏',xinwei;font-size:12pt;}
 }
 .MPage21 td { text-align:left;font-size: 10.5pt;line-height:180%;font-family:'宋体';margin:0;padding:0;
 }
-.MPage22 p{ text-align:left;font-size: 10.5pt;line-height:150%;font-family:'宋体';margin:0;padding:0;text-indent:21pt;
-}
+.MPage22 p{ text-align:left;font-size: 10.5pt;line-height:150%;font-family:'宋体';margin:0;padding:0;clear: both;position:relative;}
+.MPage22 label{width:200px; float: left;text-align: justify;position:absolute;height: 100%;}
+.MPage22 .labelB{width:100px;}
+.MPage22 u{width: 100%;padding-left: 200px; display: block;  text-decoration: none;}
+.MPage22 .UB{padding-left: 100px; }
+.MPage22 .UBW{width: 200px;float: left;}
+.MPage22 u span{ width: 100%; display: block; border-bottom: solid 1px #000000;text-decoration:none;}
+.MPage22 .TextArea{text-indent:21pt; }
+.MPage22 .TextArea u{width: auto;text-decoration:underline; border: none;display: inline;padding: 0;margin: 0;}
+.MPage22 .TextArea u span{width: auto;text-decoration:underline; border: none;display: inline;padding: 0;margin: 0;}
 .MPage23 td { text-align:left;font-size: 10.5pt;line-height:180%;font-family:'宋体';margin:0;padding:0;
 }
 .MPage24 p { text-align:left;font-size: 16pt;line-height:200%;font-family:'宋体';margin:0;padding:0;text-indent:32pt;
@@ -94,6 +104,8 @@ u{font-family:'华文新魏',xinwei;font-size:12pt;}
 }
 .MPage30 td{padding: 4px;text-align:center;font-family:'宋体';}
 .MPage31 p{ text-align:left;font-size: 14pt;line-height:200%;font-family:'宋体';margin:0;padding:0;text-indent:0;
+}
+.MPage32 img{ width: 290px;height: 180px;
 }
 .MPage33 p{ text-align:left;font-size: 10.5pt;line-height:170%;font-family:'宋体';margin:0;padding:0;text-indent:0;
 }

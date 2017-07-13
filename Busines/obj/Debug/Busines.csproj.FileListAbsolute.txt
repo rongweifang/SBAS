@@ -82,6 +82,7 @@ D:\信用社\SBAS_OP\Busines\bin\Debug\QRCode.dll
 D:\信用社\SBAS_OP\Busines\bin\Debug\QuickMark.dll
 D:\信用社\SBAS_OP\Busines\bin\Debug\ThoughtWorks.QRCode.dll
 D:\信用社\SBAS_OP\Busines\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\信用社\SBAS_OP\Busines\bin\Debug\FluentData.dll
 D:\信用社\SBAS_OP\Busines\bin\Debug\Interop.SQLDMO.dll
 D:\信用社\SBAS_OP\Busines\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
 D:\信用社\SBAS_OP\Busines\bin\Debug\Microsoft.Practices.ServiceLocation.dll

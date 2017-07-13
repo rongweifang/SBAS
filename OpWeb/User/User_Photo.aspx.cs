@@ -69,14 +69,21 @@ namespace OpWeb.User
                 ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('信息不完整！');</script>");
                 return;
             }
-            if (this.ViewState["ID01"].Equals(this.ID01.Value))
+            if (this.ViewState["ID01"]!=null)
             {
-                ht.Remove("ID01");
+                if (this.ViewState["ID01"].Equals(this.ID01.Value))
+                {
+                    ht.Remove("ID01");
+                }
             }
-            if (this.ViewState["ID02"].Equals(this.ID02.Value))
+            if (this.ViewState["ID02"]!=null)
             {
-                ht.Remove("ID02");
+                if (this.ViewState["ID02"].Equals(this.ID02.Value))
+                {
+                    ht.Remove("ID02");
+                }
             }
+            
             if (ht.Count > 0)
             {
                 if (!string.IsNullOrEmpty(this._key))

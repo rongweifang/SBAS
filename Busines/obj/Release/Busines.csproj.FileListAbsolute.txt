@@ -55,3 +55,4 @@ D:\信用社\SBAS_OP\Busines\bin\Release\QRCode.pdb
 D:\信用社\SBAS_OP\Busines\obj\Release\Busines.csprojResolveAssemblyReference.cache
 D:\信用社\SBAS_OP\Busines\obj\Release\Busines.dll
 D:\信用社\SBAS_OP\Busines\obj\Release\Busines.pdb
+D:\信用社\SBAS_OP\Busines\bin\Release\FluentData.dll

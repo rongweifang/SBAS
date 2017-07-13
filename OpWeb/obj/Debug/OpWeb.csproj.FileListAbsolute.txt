@@ -17,12 +17,16 @@ D:\信用社\SBAS\OpWeb\bin\DataBase.pdb
 D:\信用社\SBAS\OpWeb\obj\Debug\OpWeb.csprojResolveAssemblyReference.cache
 D:\信用社\SBAS\OpWeb\obj\Debug\OpWeb.dll
 D:\信用社\SBAS\OpWeb\obj\Debug\OpWeb.pdb
+D:\信用社\SBAS_OP\OpWeb\bin\License.dat
+D:\信用社\SBAS_OP\OpWeb\bin\License.lic
 D:\信用社\SBAS_OP\OpWeb\bin\OpWeb.dll.config
 D:\信用社\SBAS_OP\OpWeb\bin\OpWeb.dll
 D:\信用社\SBAS_OP\OpWeb\bin\OpWeb.pdb
 D:\信用社\SBAS_OP\OpWeb\bin\Busines.dll
 D:\信用社\SBAS_OP\OpWeb\bin\Common.dll
 D:\信用社\SBAS_OP\OpWeb\bin\DataBase.dll
+D:\信用社\SBAS_OP\OpWeb\bin\FluentData.dll
+D:\信用社\SBAS_OP\OpWeb\bin\YesHJ.Rest.dll
 D:\信用社\SBAS_OP\OpWeb\bin\ThoughtWorks.QRCode.dll
 D:\信用社\SBAS_OP\OpWeb\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
 D:\信用社\SBAS_OP\OpWeb\bin\Interop.SQLDMO.dll
@@ -33,6 +37,6 @@ D:\信用社\SBAS_OP\OpWeb\bin\Microsoft.Practices.Unity.Interception.dll
 D:\信用社\SBAS_OP\OpWeb\bin\Busines.pdb
 D:\信用社\SBAS_OP\OpWeb\bin\Common.pdb
 D:\信用社\SBAS_OP\OpWeb\bin\DataBase.pdb
+D:\信用社\SBAS_OP\OpWeb\obj\Debug\OpWeb.csprojResolveAssemblyReference.cache
 D:\信用社\SBAS_OP\OpWeb\obj\Debug\OpWeb.dll
 D:\信用社\SBAS_OP\OpWeb\obj\Debug\OpWeb.pdb
-D:\信用社\SBAS_OP\OpWeb\obj\Debug\OpWeb.csprojResolveAssemblyReference.cache
