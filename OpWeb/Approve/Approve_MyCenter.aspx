@@ -58,9 +58,8 @@
         function detail() {
             var key = CheckboxValue();
             if (IsEditdata(key)) {
-                var url = "/Contract/Contract_PrintView.aspx?CID=" + key ;
-                window.open(url);
-                //top.Urlhref(url, 'Contract_PrintView', '按揭合同-打印预览', 1000, 800, 50, 50);
+                var url = "/Approve/Approve_View.aspx?CID=" + key;
+                top.openDialog(url, 'Approve_View', '审批进度', 800, 400, 50, 50);
             }
         }
 

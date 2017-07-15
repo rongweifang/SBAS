@@ -35,11 +35,15 @@
                         <tr>
                             <td width="120">
                                 <label class="control-label">姓　　名：</label></td>
-                            <td width="250"></td>
+                            <td width="250">
+                                <asp:Label ID="LB_Name" runat="server" Text=""></asp:Label>
+                            </td>
                             <td width="120">
                                 <label class="control-label">身份证号：</label>
                             </td>
-                            <td>&nbsp;</td>
+                            <td>
+                                <asp:Label ID="LB_Card" runat="server" Text=""></asp:Label>
+                            </td>
                         </tr>
                         <tr>
                             <td colspan="4" style="height: 15px;"></td>
@@ -47,10 +51,14 @@
                         <tr>
                             <td>
                                 <label class="control-label">贷款金额：</label></td>
-                            <td></td>
+                            <td>
+                                <asp:Label ID="LB_Loan" runat="server" Text=""></asp:Label>
+                            </td>
                             <td>
                                 <label class="control-label">贷款期数：</label></td>
-                            <td>&nbsp;</td>
+                            <td>
+                                <asp:Label ID="LB_Months" runat="server" Text=""></asp:Label>
+                            </td>
                         </tr>
                         <tr>
                             <td colspan="4" style="height: 15px;"></td>

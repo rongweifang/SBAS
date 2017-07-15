@@ -15,7 +15,7 @@ using PDA_Service.DataBase.DataBase.SqlServer;
 
 namespace DataBase.Dal
 {
-    public class WorkFlowService:BaseDAL
+    public class WorkFlowService : BaseDAL
     {
         public string CreateWorkFlow(string contractId)
         {
@@ -52,9 +52,11 @@ namespace DataBase.Dal
         /// <param name="contractId">合同ID</param>
         /// <param name="contractAmount">合同金额</param>
         /// <returns></returns>
-        public string CreateWorkFlow(string contractId,string currentUserId,double contractAmount) {
+        public string CreateWorkFlow(string contractId, string currentUserId, double contractAmount)
+        {
             string retMsg = "true";
-            if (string.IsNullOrWhiteSpace(contractId) || contractAmount <= 0) {
+            if (string.IsNullOrWhiteSpace(contractId) || contractAmount <= 0)
+            {
                 retMsg = "合同不存在或合同金额错误";
                 return retMsg;
             }
@@ -80,23 +82,28 @@ namespace DataBase.Dal
                 WorkInfoId = workFlowInfo.ID
             };
 
-            using (var context = WDbContext()) {
+            using (var context = WDbContext())
+            {
                 context.Insert("WF_WorkFlow")
                     .Column("Id", workFlow.Id)
                     .Column("WorkInfoId", workFlow.WorkInfoId)
                     .Column("ContractId", workFlow.ContractId)
                     .Column("WFStatus", (int)WorkFlowStatus.Approving)
                     .Column("CurrentActivityId", workFlow.CurrentActivityId)
-                    .Column("NextActivityId",workFlow.NextActivityId)
-                    .Column("Requester",workFlow.Requester)
-                    .Column("Creater",workFlow.Creater)
-                    .Column("CreateTime",workFlow.CreateTime)
+                    .Column("NextActivityId", workFlow.NextActivityId)
+                    .Column("Requester", workFlow.Requester)
+                    .Column("Creater", workFlow.Creater)
+                    .Column("CreateTime", workFlow.CreateTime)
                     .Column("IsFinish", "0")
                     .Execute();
-               
+
             }
-            foreach (var itm in activities) {
-                AddProcess(itm, workFlow);
+            foreach (var itm in activities)
+            {
+                if (itm.Step == 1)
+                {
+                    AddProcess(itm, workFlow);
+                }
                 //if (itm.ApproveType != (int)ApproveType.Skip) {
                 //    break;
                 //}
@@ -120,62 +127,63 @@ namespace DataBase.Dal
             DateTime? operateTime = null;
             string remark = "";
             bool isFinish = false;
-            List<UserInfo> userList = new List<UserInfo>();
-            switch (activity.ApproveType)
-            {
-                case (int)ApproveType.Department:
-                    userList = GetUserByDepartId(activity.Department);
-                    break;
-                case (int)ApproveType.Group:
-                    userList = GetUserByGroupId(activity.GroupId);
-                    break;
-                case (int)ApproveType.Role:
-                    userList = GetUserByRole(activity.RoleId);
-                    break;
-                case (int)ApproveType.Skip:
-                    userList.Add(new UserInfo()
-                    {
-                        User_ID = workFlow.Requester
-                    });
-                    operate = (int)OperateEnum.Submit;
-                    operateTime = DateTime.Now;
-                    remark = "合同提交";
-                    isFinish = true;
-                    break;
-                case (int)ApproveType.Submitter:
-                    userList.Add(new UserInfo()
-                    {
-                        User_ID = workFlow.Requester
-                    });
-                    break;
-                default:
-                    break;
-            }
+           // List<UserInfo> userList = new List<UserInfo>();
+            //switch (activity.ApproveType)
+            //{
+            //    //case (int)ApproveType.Department:
+            //    //    userList = GetUserByDepartId(activity.Department);
+            //    //    break;
+            //    //case (int)ApproveType.Group:
+            //    //    userList = GetUserByGroupId(activity.GroupId);
+            //    //    break;
+            //    case (int)ApproveType.Role:
+            //        userList = GetUserByRole(activity.RoleId);
+            //        break;
+            //    //case (int)ApproveType.Skip:
+            //    //    userList.Add(new UserInfo()
+            //    //    {
+            //    //        User_ID = workFlow.Requester
+            //    //    });
+            //    //    operate = (int)OperateEnum.Submit;
+            //    //    operateTime = DateTime.Now;
+            //    //    remark = "合同提交";
+            //    //    isFinish = true;
+            //    //    break;
+            //    //case (int)ApproveType.Submitter:
+            //    //    userList.Add(new UserInfo()
+            //    //    {
+            //    //        User_ID = workFlow.Requester
+            //    //    });
+            //    //    break;
+            //    default:
+            //        break;
+            //}
+
             using (var context = WDbContext())
             {
-                foreach (var itm in userList)
-                {
+                //foreach (var itm in userList)
+                //{
                     execResult += context.Insert("WF_Process")
                         .Column("WorFlowId", workFlow.Id)
                         .Column("ActivityId", activity.Id)
                         .Column("Step", activity.Step)
-                        .Column("ApproverID", itm.User_ID)
+                        .Column("ApproverID", RequestSession.GetSessionUser().UserId.ToString())
                         .Column("Operate", operate)
                         .Column("operateTime", operateTime)
                         .Column("Remark", remark)
                         .Column("IsFinish", isFinish)
                         .Column("CreateTime", DateTime.Now)
                         .Execute();
-                }
+              //  }
+
                 //更新流程状态
                 context.Update("WF_WorkFlow")
                     .Column("CurrentActivityId", activity.Id)
                     .Where("Id", workFlow.Id)
                     .Execute();
             }
-            
-            return execResult;
 
+            return execResult;
         }
 
         /// <summary>
@@ -208,12 +216,15 @@ namespace DataBase.Dal
         /// </summary>
         /// <param name="groupId"></param>
         /// <returns></returns>
-        public List<UserInfo> GetUserByGroupId(string groupId) {
+        public List<UserInfo> GetUserByGroupId(string groupId)
+        {
             List<UserInfo> retList = new List<UserInfo>();
-            if (string.IsNullOrWhiteSpace(groupId)) {
+            if (string.IsNullOrWhiteSpace(groupId))
+            {
                 return retList;
             }
-            using (var context = WDbContext()) {
+            using (var context = WDbContext())
+            {
                 retList = context.Sql(@"select u.User_ID,u.User_Name,u.User_Code
                                     from Base_UserInfo u join Base_UserInfoUserGroup ug on u.User_ID=ug.User_ID
                                     join Base_UserGroup g on g.UserGroup_ID=ug.UserGroup_ID
@@ -229,7 +240,8 @@ namespace DataBase.Dal
         /// </summary>
         /// <param name="roleId">用户角色</param>
         /// <returns></returns>
-        public List<UserInfo> GetUserByRole(string roleId) {
+        public List<UserInfo> GetUserByRole(string roleId)
+        {
             List<UserInfo> retList = new List<UserInfo>();
             if (string.IsNullOrWhiteSpace(roleId))
             {
@@ -296,24 +308,29 @@ namespace DataBase.Dal
         /// </summary>
         /// <param name="flowInfoId"></param>
         /// <returns></returns>
-        public WF_WorkFlow  GetWorkFlow(string flowInfoId) {
+        public WF_WorkFlow GetWorkFlow(string flowInfoId)
+        {
             WF_WorkFlow retData = null;
-            if (string.IsNullOrEmpty(flowInfoId)) {
+            if (string.IsNullOrEmpty(flowInfoId))
+            {
                 return retData;
             }
-            using (var context = WDbContext()) {
+            using (var context = WDbContext())
+            {
                 retData = context.Sql(@"select id,WorkInfoId,ContractId,CurrentActivityId,NextActivityId,StatusDescrip,WFStatus,IsFinish,Requester,Creater,CreateTime
                             from WF_WorkFlow
                             where id=@id")
-                            .Parameter("id",flowInfoId)
+                            .Parameter("id", flowInfoId)
                             .QuerySingle<WF_WorkFlow>();
                 return retData;
             }
         }
 
-        public List<WF_Process> GetProcessByWorkFlowId(string flowId,int isFinish) {
+        public List<WF_Process> GetProcessByWorkFlowId(string flowId, int isFinish)
+        {
             List<WF_Process> retList = null;
-            if (string.IsNullOrWhiteSpace(flowId)) {
+            if (string.IsNullOrWhiteSpace(flowId))
+            {
                 return retList;
             }
             using (var context = WDbContext())
@@ -327,7 +344,7 @@ namespace DataBase.Dal
                 return retList;
             }
         }
-        
+
 
     }
 }

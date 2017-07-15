@@ -22,6 +22,42 @@ namespace OpWeb.Approve {
         protected global::System.Web.UI.HtmlControls.HtmlForm signupForm;
         
         /// <summary>
+        /// LB_Name 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LB_Name;
+        
+        /// <summary>
+        /// LB_Card 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LB_Card;
+        
+        /// <summary>
+        /// LB_Loan 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LB_Loan;
+        
+        /// <summary>
+        /// LB_Months 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LB_Months;
+        
+        /// <summary>
         /// Operat 控件。
         /// </summary>
         /// <remarks>

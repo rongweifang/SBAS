@@ -512,7 +512,7 @@
                 var Value = $("#M_Value").val();
                 var Loan = parseInt(Value - Pay);
                 $("#M_Loan").val(Value - Pay);
-                $("#M_Ratio").val((Pay * 100 / Value).toFixed(2));
+                $("#M_Ratio").val((Loan * 100 / Value).toFixed(2));
                 //$("#M_Loan_Cap").val(convertCurrency(Value-Pay));
                 //convertCurrency(Value-Pay);
                 $("#M_Loan_Cap").val(formatRMB(Loan));

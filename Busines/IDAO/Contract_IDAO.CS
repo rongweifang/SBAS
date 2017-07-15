@@ -15,5 +15,6 @@ namespace Busines.IDAO
         double GetLoan(string ContractID);
         DataTable GetApproveListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
         DataTable GetMyApproveListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
+        DataTable GetMyApproveList(StringBuilder SqlWhere);
     }
 }

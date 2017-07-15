@@ -61,5 +61,16 @@ SELECT @UID AS UID,ContractType,ClassID,FingerCode,FingerName,SignCode,Memo FROM
             return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "createdate", "DESC", pageIndex, pageSize, ref count);
         }
 
+        public DataTable GetMyApproveList(StringBuilder SqlWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            string UserId = RequestSession.GetSessionUser().UserId.ToString();
+            strSql.Append("SELECT *  ");
+            strSql.AppendFormat("FROM (SELECT VA.* FROM View_Approve VA , Base_UserRole BUR WHERE VA.RoleId=BUR.Roles_ID AND WFStatus=1 AND BUR.User_ID='{0}') U", UserId);
+            strSql.Append(SqlWhere);
+            return DataFactory.SqlDataBase().GetDataTableBySQL(strSql);
+
+        }
+
     }
 }

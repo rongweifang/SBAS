@@ -89,11 +89,128 @@
     <Content Include="Approve\Approve_OverForm.aspx" />
     <Content Include="Approve\Approve_Scrap.aspx" />
     <Content Include="Approve\Approve_ScrapForm.aspx" />
+    <Content Include="Approve\Approve_View.aspx" />
     <Content Include="Approve\WorkFlow_Manage.aspx" />
     <Content Include="Approve\WorkFlow_ManageForm.aspx" />
     <Content Include="Approve\WorkFlow_PointManage.aspx" />
     <Content Include="Approve\WorkFlow_PointManageForm.aspx" />
     <Content Include="Approve\WorkFlow_PointManageRoles.aspx" />
+    <Content Include="AppServer\AppContract.aspx" />
+    <Content Include="AppServer\AppCustomer.aspx" />
+    <Content Include="AppServer\AppProve.aspx" />
+    <Content Include="AppServer\css\animate-custom.css" />
+    <Content Include="AppServer\css\demo.css" />
+    <Content Include="AppServer\css\fonts\BebasNeue-webfont.svg" />
+    <Content Include="AppServer\css\fonts\Dharma Type Font License.txt" />
+    <Content Include="AppServer\css\fonts\fontomas-webfont.svg" />
+    <Content Include="AppServer\css\fonts\franchise-bold-webfont.svg" />
+    <Content Include="AppServer\css\style.css" />
+    <Content Include="AppServer\css\style2.css" />
+    <Content Include="AppServer\css\style3.css" />
+    <Content Include="AppServer\images\ajax-loader.gif" />
+    <Content Include="AppServer\images\bg.jpg" />
+    <Content Include="AppServer\images\bg_control_nav.png" />
+    <Content Include="AppServer\images\bullet.gif" />
+    <Content Include="AppServer\images\gallery\thumbs\1.jpg" />
+    <Content Include="AppServer\images\gallery\thumbs\2.jpg" />
+    <Content Include="AppServer\images\gallery\thumbs\3.jpg" />
+    <Content Include="AppServer\images\gallery\thumbs\4.jpg" />
+    <Content Include="AppServer\images\gallery\thumbs\5.jpg" />
+    <Content Include="AppServer\images\icons\icon_about.png" />
+    <Content Include="AppServer\images\icons\icon_blog.png" />
+    <Content Include="AppServer\images\icons\icon_clients.png" />
+    <Content Include="AppServer\images\icons\icon_contact.png" />
+    <Content Include="AppServer\images\icons\icon_photos.png" />
+    <Content Include="AppServer\images\icons\icon_portfolio.png" />
+    <Content Include="AppServer\images\icons\icon_services.png" />
+    <Content Include="AppServer\images\icons\icon_video.png" />
+    <Content Include="AppServer\images\icon_category.gif" />
+    <Content Include="AppServer\images\icon_comments.gif" />
+    <Content Include="AppServer\images\icon_date.gif" />
+    <Content Include="AppServer\images\nav.png" />
+    <Content Include="AppServer\images\nav_bg.png" />
+    <Content Include="AppServer\images\next.png" />
+    <Content Include="AppServer\images\pages_bg.jpg" />
+    <Content Include="AppServer\images\panel_1.jpg" />
+    <Content Include="AppServer\images\panel_2.jpg" />
+    <Content Include="AppServer\images\panel_start.jpg" />
+    <Content Include="AppServer\images\phone.png" />
+    <Content Include="AppServer\images\pic.jpg" />
+    <Content Include="AppServer\images\pic2.jpg" />
+    <Content Include="AppServer\images\pic3.jpg" />
+    <Content Include="AppServer\images\pic4.jpg" />
+    <Content Include="AppServer\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="AppServer\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="AppServer\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="AppServer\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="AppServer\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="AppServer\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="AppServer\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="AppServer\images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="AppServer\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="AppServer\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="AppServer\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="AppServer\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="AppServer\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="AppServer\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="AppServer\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="AppServer\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="AppServer\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="AppServer\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="AppServer\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="AppServer\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="AppServer\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="AppServer\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="AppServer\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="AppServer\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="AppServer\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="AppServer\images\prev.png" />
+    <Content Include="AppServer\images\quotes.png" />
+    <Content Include="AppServer\images\search.gif" />
+    <Content Include="AppServer\images\shadow.jpg" />
+    <Content Include="AppServer\images\social\digg.png" />
+    <Content Include="AppServer\images\social\facebook.png" />
+    <Content Include="AppServer\images\social\flickr.png" />
+    <Content Include="AppServer\images\social\google.png" />
+    <Content Include="AppServer\images\social\reddit.png" />
+    <Content Include="AppServer\images\social\rss.png" />
+    <Content Include="AppServer\images\social\twitter.png" />
+    <Content Include="AppServer\images\social\vimeo.png" />
+    <Content Include="AppServer\images\thumbs_nav_left.png" />
+    <Content Include="AppServer\images\thumbs_nav_right.png" />
+    <Content Include="AppServer\images\timg.png" />
+    <Content Include="AppServer\images\toggle.gif" />
+    <Content Include="AppServer\images\UserHead\01.png" />
+    <Content Include="AppServer\images\UserHead\010001.png" />
+    <Content Include="AppServer\images\UserHead\010002.png" />
+    <Content Include="AppServer\images\UserHead\010003.png" />
+    <Content Include="AppServer\images\UserHead\010004.png" />
+    <Content Include="AppServer\images\UserHead\010005.png" />
+    <Content Include="AppServer\images\UserHead\010006.png" />
+    <Content Include="AppServer\images\UserHead\010007.png" />
+    <Content Include="AppServer\images\UserHead\010008.png" />
+    <Content Include="AppServer\images\UserHead\010009.png" />
+    <Content Include="AppServer\images\UserHead\010010.png" />
+    <Content Include="AppServer\images\UserHead\010011.png" />
+    <Content Include="AppServer\images\UserHead\010012.png" />
+    <Content Include="AppServer\images\UserHead\010013.png" />
+    <Content Include="AppServer\images\UserHead\010014.png" />
+    <Content Include="AppServer\images\UserHead\010015.png" />
+    <Content Include="AppServer\images\w_logo.png" />
+    <Content Include="AppServer\js\effects.js" />
+    <Content Include="AppServer\js\gallery.js" />
+    <Content Include="AppServer\js\jquery.easing.1.3.js" />
+    <Content Include="AppServer\js\jquery.elastislide.js" />
+    <Content Include="AppServer\js\jquery.fitvids.js" />
+    <Content Include="AppServer\js\jquery.flexslider.js" />
+    <Content Include="AppServer\js\jquery.min.js" />
+    <Content Include="AppServer\js\jquery.prettyPhoto.js" />
+    <Content Include="AppServer\js\jquery.tabify.js" />
+    <Content Include="AppServer\js\jquery.tmpl.min.js" />
+    <Content Include="AppServer\Login.aspx" />
+    <Content Include="AppServer\Main.aspx" />
+    <Content Include="AppServer\MyCenter.aspx" />
+    <Content Include="AppServer\style.css" />
     <Content Include="App_Code\Config.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -3497,6 +3614,7 @@
     <Content Include="User\Message_SendList.aspx" />
     <Content Include="User\myflag.aspx" />
     <Content Include="User\ShowPictures.aspx" />
+    <Content Include="User\ShowUserDatas.aspx" />
     <Content Include="User\UserBlackList.aspx" />
     <Content Include="User\UserForm.aspx" />
     <Content Include="User\UserInfo.aspx" />
@@ -3505,6 +3623,7 @@
     <Content Include="User\User_Contract.aspx" />
     <Content Include="User\User_Datas.aspx" />
     <Content Include="User\User_DatasForm.aspx" />
+    <Content Include="User\User_DatasView.aspx" />
     <Content Include="User\User_Extra.aspx" />
     <Content Include="User\User_Finger.aspx" />
     <Content Include="User\User_Guardian.aspx" />
@@ -3583,6 +3702,13 @@
     <Compile Include="Approve\Approve_ScrapForm.aspx.designer.cs">
       <DependentUpon>Approve_ScrapForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Approve\Approve_View.aspx.cs">
+      <DependentUpon>Approve_View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\Approve_View.aspx.designer.cs">
+      <DependentUpon>Approve_View.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Approve\WorkFlow_Manage.aspx.cs">
       <DependentUpon>WorkFlow_Manage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3617,6 +3743,48 @@
     </Compile>
     <Compile Include="Approve\WorkFlow_PointManageRoles.aspx.designer.cs">
       <DependentUpon>WorkFlow_PointManageRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppServer\AppContract.aspx.cs">
+      <DependentUpon>AppContract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppServer\AppContract.aspx.designer.cs">
+      <DependentUpon>AppContract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppServer\AppCustomer.aspx.cs">
+      <DependentUpon>AppCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppServer\AppCustomer.aspx.designer.cs">
+      <DependentUpon>AppCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppServer\AppProve.aspx.cs">
+      <DependentUpon>AppProve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppServer\AppProve.aspx.designer.cs">
+      <DependentUpon>AppProve.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppServer\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppServer\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppServer\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppServer\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppServer\MyCenter.aspx.cs">
+      <DependentUpon>MyCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppServer\MyCenter.aspx.designer.cs">
+      <DependentUpon>MyCenter.aspx</DependentUpon>
     </Compile>
     <Compile Include="Company\Company_form.aspx.cs">
       <DependentUpon>Company_form.aspx</DependentUpon>
@@ -4212,6 +4380,13 @@
     <Compile Include="User\ShowPictures.aspx.designer.cs">
       <DependentUpon>ShowPictures.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User\ShowUserDatas.aspx.cs">
+      <DependentUpon>ShowUserDatas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ShowUserDatas.aspx.designer.cs">
+      <DependentUpon>ShowUserDatas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\UserBlackList.aspx.cs">
       <DependentUpon>UserBlackList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4267,6 +4442,13 @@
     </Compile>
     <Compile Include="User\User_DatasForm.aspx.designer.cs">
       <DependentUpon>User_DatasForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_DatasView.aspx.cs">
+      <DependentUpon>User_DatasView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_DatasView.aspx.designer.cs">
+      <DependentUpon>User_DatasView.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\User_Extra.aspx.cs">
       <DependentUpon>User_Extra.aspx</DependentUpon>
@@ -4410,6 +4592,15 @@
     <Content Include="fonts\huawenxinwei-webfont.eot" />
     <Content Include="fonts\STXINWEI.TTF" />
     <Content Include="Frame\ApproveDispose.ashx" />
+    <Content Include="AppServer\css\fonts\BebasNeue-webfont.eot" />
+    <Content Include="AppServer\css\fonts\BebasNeue-webfont.ttf" />
+    <Content Include="AppServer\css\fonts\BebasNeue-webfont.woff" />
+    <Content Include="AppServer\css\fonts\fontomas-webfont.eot" />
+    <Content Include="AppServer\css\fonts\fontomas-webfont.ttf" />
+    <Content Include="AppServer\css\fonts\fontomas-webfont.woff" />
+    <Content Include="AppServer\css\fonts\franchise-bold-webfont.eot" />
+    <Content Include="AppServer\css\fonts\franchise-bold-webfont.ttf" />
+    <Content Include="AppServer\css\fonts\franchise-bold-webfont.woff" />
     <None Include="Properties\PublishProfiles\M.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
