@@ -28,7 +28,6 @@ namespace OpWeb.AppServer
 
         private void DataBindGrid()
         {
-            int count = 0;
             StringBuilder SqlWhere = new StringBuilder();
             IList<SqlParam> IList_param = new List<SqlParam>();
             SqlWhere.Append(" WHERE WFStatus=1 ");
@@ -39,7 +38,7 @@ namespace OpWeb.AppServer
                 sb.Append(" <ul class=\"lists\">");
                 foreach (DataRow dr in dt.Rows)
                 {
-                    sb.AppendFormat("<li><a href=\"#\">{0}-[授信金额：{1}]-[分期数：{2}]</a></li>", dr["Card_Name"].ToString(), dr["M_Loan_Cap"].ToString(), dr["M_Loan_Months"].ToString());
+                    sb.AppendFormat("<li><a href=\"AppCustomer.aspx?UID={3}&documentType={4}\">{0}--[授信金额：{1}]--[分期数：{2}]</a></li>", dr["Card_Name"].ToString(), dr["M_Loan_Cap"].ToString(), dr["M_Loan_Months"].ToString(), dr["UID"].ToString(), dr["documentType"].ToString());
                 }
                 sb.Append("</ul>");
             }

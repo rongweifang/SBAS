@@ -36,7 +36,7 @@ namespace OpWeb.Approve
             IList<SqlParam> IList_param = new List<SqlParam>();
             SqlWhere.Append(" WHERE WFStatus=1 ");
 
-            DataTable dt = this.peridal.GetMyApproveListPage(SqlWhere, IList_param, this.PageControl1.PageIndex, this.PageControl1.PageSize, ref count);
+            DataTable dt = this.peridal.GetMyApproveOverListPage(SqlWhere, IList_param, this.PageControl1.PageIndex, this.PageControl1.PageSize, ref count);
             ControlBindHelper.BindRepeaterList(dt, this.rp_Item);
             this.PageControl1.RecordCount = Convert.ToInt32(count);
             this.PageControl1.PageChecking();

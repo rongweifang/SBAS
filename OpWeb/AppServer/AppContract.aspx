@@ -16,7 +16,7 @@
         var $ = jQuery.noConflict();
         $(function () {
             $('#tabsmenu').tabify();
-            $(".toggle_container").hide();
+           
             $(".trigger").click(function () {
                 $(this).toggleClass("active").next().slideToggle("slow");
                 return false;
@@ -46,22 +46,7 @@
                 <div class="toogle_wrap">
                     <div class="toggle_container">
                         <%=sb.ToString() %>
-                            <ul class="lists">
-                <li><a href="#">Consectetur adipisicing</a></li>
-                <li><a href="#">Sed do eiusmod incididunt</a></li>
-                <li><a href="#">Ut enim ad veniam</a></li>
-                <li><a href="#">Consectetur eiusmod</a></li>
-                <li><a href="#">Sed do incididunt</a></li>
-                                  <li><a href="#">Consectetur adipisicing</a></li>
-                <li><a href="#">Sed do eiusmod incididunt</a></li>
-                <li><a href="#">Ut enim ad veniam</a></li>
-                <li><a href="#">Consectetur eiusmod</a></li>
-                <li><a href="#">Sed do incididunt</a></li>  <li><a href="#">Consectetur adipisicing</a></li>
-                <li><a href="#">Sed do eiusmod incididunt</a></li>
-                <li><a href="#">Ut enim ad veniam</a></li>
-                <li><a href="#">Consectetur eiusmod</a></li>
-                <li><a href="#">Sed do incididunt</a></li>
-                </ul>
+                           
                     </div>
                 </div>
                 <div class="clear"></div>

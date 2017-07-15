@@ -207,10 +207,26 @@
     <Content Include="AppServer\js\jquery.prettyPhoto.js" />
     <Content Include="AppServer\js\jquery.tabify.js" />
     <Content Include="AppServer\js\jquery.tmpl.min.js" />
+    <Content Include="AppServer\js\jSignature.js" />
+    <Content Include="AppServer\js\plugins\jSignature.CompressorBase30.js" />
+    <Content Include="AppServer\js\plugins\jSignature.CompressorSVG.js" />
+    <Content Include="AppServer\js\plugins\jSignature.UndoButton.js" />
+    <Content Include="AppServer\js\plugins\signhere\jSignature.SignHere.js" />
+    <Content Include="AppServer\js\plugins\signhere\signhere.svg" />
+    <Content Include="AppServer\libs\flashcanvas.js" />
+    <Content Include="AppServer\libs\flashcanvas.min.js" />
+    <Content Include="AppServer\libs\flashcanvas.swf" />
+    <Content Include="AppServer\libs\jquery.js" />
+    <Content Include="AppServer\libs\jSignature.min.js" />
+    <Content Include="AppServer\libs\jSignature.min.noconflict.js" />
+    <Content Include="AppServer\libs\modernizr.js" />
+    <Content Include="AppServer\libs\qunit.css" />
+    <Content Include="AppServer\libs\qunit.js" />
     <Content Include="AppServer\Login.aspx" />
     <Content Include="AppServer\Main.aspx" />
     <Content Include="AppServer\MyCenter.aspx" />
     <Content Include="AppServer\style.css" />
+    <Content Include="AppServer\tests.js" />
     <Content Include="App_Code\Config.xml">
       <SubType>Designer</SubType>
     </Content>

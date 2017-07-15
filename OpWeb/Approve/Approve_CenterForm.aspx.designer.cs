@@ -13,15 +13,6 @@ namespace OpWeb.Approve {
     public partial class Approve_CenterForm {
         
         /// <summary>
-        /// signupForm 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm signupForm;
-        
-        /// <summary>
         /// LB_Name 控件。
         /// </summary>
         /// <remarks>
@@ -58,6 +49,15 @@ namespace OpWeb.Approve {
         protected global::System.Web.UI.WebControls.Label LB_Months;
         
         /// <summary>
+        /// signupForm 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm signupForm;
+        
+        /// <summary>
         /// Operat 控件。
         /// </summary>
         /// <remarks>
@@ -83,6 +83,15 @@ namespace OpWeb.Approve {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton RB2;
+        
+        /// <summary>
+        /// SignBase 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden SignBase;
         
         /// <summary>
         /// Save 控件。

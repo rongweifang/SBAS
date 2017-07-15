@@ -71,7 +71,7 @@
                     try {
                         xhr = new ActiveXObject("Msxml2.XMLHTTP");
                     } catch (e2) {
-                        alert("您的浏览器有问题！");
+                        layer.msg('您的浏览器有问题');
                     }
                 }
             }

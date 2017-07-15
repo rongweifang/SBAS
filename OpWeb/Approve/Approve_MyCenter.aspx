@@ -46,7 +46,7 @@
             var key = CheckboxValue();
             if (IsEditdata(key)) {
                 var url = "/Approve/Approve_CenterForm.aspx?CID=" + key ;
-                top.openDialog(url, 'Approve_CenterForm', '合同审批', 800,340, 50, 50);
+                top.openDialog(url, 'Approve_CenterForm', '合同审批', 800,560, 50, 50);
             }
         }
 
