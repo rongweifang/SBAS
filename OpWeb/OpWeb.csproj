@@ -97,13 +97,18 @@
     <Content Include="Approve\WorkFlow_PointManageRoles.aspx" />
     <Content Include="AppServer\AppContract.aspx" />
     <Content Include="AppServer\AppCustomer.aspx" />
+    <Content Include="AppServer\AppCustomerFile.aspx" />
+    <Content Include="AppServer\AppCustomerView.aspx" />
     <Content Include="AppServer\AppProve.aspx" />
     <Content Include="AppServer\css\animate-custom.css" />
+    <Content Include="AppServer\css\app.css" />
     <Content Include="AppServer\css\demo.css" />
     <Content Include="AppServer\css\fonts\BebasNeue-webfont.svg" />
     <Content Include="AppServer\css\fonts\Dharma Type Font License.txt" />
     <Content Include="AppServer\css\fonts\fontomas-webfont.svg" />
     <Content Include="AppServer\css\fonts\franchise-bold-webfont.svg" />
+    <Content Include="AppServer\css\jquery.mobile-1.3.2.css" />
+    <Content Include="AppServer\css\jquery.mobile.structure-1.3.2.css" />
     <Content Include="AppServer\css\style.css" />
     <Content Include="AppServer\css\style2.css" />
     <Content Include="AppServer\css\style3.css" />
@@ -197,13 +202,16 @@
     <Content Include="AppServer\images\UserHead\010014.png" />
     <Content Include="AppServer\images\UserHead\010015.png" />
     <Content Include="AppServer\images\w_logo.png" />
+    <Content Include="AppServer\js\app.js" />
     <Content Include="AppServer\js\effects.js" />
     <Content Include="AppServer\js\gallery.js" />
     <Content Include="AppServer\js\jquery.easing.1.3.js" />
     <Content Include="AppServer\js\jquery.elastislide.js" />
     <Content Include="AppServer\js\jquery.fitvids.js" />
     <Content Include="AppServer\js\jquery.flexslider.js" />
+    <Content Include="AppServer\js\jquery.js" />
     <Content Include="AppServer\js\jquery.min.js" />
+    <Content Include="AppServer\js\jquery.mobile-1.3.2.min.js" />
     <Content Include="AppServer\js\jquery.prettyPhoto.js" />
     <Content Include="AppServer\js\jquery.tabify.js" />
     <Content Include="AppServer\js\jquery.tmpl.min.js" />
@@ -239,7 +247,10 @@
     <Content Include="Company\Specialty_form.aspx" />
     <Content Include="Company\Specialty_index.aspx" />
     <Content Include="Company\Specialty_view.aspx" />
+    <Content Include="Company\Vendor_Form.aspx" />
+    <Content Include="Company\Vendor_List.aspx" />
     <Content Include="Contract\ApproveFlow.aspx" />
+    <Content Include="Contract\Contract_Examine.aspx" />
     <Content Include="Contract\Contract_Finger.aspx" />
     <Content Include="Contract\Contract_Finger_Temp.aspx" />
     <Content Include="Contract\Contract_Finger_TempForm.aspx" />
@@ -248,11 +259,22 @@
     <Content Include="Contract\Contract_Mortgage.aspx" />
     <Content Include="Contract\Contract_MortgageForm.aspx" />
     <Content Include="Contract\Contract_Mortgage_Finger.aspx" />
+    <Content Include="Contract\Contract_Print.aspx" />
+    <Content Include="Contract\Contract_PrintForm.aspx" />
+    <Content Include="Contract\Contract_PrintList.aspx" />
     <Content Include="Contract\Contract_PrintView.aspx" />
     <Content Include="Contract\Contract_PrintViewA3.aspx" />
+    <Content Include="Contract\Contract_SelectList.aspx" />
+    <Content Include="Contract\Contract_SelectListForm.aspx" />
+    <Content Include="Contract\Contract_SelectTemp.aspx" />
+    <Content Include="Contract\Contract_SelectTempForm.aspx" />
+    <Content Include="Contract\Contract_SelectTemp_Left.aspx" />
+    <Content Include="Contract\Contract_SelectTemp_Right.aspx" />
+    <Content Include="Contract\Contract_SelectTemp_RightForm.aspx" />
     <Content Include="Contract\Contract_Template.aspx" />
     <Content Include="Contract\Contract_TemplateForm.aspx" />
     <Content Include="Contract\Contract_Type.aspx" />
+    <Content Include="Contract\Contract_User.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap-rtl.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -406,6 +428,10 @@
     <Content Include="img\p_big2.jpg" />
     <Content Include="img\p_big3.jpg" />
     <Content Include="img\qr_code.png" />
+    <Content Include="img\Seal_Bank.png" />
+    <Content Include="img\Seal_Bank_Person.png" />
+    <Content Include="img\Seal_Vendor.png" />
+    <Content Include="img\Seal_Vendor_Person.png" />
     <Content Include="img\sonyericsson_camera.png" />
     <Content Include="img\sprite-skin-flat.png" />
     <Content Include="img\success.png" />
@@ -3774,6 +3800,20 @@
     <Compile Include="AppServer\AppCustomer.aspx.designer.cs">
       <DependentUpon>AppCustomer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AppServer\AppCustomerFile.aspx.cs">
+      <DependentUpon>AppCustomerFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppServer\AppCustomerFile.aspx.designer.cs">
+      <DependentUpon>AppCustomerFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppServer\AppCustomerView.aspx.cs">
+      <DependentUpon>AppCustomerView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppServer\AppCustomerView.aspx.designer.cs">
+      <DependentUpon>AppCustomerView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AppServer\AppProve.aspx.cs">
       <DependentUpon>AppProve.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3865,12 +3905,33 @@
     <Compile Include="Company\Specialty_view.aspx.designer.cs">
       <DependentUpon>Specialty_view.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Company\Vendor_Form.aspx.cs">
+      <DependentUpon>Vendor_Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\Vendor_Form.aspx.designer.cs">
+      <DependentUpon>Vendor_Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Vendor_List.aspx.cs">
+      <DependentUpon>Vendor_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\Vendor_List.aspx.designer.cs">
+      <DependentUpon>Vendor_List.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contract\ApproveFlow.aspx.cs">
       <DependentUpon>ApproveFlow.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Contract\ApproveFlow.aspx.designer.cs">
       <DependentUpon>ApproveFlow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_Examine.aspx.cs">
+      <DependentUpon>Contract_Examine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_Examine.aspx.designer.cs">
+      <DependentUpon>Contract_Examine.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contract\Contract_Finger.aspx.cs">
       <DependentUpon>Contract_Finger.aspx</DependentUpon>
@@ -3929,6 +3990,27 @@
     <Compile Include="Contract\Contract_Mortgage_Finger.aspx.designer.cs">
       <DependentUpon>Contract_Mortgage_Finger.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Contract\Contract_Print.aspx.cs">
+      <DependentUpon>Contract_Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_Print.aspx.designer.cs">
+      <DependentUpon>Contract_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_PrintForm.aspx.cs">
+      <DependentUpon>Contract_PrintForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_PrintForm.aspx.designer.cs">
+      <DependentUpon>Contract_PrintForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_PrintList.aspx.cs">
+      <DependentUpon>Contract_PrintList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_PrintList.aspx.designer.cs">
+      <DependentUpon>Contract_PrintList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contract\Contract_PrintView.aspx.cs">
       <DependentUpon>Contract_PrintView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3942,6 +4024,55 @@
     </Compile>
     <Compile Include="Contract\Contract_PrintViewA3.aspx.designer.cs">
       <DependentUpon>Contract_PrintViewA3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectList.aspx.cs">
+      <DependentUpon>Contract_SelectList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectList.aspx.designer.cs">
+      <DependentUpon>Contract_SelectList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectListForm.aspx.cs">
+      <DependentUpon>Contract_SelectListForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectListForm.aspx.designer.cs">
+      <DependentUpon>Contract_SelectListForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectTemp.aspx.cs">
+      <DependentUpon>Contract_SelectTemp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectTemp.aspx.designer.cs">
+      <DependentUpon>Contract_SelectTemp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectTempForm.aspx.cs">
+      <DependentUpon>Contract_SelectTempForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectTempForm.aspx.designer.cs">
+      <DependentUpon>Contract_SelectTempForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectTemp_Left.aspx.cs">
+      <DependentUpon>Contract_SelectTemp_Left.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectTemp_Left.aspx.designer.cs">
+      <DependentUpon>Contract_SelectTemp_Left.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectTemp_Right.aspx.cs">
+      <DependentUpon>Contract_SelectTemp_Right.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectTemp_Right.aspx.designer.cs">
+      <DependentUpon>Contract_SelectTemp_Right.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectTemp_RightForm.aspx.cs">
+      <DependentUpon>Contract_SelectTemp_RightForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_SelectTemp_RightForm.aspx.designer.cs">
+      <DependentUpon>Contract_SelectTemp_RightForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contract\Contract_Template.aspx.cs">
       <DependentUpon>Contract_Template.aspx</DependentUpon>
@@ -3963,6 +4094,13 @@
     </Compile>
     <Compile Include="Contract\Contract_Type.aspx.designer.cs">
       <DependentUpon>Contract_Type.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\Contract_User.aspx.cs">
+      <DependentUpon>Contract_User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\Contract_User.aspx.designer.cs">
+      <DependentUpon>Contract_User.aspx</DependentUpon>
     </Compile>
     <Compile Include="Error\ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>

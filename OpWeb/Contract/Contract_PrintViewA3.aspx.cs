@@ -32,7 +32,7 @@ namespace OpWeb.Contract
         private void InitData()
         {
 
-            PageContent = Contract_Manage.GetHtmlContent(UID, documentType, "A3");
+           // PageContent = Contract_Manage.GetHtmlContent(UID, documentType, "A3");
 
         }
 

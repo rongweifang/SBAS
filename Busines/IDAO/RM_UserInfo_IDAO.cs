@@ -28,6 +28,7 @@ namespace Busines.IDAO
         DataTable GetSysLoginLogPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
 
         DataTable GetLogin_Info(ref int count);
+        DataTable GetLogin10_Info(ref int count);
 
         DataTable Load_StaffOrganizeList();
 

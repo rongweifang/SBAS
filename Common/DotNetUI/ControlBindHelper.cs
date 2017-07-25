@@ -256,6 +256,15 @@ namespace Common.DotNetUI
                             HtmlTextArea area = (HtmlTextArea)control;
                             area.Value = val.ToString();
                         }
+                        if (control is HtmlInputRadioButton)
+                        {
+                            HtmlInputRadioButton radio = (HtmlInputRadioButton)control;
+                            if (radio.Checked)
+                            {
+                                ht[radio.Name] = radio.Value.Trim();
+                            }
+
+                        }
                     }
                 }
             }

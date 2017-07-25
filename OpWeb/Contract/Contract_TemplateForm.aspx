@@ -6,27 +6,27 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>合同模板管理</title>
-   
+
     <link href="/css/font-awesome.css?v=4.4.0" rel="stylesheet" />
     <link href="/css/animate.css" rel="stylesheet" />
     <link href="/css/plugins/summernote/summernote.css" rel="stylesheet" />
     <link href="/css/plugins/summernote/summernote-bs3.css" rel="stylesheet" />
     <link href="/Themes/Styles/Site.css" rel="stylesheet" type="text/css" />
-     <link href="/css/style.css?v=4.1.0" rel="stylesheet"/>
+    <link href="/css/style.css?v=4.1.0" rel="stylesheet" />
     <script src="/Themes/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/Validator/JValidator.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
 
     <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
-     <script src="/js/jquery.min.js?v=2.1.4"></script>
-     <script src="/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
 
 
 
     <!-- 自定义js -->
     <script src="/js/content.js?v=1.0.0"></script>
-  <!-- SUMMERNOTE -->
+    <!-- SUMMERNOTE -->
     <script src="/js/plugins/summernote/summernote.min.js"></script>
     <script src="/js/plugins/summernote/summernote-zh-CN.js"></script>
 
@@ -60,10 +60,12 @@
         })(jQuery);
 
     </script>
-   
-<style>
-	.note-editor{min-height: 450px;}
-	</style>
+
+    <style>
+        .note-editor {
+            min-height: 450px;
+        }
+    </style>
 
 
 
@@ -96,9 +98,9 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="ibox float-e-margins" style="height: 460px;">
-                                <input type="hidden" id="CTContent" runat="server" value=""/>
-                                <div class="ibox-content no-padding" id="Content" style="width:100%;height:100%; overflow:scroll;">
-                                    <div class="click2edit" >
+                                <input type="hidden" id="CTContent" runat="server" value="" />
+                                <div class="ibox-content no-padding" id="Content" style="width: 100%; height: 100%; overflow: scroll;">
+                                    <div class="click2edit">
                                     </div>
 
                                 </div>
@@ -117,7 +119,7 @@
         </div>
     </form>
 
-    
+
     <script>
         $(document).ready(function () {
 
@@ -126,7 +128,7 @@
             });
             $('.click2edit').code(unescape($('#CTContent').val()));
         });
-       
+
         var save = function () {
             $("#Content").removeClass("no-padding");
             var aHTML = escape($('.click2edit').code());

@@ -38,7 +38,7 @@ namespace OpWeb.Contract
         private void InitData()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("SELECT * FROM Contract_Finger WHERE [UID]='{0}' AND ClassID='{1}'",this.UID,this.ClassID);
+            sb.AppendFormat("SELECT * FROM Contract_Finger WHERE [UID]='{0}' AND ClassID IN ({1})",this.UID,this.ClassID);
             DataTable dt = DataFactory.SqlDataBase().GetDataTableBySQL(sb);
             if (DataTableHelper.IsExistRows(dt))
             {

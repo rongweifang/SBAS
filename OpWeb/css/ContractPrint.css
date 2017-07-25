@@ -20,3 +20,4 @@
 .PageBody{height:970px; overflow: hidden;position:relative;}
 .form-group {display:none;
 }
+#Seal_Bank_P36,#Seal_Bank_P35,#Seal_Bank_P23,#Seal_Bank_Person_P23,#Seal_Vendor_Person_P23{background-image: none; display: none;}

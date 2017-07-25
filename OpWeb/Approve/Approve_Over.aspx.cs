@@ -34,7 +34,7 @@ namespace OpWeb.Approve
             int count = 0;
             StringBuilder SqlWhere = new StringBuilder();
             IList<SqlParam> IList_param = new List<SqlParam>();
-            SqlWhere.Append(" WHERE WFStatus=1 ");
+            SqlWhere.Append(" WHERE WFStatus IN (1,6) ");
 
             DataTable dt = this.peridal.GetMyApproveOverListPage(SqlWhere, IList_param, this.PageControl1.PageIndex, this.PageControl1.PageSize, ref count);
             ControlBindHelper.BindRepeaterList(dt, this.rp_Item);

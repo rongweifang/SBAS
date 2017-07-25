@@ -18,11 +18,12 @@ namespace OpWeb.AppServer
 {
     public partial class AppCustomer : System.Web.UI.Page
     {
-        private string UID;
+        public string UID;
         public string PageContent = string.Empty;
         private string documentType;
         private string _key;
         private string CID;
+        public string Card_ID;
         public StringBuilder SM = new StringBuilder();
         private Contract_IDAO peridal = new Contract_Dal();
         protected void Page_Load(object sender, EventArgs e)
@@ -40,11 +41,6 @@ namespace OpWeb.AppServer
                 InitInfo();
 
             }
-
-            if (!base.IsPostBack)
-            {
-               
-            }
         }
         private void InitInfo()
         {
@@ -52,15 +48,18 @@ namespace OpWeb.AppServer
             if (ht.Count > 0 && ht != null)
             {
                 this.CID = ht["ID"].ToString();
+                this.Card_ID = ht["CARD_ID"].ToString();
                 this.InitData(ht["UID"].ToString(), ht["DOCUMENTTYPE"].ToString());
                 InitDataPicture(ht["CARD_ID"].ToString());
+                
             }
 
 
         }
-        private void InitData(string UID,string documentType)
+        private void InitData(string UID, string documentType)
         {
-            PageContent = Contract_Manage.GetHtmlContent(UID, documentType);
+            //PageContent = Contract_Manage.GetHtmlContent(UID, documentType);
+
 
         }
 
@@ -104,7 +103,7 @@ namespace OpWeb.AppServer
             string Sign = this.SignBase.Value.Trim();
             Sign = Sign.Split(',')[1];
 
-            bool result= peridal.InsertProcess(this.CID, true, Operat.Value.Trim(), Sign);
+            bool result = peridal.InsertProcess(this.CID, true, Operat.Value.Trim(), Sign);
             if (result)
             {
                 ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('保存成功！');</script>");

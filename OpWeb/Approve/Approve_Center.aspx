@@ -17,11 +17,6 @@
     <link href="/css/animate.css" rel="stylesheet" />
     <link href="/css/style.css?v=4.1.0" rel="stylesheet" />
 
-    <script src="/js/jquery.min.js?v=2.1.4"></script>
-    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
-
-    <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
-
     <script type="text/javascript">
         //回车键
         document.onkeydown = function (e) {
@@ -40,19 +35,14 @@
             location.reload();
         }
 
-        //审批通过
-
-
-        //审批不通过
-
-        //查看进度
-
         //查看详细
         function detail() {
             var key = CheckboxValue();
             if (IsEditdata(key)) {
                 var url = "/Contract/Contract_PrintView.aspx?UID=" + key + "&documentType=Contract_Mortgage";
-                window.open(url);
+
+                top.openDialog(url, 'Contract_PrintView', '打印预览', 710, 800, 50, 50);
+               // window.open(url);
                 //top.Urlhref(url, 'Contract_PrintView', '按揭合同-打印预览', 1000, 800, 50, 50);
             }
         }
@@ -82,7 +72,7 @@
                 </div>
             </div>
             <div class="div-body">
-                <table id="table1" class="grid" singleselect="false">
+                <table id="table1" class="grid" singleselect="true">
                     <thead>
                         <tr>
                             <td style="width: 20px; text-align: left;">
@@ -96,7 +86,8 @@
                             <td style="width: 120px; text-align: center;">待审批人</td>
                             <td style="width: 70px; text-align: center;">审批状态</td>
                             <td style="width: 70px; text-align: center;">合同状态</td>
-                            <td>创建日期</td>
+                            <td style="width: 120px;">创建日期</td>
+                            <td>&nbsp;</td>
                         </tr>
                     </thead>
                     <tbody style="line-height: 35px;">
@@ -104,7 +95,7 @@
                             <ItemTemplate>
                                 <tr>
                                     <td style="width: 20px; text-align: left;">
-                                        <input type="checkbox" value="<%#Eval("id")%>" name="checkbox" />
+                                        <input id="AID" type="checkbox" value="<%#Eval("id")%>" name="checkbox" />
                                     </td>
                                     <td style="width: 80px; text-align: center;"><%#Eval("Card_Name")%></td>
                                     <td style="width: 140px; text-align: center;"><%#Eval("Card_ID")%></td>
@@ -114,7 +105,8 @@
                                     <td style="width: 120px; text-align: center;"><%#Eval("Roles_Name")%></td>
                                     <td style="width: 70px; text-align: center;"><%#Eval("WFStatusName")%></td>
                                     <td style="width: 70px; text-align: center;"><%#Eval("StateName")%></td>
-                                    <td><%#Eval("CreateDate")%></td>
+                                    <td style="width: 120px;"><%#Eval("CreateDate")%></td>
+                                    <td>&nbsp;</td>
                                 </tr>
                             </ItemTemplate>
                             <FooterTemplate>

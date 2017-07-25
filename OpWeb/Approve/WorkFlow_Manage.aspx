@@ -204,7 +204,7 @@
                 </div>
             </div>
             <div class="div-body">
-                <table id="table1" class="grid" singleselect="false">
+                <table id="table1" class="grid" singleselect="true">
                     <thead>
                         <tr>
                             <td style="width: 20px; text-align: left;">

@@ -22,14 +22,14 @@ namespace OpWeb.Company
             this.PageControl1.pageHandler += new EventHandler(this.pager_PageChanged);
             if (!base.IsPostBack)
             {
-                this.BindSelect();
+             //   this.BindSelect();
             }
         }
-        private void BindSelect()
-        {
-            DataTable dt = DataFactory.SqlDataBase().GetDataTable("NewsType");
-            ControlBindHelper.BindHtmlSelect(dt, this.newsTypeID, "newsTypeName", "newsTypeID", "选择分类");
-        }
+        //private void BindSelect()
+        //{
+        //    DataTable dt = DataFactory.SqlDataBase().GetDataTable("NewsType");
+        //    ControlBindHelper.BindHtmlSelect(dt, this.newsTypeID, "newsTypeName", "newsTypeID", "选择分类");
+        //}
         protected void pager_PageChanged(object sender, EventArgs e)
         {
             this.DataBindGrid();
@@ -40,10 +40,10 @@ namespace OpWeb.Company
             StringBuilder SqlWhere = new StringBuilder();
             IList<SqlParam> IList_param = new List<SqlParam>();
 
-            if (!string.IsNullOrEmpty(this.newsTypeID.Value))
-            {
-                SqlWhere.AppendFormat(" AND newsTypeID='{0}' ", this.newsTypeID.Value);
-            }
+            //if (!string.IsNullOrEmpty(this.newsTypeID.Value))
+            //{
+            //    SqlWhere.AppendFormat(" AND newsTypeID='{0}' ", this.newsTypeID.Value);
+            //}
 
             if (!string.IsNullOrEmpty(this.txt_Search.Value))
             {

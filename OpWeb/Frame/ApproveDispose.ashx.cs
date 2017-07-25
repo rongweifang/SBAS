@@ -1,4 +1,6 @@
-﻿using Common.DotNetBean;
+﻿using Busines.DAL;
+using Busines.IDAO;
+using Common.DotNetBean;
 using DataBase;
 using System;
 using System.Collections.Generic;
@@ -28,6 +30,9 @@ namespace OpWeb.Frame
             string WorkInfoId = context.Request["WorkInfoId"];
             string ContractId = context.Request["ContractId"];
             string ContractType = context.Request["ContractType"];
+            string HUID = context.Request["HUID"];
+
+            Contract_IDAO cidal = new Contract_Dal();
 
             if (RequestSession.GetSessionUser() == null)
             {
@@ -39,13 +44,32 @@ namespace OpWeb.Frame
                 string ACT = Action.ToUpper();
                 if (ACT == "SUBMIT")
                 {
-                    WorkFlowService flowService = new WorkFlowService();
-                    context.Response.Write(flowService.CreateWorkFlow(ContractId).ToUpper());
-                    context.Response.End();
-                }
-                else if (ACT == "APPROVE")
-                {
-
+                    //WorkFlowService flowService = new WorkFlowService();
+                    //context.Response.Write(flowService.CreateWorkFlow(ContractId).ToUpper());
+                    //context.Response.End();
+                    //判断是否已经存在审批记录
+                  
+                    string UID = cidal.GetUIDbyHUID(HUID);
+                    bool isexist = cidal.IsExistApprove(UID);
+                    if (isexist)
+                    {
+                        context.Response.Write("EXIST");
+                        context.Response.End();
+                    }
+                    else
+                    {
+                    if (!string.IsNullOrEmpty(UID))
+                    {
+                        WorkFlowService flowService = new WorkFlowService();
+                        context.Response.Write(flowService.CreateWorkFlow(UID).ToUpper());
+                        context.Response.End();
+                    }
+                    else
+                    {
+                        context.Response.Write("false");
+                        context.Response.End();
+                    }
+                    }
                 }
             }
             else

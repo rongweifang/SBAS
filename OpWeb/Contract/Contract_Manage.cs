@@ -26,12 +26,15 @@ namespace OpWeb.Contract
         private static Regex MortageMFRegex = new Regex(@"{MortageMF:+[\w]+}");//婚姻状况声明指纹
         private static Regex MortageUNMFRegex = new Regex(@"{MortageUNMF:+[\w]+}");//单身声明指纹
         private static Regex MortageSRegex = new Regex(@"{MortageS:+[\w]+}");//值输出
+        private static Regex MortageReportRegex = new Regex(@"{MortageR:+[\w]+}");//复选框输出
+        private static Regex MortageLeaderRegex = new Regex(@"{MortageL:+[\w]+}");//领导签名
 
         private static string Card_ID = string.Empty;
         private static string Marry = string.Empty;
 
         private static Hashtable hu = new Hashtable();//用户基本信息
 
+        //生成文件
         public static void CreateMortgageFile(string UID, string documentType)
         {
             Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("Document_Template", "documentType", documentType);
@@ -150,7 +153,7 @@ namespace OpWeb.Contract
             }
 
         }
-
+        //获取图片大小
         private static void GetSize(string MName, out int _width, out int _height)
         {
             int w = 0;
@@ -190,24 +193,29 @@ namespace OpWeb.Contract
 
         public static string GetHtmlContent(string UID, string documentType, string PrintType)
         {
+            return GetHtmlContent(UID, documentType, PrintType, true);
+        }
+
+        public static string GetHtmlContent(string UID, string documentType, string PrintType, bool ClearMark)
+        {
 
             StringBuilder sb = new StringBuilder();
-            int PageNuam = 0;
+            int PageNum = 0;
 
             string sTable = string.Format("SELECT CTContent,CTPage FROM Contract_Template WHERE ContractType='{0}' ", documentType);
             string sqlwhere = string.Empty;
             if (PrintType.ToUpper().Equals("A3"))
             {
-                StringBuilder sbsql = new StringBuilder();
-                sbsql.AppendFormat("SELECT COUNT(1) FROM Contract_Template WHERE ContractType='{0}'", documentType);
-                PageNuam = int.Parse(DataFactory.SqlDataBase().GetDataTableBySQL(sbsql).Rows[0][0].ToString());
-
-                if (PageNuam > 0)
+                //StringBuilder sbsql = new StringBuilder();
+                //sbsql.AppendFormat("SELECT COUNT(1) FROM Contract_Template WHERE ContractType='{0}'", documentType);
+                //PageNum = int.Parse(DataFactory.SqlDataBase().GetDataTableBySQL(sbsql).Rows[0][0].ToString());
+                PageNum = GetPageNum(documentType);
+                if (PageNum > 0)
                 {
                     StringBuilder pglist = new StringBuilder();
-                    for (int i = 0; i < PageNuam / 4; i++)
+                    for (int i = 0; i < PageNum / 4; i++)
                     {
-                        pglist.AppendFormat("{0},{1},{2},{3},", PageNuam - 2 * i, 1 + 2 * i, 1 + 2 * i + 1, PageNuam - 2 * i - 1);
+                        pglist.AppendFormat("{0},{1},{2},{3},", PageNum - 2 * i, 1 + 2 * i, 1 + 2 * i + 1, PageNum - 2 * i - 1);
                     }
 
                     sqlwhere = string.Format(" AND CTPage IN ({0}) ORDER BY CHARINDEX(',' + CONVERT(VARCHAR, CTPage) + ',' , '{1}') ", pglist.ToString().TrimEnd(','), pglist.ToString().Trim());
@@ -237,15 +245,108 @@ namespace OpWeb.Contract
                     }
                 }
             }
-
-            string ResultCotent = GetHtmlExchange(UID, sb.ToString(), documentType);//替换基本信息
+            //替换基本信息
+            string ResultCotent = GetHtmlExchange(UID, sb.ToString(), documentType);
             //替换指纹签名
             ResultCotent = GetFingerExchange(UID, ResultCotent);
-           
-            ResultCotent = ClearHtmlExchange(ResultCotent);//清除标记
+            //替换审查报告
+            ResultCotent = GetLeaderExchange(UID, ResultCotent);
+            //替换领导签名
+            ResultCotent = GetReportExchange(UID, ResultCotent);
+            if (ClearMark)
+            {
+                ResultCotent = ClearHtmlExchange(ResultCotent);//清除标记
+            }
             return ResultCotent;
         }
 
+        public static int GetPageNum(string documentType)
+        {
+            StringBuilder sbsql = new StringBuilder();
+            sbsql.AppendFormat("SELECT COUNT(1) FROM Contract_Template WHERE ContractType='{0}'", documentType);
+            return int.Parse(DataFactory.SqlDataBase().GetDataTableBySQL(sbsql).Rows[0][0].ToString());
+        }
+
+        //替换领导签名
+        //{MortageL:}
+        public static string GetLeaderExchange(string UID, string HtmlContent)
+        {
+            StringBuilder strsql = new StringBuilder();
+
+            // strsql.AppendFormat("SELECT ContractId AS UID,BU.User_Code,SignBase,Step FROM WF_Process WP,WF_WorkFlow WWF,Base_UserInfo BU WHERE WP.WorFlowId=WWF.Id AND WP.ApproverID=BU.User_ID AND ContractId='{0}' order by wp.CreateTime desc", UID);
+            strsql.AppendFormat("SELECT UID,User_Code,SignBase,Step,OperateTime FROM View_Process WHERE UID='{0}' order by OperateTime desc", UID);
+
+            DataTable dt = DataFactory.SqlDataBase().GetDataTableBySQL(strsql);
+            if (DataTableHelper.IsExistRows(dt))
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    MatchCollection FMatchColl = MortageLeaderRegex.Matches(HtmlContent);
+                    if (FMatchColl.Count > 0)
+                    {
+                        foreach (Match matchItem in FMatchColl)
+                        {
+                            string ContentDeal = matchItem.Value.Trim();
+                            string FieldDeal = ContentDeal.Replace("{MortageL:", "").Replace("}", "");
+
+                            if (dr["User_Code"].ToString().Equals(FieldDeal))
+                            {
+                                string result = string.Format("<span style=\"display: inline\"><img src=\"data:image/png;base64,{0}\"  width=\"{1}\" height=\"{2}\" /></span>", dr["SignBase"].ToString(), 120, 40);
+
+                                HtmlContent = HtmlContent.Replace(ContentDeal, result);
+                            }
+                        }
+                    }
+                }
+            }
+            return HtmlContent;
+        }
+
+
+        //替换审批报告
+        public static string GetReportExchange(string UID, string HtmlContent)
+        {
+            StringBuilder strsql = new StringBuilder();
+
+            strsql.AppendFormat("SELECT SL_Code,SL_Desc,SL_SubTitle,SL_Sub_Order,SL_Checked,SL_IsBreak,SL_Width,SL_MarginLeft,Checked FROM View_ContractSelect WHERE UID='{0}' ", UID);
+            DataTable dt = DataFactory.SqlDataBase().GetDataTableBySQL(strsql);
+            if (DataTableHelper.IsExistRows(dt))
+            {
+                DataView dv = new DataView(dt);
+
+
+                MatchCollection FMatchColl = MortageReportRegex.Matches(HtmlContent);
+                if (FMatchColl.Count > 0)
+                {
+                    foreach (Match matchItem in FMatchColl)
+                    {
+                        string ContentDeal = matchItem.Value.Trim();
+                        string Code = ContentDeal.Replace("{MortageR:", "").Replace("}", "");
+
+                        dv.RowFilter = "SL_Code like '%" + Code + "%'";
+                        dv.Sort = "SL_Sub_Order ASC";
+                        StringBuilder sb = new StringBuilder();
+                        foreach (DataRow dr in dv.ToTable().Rows)
+                        {
+                            sb.AppendFormat("<span style=\"padding-left:{0};display:{1};width:{2}\">{3} {4}</span>", dr["SL_MarginLeft"].ToString(), dr["SL_IsBreak"].ToString().Equals("True") ? "block" : "inline", dr["SL_Width"].ToString(), dr["Checked"].ToString().Equals("True") ? "■" : dr["Checked"].ToString().Equals("False") ? "□" : dr["SL_Checked"].ToString().Equals("True") ? "■" : "□", dr["SL_SubTitle"].ToString());
+                        }
+
+                        HtmlContent = HtmlContent.Replace(ContentDeal, sb.ToString());
+                        //SL_CODE:CM_P7_001---{MortageR:CM_P7_001}
+
+
+
+                        // HtmlContent = HtmlContent.Replace(ContentDeal, ImageData);
+                    }
+                }
+            }
+
+            //  sb.AppendFormat("<div style=\"padding-left:{5};display:{6};width:{7}\"><label><input type =\"checkbox\" name=\"{0}\" value=\"{1}\" id=\"{2}\" {3} runat=\"server\" />{4}</label></div>", dr["SL_PageID"].ToString(), 1, dr["SL_PageID"].ToString(), dr["Checked"].ToString().Equals("True") ? "checked=\"checked\"" : dr["Checked"].ToString().Equals("False") ? "" : dr["SL_Checked"].ToString().Equals("True") ? "checked=\"checked\"" : "", dr["SL_SubTitle"].ToString(), dr["SL_MarginLeft"].ToString(), dr["SL_IsBreak"].ToString().Equals("True")?"block":"inline", dr["SL_Width"].ToString());
+
+
+
+            return HtmlContent;
+        }
 
         public static string GetHtmlExchange(string UID, string HtmlContent, string documentType)
         {
@@ -281,7 +382,7 @@ namespace OpWeb.Contract
                 }
 
                 //值输出，替换身份证，及其它拍照图片
-                htmls = GetSingleExchange(ht,htmls);
+                htmls = GetSingleExchange(ht, htmls);
             }
             return htmls;
         }

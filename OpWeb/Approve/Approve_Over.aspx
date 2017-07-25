@@ -17,11 +17,6 @@
     <link href="/css/animate.css" rel="stylesheet" />
     <link href="/css/style.css?v=4.1.0" rel="stylesheet" />
 
-    <script src="/js/jquery.min.js?v=2.1.4"></script>
-    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
-
-    <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
-
     <script type="text/javascript">
         //回车键
         document.onkeydown = function (e) {
@@ -82,7 +77,7 @@
                 </div>
             </div>
             <div class="div-body">
-                <table id="table1" class="grid" singleselect="false">
+                <table id="table1" class="grid" singleselect="true">
                     <thead>
                         <tr>
                             <td style="width: 20px; text-align: left;">

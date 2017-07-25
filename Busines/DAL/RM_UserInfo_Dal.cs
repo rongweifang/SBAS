@@ -172,6 +172,30 @@ namespace Busines.DAL
             return DataFactory.SqlDataBase().GetDataTableBySQL(strSql, para);
         }
 
+        public DataTable GetLogin10_Info(ref int count)
+        {
+            DateTime now = DateTime.Now;
+            DateTime d = new DateTime(now.Year, now.Month, 1);
+            DateTime d2 = d.AddMonths(1).AddDays(-1.0);
+            string UserAccount = RequestSession.GetSessionUser().UserAccount.ToString();
+            StringBuilder strSql = new StringBuilder();
+            StringBuilder strSqlCount = new StringBuilder();
+            strSql.Append("Select top 10 SYS_LOGINLOG_IP,Sys_LoginLog_Time from Base_SysLoginlog where User_Account = @User_Account");
+            strSql.Append(" and Sys_LoginLog_Time >= @BeginBuilTime");
+            strSql.Append(" and Sys_LoginLog_Time <= @endBuilTime ORDER BY Sys_LoginLog_Time DESC ");
+            strSqlCount.Append("Select count(1) from Base_SysLoginlog where User_Account = @User_Account");
+            strSqlCount.Append(" and Sys_LoginLog_Time >= @BeginBuilTime");
+            strSqlCount.Append(" and Sys_LoginLog_Time <= @endBuilTime");
+            SqlParam[] para = new SqlParam[]
+            {
+                new SqlParam("@User_Account", UserAccount),
+                new SqlParam("@BeginBuilTime", d),
+                new SqlParam("@endBuilTime", d2)
+            };
+            count = Convert.ToInt32(DataFactory.SqlDataBase().GetObjectValue(strSqlCount, para));
+            return DataFactory.SqlDataBase().GetDataTableBySQL(strSql, para);
+        }
+
         public DataTable InitUserGroupList()
         {
             StringBuilder strSql = new StringBuilder();

@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div class="div-body">
-                <table id="table1" class="grid" singleselect="false">
+                <table id="table1" class="grid" singleselect="true">
                     <thead>
                         <tr>
                             <td style="width: 20px; text-align: left;">
@@ -82,7 +82,8 @@
                             <td style="width: 40px; text-align: center;">年龄</td>
                             <td style="width: 100px; text-align: center;">联系电话</td>
                             <td style="width: 70px; text-align: center;">状态</td>
-                            <td>创建日期</td>
+                            <td style="width: 120px;">创建日期</td>
+                            <td>&nbsp;</td>
                         </tr>
                     </thead>
                     <tbody style="line-height: 35px;">
@@ -98,7 +99,8 @@
                                     <td style="width: 40px; text-align: center;"><%#Eval("U_Age")%></td>
                                     <td style="width: 100px; text-align: center;"><%#Eval("U_Tel")%></td>
                                     <td style="width: 70px; text-align: center;"><%#Eval("status")%></td>
-                                    <td><%#Eval("CreateDate")%></td>
+                                    <td style="width: 120px;"><%#Eval("CreateDate")%></td>
+                                    <td>&nbsp;</td>
                                 </tr>
                             </ItemTemplate>
                             <FooterTemplate>

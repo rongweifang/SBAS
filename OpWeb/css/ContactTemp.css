@@ -52,8 +52,7 @@ u{font-family:'华文新魏',xinwei;font-size:12pt;}
 }
 .MPage11 p{ text-align:left;font-size: 10.5pt;line-height:180%;font-family:'宋体';margin:0;padding:0;width:100%; clear: both;display: inline-block;position:relative;}
 .MPage11 label{width:150px; float: left;text-align: justify;position:absolute;height: 100%;}
-.MPage11 u{width: 100%;padding-left: 150px; display: block;  text-decoration: none;}
-.MPage11 u span{ width: 100%; display: block; border-bottom: solid 1px #000000;text-decoration:none;}
+.MPage11 u{width: 100%;padding-left: 150px;  text-decoration: none; display:inline-block;}
 .MPage12 p{ text-align:left;font-size: 10.5pt;line-height:250%;font-family:'宋体';margin:0;padding:0;text-indent:21pt;
 }
 .MPage13 p{ text-align:left;font-size: 10.5pt;line-height:250%;font-family:'宋体';margin:0;padding:0;text-indent:21pt;
@@ -118,4 +117,19 @@ u{font-family:'华文新魏',xinwei;font-size:12pt;}
 .MPage36 p{ text-align:left;font-size: 15pt;line-height:200%;font-family:'宋体';margin:0;padding:0;text-indent:0;
 }
 .MPage36 td { text-align:center;font-size: 15pt;line-height:200%;font-family:'楷体';margin:0;padding:0;
+}
+#Seal_Bank_P36{position: absolute;width:200px;height: 200px; left: 69px; top: 53px;z-index: -1;background-image: url('/img/Seal_Bank.png');background-repeat: no-repeat;}
+#Seal_Bank_P35{position: absolute;width:200px;height: 200px; left: 69px; top: 53px;z-index: -1;background-image: url('/img/Seal_Bank.png');background-repeat: no-repeat;}
+#Seal_Bank_P23{position: absolute;width:200px;height: 200px; left: 69px; top: 3px;z-index: -1;background-image: url('/img/Seal_Bank.png');background-repeat:no-repeat;}
+#Seal_Bank_Person_P23{width:119px;height: 119px; background-image: url('/img/Seal_Bank_Person.png');background-repeat:no-repeat;}
+#Seal_Vendor_Person_P23{width:119px;height: 119px; background-image: url('/img/Seal_Vendor_Person.png');background-repeat:no-repeat;}
+#Seal_Vendor_P23{
+	position:absolute;
+	width: 200px;
+	height: 200px;
+	left: 100px;
+	top: -15px;
+	z-index: -1;
+	background-image: url('/img/Seal_Vendor.png');
+	background-repeat: no-repeat;
 }

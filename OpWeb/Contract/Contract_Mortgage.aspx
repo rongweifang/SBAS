@@ -16,10 +16,6 @@
     <link href="/css/plugins/iCheck/custom.css" rel="stylesheet" />
     <link href="/css/animate.css" rel="stylesheet" />
     <link href="/css/style.css?v=4.1.0" rel="stylesheet" />
-
-    <script src="/js/jquery.min.js?v=2.1.4"></script>
-    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
-
     <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
 
     <script type="text/javascript">
@@ -54,16 +50,16 @@
             var key = CheckboxValue();
             if (IsEditdata(key)) {
                 var url = "/Contract/Contract_PrintView.aspx?UID=" + key + "&documentType=Contract_Mortgage";
-                window.open(url);
-                //top.Urlhref(url, 'Contract_PrintView', '按揭合同-打印预览', 1000, 800, 50, 50);
+               // window.open(url);
+                top.openDialog(url, 'Contract_PrintView', '按揭合同-打印预览', 710, 800, 50, 50);
             }
         }
         function detailA3() {
             var key = CheckboxValue();
             if (IsEditdata(key)) {
-                var url = "/Contract/Contract_PrintViewA3.aspx?UID=" + key + "&documentType=Contract_Mortgage";
-                window.open(url);
-                //top.Urlhref(url, 'Contract_PrintView', '按揭合同A3-打印预览', 1000, 800, 50, 50);
+                var url = "/Contract/Contract_PrintView.aspx?UID=" + key + "&documentType=Contract_Mortgage";
+               // window.open(url);
+                top.openDialog(url, 'Contract_PrintView', '按揭合同A3-打印预览', 710, 800, 50, 50);
             }
         }
         //打印
@@ -114,6 +110,18 @@
             }
         }
 
+        function EditUser(UID) {
+            if (IsEditdata(UID)) {
+                var url = "/Contract/Contract_Finger.aspx?UID=" + UID + "&ClassID=5,6,7";
+                top.openDialog(url, 'Contract_Finger', '指纹签名', 970, 630, 50, 50);
+            }
+        }
+        function EditExamine(UID) {
+            if (IsEditdata(UID)) {
+                var url = "/Contract/Contract_Examine.aspx?ContractType=Contract_Mortgage&UID=" + UID;
+                top.openDialog(url, 'Contract_Examine', '审查报告', 970, 630, 50, 50);
+            }
+        }
     </script>
 </head>
 <body class="gray-bg">
@@ -125,15 +133,14 @@
                     <input type="text" id="txt_Search" class="txtSearch SearchImg" runat="server" style="width: 180px;" /><asp:LinkButton ID="lbtSearch" runat="server" class="button green" OnClick="lbtSearch_Click"><span class="icon-botton"
             style="background: url('../../Themes/images/Search.png') no-repeat scroll 0px 4px;">
         </span>查 询</asp:LinkButton>
-                    <button class="button green">指纹搜索</button>
-                    <button class="button green">身份证搜索</button>
+
                 </div>
                 <div style="text-align: right">
                     <uc2:LoadButton ID="LoadButton1" runat="server" />
                 </div>
             </div>
             <div class="div-body">
-                <table id="table1" class="grid" singleselect="false">
+                <table id="table1" class="grid" singleselect="true">
                     <thead>
                         <tr>
                             <td style="width: 20px; text-align: left;">
@@ -146,10 +153,13 @@
                             <td style="width: 200px; text-align: center;">起止日期</td>
                             <td style="width: 70px; text-align: center;">指纹签名</td>
                             <td style="width: 60px; text-align: center;">配偶签名</td>
+                            <td style="width: 70px; text-align: center;">责任人签名</td>
+                            <td style="width: 60px; text-align: center;">审查报告</td>
                             <td style="width: 60px; text-align: center;">操作员</td>
                             <td style="width: 70px; text-align: center;">审批状态</td>
                             <td style="width: 70px; text-align: center;">合同状态</td>
-                            <td style="min-width: 100px; overflow: hidden;">创建日期</td>
+                            <td style="width: 120px;">创建日期</td>
+                            <td>&nbsp;</td>
                         </tr>
                     </thead>
                     <tbody style="line-height: 35px;">
@@ -157,7 +167,7 @@
                             <ItemTemplate>
                                 <tr>
                                     <td style="width: 20px; text-align: left;">
-                                        <input type="checkbox" value="<%#Eval("UID")%>" name="checkbox" />
+                                        <input id="UUID" type="checkbox" value="<%#Eval("UID")%>" name="checkbox" />
                                     </td>
                                     <td style="width: 80px; text-align: center;"><%#Eval("Card_Name")%></td>
                                     <td style="width: 140px; text-align: center;"><%#Eval("Card_ID")%></td>
@@ -174,6 +184,16 @@
                                             <img src="../img/pen_128.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>
+                                    <td style="width: 70px; text-align: center;">
+                                        <a onclick="EditUser('<%#Eval("UID")%>',2)">
+                                            <img src="../img/Browser_pen.png" width="35" height="35" alt="" />
+                                        </a>
+                                    </td>
+                                    <td style="width: 60px; text-align: center;">
+                                        <a onclick="EditExamine('<%#Eval("UID")%>',2)">
+                                            <img src="../img/contract_740.png" width="35" height="35" alt="" />
+                                        </a>
+                                    </td>
                                     <td style="width: 60px; text-align: center;">
                                         <%#Eval("User_Name")%>
                                     </td>
@@ -181,7 +201,8 @@
                                         <%#Eval("Approve_State")%>
                                     </td>
                                     <td style="width: 70px; text-align: center;"><%#Eval("State")%></td>
-                                    <td style="min-width: 100px; overflow: hidden;"><%#Eval("CreateDate")%></td>
+                                    <td style="width: 120px; overflow: hidden;"><%#Eval("CreateDate")%></td>
+                                    <td>&nbsp;</td>
                                 </tr>
                             </ItemTemplate>
                             <FooterTemplate>
