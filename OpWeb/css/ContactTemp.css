@@ -133,3 +133,16 @@ u{font-family:'华文新魏',xinwei;font-size:12pt;}
 	background-image: url('/img/Seal_Vendor.png');
 	background-repeat: no-repeat;
 }
+#Seal_Bank_P21{position: absolute;width:200px;height: 200px; left: -10px; top:-5px;z-index: -1;background-image: url('/img/Seal_Bank.png');background-repeat:no-repeat;}
+#Seal_Bank_Person_P21{width:119px;height: 119px; background-image: url('/img/Seal_Bank_Person.png');background-repeat:no-repeat;}
+#Seal_Vendor_Person_P21{width:119px;height: 119px; background-image: url('/img/Seal_Vendor_Person.png');background-repeat:no-repeat;}
+#Seal_Vendor_P21{
+	position:absolute;
+	width: 200px;
+	height: 200px;
+	left:-10px;
+	top: -25px;
+	z-index: -1;
+	background-image: url('/img/Seal_Vendor.png');
+	background-repeat: no-repeat;
+}

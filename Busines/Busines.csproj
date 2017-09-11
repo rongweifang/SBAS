@@ -91,6 +91,7 @@
     <Compile Include="DataFactory.cs" />
     <Compile Include="IDAO\SR_Tickets_IDal.cs" />
     <Compile Include="IDAO\SR_WorkFlow_IDAO.cs" />
+    <Compile Include="MODEL\Contract_Loan_Model.cs" />
     <Compile Include="MODEL\Month.cs" />
   </ItemGroup>
   <ItemGroup>

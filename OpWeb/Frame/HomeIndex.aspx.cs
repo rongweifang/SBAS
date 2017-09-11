@@ -20,6 +20,12 @@ namespace OpWeb.Frame
         public string _UserName;
         private RM_System_IDAO sys_idao = new RM_System_Dal();
         private RM_UserInfo_IDAO user_idao = new RM_UserInfo_Dal();
+
+        public double LoanOut = 0d;//贷款金额合计（万元）
+        public int Customers = 0;//总客户数
+        public int ContractNum = 0;//总合同数量
+        public int ApproveNum = 0;//提交审批数量
+
         protected HtmlForm form1;
         protected void Page_Load(object sender, EventArgs e)
         {

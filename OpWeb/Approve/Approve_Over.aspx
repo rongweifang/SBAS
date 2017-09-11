@@ -35,28 +35,21 @@
             location.reload();
         }
 
-        //审批通过
-
-
-        //审批不通过
-
-        //查看进度
-
         //查看详细
         function detail() {
             var key = CheckboxValue();
             if (IsEditdata(key)) {
-                var url = "/Contract/Contract_PrintView.aspx?UID=" + key + "&documentType=Contract_Mortgage";
-                window.open(url);
+                //var url = "/Contract/Contract_PrintView.aspx?UID=" + key + "&documentType=Contract_Mortgage";
+               // window.open(url);
                 //top.Urlhref(url, 'Contract_PrintView', '按揭合同-打印预览', 1000, 800, 50, 50);
             }
         }
-
-        //作废
-        function EditWarrantor(Card_ID) {
-            if (IsEditdata(Card_ID)) {
-                //var url = "/User/User_Warrantor.aspx?Card_ID=" + Card_ID;
-                //top.openDialog(url, 'User_Warrantor', '保证人信息', 800, 630, 50, 50);
+        //贷款发放 issue()
+        function issue() {
+            var key = CheckboxValue();
+            if (IsEditdata(key)) {
+                var url = "/Approve/Approve_Issue.aspx?ID=" + key;
+                top.openDialog(url, 'Approve_Issue', '贷款发放', 500, 380, 50, 50);
             }
         }
 
@@ -77,7 +70,7 @@
                 </div>
             </div>
             <div class="div-body">
-                <table id="table1" class="grid" singleselect="true">
+                <table id="table1" class="grid" singleselect="false">
                     <thead>
                         <tr>
                             <td style="width: 20px; text-align: left;">
@@ -99,7 +92,7 @@
                             <ItemTemplate>
                                 <tr>
                                     <td style="width: 20px; text-align: left;">
-                                        <input type="checkbox" value="<%#Eval("id")%>" name="checkbox" />
+                                        <input type="checkbox" value="<%#Eval("UID")%>" name="checkbox" />
                                     </td>
                                     <td style="width: 80px; text-align: center;"><%#Eval("Card_Name")%></td>
                                     <td style="width: 140px; text-align: center;"><%#Eval("Card_ID")%></td>

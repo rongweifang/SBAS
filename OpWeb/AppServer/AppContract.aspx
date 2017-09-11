@@ -11,7 +11,7 @@
     <script src="js/jquery.flexslider.js"></script>
     <script src="js/effects.js"></script>
     <script src="js/jquery.tabify.js"></script>
-
+    <meta http-equiv="refresh" content="500" />
     <script type="text/javascript">
         var $ = jQuery.noConflict();
         $(function () {
@@ -73,5 +73,6 @@
             </div>
         </div>
     </form>
+    
 </body>
 </html>

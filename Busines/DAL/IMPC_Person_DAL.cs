@@ -111,7 +111,6 @@ namespace Busines.DAL
                 return 0;
             }
         }
-        //政治面貌
         public DataTable getpolity(string value)
         {
             StringBuilder strSql = new StringBuilder();
@@ -1402,6 +1401,25 @@ namespace Busines.DAL
             strSql.Append("SELECT *  ");
             strSql.Append("FROM View_UserList U");
             strSql.Append(SqlWhere);
+            if (!RequestSession.GetSessionUser().UserId.ToString().ToUpper().Equals("48F3889C-AF8D-401F-ADA2-C383031AF92D"))
+            {
+                string OrganizationID = RequestSession.GetSessionUser().OrganizationID.ToString();
+                string Users = "";
+                if (!string.IsNullOrEmpty(OrganizationID))
+                {
+                    Users = DataTableHelper.GetSqlInByTable(GetUserIDByOrganization_ID(OrganizationID));
+                }
+                if (!string.IsNullOrEmpty(Users))
+                {
+                    strSql.AppendFormat(" AND User_ID IN ({0}) ", Users);
+
+                }
+                else
+                {
+                    strSql.AppendFormat(" AND User_ID IN= '{0}' ", RequestSession.GetSessionUser().UserAccount.ToString());
+                }
+            }
+           
             return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "createdate", "DESC", pageIndex, pageSize, ref count);
         }
         public DataTable GetUserID(StringBuilder SqlWhere, IList<SqlParam> IList_param)
@@ -1813,6 +1831,24 @@ namespace Busines.DAL
             strSql.Append("SELECT *  ");
             strSql.Append("FROM Contract_Mortgage U");
             strSql.Append(SqlWhere);
+            if (!RequestSession.GetSessionUser().UserId.ToString().ToUpper().Equals("48F3889C-AF8D-401F-ADA2-C383031AF92D"))
+            {
+                string OrganizationID = RequestSession.GetSessionUser().OrganizationID.ToString();
+                string Users = "";
+                if (!string.IsNullOrEmpty(OrganizationID))
+                {
+                    Users = DataTableHelper.GetSqlInByTable(GetUserIDByOrganization_ID(OrganizationID));
+                }
+                if (!string.IsNullOrEmpty(Users))
+                {
+                    strSql.AppendFormat(" AND User_ID IN ({0}) ", Users);
+
+                }
+                else
+                {
+                    strSql.AppendFormat(" AND User_ID IN= '{0}' ", RequestSession.GetSessionUser().UserAccount.ToString());
+                }
+            }
             return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "createdate", "DESC", pageIndex, pageSize, ref count);
         }
 
@@ -1831,6 +1867,15 @@ namespace Busines.DAL
             strSql.Append("FROM Contract_Guarantee U");
             strSql.Append(SqlWhere);
             return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "createdate", "DESC", pageIndex, pageSize, ref count);
+        }
+
+        public DataTable GetUserIDByOrganization_ID(string Organization_ID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT DISTINCT USER_ID FROM View_UserInfo ");
+            strSql.AppendFormat("WHERE Organization_ID='{0}'", Organization_ID);
+
+            return DataFactory.SqlDataBase().GetDataTableBySQL(strSql);
         }
     }
 }

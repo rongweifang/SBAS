@@ -78,11 +78,14 @@ namespace OpWeb.Frame
                                         UserName = dtlogin.Rows[0]["User_Name"].ToString(),
                                         User_Account = dtlogin.Rows[0]["User_Account"].ToString(),
                                         UserPwd = dtlogin.Rows[0]["User_Pwd"].ToString(),
-                                        Organization_IDs = "",
-                                        OrganizationID = "",
-                                        Organization_Fax = "",
+                                        Organization_IDs = dtlogin.Rows[0]["Organization_Name"].ToString(),
+                                        OrganizationID = dtlogin.Rows[0]["Organization_ID"].ToString(),
+                                        Organization_Fax = dtlogin.Rows[0]["Organization_Fax"].ToString(),
                                         DESKey = CommonHelper.GetRandomString(9)
                                     });
+
+                                    //ConfigHelper.GetAppSettings("SqlServer_RM_DB")
+
                                     context.Response.Write("3");
                                     context.Response.End();
                                 }

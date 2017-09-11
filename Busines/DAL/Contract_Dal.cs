@@ -9,6 +9,9 @@ using System.Web.SessionState;
 using Common.DotNetCode;
 using Common.DotNetBean;
 using System.Collections;
+using Busines.MODEL;
+using Common.SendMessage;
+
 
 namespace Busines.DAL
 {
@@ -136,6 +139,22 @@ SELECT @UID AS UID,ContractType,ClassID,FingerCode,FingerName,SignCode,Memo FROM
                         if (count > 0)
                         {
                             result = 1;
+                            //Organization_Zipcode
+                            if (IsSendMessage(RequestSession.GetSessionUser().OrganizationID.ToString()))
+                            {
+                                //通过角色获取用户
+                                StringBuilder su = new StringBuilder();
+                                su.AppendFormat("SELECT USER_ID FROM Base_UserRole BU LEFT JOIN WF_Activity WA ON BU.Roles_ID=WA.RoleId WHERE WA.Id='{0}'", hb["ID"].ToString());
+                                DataTable du = DataFactory.SqlDataBase().GetDataTableBySQL(su);
+                                if (DataTableHelper.IsExistRows(du))
+                                {
+                                    foreach (DataRow dr in du.Rows)
+                                    {
+                                        SendMsg(dr["USER_ID"].ToString());
+                                    }
+                                }
+                                
+                            }
                             //ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('审批成功！');setTimeout('OpenClose()','100');</script>");
                         }
                         else
@@ -187,7 +206,6 @@ SELECT @UID AS UID,ContractType,ClassID,FingerCode,FingerName,SignCode,Memo FROM
             }
             return result;
         }
-
         //GetContract_SelectListPage
         public DataTable GetContract_SelectListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count)
         {
@@ -267,6 +285,176 @@ SELECT @UID AS UID,ContractType,ClassID,FingerCode,FingerName,SignCode,Memo FROM
         {
             int count = DataFactory.SqlDataBase().IsExist("WF_WorkFlow", "ContractId", UID);
             return count > 0 ? true : false;
+        }
+        public DataTable GetContractInfoByID(string UID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT *  ");
+            strSql.Append("FROM View_Contract ");
+            strSql.AppendFormat("WHERE UID='{0}'", UID);
+            return DataFactory.SqlDataBase().GetDataTableBySQL(strSql);
+        }
+        public bool Contract_Loan_Add(Contract_Loan_Model model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("insert into Contract_Loan(");
+            strSql.Append("ContractID,Card_ID,Card_Name,M_Loan,Loan_Balance,M_Loan_Months,M_Replay_Type,Current_Month,Loan_StartDate,Loan_SettleDate,UserID,M_Rate_Month,M_Rate_Year)");
+            strSql.Append(" values (");
+            strSql.Append("@ContractID,@Card_ID,@Card_Name,@M_Loan,@Loan_Balance,@M_Loan_Months,@M_Replay_Type,@Current_Month,@Loan_StartDate,@Loan_SettleDate,@UserID,@M_Rate_Month,@M_Rate_Year)");
+
+            SqlParam[] param = new SqlParam[] {
+                new SqlParam("@ContractID", model.ContractID),
+                new SqlParam("@Card_ID", model.Card_ID),
+                new SqlParam("@Card_Name",model.Card_Name),
+                new SqlParam("@M_Loan",model.M_Loan),
+                new SqlParam("@Loan_Balance", model.Loan_Balance),
+                new SqlParam("@M_Loan_Months", model.M_Loan_Months),
+                new SqlParam("@M_Replay_Type", model.M_Replay_Type),
+                new SqlParam("@Current_Month", model.Current_Month),
+                new SqlParam("@Loan_StartDate", model.Loan_StartDate),
+                new SqlParam("@Loan_SettleDate", model.Loan_SettleDate),
+                new SqlParam("@UserID", model.UserID),
+                new SqlParam("@M_Rate_Month", model.M_Rate_Month),
+                new SqlParam("@M_Rate_Year", model.M_Rate_Year) };
+
+            int rows = DataFactory.SqlDataBase().ExecuteBySql(strSql, param);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool Contract_Loan_Exists(string ContractID)
+        {
+            int rows = DataFactory.SqlDataBase().IsExist("Contract_Loan", "ContractID", ContractID);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        public DataTable GetMortgageDetailPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count)
+        {
+            StringBuilder strSql = new StringBuilder();
+            string UserId = RequestSession.GetSessionUser().UserId.ToString();
+            //strSql.Append("SELECT *  ");
+            // strSql.Append("FROM (SELECT *,CASE WHEN M_Loan_Months< DATEDIFF(m,Loan_SettleDate,GETDATE()) THEN M_Loan_Months ELSE DATEDIFF(m,Loan_SettleDate,GETDATE())+1 END Loan_M,(SELECT User_Name FROM  Base_UserInfo BU WHERE User_ID=CL.UserID) AS User_Name  FROM Contract_Loan CL) U ");
+            strSql.Append(@"SELECT *,
+CASE WHEN M_Replay_Type='等额本金' THEN CAST(((M_Loan/M_Loan_Months)+M_Loan*(M_Loan_Months-Loan_M+1)/M_Loan_Months*M_Rate_Month/1000 ) AS numeric(18, 2))
+ELSE 
+CAST((M_Loan*(CONVERT(numeric(18, 6) ,M_Rate_Month)/1000)*power((1+CONVERT(numeric(18, 6) ,M_Rate_Month)/1000),M_Loan_Months)/(
+power((1+CONVERT(numeric(18, 6) ,M_Rate_Month)/1000),M_Loan_Months)-1)) AS numeric(18, 2))
+END PerPay
+ FROM (SELECT *,
+CASE WHEN M_Loan_Months< DATEDIFF(m,GETDATE(),Loan_SettleDate) THEN M_Loan_Months ELSE DATEDIFF(m,Loan_SettleDate,GETDATE())+1 END Loan_M,
+(SELECT User_Name FROM  Base_UserInfo BU WHERE User_ID=CL.UserID) AS User_Name  
+FROM Contract_Loan CL) M");
+
+            strSql.Append(SqlWhere);
+            return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "Loan_StartDate", "ASC", pageIndex, pageSize, ref count);
+        }
+        private void SendMsg(string UserID)
+        {
+            DataTable dt = GetUserPhoneByUserID(UserID);
+            if (DataTableHelper.IsExistRows(dt))
+            {
+                #region 短信发送
+                //发送短信--{UserName}你有新的审批事务，请登录【贷前调查管理系统】进行审批！
+                string User_Name = dt.Rows[0]["User_Name"].ToString();
+                string User_Telphone = dt.Rows[0]["User_Telphone"].ToString(); 
+
+                string _c = string.Format("{0},你有新的审批事务，请登录【贷前调查管理系统】进行审批！[{1}]", User_Name, DateTime.Now.ToString());
+                if (ValidateUtil.IsValidMobile(User_Telphone))
+                {
+                    int nRet = SendMessage.sendOnce(User_Telphone, _c);
+                    SaveSendMessage(User_Name, User_Telphone, _c, DateTime.Now.ToString(), nRet, RequestSession.GetSessionUser().UserId.ToString(), 1);
+                }
+                #endregion
+            }
+        }
+        private DataTable GetUserPhoneByUserID(string UserID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT BU.User_Name,BA.PropertyInstance_Value AS User_Telphone FROM ");
+            strSql.Append("Base_UserInfo BU LEFT JOIN Base_AppendPropertyInstance BA ON BU.User_ID=BA.PropertyInstance_Key  ");
+            strSql.Append(" WHERE BA.Property_Control_ID='User_Telphone' ");
+            strSql.Append(" AND BU.USER_ID=@UserID");
+
+            SqlParam[] param = new SqlParam[] {
+                new SqlParam("@UserID", UserID) };
+
+            return DataFactory.SqlDataBase().GetDataTableBySQL(strSql, param);
+        }
+        /// <summary>
+        /// 保存短信记录
+        /// </summary>
+        /// <param name="UserName">收信人姓名</param>
+        /// <param name="UserTel">接收号码</param>
+        /// <param name="MSG">短信内容</param>
+        /// <param name="SendTime">发送时间</param>
+        /// <param name="State">发送状态：系统反馈状态</param>
+        /// <param name="CreateUser">创建人-系统操作员</param>
+        /// <param name="MsgType">短信类型：1-审批短信；2-催费短信</param>
+        /// <returns></returns>
+        public bool SaveSendMessage(string UserName,string UserTel,string MSG,string SendTime,int State,string CreateUser,int MsgType)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("insert into MessageInfo(");
+            strSql.Append("UserName,UserTel,MSG,SendTime,State,CreateUser,MsgType)");
+            strSql.Append(" values (");
+            strSql.Append("@UserName,@UserTel,@MSG,@SendTime,@State,@CreateUser,@MsgType)");
+
+            SqlParam[] param = new SqlParam[] {
+                new SqlParam("@UserName", UserName),
+                new SqlParam("@UserTel", UserTel),
+                new SqlParam("@MSG",MSG),
+                new SqlParam("@SendTime",SendTime),
+                new SqlParam("@State", State),
+                new SqlParam("@CreateUser", CreateUser),
+                new SqlParam("@MsgType", MsgType) };
+
+            int rows = DataFactory.SqlDataBase().ExecuteBySql(strSql, param);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool IsSendMessage(string Organization_ID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.AppendFormat("SELECT COUNT(1)  FROM Base_Organization WHERE Organization_ID='{0}' AND Organization_Zipcode='101' ", Organization_ID);
+
+            DataTable dt = DataFactory.SqlDataBase().GetDataTableBySQL(strSql);
+            int rows = int.Parse(dt.Rows[0][0].ToString());
+
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public DataTable GetMessageHistoryPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count)
+        {
+            StringBuilder strSql = new StringBuilder();
+            string UserId = RequestSession.GetSessionUser().UserId.ToString();
+            strSql.Append(@"SELECT MI.*,BU.User_Name FROM MessageInfo MI LEFT JOIN Base_UserInfo BU ON MI.CreateUser=BU.User_ID ");
+
+            strSql.Append(SqlWhere);
+            return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "CreateDate", "DESC", pageIndex, pageSize, ref count);
         }
 
     }

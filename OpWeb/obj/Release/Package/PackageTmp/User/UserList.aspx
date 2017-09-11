@@ -58,7 +58,7 @@
         function EditSpouse(Card_ID) {
             if (IsEditdata(Card_ID)) {
                 var url = "/User/User_Spouse.aspx?Card_ID=" + Card_ID;
-                top.openDialog(url, 'User_Spouse', '配偶信息管理 ', 800, 560, 50, 50);
+                top.openDialog(url, 'User_Spouse', '配偶信息管理 ', 800, 600, 50, 50);
             }
         }
         //监护人
@@ -142,7 +142,7 @@
                 </div>
             </div>
             <div class="div-body">
-                <table id="table1" class="grid" singleselect="false">
+                <table id="table1" class="grid" singleselect="true">
                     <thead>
                         <tr>
                             <td style="width: 20px; text-align: left;">
@@ -160,7 +160,8 @@
                             <td style="width: 60px; text-align: center;">照片采集</td>
                             <td style="width: 70px; text-align: center;">签订合同</td>
                             <td style="width: 70px; text-align: center;">状态</td>
-                            <td>创建日期</td>
+                            <td style="width: 120px;">创建日期</td>
+                            <td>&nbsp;</td>
                         </tr>
                     </thead>
                     <tbody style="line-height: 35px;">
@@ -206,7 +207,8 @@
                                         </a>
                                     </td>
                                     <td style="width: 70px; text-align: center;"><%#Eval("status")%></td>
-                                    <td><%#Eval("CreateDate")%></td>
+                                    <td style="width: 120px;"><%#Eval("CreateDate")%></td>
+                                    <td>&nbsp;</td>
                                 </tr>
                             </ItemTemplate>
                             <FooterTemplate>

@@ -37,9 +37,8 @@
                 </th>
                 <td>
                     <select id="newsTypeID" name="newsTypeID" class="required validate-selection" runat="server">
-                        <option value="1">公司公告</option>
-                        <option value="2">招聘动态</option>
-                        <option value="3">公司新闻</option>
+                        <option value="1">内部公告</option>
+                        <option value="2">公司新闻</option>
                     </select>
                 </td>
             </tr>

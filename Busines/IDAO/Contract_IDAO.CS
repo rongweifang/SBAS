@@ -5,6 +5,7 @@ using System.Data;
 using System.Text;
 using Common.DotNetData;
 using Common.DotNetCode;
+using Busines.MODEL;
 
 namespace Busines.IDAO
 {
@@ -29,5 +30,12 @@ namespace Busines.IDAO
         DataTable GetHistoryListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
         string GetUIDbyHUID(string HUID);
         bool IsExistApprove(string UID);
+        DataTable GetContractInfoByID(string UID);
+        bool Contract_Loan_Add(Contract_Loan_Model model);
+        bool Contract_Loan_Exists(string ContractID);
+        DataTable GetMortgageDetailPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
+        bool SaveSendMessage(string UserName, string UserTel, string MSG, string SendTime, int State, string CreateUser, int MsgType);
+        bool IsSendMessage(string Organization_ID);
+        DataTable GetMessageHistoryPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
     }
 }

@@ -41,7 +41,8 @@ namespace Busines.DAL
         public DataTable UserLogin(string name, string pwd)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("Select User_ID,User_Account,User_Pwd,User_Name,DeleteMark from Base_UserInfo where ");
+            //strSql.Append("Select User_ID,User_Account,User_Pwd,User_Name,DeleteMark from Base_UserInfo where ");
+            strSql.Append("Select * from View_UserInfo where ");
             strSql.Append("User_Account=@User_Account ");
             strSql.Append("and User_Pwd=@User_Pwd ");
             strSql.Append("and DeleteMark!=0");

@@ -790,5 +790,10 @@ namespace Busines.DAL
             }
             return result;
         }
+
+        //public bool IsManager(string UserId)
+        //{
+
+        //}
     }
 }

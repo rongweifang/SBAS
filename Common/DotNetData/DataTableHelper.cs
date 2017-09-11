@@ -269,5 +269,20 @@ namespace Common.DotNetData
             }
             return result;
         }
+
+        public static string GetSqlInByTable(DataTable dt)
+        {
+            string result = "";
+            if (DataTableHelper.IsExistRows(dt))
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    result +="'" +dr[0].ToString()+"'";
+                    result += ",";
+                }
+                result= result.TrimEnd(',');
+            }
+            return result;
+        }
     }
 }

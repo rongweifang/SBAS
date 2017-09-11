@@ -108,9 +108,7 @@
         </div>
         <div class="btnbarcontetn">
             <div style="float: left;">
-                <select id="newsTypeID" class="Searchwhere" runat="server">
-                </select>
-                <input type="text" id="txt_Search" class="txtSearch SearchImg" runat="server" style="width: 100px;" />
+                &nbsp;<input type="text" id="txt_Search" class="txtSearch SearchImg" runat="server" style="width: 100px;" />
                 <asp:LinkButton ID="lbtSearch" runat="server" class="button green" OnClick="lbtSearch_Click"><span class="icon-botton"
             style="background: url('../../Themes/images/Search.png') no-repeat scroll 0px 4px;">
         </span>查 询</asp:LinkButton>

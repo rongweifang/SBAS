@@ -25,10 +25,10 @@
                     <div class="ibox-content">
                         <div>
 
-                            <h1 class="m-b-xs">￥ 0万元</h1>
+                            <h1 class="m-b-xs">￥ <%=LoanOut %>万元</h1>
                             <h3 class="font-bold no-margins">本月贷款金额
                             </h3>
-                            <small>联社营业部</small>
+                            <small><%= Common.DotNetConfig.ConfigHelper.GetAppSettings("CustomerCompanyNameShort") %></small>
                         </div>
 
                         <div class="flot-chart" style="height: 140px">
@@ -38,7 +38,7 @@
                         <div class="m-t-md">
                             <small class="pull-right">
                                 <i class="fa fa-clock-o"></i>
-                                最后更新：2017.6.11
+                                最后更新：<%=DateTime.Now.ToString("yyyy年MM月dd日") %>
                             </small>
                             <small>
                                 <strong>贷款分析：</strong> 该值已随时间发生变化，上个月达到的水平超过0万元。
@@ -60,7 +60,7 @@
                         <h5>客户</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">0</h1>
+                        <h1 class="no-margins"><%=Customers %></h1>
                         <div class="stat-percent font-bold text-navy">
                             0% <i class="fa fa-level-up"></i>
                         </div>
@@ -75,7 +75,7 @@
                         <h5>合同数量</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">0</h1>
+                        <h1 class="no-margins"><%=ContractNum %></h1>
                         <div class="stat-percent font-bold text-info">
                             0% <i class="fa fa-level-up"></i>
                         </div>
@@ -90,7 +90,7 @@
                         <h5>提交审批</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">￥ 0</h1>
+                        <h1 class="no-margins"><%=ApproveNum %></h1>
                         <div class="stat-percent font-bold text-warning">
                             0% <i class="fa fa-level-up"></i>
                         </div>
@@ -116,12 +116,12 @@
                         </div>
                     </div>
                     <div class="ibox-content ibox-heading">
-                       <%=Login_InfoHtml%>
-            <br />
-            <img src="/Themes/Images/exclamation_octagon_fram.png" style="vertical-align: middle;
-                margin-bottom: 3px;" width="16" height="16" alt="tip" />
-            提示：为了账号的安全，如果上面的登录情况不正常，建议您马上 <a href="javascript:void(0);" title="修改登录密码" style="text-decoration: underline;
-                color: Blue;" onclick="editpwd()">密码修改</a>
+                        <%=Login_InfoHtml%>
+                        <br />
+                        <img src="/Themes/Images/exclamation_octagon_fram.png" style="vertical-align: middle; margin-bottom: 3px;"
+                            width="16" height="16" alt="tip" />
+                        提示：为了账号的安全，如果上面的登录情况不正常，建议您马上 <a href="javascript:void(0);" title="修改登录密码" style="text-decoration: underline; color: Blue;"
+                            onclick="editpwd()">密码修改</a>
                     </div>
 
                 </div>
@@ -149,37 +149,18 @@
                             <div class="row">
                                 <div class="col-xs-3 date">
                                     <i class="fa fa-briefcase"></i>6:00
-                                    <br>
-                                    <small class="text-navy">2 小时前</small>
+                                    <br />
+                                    <small class="text-navy"></small>
                                 </div>
                                 <div class="col-xs-7 content no-top-border">
                                     <p class="m-b-xs">
-                                        <strong>李万年</strong>
+                                        <strong></strong>
                                     </p>
-
-                                    <p>贷款金额50万元，180期</p>
-
-
+                                    <p></p>
                                 </div>
                             </div>
+                            <div class="clear"></div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="row">
-                                <div class="col-xs-3 date">
-                                    <i class="fa fa-file-text"></i>7:00
-                                    <br>
-                                    <small class="text-navy">3小时前</small>
-                                </div>
-                                <div class="col-xs-7 content">
-                                    <p class="m-b-xs">
-                                        <strong>张军</strong>
-                                    </p>
-                                    <p>贷款金额30万元，150期</p>
-                                </div>
-                            </div>
-                        </div>
-
-
 
                     </div>
                 </div>
@@ -212,9 +193,6 @@
 
     <script>
         $(document).ready(function () {
-
-
-
             var d1 = [
                 [1262304000000, 1],
                 [1264982400000, 100],
@@ -284,7 +262,7 @@
                 }
             });
         });
-       
+
         /**修改密码**/
         function editpwd() {
             var url = "/RMBase/SysUser/UpdateUserPwd.aspx";

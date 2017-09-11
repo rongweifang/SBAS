@@ -352,7 +352,7 @@ namespace OpWeb.Contract
         {
             //{Mortage:Card_Id}{Mortage:+[\w]+}//{Mortage:+[a-zA-Z0-9_-]+}
             string htmls = HtmlContent;
-            Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("V_" + documentType, "UID", UID);
+            Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("V_" + documentType, "cast(UID as varchar(36))", UID);
             if (ht.Count > 0 && ht != null)
             {
                 Card_ID = ht.Contains("CARD_ID") ? ht["CARD_ID"].ToString() : "";
@@ -366,7 +366,8 @@ namespace OpWeb.Contract
                         string FieldDeal = ContentDeal.Replace("{Mortage:", "").Replace("}", "");
                         if (ht.Contains(FieldDeal.ToUpper()))
                         {
-                            htmls = htmls.Replace(ContentDeal, "<span style=\"font-family: 'xinwei','华文新魏'\">" + ht[FieldDeal.ToUpper()].ToString() + "</span>");
+                            string _deal = string.IsNullOrEmpty(ht[FieldDeal.ToUpper()].ToString()) ? "&nbsp;" : ht[FieldDeal.ToUpper()].ToString();
+                            htmls = htmls.Replace(ContentDeal, "<span style=\"font-family: 'xinwei','华文新魏'\">" + _deal + "</span>");
                         }
                     }
                 }

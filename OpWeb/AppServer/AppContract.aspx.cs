@@ -41,6 +41,7 @@ namespace OpWeb.AppServer
                     sb.AppendFormat("<li><a href=\"AppCustomer.aspx?UID={3}&documentType={4}\">{0}--[授信金额：{1}]--[分期数：{2}]</a></li>", dr["Card_Name"].ToString(), dr["M_Loan_Cap"].ToString(), dr["M_Loan_Months"].ToString(), dr["UID"].ToString(), dr["documentType"].ToString());
                 }
                 sb.Append("</ul>");
+                sb.Append("<audio controls><source src=\"/AppServer/images/8858.mp3\" /></audio>");
             }
             //ControlBindHelper.BindRepeaterList(dt, this.rp_Item);
             //this.PageControl1.RecordCount = Convert.ToInt32(count);

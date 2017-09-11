@@ -11,6 +11,7 @@ namespace Common.DotNetCode
         private static Regex RegDecimalSign = new Regex("^[+-]?[0-9]+[.]?[0-9]+$");
         private static Regex RegEmail = new Regex("^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$");
         private static Regex RegCHZN = new Regex("[一-龥]");
+        private static Regex RegMobile = new Regex("^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$");
 
         public static int GetStringLength(string stringValue)
         {
@@ -122,8 +123,8 @@ namespace Common.DotNetCode
 
         public static bool IsValidMobile(string mobile)
         {
-            Regex rx = new Regex("^(13|15)\\d{9}$", RegexOptions.None);
-            Match i = rx.Match(mobile);
+          //  Regex rx = new Regex("^(13|15)\\d{9}$", RegexOptions.None);
+            Match i = RegMobile.Match(mobile);
             return i.Success;
         }
 

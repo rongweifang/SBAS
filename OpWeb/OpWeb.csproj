@@ -84,6 +84,7 @@
     <Content Include="500.html" />
     <Content Include="Approve\Approve_Center.aspx" />
     <Content Include="Approve\Approve_CenterForm.aspx" />
+    <Content Include="Approve\Approve_Issue.aspx" />
     <Content Include="Approve\Approve_MyCenter.aspx" />
     <Content Include="Approve\Approve_Over.aspx" />
     <Content Include="Approve\Approve_OverForm.aspx" />
@@ -112,6 +113,7 @@
     <Content Include="AppServer\css\style.css" />
     <Content Include="AppServer\css\style2.css" />
     <Content Include="AppServer\css\style3.css" />
+    <Content Include="AppServer\images\8858.mp3" />
     <Content Include="AppServer\images\ajax-loader.gif" />
     <Content Include="AppServer\images\bg.jpg" />
     <Content Include="AppServer\images\bg_control_nav.png" />
@@ -373,15 +375,6 @@
     <Content Include="Frame\MainSwitch.aspx" />
     <Content Include="Frame\MainTree.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="img\a1.jpg" />
-    <Content Include="img\a2.jpg" />
-    <Content Include="img\a3.jpg" />
-    <Content Include="img\a4.jpg" />
-    <Content Include="img\a5.jpg" />
-    <Content Include="img\a6.jpg" />
-    <Content Include="img\a7.jpg" />
-    <Content Include="img\a8.jpg" />
-    <Content Include="img\a9.jpg" />
     <Content Include="img\bg.png" />
     <Content Include="img\browser.png" />
     <Content Include="img\Browser_pen.png" />
@@ -403,10 +396,7 @@
     <Content Include="img\Hand_R_3.png" />
     <Content Include="img\Hand_R_4.png" />
     <Content Include="img\Hand_R_5.png" />
-    <Content Include="img\iconfont-logo.png" />
     <Content Include="img\icons.png" />
-    <Content Include="img\index.jpg" />
-    <Content Include="img\index_4.jpg" />
     <Content Include="img\loading-upload.gif" />
     <Content Include="img\locked.png" />
     <Content Include="img\login-background.jpg" />
@@ -418,7 +408,6 @@
     <Content Include="img\p1.jpg" />
     <Content Include="img\p2.jpg" />
     <Content Include="img\p3.jpg" />
-    <Content Include="img\pay.png" />
     <Content Include="img\pen_128.png" />
     <Content Include="img\profile.jpg" />
     <Content Include="img\profile_big.jpg" />
@@ -437,7 +426,6 @@
     <Content Include="img\success.png" />
     <Content Include="img\user.png" />
     <Content Include="img\webuploader.png" />
-    <Content Include="img\wenku_logo.png" />
     <Content Include="index.htm" />
     <Content Include="JS\bootstrap.min.js" />
     <Content Include="JS\contabs.js" />
@@ -800,6 +788,10 @@
     <Content Include="Log\operate.aspx" />
     <Content Include="Log\userlogin.aspx" />
     <Content Include="MainDefault.aspx" />
+    <Content Include="Mortgage\Message_Index.aspx" />
+    <Content Include="Mortgage\Message_SendList.aspx" />
+    <Content Include="Mortgage\MortgageData_Detail.aspx" />
+    <Content Include="Mortgage\MortgageData_Index.aspx" />
     <Content Include="PT.html" />
     <Content Include="RMBase\SysAppend\AppendProperty_Form.aspx" />
     <Content Include="RMBase\SysAppend\AppendProperty_Function.aspx" />
@@ -3709,6 +3701,13 @@
     <Compile Include="Approve\Approve_CenterForm.aspx.designer.cs">
       <DependentUpon>Approve_CenterForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Approve\Approve_Issue.aspx.cs">
+      <DependentUpon>Approve_Issue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve\Approve_Issue.aspx.designer.cs">
+      <DependentUpon>Approve_Issue.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Approve\Approve_MyCenter.aspx.cs">
       <DependentUpon>Approve_MyCenter.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4184,6 +4183,34 @@
     </Compile>
     <Compile Include="MainDefault.aspx.designer.cs">
       <DependentUpon>MainDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mortgage\Message_Index.aspx.cs">
+      <DependentUpon>Message_Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mortgage\Message_Index.aspx.designer.cs">
+      <DependentUpon>Message_Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mortgage\Message_SendList.aspx.cs">
+      <DependentUpon>Message_SendList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mortgage\Message_SendList.aspx.designer.cs">
+      <DependentUpon>Message_SendList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mortgage\MortgageData_Detail.aspx.cs">
+      <DependentUpon>MortgageData_Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mortgage\MortgageData_Detail.aspx.designer.cs">
+      <DependentUpon>MortgageData_Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mortgage\MortgageData_Index.aspx.cs">
+      <DependentUpon>MortgageData_Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mortgage\MortgageData_Index.aspx.designer.cs">
+      <DependentUpon>MortgageData_Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RMBase\SysAppend\AppendProperty_Form.aspx.cs">
