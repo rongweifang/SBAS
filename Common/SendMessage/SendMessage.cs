@@ -71,7 +71,7 @@ namespace Common.SendMessage
         private static readonly string AUTHKEY = "CF79306D5D35ADAD004F446E2B599B90";
 
         // 通道组编号, 请换成你的帐号可以使用的通道组编号
-        private static readonly uint CGID = 185;
+        private static readonly uint CGID = 52;
 
         /************************************************************************/
         /* UrlEncode
