@@ -124,5 +124,8 @@ namespace Busines.IDAO
         DataTable GetContract_TemplateListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
         DataTable GetGuaranteeListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
         DataTable GetUserIDByOrganization_ID(string Organization_ID);
+        DataTable GetEnterpriseListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
+        DataTable GetLDZJListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
+        DataTable GetOneCardListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
     }
 }

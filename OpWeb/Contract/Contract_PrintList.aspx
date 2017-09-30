@@ -101,8 +101,8 @@
                             <td style="width: 20px; text-align: left;">
                                 <label id="checkAllOff" onclick="CheckAllLine()" title="全选"></label>
                             </td>
-                            <td style="width: 80px; text-align: center;">姓名</td>
-                            <td style="width: 140px; text-align: center;">身份证号</td>
+                            <td style="width: 160px; text-align: center;">借款人全称</td>
+                            <td style="width: 140px; text-align: center;">证件号码</td>
                             <td style="width: 80px; text-align: center;">授信金额(万)</td>
                             <td style="width: 100px; text-align: center;">贷款期数</td>
                             <td style="width: 200px; text-align: center;">起止日期</td>
@@ -119,7 +119,7 @@
                                     <td style="width: 20px; text-align: left;">
                                         <input id="UUID" type="checkbox" value="<%#Eval("HUID")%>" name="checkbox" />
                                     </td>
-                                    <td style="width: 80px; text-align: center;"><%#Eval("Card_Name")%></td>
+                                    <td style="width: 160px; text-align: center;"><%#Eval("Card_Name")%></td>
                                     <td style="width: 140px; text-align: center;"><%#Eval("Card_ID")%></td>
                                     <td style="width: 80px; text-align: center;"><%#Eval("M_Loan_Cap")%></td>
                                     <td style="width: 100px; text-align: center;"><%#Eval("M_Loan_Months")%></td>

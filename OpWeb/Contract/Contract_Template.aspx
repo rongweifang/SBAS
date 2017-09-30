@@ -89,7 +89,7 @@
                             <td style="width: 20px; text-align: left;">
                                 <label id="checkAllOff" onclick="CheckAllLine()" title="全选"></label>
                             </td>
-                            <td style="width: 120px; text-align: center;">模板分类</td>
+                            <td style="width: 160px; text-align: center;">模板分类</td>
                             <td style="width: 60px; text-align: center;">模板页码</td>
                             <td style="width: 80px; text-align: center;">修改人</td>
                             <td>修改时间</td>
@@ -102,7 +102,7 @@
                                     <td style="width: 20px; text-align: left;">
                                         <input type="checkbox" value="<%#Eval("CTID")%>" name="checkbox" />
                                     </td>
-                                    <td style="width:120px; text-align: center;">
+                                    <td style="width:160px; text-align: center;">
                                        <%#Eval("ContractName")%>
                                     </td>
                                     <td style="width: 60px; text-align: center;">

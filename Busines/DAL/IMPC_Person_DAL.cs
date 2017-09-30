@@ -1877,5 +1877,70 @@ namespace Busines.DAL
 
             return DataFactory.SqlDataBase().GetDataTableBySQL(strSql);
         }
+        public DataTable GetEnterpriseListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT *  ");
+            strSql.Append("FROM Enterprise U");
+            strSql.Append(SqlWhere);
+            if (!RequestSession.GetSessionUser().UserId.ToString().ToUpper().Equals("48F3889C-AF8D-401F-ADA2-C383031AF92D"))
+            {
+                string OrganizationID = RequestSession.GetSessionUser().OrganizationID.ToString();
+                string Users = "";
+                if (!string.IsNullOrEmpty(OrganizationID))
+                {
+                    Users = DataTableHelper.GetSqlInByTable(GetUserIDByOrganization_ID(OrganizationID));
+                }
+                if (!string.IsNullOrEmpty(Users))
+                {
+                    strSql.AppendFormat(" AND User_ID IN ({0}) ", Users);
+
+                }
+                else
+                {
+                    strSql.AppendFormat(" AND User_ID IN= '{0}' ", RequestSession.GetSessionUser().UserAccount.ToString());
+                }
+            }
+
+            return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "createdate", "DESC", pageIndex, pageSize, ref count);
+        }
+
+        //GetLDZJListPage
+        public DataTable GetLDZJListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT *  ");
+            strSql.Append("FROM (SELECT CL.*,E.E_enterpriseName FROM Contract_LDZJ CL LEFT JOIN Enterprise E ON CL.E_enterpriseID=E.E_enterpriseID) U");
+            strSql.Append(SqlWhere);
+           
+            if (!RequestSession.GetSessionUser().UserId.ToString().ToUpper().Equals("48F3889C-AF8D-401F-ADA2-C383031AF92D"))
+            {
+                string OrganizationID = RequestSession.GetSessionUser().OrganizationID.ToString();
+                string Users = "";
+                if (!string.IsNullOrEmpty(OrganizationID))
+                {
+                    strSql.AppendFormat(" AND OrganizationID = '{0}'", OrganizationID);
+                }
+                //if (!string.IsNullOrEmpty(Users))
+                //{
+                //    strSql.AppendFormat(" AND User_ID IN ({0}) ", Users);
+
+                //}
+                //else
+                //{
+                //    strSql.AppendFormat(" AND User_ID IN= '{0}' ", RequestSession.GetSessionUser().UserAccount.ToString());
+                //}
+            }
+            return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "createdate", "DESC", pageIndex, pageSize, ref count);
+        }
+
+        public DataTable GetOneCardListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT *  ");
+            strSql.Append("FROM Contract_OneCard U");
+            strSql.Append(SqlWhere);
+            return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "createdate", "DESC", pageIndex, pageSize, ref count);
+        }
     }
 }

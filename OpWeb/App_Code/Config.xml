@@ -3,7 +3,7 @@
   <!-- 连接字符串是否加密-->
   <add key="ConStringEncrypt" value="false" />
   <!-- SqlServer连接字符串:Server=服务器地址;Database=库名;Uid=用户;Pwd=密码-->
-  <add key="SqlServer_RM_DB" value="Server=.;Database=T;Uid=sa;Pwd=sa" />
+  <add key="SqlServer_RM_DB" value="Server=.;Database=SBAS_SC;Uid=sa;Pwd=sa" />
   <!--<add key="SqlServer_RM_DB" value="Server=qds116425484.my3w.com;Database=qds116425484_db;Uid=qds116425484;Pwd=gowant7788" />-->
 
   <!-- 系统默认登录账户 -->
@@ -55,7 +55,7 @@
   <!-- 邮编 -->
   <add key="CustomerCompanyZip" value="013550" />
   <!-- 软件名称 -->
-  <add key="SoftName" value=" 察哈尔右翼中旗农村信用合作联社信贷合同管理系统" />
+  <add key="SoftName" value=" 察哈尔右翼中旗农村信用合作联社贷前调查管理系统" />
   <!-- 当前软件版本 -->
   <add key="Version" value="2.0" />
   <add key="MailUser" value="5iday@163.com"/>
