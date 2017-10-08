@@ -55,6 +55,27 @@
                 <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
                     <tbody>
                         <tr>
+                            <td width="110"><label class="control-label">贷款类型：</label>
+                            </td>
+                            <td width="200">
+                                <select class="form-control" id="M_CreditType" name="M_CreditType" runat="server">
+                                    <option>个人经营性贷款 </option>
+                                    <option>个人综合消费贷款</option>
+                                    <option>其他贷款</option>
+                                </select></td>
+                            <td width="100">
+                                <label class="control-label">担保方式 ：</label></td>
+                            <td width="180">
+                                <select class="form-control" id="M_GuaranteeType" name="M_GuaranteeType" runat="server">
+                                    <option>抵押</option>
+                                    <option>质押</option>
+                                    <option>保证</option>
+                                    <option>信用</option>
+                                </select></td>
+                            <td width="130"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
                             <td width="110">
                                 <label class="control-label">贷前调查方式：</label></td>
                             <td width="200">
@@ -165,7 +186,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <label class="control-label">授信金额(<span style="color:red">*</span>)：</label></td>
+                                <label class="control-label">授信金额(<span style="color: red">*</span>)：</label></td>
                             <td>
                                 <div class="input-group">
                                     <span class="input-group-addon">&yen;</span>
@@ -197,7 +218,7 @@
 
                             </td>
                             <td>
-                                <label class="control-label">富民卡卡号(<span style="color:red">*</span>)：</label></td>
+                                <label class="control-label">富民卡卡号(<span style="color: red">*</span>)：</label></td>
                             <td>
                                 <input id="M_CardNO" name="M_CardNO" class="form-control" type="text" runat="server" /></td>
                             <td>
@@ -299,7 +320,7 @@
             if (!$("#M_Rate_Month").val().length > 0) {
                 $("#M_Rate_Month").val("4.0834");
             }
-            
+
         });
         var baiduBsSuggest = $("#M_Signed").bsSuggest({
             allowNoKeyword: true, //是否允许无关键字时请求数据

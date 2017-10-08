@@ -53,18 +53,18 @@
             }
         }
 
-        //保证人
+        //抵押人
         function EditGuarantee(UID) {
             if (IsEditdata(UID)) {
                 var url = "/Contract/User_Guarantee.aspx?UID= " + UID;
                 top.openDialog(url, 'User_Guarantee', '保证信息', 700, 630, 50, 50);
             }
         }
-        //抵押人
+        //抵押物品
         function EditPledge(UID) {
             if (IsEditdata(UID)) {
                 var url = "/Contract/User_Pledge.aspx?UID=" + UID;
-                top.openDialog(url, 'User_Pledge', '抵押信息', 800, 630, 50, 50);
+                top.openDialog(url, 'User_Pledge', '抵押信息', 800, 280, 50, 50);
             }
         }
 
@@ -73,7 +73,7 @@
         {
             if (IsEditdata(UID)) {
                 var url = "/Contract/User_Interview.aspx?UID=" + UID;
-                top.openDialog(url, 'User_Interview', '面谈记录', 800, 630, 50, 50);
+                top.openDialog(url, 'User_Interview', '面谈记录', 900, 630, 50, 50);
             }
         }
 
@@ -110,7 +110,7 @@
                              <td style="width: 100px; text-align: center;">授信期限</td>
                             <td style="width: 70px; text-align: center;">指纹签名</td>
                             <td style="width: 60px; text-align: center;">配偶签名</td>
-                            <td style="width: 60px; text-align: center;">抵押信息</td>
+                            <td style="width: 60px; text-align: center;">抵押物品</td>
                             <td style="width: 60px; text-align: center;">保证/抵押</td>
                             <td style="width: 60px; text-align: center;">面谈记录</td>
                             <td style="width: 60px; text-align: center;">操作员</td>

@@ -10,169 +10,115 @@
 namespace OpWeb.Contract {
     
     
-    public partial class User_Interview {
+    public partial class User_PledgeForm2 {
         
         /// <summary>
-        /// signupForm 控件。
+        /// form1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm signupForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// UV_Date 控件。
+        /// table2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText UV_Date;
+        protected global::System.Web.UI.HtmlControls.HtmlTable table2;
         
         /// <summary>
-        /// UV_Address 控件。
+        /// PV_Number 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText UV_Address;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PV_Number;
         
         /// <summary>
-        /// UV_Real 控件。
+        /// PV_Type 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect UV_Real;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PV_Type;
         
         /// <summary>
-        /// UV_House 控件。
+        /// PV_Verder 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText UV_House;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PV_Verder;
         
         /// <summary>
-        /// UV_HouseValue 控件。
+        /// PV_Frame 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText UV_HouseValue;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PV_Frame;
         
         /// <summary>
-        /// UV_Vehicle  控件。
+        /// PV_Engine 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText UV_Vehicle ;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PV_Engine;
         
         /// <summary>
-        /// UV_VehicleValue 控件。
+        /// PV_Registration 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText UV_VehicleValue;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PV_Registration;
         
         /// <summary>
-        /// UV_Others 控件。
+        /// PV_Price 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText UV_Others;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PV_Price;
         
         /// <summary>
-        /// UV_Trade 控件。
+        /// PV_Value 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText UV_Trade;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PV_Value;
         
         /// <summary>
-        /// UV_Operating  控件。
+        /// PV_Rate 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText UV_Operating ;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PV_Rate;
         
         /// <summary>
-        /// UV_Income 控件。
+        /// PV_Expire 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText UV_Income;
-        
-        /// <summary>
-        /// UV_MateIncome 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText UV_MateIncome;
-        
-        /// <summary>
-        /// UV_FamilyIncome 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText UV_FamilyIncome;
-        
-        /// <summary>
-        /// UV_Ownership  控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect UV_Ownership ;
-        
-        /// <summary>
-        /// UV_FeeAffirm 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect UV_FeeAffirm;
-        
-        /// <summary>
-        /// UV_Affirm 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect UV_Affirm;
-        
-        /// <summary>
-        /// UV_AffirmAll 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect UV_AffirmAll;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PV_Expire;
         
         /// <summary>
         /// Save 控件。

@@ -290,6 +290,9 @@
     <Content Include="Contract\User_Guarantee.aspx" />
     <Content Include="Contract\User_Interview.aspx" />
     <Content Include="Contract\User_Pledge.aspx" />
+    <Content Include="Contract\User_PledgeForm1.aspx" />
+    <Content Include="Contract\User_PledgeForm2.aspx" />
+    <Content Include="Contract\User_PledgeForm3.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap-rtl.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -382,6 +385,7 @@
     <Content Include="Enterprise\EnterpriseIndex.aspx" />
     <Content Include="Enterprise\EnterpriseMore.aspx" />
     <Content Include="Enterprise\EnterpriseOperator.aspx" />
+    <Content Include="Enterprise\EnterprisePhoto.aspx" />
     <Content Include="Enterprise\Enterprise_Contract.aspx" />
     <Content Include="Error\ErrorPage.aspx" />
     <Content Include="favicon.ico" />
@@ -4230,6 +4234,27 @@
     <Compile Include="Contract\User_Pledge.aspx.designer.cs">
       <DependentUpon>User_Pledge.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Contract\User_PledgeForm1.aspx.cs">
+      <DependentUpon>User_PledgeForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\User_PledgeForm1.aspx.designer.cs">
+      <DependentUpon>User_PledgeForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\User_PledgeForm2.aspx.cs">
+      <DependentUpon>User_PledgeForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\User_PledgeForm2.aspx.designer.cs">
+      <DependentUpon>User_PledgeForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\User_PledgeForm3.aspx.cs">
+      <DependentUpon>User_PledgeForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\User_PledgeForm3.aspx.designer.cs">
+      <DependentUpon>User_PledgeForm3.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Enterprise\EnterpriseAccount.aspx.cs">
       <DependentUpon>EnterpriseAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4271,6 +4296,13 @@
     </Compile>
     <Compile Include="Enterprise\EnterpriseOperator.aspx.designer.cs">
       <DependentUpon>EnterpriseOperator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enterprise\EnterprisePhoto.aspx.cs">
+      <DependentUpon>EnterprisePhoto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enterprise\EnterprisePhoto.aspx.designer.cs">
+      <DependentUpon>EnterprisePhoto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Enterprise\Enterprise_Contract.aspx.cs">
       <DependentUpon>Enterprise_Contract.aspx</DependentUpon>

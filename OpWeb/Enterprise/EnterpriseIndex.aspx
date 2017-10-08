@@ -84,8 +84,11 @@
             }
         }
         //照片管理
-        function EditPhoto(Card_ID) {
-           
+        function EditPhoto(E_enterpriseID) {
+            if (IsEditdata(E_enterpriseID)) {
+                var url = "/Enterprise/EnterprisePhoto.aspx?E_enterpriseID=" + E_enterpriseID;
+                top.openDialog(url, 'EnterprisePhoto', '证件采集', 800, 560, 50, 50);
+            }
         }
 
     </script>

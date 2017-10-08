@@ -5,16 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace OpWeb.Contract
+namespace OpWeb.Enterprise
 {
-    public partial class User_Guarantee : System.Web.UI.Page
+    public partial class EnterprisePhoto : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Save_Click(object sender, EventArgs e)
         {
 
         }
