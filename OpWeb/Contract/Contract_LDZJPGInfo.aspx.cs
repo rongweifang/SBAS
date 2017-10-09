@@ -9,9 +9,14 @@ namespace OpWeb.Contract
 {
     public partial class Contract_LDZJPGInfo : System.Web.UI.Page
     {
+        public string UID;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(base.Request["UID"]))
+            {
+                return;
+            }
+            this.UID = base.Request["UID"];
         }
     }
 }

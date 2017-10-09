@@ -57,7 +57,7 @@
         function EditGuarantee(UID) {
             if (IsEditdata(UID)) {
                 var url = "/Contract/User_Guarantee.aspx?UID= " + UID;
-                top.openDialog(url, 'User_Guarantee', '保证信息', 700, 630, 50, 50);
+                top.openDialog(url, 'User_Guarantee', '保证信息', 760, 630, 50, 50);
             }
         }
         //抵押物品

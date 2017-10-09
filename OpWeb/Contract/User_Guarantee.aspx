@@ -10,56 +10,42 @@
     <script src="/Themes/Scripts/DatePicker/WdatePicker.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/artDialog/artDialog.source.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/artDialog/iframeTools.source.js" type="text/javascript"></script>
-    <script src="/Themes/Scripts/TreeTable/jquery.treeTable.js" type="text/javascript"></script>
-    <link href="/Themes/Scripts/TreeTable/css/jquery.treeTable.css" rel="stylesheet"
-        type="text/css" />
-    <link href="/Themes/Scripts/TreeView/treeview.css" rel="stylesheet" type="text/css" />
-    <script src="/Themes/Scripts/TreeView/treeview.pack.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/FunctionJS.js" type="text/javascript"></script>
     <script type="text/javascript">
         //初始化
-        $(function () {
-            $('#table2').hide();
-        })
+
         //点击切换面板
         function panel(obj) {
+            var url = "User_GuaranteeForm1.aspx?UID=<%=UID%>";
             if (obj == 1) {
-                $('#table1').show();
-                $('#table2').hide();
 
+                url = "User_GuaranteeForm1.aspx?UID=<%=UID%>";
             } else if (obj == 2) {
-                $('#table1').hide();
-                $("#table2").show();
+                url = "User_GuaranteeForm2.aspx?UID=<%=UID%>";
             }
+            $('#iframe0').attr('src', url);
         }
     </script>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="frmtop">
-        <table style="padding: 0px; margin: 0px; height: 100%;" cellpadding="0" cellspacing="0">
-            <tr>
-                <td id="menutab" style="vertical-align: bottom;">
-                    <div id="tab0" class="Tabsel" onclick="GetTabClick(this);panel(1)">
-                        保证人</div>
-                    <div id="tab1" class="Tabremovesel" onclick="GetTabClick(this);panel(2);">
-                        抵押人</div>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="div-frm" style="height: 275px;">
-        <%--房产抵押--%>
-        <table id="table1" border="0" cellpadding="0" cellspacing="0" class="frm">
-            
-        </table>
-        <%--汽车抵押--%>
-        <table id="table2" border="0" cellpadding="0" cellspacing="0" class="frm">
-           
-        </table>
-       
-    </div>
-   
+        <div class="frmtop">
+            <table style="padding: 0px; margin: 0px; height: 100%;" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td id="menutab" style="vertical-align: bottom;">
+                        <div id="tab0" class="Tabsel" onclick="GetTabClick(this);panel(1)">
+                            保证人
+                        </div>
+                        <div id="tab1" class="Tabremovesel" onclick="GetTabClick(this);panel(2);">
+                            抵押人
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="div-frm" style="height: 590px;overflow:hidden;">
+            <iframe name="iframe0" id="iframe0" width="100%" height="100%" src="User_GuaranteeForm1.aspx?UID=<%=UID%>" frameborder="0"></iframe>
+        </div>
     </form>
 </body>
 </html>

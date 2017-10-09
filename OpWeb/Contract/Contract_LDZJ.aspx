@@ -66,7 +66,7 @@
         function EditPG(UID) {
             if (IsEditdata(UID)) {
                 var url = "/Contract/Contract_LDZJPGInfo.aspx?UID=" + UID;
-                top.openDialog(url, '6', '质押凭证 ', 800, 510, 50, 50);
+                top.openDialog(url, 'Contract_LDZJPGInfo', '质押凭证 ', 800, 510, 50, 50);
             }
         }
         //抵押凭证
@@ -132,7 +132,7 @@
                             <td style="width: 70px; text-align: center;">财务信息</td>
                             <td style="width: 60px; text-align: center;">质押凭证</td>
                             <td style="width: 70px; text-align: center;">抵押凭证</td>
-                            <td style="width: 60px; text-align: center;">保证资料</td>
+                           
                             <td style="width: 60px; text-align: center;">操作员</td>
                             <td style="width: 70px; text-align: center;">审批状态</td>
                             <td style="width: 70px; text-align: center;">合同状态</td>
@@ -166,11 +166,7 @@
                                             <img src="../img/data_70.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>
-                                    <td style="width: 60px; text-align: center;">
-                                        <a onclick="EditGT('<%#Eval("UID")%>')">
-                                            <img src="../img/file_38.png" width="35" height="35" alt="" />
-                                        </a>
-                                    </td>
+                                   
                                     <td style="width: 60px; text-align: center;">
                                         <%#Eval("User_Name")%>
                                     </td>

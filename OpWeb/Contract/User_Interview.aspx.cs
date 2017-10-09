@@ -59,6 +59,13 @@ namespace OpWeb.Contract
             Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("User_Interview", "UID", UID);
             if (ht.Count>0)
             {
+                if (!string.IsNullOrEmpty(ht["UV_DATE"].ToString()))
+                {
+                    DateTime NewDate;
+                    NewDate = DateTime.Parse(ht["UV_DATE"].ToString());
+                    ht["UV_DATE"] = NewDate.ToString("yyyy-MM-dd");
+                }
+
                 ControlBindHelper.SetWebControls(this.Page, ht);
             }
         }

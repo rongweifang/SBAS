@@ -112,12 +112,12 @@
                             <td width="100">
                                 <label class="control-label">姓　　名：</label></td>
                             <td width="140">
-                                <input id="Card_Name" readonly name="Card_Name" class="form-control" value="荣" type="text" runat="server" />
+                                <input id="Card_Name" readonly name="Card_Name" class="form-control" value="" type="text" runat="server" />
                             </td>
                             <td width="100">
                                 <label class="control-label">身份证号：</label></td>
                             <td width="220">
-                                <input id="Card_ID" readonly name="Card_ID" class="form-control valid" type="text" value="411302198410223710" aria-required="true" aria-invalid="false" runat="server" />
+                                <input id="Card_ID" readonly name="Card_ID" class="form-control valid" type="text" value="" aria-required="true" aria-invalid="false" runat="server" />
                             </td>
                         </tr>
                         <tr>
@@ -148,7 +148,7 @@
                             <td>
                                 <label class="control-label">年　　龄：</label></td>
                             <td>
-                                <input id="U_Age" readonly name="U_Age" value="33" class="form-control" type="text" runat="server" /></td>
+                                <input id="U_Age" readonly name="U_Age" value="" class="form-control" type="text" runat="server" /></td>
                             <td>
                                 <label class="control-label">出生年月：</label></td>
                             <td>

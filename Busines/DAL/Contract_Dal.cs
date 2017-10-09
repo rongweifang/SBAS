@@ -457,5 +457,28 @@ FROM Contract_Loan CL) M");
             return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "CreateDate", "DESC", pageIndex, pageSize, ref count);
         }
 
+        public DataTable GetUserGuaranteeByUID(string UID)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("SELECT * FROM User_Guarantee WHERE UID=@UID");
+            SqlParam[] para = new SqlParam[] { new SqlParam("@UID", UID) };
+           return DataFactory.SqlDataBase().GetDataTableBySQL(sb, para);
+        }
+        public DataTable GetUserGuaranteeByUGID(string UGID)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("SELECT * FROM User_Guarantee WHERE UGID=@UGID");
+            SqlParam[] para = new SqlParam[] { new SqlParam("@UGID", UGID) };
+            return DataFactory.SqlDataBase().GetDataTableBySQL(sb, para);
+        }
+        public DataTable GetUserPledgeByUID(string UID)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("SELECT * FROM User_Pledge WHERE UID=@UID");
+            SqlParam[] para = new SqlParam[] { new SqlParam("@UID", UID) };
+            return DataFactory.SqlDataBase().GetDataTableBySQL(sb, para);
+        }
+
+
     }
 }

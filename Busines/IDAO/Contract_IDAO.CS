@@ -37,5 +37,8 @@ namespace Busines.IDAO
         bool SaveSendMessage(string UserName, string UserTel, string MSG, string SendTime, int State, string CreateUser, int MsgType);
         bool IsSendMessage(string Organization_ID);
         DataTable GetMessageHistoryPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count);
+        DataTable GetUserGuaranteeByUID(string UID);
+        DataTable GetUserGuaranteeByUGID(string UGID);
+        DataTable GetUserPledgeByUID(string UID);
     }
 }
