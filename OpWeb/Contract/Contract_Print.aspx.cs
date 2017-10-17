@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Collections;
 using Busines;
+using System.Text;
 
 namespace OpWeb.Contract
 {
@@ -13,6 +14,7 @@ namespace OpWeb.Contract
     {
         private string HUID;
         public string PageContent = string.Empty;
+        public string CssUrl;
         protected void Page_Load(object sender, EventArgs e)
         {
             this.HUID = base.Request["HUID"];
@@ -24,10 +26,13 @@ namespace OpWeb.Contract
         }
         private void InitData()
         {
-
             Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("Contract_History", "HUID", this.HUID);
             if (ht.Count > 0 && ht != null)
             {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendFormat("SELECT DocumentType FROM View_Contract WHERE UID='{0}'", ht["UID"].ToString());
+               object ContractType = DataFactory.SqlDataBase().GetObjectValue(sb);
+                CssUrl = string.Format("<link href=\"/css/{0}.css\" rel=\"stylesheet\" /> <link href=\"/css/{0}_Print.css\" media=\"print\" rel=\"stylesheet\" /> ", ContractType);
                 PageContent = ht["CONTRACTCONTENT"].ToString();
                 PageContent = Microsoft.JScript.GlobalObject.unescape(PageContent);
                 PageContent= Contract_Manage.GetReportExchange(ht["UID"].ToString(), PageContent);

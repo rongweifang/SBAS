@@ -14,9 +14,10 @@ namespace OpWeb.Contract
     {
         private string UID;
         public string PageContent = string.Empty;
-        private string documentType;
+        public string documentType;
         private string documentSize;
         private bool isApprove = false;
+        public string CssUrl;
         private Contract_IDAO cidal = new Contract_Dal();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,6 +27,7 @@ namespace OpWeb.Contract
             }
             this.UID = base.Request["UID"];
             this.documentType = base.Request["documentType"];
+            CssUrl = string.Format("<link href=\"/css/{0}.css\" rel=\"stylesheet\" /> <link href=\"/css/{0}_Print.css\" media=\"print\" rel=\"stylesheet\" /> ", documentType);
             this.documentSize = string.IsNullOrEmpty(Request["documentSize"]) ? "A4" : Request["documentSize"];
 
             if (!string.IsNullOrEmpty(this.UID))

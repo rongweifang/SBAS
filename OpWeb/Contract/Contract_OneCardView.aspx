@@ -4,14 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>合同预览</title>
     <link href="/css/bootstrap.min.css?v=3.3.6" rel="stylesheet" />
     <link href="/css/ContactTemp.css" rel="stylesheet" />
     <link href="/css/ContractPrint.css" media="print" rel="stylesheet" />
     <script src="/Themes/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
     <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
-
+     <%=CssUrl %>
     <style>
         #ViewBody {
             width: 100%;

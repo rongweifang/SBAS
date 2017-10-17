@@ -123,7 +123,7 @@
                             <td style="width: 70px; text-align: center;">经营人</td>
                             <td style="width: 60px; text-align: center;">附加信息</td>
                             <td style="width: 70px; text-align: center;">本社开户</td>
-                            <td style="width: 70px; text-align: center;">分支机构</td>
+                            <td style="width: 70px; text-align: center; display:none;">分支机构</td>
                             <td style="width: 60px; text-align: center;">证件采集</td>
                             <td style="width: 70px; text-align: center;">签订合同</td>
                             <td style="width: 120px; text-align: center;">企业状态</td>
@@ -157,7 +157,7 @@
                                             <img src="../img/account_card.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>
-                                    <td style="width: 70px; text-align: center;">
+                                    <td style="width: 70px; text-align: center;display:none;">
                                         <a onclick="EditEnterpriseBranch('<%#Eval("E_enterpriseID")%>')">
                                             <img src="../img/group_55.png" width="35" height="35" alt="" />
                                         </a>

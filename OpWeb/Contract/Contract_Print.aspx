@@ -8,7 +8,7 @@
     <title>合同预览打印</title>
     <link href="/css/ContactTemp.css" rel="stylesheet" />
     <link href="/css/ContractPrint.css" media="print" rel="stylesheet" />
-   
+    <%=CssUrl %>
 </head>
 <body>
     <div id="ViewBody">

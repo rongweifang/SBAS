@@ -11,7 +11,7 @@
     <link href="/css/ContractPrint.css" media="print" rel="stylesheet" />
     <script src="/Themes/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
     <script src="/Themes/scripts/layer.js" type="text/javascript"></script>
-
+     <%=CssUrl %>
     <style>
         #ViewBody {
             width: 100%;
