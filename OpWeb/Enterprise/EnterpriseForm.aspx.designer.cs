@@ -112,6 +112,24 @@ namespace OpWeb.Enterprise {
         protected global::System.Web.UI.HtmlControls.HtmlInputText E_operateScope;
         
         /// <summary>
+        /// E_BankDeposit 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText E_BankDeposit;
+        
+        /// <summary>
+        /// E_BankAccount 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText E_BankAccount;
+        
+        /// <summary>
         /// E_LinkMan 控件。
         /// </summary>
         /// <remarks>

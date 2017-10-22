@@ -37,6 +37,23 @@ namespace OpWeb.Contract
             Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("Contract_LDZJ", "UID", this._key);
             if (ht.Count > 0 && ht != null)
             {
+                if (ht.Count > 0 && ht != null)
+                {
+                    DateTime NewDate;
+                    if (!string.IsNullOrEmpty(ht["M_REPLY_BEGIN"].ToString()))
+                    {
+                        NewDate = DateTime.Parse(ht["M_REPLY_BEGIN"].ToString());
+                        ht["M_REPLY_BEGIN"] = NewDate.ToString("yyyy-MM-dd");
+                    }
+
+                    if (!string.IsNullOrEmpty(ht["M_REPLY_END"].ToString()))
+                    {
+                        NewDate = DateTime.Parse(ht["M_REPLY_END"].ToString());
+                        ht["M_REPLY_END"] = NewDate.ToString("yyyy-MM-dd");
+                    }
+                   
+                    ControlBindHelper.SetWebControls(this.Page, ht);
+                }
                 ControlBindHelper.SetWebControls(this.Page, ht);
             }
         }

@@ -102,257 +102,327 @@
     </div>
     <form id="signupForm" runat="server">
         <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>法定代表人</h5>
-            </div>
-            <div class="ibox-content">
-                <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
-                    <tbody>
-                        <tr>
-                            <td width="100">
-                                <label class="control-label">姓　　名：</label></td>
-                            <td width="140">
-                                <input id="Card_Name" readonly name="Card_Name" class="form-control" value="" type="text" runat="server" />
-                            </td>
-                            <td width="100">
-                                <label class="control-label">身份证号：</label></td>
-                            <td width="220">
-                                <input id="Card_ID" readonly name="Card_ID" class="form-control valid" type="text" value="" aria-required="true" aria-invalid="false" runat="server" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td></td>
-                            <td>&nbsp;</td>
-                            <td><span class="help-block m-b-none"><i class="fa fa-info-circle"></i>身份证号不能为空</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="control-label">性　　别：</label></td>
-                            <td>
-                                <input id="Card_Sex" readonly name="Card_Sex" class="form-control" type="text" runat="server" />
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#tab-1"><i class="fa fa-user"></i>法定代表人</a></li>
+                <li class=""><a data-toggle="tab" href="#tab-2"><i class="fa fa-briefcase"></i>董事长</a></li>
+                <li class=""><a data-toggle="tab" href="#tab-3"><i class="fa fa-briefcase"></i>总经理</a></li>
+                <li class=""><a data-toggle="tab" href="#tab-4"><i class="fa fa-briefcase"></i>财务主管</a></li>
+            </ul>
+            <div style="clear: both"></div>
+            <div class="tab-content" style="height: 390px;">
+                <div id="tab-1" class="tab-pane active">
+                    <div class="ibox-content">
+                        <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
+                            <tbody>
+                                <tr>
+                                    <td width="100">
+                                        <label class="control-label">姓　　名：</label></td>
+                                    <td width="140">
+                                        <input id="Card_Name" readonly name="Card_Name" class="form-control" value="" type="text" runat="server" />
+                                    </td>
+                                    <td width="100">
+                                        <label class="control-label">身份证号：</label></td>
+                                    <td width="220">
+                                        <input id="Card_ID" readonly name="Card_ID" class="form-control valid" type="text" value="" aria-required="true" aria-invalid="false" runat="server" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td>&nbsp;</td>
+                                    <td><span class="help-block m-b-none"><i class="fa fa-info-circle"></i>身份证号不能为空</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">性　　别：</label></td>
+                                    <td>
+                                        <input id="Card_Sex" readonly name="Card_Sex" class="form-control" type="text" runat="server" />
 
-                            </td>
-                            <td>
-                                <label class="control-label">民　　族：</label></td>
-                            <td>
-                                <input id="Card_Nation" readonly name="Card_Nation" class="form-control" type="text" runat="server" /></td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="control-label">年　　龄：</label></td>
-                            <td>
-                                <input id="U_Age" readonly name="U_Age" value="" class="form-control" type="text" runat="server" /></td>
-                            <td>
-                                <label class="control-label">出生年月：</label></td>
-                            <td>
+                                    </td>
+                                    <td>
+                                        <label class="control-label">民　　族：</label></td>
+                                    <td>
+                                        <input id="Card_Nation" readonly name="Card_Nation" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">年　　龄：</label></td>
+                                    <td>
+                                        <input id="U_Age" readonly name="U_Age" value="" class="form-control" type="text" runat="server" /></td>
+                                    <td>
+                                        <label class="control-label">出生年月：</label></td>
+                                    <td>
 
-                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <input id="Card_Year" readonly name="Card_Year" class="form-control" type="text" style="width: 80px;" runat="server" /></td>
-                                            <td>－</td>
-                                            <td>
-                                                <input id="Card_Month" readonly name="Card_Month" class="form-control" style="width: 45px;" type="text" runat="server" /></td>
-                                            <td>－</td>
-                                            <td>
-                                                <input id="Card_Day" readonly name="Card_Day" class="form-control" style="width: 45px;" type="text" runat="server" /></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td colspan="3">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="control-label">身份证有效期：</label></td>
-                            <td colspan="3">
-                                <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="text-align: center">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <input id="Card_Apply_Year" readonly name="Card_Apply_Year" class="form-control" type="text" style="width: 80px;" runat="server" /></td>
-                                            <td>－</td>
-                                            <td>
-                                                <input id="Card_Apply_Month" readonly name="Card_Apply_Month" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
-                                            <td>－</td>
-                                            <td>
-                                                <input id="Card_Apply_Day" readonly name="Card_Apply_Day" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
-                                            <td>至 </td>
-                                            <td>
-                                                <input id="Card_Valid_Year" readonly name="Card_Valid_Year" class="form-control" type="text" style="width: 80px;" runat="server" /></td>
-                                            <td>－</td>
-                                            <td>
-                                                <input id="Card_Valid_Month" readonly name="Card_Valid_Month" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
-                                            <td>－</td>
-                                            <td>
-                                                <input id="Card_Valid_Day" readonly name="Card_Valid_Day" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input id="Card_Year" readonly name="Card_Year" class="form-control" type="text" style="width: 80px;" runat="server" /></td>
+                                                    <td>－</td>
+                                                    <td>
+                                                        <input id="Card_Month" readonly name="Card_Month" class="form-control" style="width: 45px;" type="text" runat="server" /></td>
+                                                    <td>－</td>
+                                                    <td>
+                                                        <input id="Card_Day" readonly name="Card_Day" class="form-control" style="width: 45px;" type="text" runat="server" /></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td colspan="3">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">身份证有效期：</label></td>
+                                    <td colspan="3">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="text-align: center">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input id="Card_Apply_Year" readonly name="Card_Apply_Year" class="form-control" type="text" style="width: 80px;" runat="server" /></td>
+                                                    <td>－</td>
+                                                    <td>
+                                                        <input id="Card_Apply_Month" readonly name="Card_Apply_Month" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
+                                                    <td>－</td>
+                                                    <td>
+                                                        <input id="Card_Apply_Day" readonly name="Card_Apply_Day" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
+                                                    <td>至 </td>
+                                                    <td>
+                                                        <input id="Card_Valid_Year" readonly name="Card_Valid_Year" class="form-control" type="text" style="width: 80px;" runat="server" /></td>
+                                                    <td>－</td>
+                                                    <td>
+                                                        <input id="Card_Valid_Month" readonly name="Card_Valid_Month" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
+                                                    <td>－</td>
+                                                    <td>
+                                                        <input id="Card_Valid_Day" readonly name="Card_Valid_Day" class="form-control" type="text" style="width: 45px;" runat="server" /></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td colspan="3">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="control-label">户籍地址：</label></td>
-                            <td colspan="3">
-                                <input id="Card_Address" readonly name="Card_Address" class="form-control" type="text" runat="server" /></td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td colspan="3">&nbsp;</td>
-                        </tr>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td colspan="3">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">户籍地址：</label></td>
+                                    <td colspan="3">
+                                        <input id="Card_Address" readonly name="Card_Address" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td colspan="3">&nbsp;</td>
+                                </tr>
 
-                        <tr>
-                            <td>
-                                <label class="control-label">联系电话:</label></td>
-                            <td>
-                                <input id="U_Tel" name="U_Tel" class="form-control" type="text" runat="server" /></td>
-                            <td>&nbsp;
-                            </td>
-                            <td>&nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;
-                            </td>
-                            <td colspan="3">&nbsp;
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="ibox-title">
-                <h5>董事长</h5>
-            </div>
-            <div class="ibox-content">
-                <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <label class="control-label">姓　　名：</label></td>
-                            <td>
-                                <input id="E_ChairMan" name="E_ChairMan" class="form-control" type="text" runat="server" /></td>
-                            <td>
-                                <label class="control-label">身份证号：</label></td>
-                            <td>
-                                <input id="E_ChairMan_ID" name="E_ChairMan_ID" class="form-control" type="text" runat="server" /></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="control-label">性　　别：</label></td>
-                            <td>
-                                <input id="E_ChairMan_Sex" name="E_ChairMan_Sex" class="form-control" type="text" runat="server" /></td>
-                            <td>
-                                <label class="control-label">任职年限：</label></td>
-                            <td>
-                                <input id="E_ChairMan_Limit" name="E_ChairMan_Limit" class="form-control" type="text" runat="server" /></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="control-label">学　　历：</label></td>
-                            <td>
-                                <input id="E_ChairMan_Edu" name="E_ChairMan_Edu" class="form-control" type="text" runat="server" /></td>
-                            <td>
-                                <label class="control-label">有无不良记录：</label></td>
-                            <td>
-                                <input id="E_ChairMan_Bad" name="E_ChairMan_Bad" class="form-control" type="text" runat="server" /></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="ibox-title">
-                <h5>总经理</h5>
-            </div>
-            <div class="ibox-content">
-                <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <label class="control-label">姓　　名：</label></td>
-                            <td>
-                                <input id="E_Manager" name="E_Manager" class="form-control" type="text" runat="server" /></td>
-                            <td>
-                                <label class="control-label">身份证号：</label></td>
-                            <td>
-                                <input id="E_Manager_ID" name="E_Manager_ID" class="form-control" type="text" runat="server" /></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="control-label">性　　别：</label></td>
-                            <td>
-                                <input id="E_Manager_Sex" name="E_Manager_Sex" class="form-control" type="text" runat="server" /></td>
-                            <td>
-                                <label class="control-label">任职年限：</label></td>
-                            <td>
-                                <input id="E_Manager_Limit" name="E_Manager_Limit" class="form-control" type="text" runat="server" /></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="control-label">学　　历：</label></td>
-                            <td>
-                                <input id="E_Manager_Edu" name="E_Manager_Edu" class="form-control" type="text" runat="server" /></td>
-                            <td>
-                                <label class="control-label">有无不良记录：</label></td>
-                            <td>
-                                <input id="E_Manager_Bad" name="E_Manager_Bad" class="form-control" type="text" runat="server" /></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="ibox-title">
-                <h5>财务主管</h5>
-            </div>
-            <div class="ibox-content">
-                <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <label class="control-label">姓　　名：</label></td>
-                            <td>
-                                <input id="E_CFO" name="E_CFO" class="form-control" type="text" runat="server" /></td>
-                            <td>
-                                <label class="control-label">身份证号：</label></td>
-                            <td>
-                                <input id="E_CFO_ID" name="E_CFO_ID" class="form-control" type="text" runat="server" /></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="control-label">性　　别：</label></td>
-                            <td>
-                                <input id="E_CFO_Sex" name="E_CFO_Sex" class="form-control" type="text" runat="server" /></td>
-                            <td>
-                                <label class="control-label">任职年限：</label></td>
-                            <td>
-                                <input id="E_CFO_Limit" name="E_CFO_Limit" class="form-control" type="text" runat="server" /></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="control-label">学　　历：</label></td>
-                            <td>
-                                <input id="E_CFO_Edu" name="E_CFO_Edu" class="form-control" type="text" runat="server" /></td>
-                            <td>
-                                <label class="control-label">有无不良记录：</label></td>
-                            <td>
-                                <input id="E_CFO_Bad" name="E_CFO_Bad" class="form-control" type="text" runat="server" /></td>
-                        </tr>
-                    </tbody>
-                </table>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">联系电话:</label></td>
+                                    <td>
+                                        <input id="U_Tel" name="U_Tel" class="form-control" type="text" runat="server" /></td>
+                                    <td>&nbsp;
+                                    </td>
+                                    <td>&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;
+                                    </td>
+                                    <td colspan="3">&nbsp;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="tab-2" class="tab-pane">
+                    <div class="ibox-content">
+                        <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">姓　　名：</label></td>
+                                    <td>
+                                        <input id="E_ChairMan" name="E_ChairMan" class="form-control" type="text" runat="server" /></td>
+                                    <td>
+                                        <label class="control-label">身份证号：</label></td>
+                                    <td>
+                                        <input id="E_ChairMan_ID" name="E_ChairMan_ID" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 15px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">性　　别：</label></td>
+                                    <td>
+                                        <select class="form-control" name="E_ChairMan_Sex" id="E_ChairMan_Sex" runat="server">
+                                            <option selected></option>
+                                            <option>男</option>
+                                            <option>女</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <label class="control-label">任职年限：</label></td>
+                                    <td>
+                                        <input id="E_ChairMan_Limit" name="E_ChairMan_Limit" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 15px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">学　　历：</label></td>
+                                    <td>
+                                        <select class="form-control" id="E_ChairMan_Edu" name="E_ChairMan_Edu" runat="server">
+                                            <option selected></option>
+                                            <option>小学</option>
+                                            <option>初中</option>
+                                            <option>高中</option>
+                                            <option>大专</option>
+                                            <option>硕士研究生</option>
+                                            <option>博士研究生</option>
+                                            <option>本科</option>
+                                        </select>
+
+                                    </td>
+                                    <td>
+                                        <label class="control-label">有无不良记录：</label></td>
+                                    <td>
+                                        <input id="E_ChairMan_Bad" name="E_ChairMan_Bad" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="tab-3" class="tab-pane">
+                    <div class="ibox-content">
+                        <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">姓　　名：</label></td>
+                                    <td>
+                                        <input id="E_Manager" name="E_Manager" class="form-control" type="text" runat="server" /></td>
+                                    <td>
+                                        <label class="control-label">身份证号：</label></td>
+                                    <td>
+                                        <input id="E_Manager_ID" name="E_Manager_ID" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 15px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">性　　别：</label></td>
+                                    <td>
+                                        <select class="form-control" name="E_Manager_Sex" id="E_Manager_Sex" runat="server">
+                                            <option selected></option>
+                                            <option>男</option>
+                                            <option>女</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <label class="control-label">任职年限：</label></td>
+                                    <td>
+                                        <input id="E_Manager_Limit" name="E_Manager_Limit" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 15px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">学　　历：</label></td>
+                                    <td>
+                                        <select class="form-control" id="E_Manager_Edu" name="E_Manager_Edu" runat="server">
+                                            <option selected></option>
+                                            <option>小学</option>
+                                            <option>初中</option>
+                                            <option>高中</option>
+                                            <option>大专</option>
+                                            <option>硕士研究生</option>
+                                            <option>博士研究生</option>
+                                            <option>本科</option>
+                                        </select>
+
+                                    </td>
+                                    <td>
+                                        <label class="control-label">有无不良记录：</label></td>
+                                    <td>
+                                        <input id="E_Manager_Bad" name="E_Manager_Bad" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="tab-4" class="tab-pane">
+                    <div class="ibox-content">
+                        <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">姓　　名：</label></td>
+                                    <td>
+                                        <input id="E_CFO" name="E_CFO" class="form-control" type="text" runat="server" /></td>
+                                    <td>
+                                        <label class="control-label">身份证号：</label></td>
+                                    <td>
+                                        <input id="E_CFO_ID" name="E_CFO_ID" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 15px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">性　　别：</label></td>
+                                    <td>
+                                        <select class="form-control" name="E_CFO_Sex" id="E_CFO_Sex" runat="server">
+                                            <option selected></option>
+                                            <option>男</option>
+                                            <option>女</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <label class="control-label">任职年限：</label></td>
+                                    <td>
+                                        <input id="E_CFO_Limit" name="E_CFO_Limit" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 15px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">学　　历：</label></td>
+                                    <td>
+                                        <select class="form-control" id="E_CFO_Edu" name="E_CFO_Edu" runat="server">
+                                            <option selected></option>
+                                            <option>小学</option>
+                                            <option>初中</option>
+                                            <option>高中</option>
+                                            <option>大专</option>
+                                            <option>硕士研究生</option>
+                                            <option>博士研究生</option>
+                                            <option>本科</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <label class="control-label">有无不良记录：</label></td>
+                                    <td>
+                                        <input id="E_CFO_Bad" name="E_CFO_Bad" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8 col-sm-offset-3">
@@ -360,9 +430,7 @@
                                         <button type="button" class="btn btn-w-m btn-warning" onclick="OpenClose();">取  消</button>
                 </div>
             </div>
-
         </div>
-
     </form>
 </body>
 </html>

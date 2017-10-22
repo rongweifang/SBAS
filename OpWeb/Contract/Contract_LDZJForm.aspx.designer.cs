@@ -40,13 +40,22 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText E_Loan;
         
         /// <summary>
-        /// M_Loan_Years 控件。
+        /// E_Loan_Cap 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect M_Loan_Years;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText E_Loan_Cap;
+        
+        /// <summary>
+        /// M_Loan_Months 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Loan_Months;
         
         /// <summary>
         /// E_Use 控件。
@@ -56,6 +65,24 @@ namespace OpWeb.Contract {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText E_Use;
+        
+        /// <summary>
+        /// M_Reply_Begin 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Reply_Begin;
+        
+        /// <summary>
+        /// M_Reply_End 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Reply_End;
         
         /// <summary>
         /// E_Replay_Type 控件。

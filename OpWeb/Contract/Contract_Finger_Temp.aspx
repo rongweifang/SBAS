@@ -1,11 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contract_Finger_Temp.aspx.cs" Inherits="OpWeb.Contract.Contract_Finger_Temp" %>
+
 <%@ Register Src="../UserControl/LoadButton.ascx" TagName="LoadButton" TagPrefix="uc2" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-     <title>指纹应用管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>指纹应用管理</title>
     <link href="/Themes/Styles/Site.css" rel="stylesheet" type="text/css" />
     <script src="/Themes/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
     <script src="/Themes/Scripts/jquery.pullbox.js" type="text/javascript"></script>
@@ -46,7 +47,7 @@
                 top.openDialog(url, 'Contract_Finger_TempForm', '指纹应用管理　- 编辑', 450, 325, 50, 50);
             }
         }
-       
+
         //删除
         function EditWarrantor(Card_ID) {
             if (IsEditdata(Card_ID)) {
@@ -54,7 +55,7 @@
                 top.openDialog(url, 'User_Warrantor', '保证人信息', 800, 630, 50, 50);
             }
         }
- 
+
 
     </script>
 </head>
@@ -63,13 +64,17 @@
         <form id="form1" runat="server">
 
             <div class="btnbarcontetn">
-               
+                <div style="float: left;">
+                    <select id="ContractType" class="select" runat="server" style="width: 140px; display: inline-block;"></select>&nbsp;&nbsp;<input type="text" id="txt_Search" class="txtSearch SearchImg" runat="server" style="width: 120px;" /><asp:LinkButton ID="lbtSearch" runat="server" class="button green" OnClick="lbtSearch_Click"><span class="icon-botton"
+            style="background: url('../../Themes/images/Search.png') no-repeat scroll 0px 4px;">
+        </span>查 询</asp:LinkButton>
+                </div>
                 <div style="text-align: right">
                     <uc2:LoadButton ID="LoadButton1" runat="server" />
                 </div>
             </div>
             <div class="div-body">
-                <table id="table1" class="grid" singleselect="false">
+                <table id="table1" class="grid" singleselect="true">
                     <thead>
                         <tr>
                             <td style="width: 20px; text-align: left;">
@@ -102,12 +107,12 @@
                             </ItemTemplate>
                             <FooterTemplate>
                                 <% if (rp_Item != null)
-                                   {
-                                       if (rp_Item.Items.Count == 0)
-                                       {
-                                           Response.Write("<tr><td colspan='8' style='color:red;text-align:center'>没有找到您要的相关数据！</td></tr>");
-                                       }
-                                   } %>
+                                    {
+                                        if (rp_Item.Items.Count == 0)
+                                        {
+                                            Response.Write("<tr><td colspan='8' style='color:red;text-align:center'>没有找到您要的相关数据！</td></tr>");
+                                        }
+                                    } %>
                             </FooterTemplate>
                         </asp:Repeater>
                     </tbody>

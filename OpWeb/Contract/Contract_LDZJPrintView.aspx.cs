@@ -29,13 +29,13 @@ namespace OpWeb.Contract
             this.documentType = base.Request["documentType"];
             CssUrl = string.Format("<link href=\"/css/{0}.css\" rel=\"stylesheet\" /> <link href=\"/css/{0}_Print.css\" media=\"print\" rel=\"stylesheet\" /> ", documentType);
             this.documentSize = string.IsNullOrEmpty(Request["documentSize"]) ? "A4" : Request["documentSize"];
-
             if (!string.IsNullOrEmpty(this.UID))
             {
                 isApprove = cidal.IsApproving(UID);
                 Btn_Create.Visible = isApprove;
                 this.InitData();
             }
+
         }
         private void InitData()
         {
@@ -46,17 +46,24 @@ namespace OpWeb.Contract
 
         protected void Btn_A4_Click(object sender, EventArgs e)
         {
-            PageContent = Contract_LDZJ_Change.GetHtmlContent(UID, documentType, "A4");
+            // documentSize = "A4";
+            //PageContent = Contract_LDZJ_Change.GetHtmlContent(UID, documentType, "A4");
+            //PageContent = Contract_LDZJ_Change.GetHtmlExchange(UID, PageContent, documentType);
+            //PageContent = Contract_LDZJ_Change.ClearHtmlExchange(PageContent);
+            //InitData();
 
-            PageContent = Contract_LDZJ_Change.GetHtmlExchange(UID, PageContent, documentType);
-            PageContent = Contract_LDZJ_Change.ClearHtmlExchange(PageContent);
+            Response.Redirect("/Contract/Contract_LDZJPrintView.aspx?UID=" + this.UID + "&documentType=Contract_LDZJ&documentSize=A4", false);
         }
 
         protected void Btn_A3_Click(object sender, EventArgs e)
         {
-            PageContent = Contract_LDZJ_Change.GetHtmlContent(UID, documentType, "A3");
-            PageContent = Contract_LDZJ_Change.GetHtmlExchange(UID, PageContent, documentType);
-            PageContent = Contract_LDZJ_Change.ClearHtmlExchange(PageContent);
+            // documentSize = "A3";
+            //PageContent = Contract_LDZJ_Change.GetHtmlContent(UID, documentType, "A3");
+            //PageContent = Contract_LDZJ_Change.GetHtmlExchange(UID, PageContent, documentType);
+            //PageContent = Contract_LDZJ_Change.ClearHtmlExchange(PageContent);
+            // InitData();
+
+            Response.Redirect("/Contract/Contract_LDZJPrintView.aspx?UID=" + this.UID + "&documentType=Contract_LDZJ&documentSize=A3", false);
         }
 
         protected void Btn_Create_Click(object sender, EventArgs e)
@@ -75,9 +82,9 @@ namespace OpWeb.Contract
             }
             else
             {
-                PageContent = Contract_LDZJ_Change.GetHtmlContent(UID, documentType, documentSize, false);
-                PageContent = Contract_LDZJ_Change.GetHtmlExchange(UID, PageContent, documentType);
-                PageContent = Contract_LDZJ_Change.ClearHtmlExchange(PageContent);
+                //PageContent = Contract_LDZJ_Change.GetHtmlContent(UID, documentType, documentSize, false);
+                //PageContent = Contract_LDZJ_Change.GetHtmlExchange(UID, PageContent, documentType);
+                //PageContent = Contract_LDZJ_Change.ClearHtmlExchange(PageContent);
 
                 //保存合同
                 bool ISOK = cidal.CreateContract(UID, PageContent);

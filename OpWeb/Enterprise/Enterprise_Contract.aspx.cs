@@ -69,7 +69,27 @@ namespace OpWeb.Enterprise
             bool IsOk = DataFactory.SqlDataBase().Submit_AddOrEdit("Contract_LDZJ", "E_enterpriseID", EID, ht);
             if (IsOk)
             {
-                ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('创建成功！');setTimeout('OpenClose()','3000');</script>");
+                Hashtable htt = DataFactory.SqlDataBase().GetHashtableById("Contract_LDZJ", "E_enterpriseID", EID);
+                string _UID = htt["UID"].ToString();
+                int FingerNum = DataFactory.SqlDataBase().IsExist("Contract_Finger", "UID", _UID);
+
+                if (FingerNum > 0)
+                {
+                    ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('保存成功！');setTimeout('OpenClose()','3000');</script>");
+                }
+                else
+                {
+                    bool IsFinger = cidal.IsInitFinger(_UID, "Contract_LDZJ");
+                    if (IsFinger)
+                    {
+                        ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('保存成功！');setTimeout('OpenClose()','3000');</script>");
+                    }
+                    else
+                    {
+                        ShowMsgHelper.Alert_Error("指纹应用写入失败，请重新创建！");
+                    }
+                }
+                //ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('创建成功！');setTimeout('OpenClose()','3000');</script>");
             }
             else
             {

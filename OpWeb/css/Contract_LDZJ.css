@@ -1,3 +1,30 @@
 ﻿body {
 }
+H1{font-size:20pt;}
 .HPrintPage  {width: 910px;height: 649px;line-height: 138%; text-align: center}
+
+.DPage1{font-size:15pt;}
+.DPage1 p{ line-height: 160%; margin:0; padding: 0;}
+.DPage1 td{ line-height: 185%; padding-top: 3px;padding-bottom: 3px;}
+.DPage2{font-size:11pt;line-height: 150%;}
+.DPage2 td{ padding-left: 2px;}
+.DPage2 p{ line-height: 150%; margin:0; padding: 0;}
+.DPage3{font-size:11pt;line-height: 150%;}
+.DPage3 p{ line-height: 150%; margin:0; padding: 0;}
+.DPage3 td{ padding-top: 3px;}
+.DPage4{font-size:11pt;line-height: 160%;}
+.DPage4 p{ line-height: 150%; margin:0; padding: 0;}
+.DPage4 td{ padding-top: 2px;padding-bottom: 3px;}
+.DPage5{font-size:11pt;line-height: 150%;}
+.DPage5 p{ line-height: 150%; margin:0; padding: 0;}
+.DPage5 td{padding-top: 2px;padding-bottom: 3px;}
+.DPage6{font-size:11pt;line-height: 150%;}
+.DPage6 td{padding-top: 1px;}
+.DPage10{font-size:11pt;line-height: 150%;}
+.DPage10 p{ line-height: 150%; margin:0; padding: 0;}
+.DPage11{font-size:11pt;line-height: 165%;text-indent: 2em; padding-top: 2px;padding-bottom: 3px;}
+.DPage11 td{ padding-top: 3px;padding-bottom: 3px;}
+.DPage11 p{ line-height: 165%; margin:0; padding: 0;padding-top: 2px;padding-bottom: 3px;}
+.DPage20{font-size:11pt;line-height: 175%;text-indent: 2em; padding-top: 2px;padding-bottom: 3px;}
+.DPage20 td{ padding-top: 3px;padding-bottom: 3px;}
+.DPage20 p{ line-height: 175%; margin:0; padding: 0;padding-top: 2px;padding-bottom: 3px;}

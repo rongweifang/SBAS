@@ -1,10 +1,8 @@
 ﻿using Busines;
-using Busines.DAL;
-using Busines.IDAO;
-using Common.DotNetBean;
+using Common.DotNetCode;
 using Common.DotNetUI;
-using OpWeb.App_Code;
 using System;
+using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,10 +16,23 @@ namespace OpWeb.Contract
     {
         private string _key;
         bool IsEdit = false;
+        public string Type;
         protected void Page_Load(object sender, EventArgs e)
         {
             this._key = base.Request["UID"];
             IsEdit = DataFactory.SqlDataBase().IsExist("EnterpriseFinance", "UID", this._key) > 0 ? true : false;
+
+            StringBuilder sb = new StringBuilder();
+            SqlParam[] param = new SqlParam[] {new SqlParam("@UID", _key) };
+            sb.Append("SELECT E_GuaranteeType From Contract_LDZJ WHERE UID=@UID");
+
+            object obj = DataFactory.SqlDataBase().GetObjectValue(sb,param);
+            if (string.IsNullOrEmpty(obj.ToString()))
+            {
+                ClientScript.RegisterStartupScript(Page.GetType(), "", "<script language=javascript>layer.msg('基础信息不完整！');OpenClose();</script>");
+                return;
+            }
+            Type = obj.ToString();
             if (!base.IsPostBack)
             {
                 if (!string.IsNullOrEmpty(this._key))

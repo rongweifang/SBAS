@@ -37,14 +37,14 @@
         //添加
         function add() {
             var url = "/Enterprise/EnterpriseForm.aspx";
-            top.openDialog(url, 'EnterpriseForm', '企业客户管理 - 添加', 820, 510, 50, 50);
+            top.openDialog(url, 'EnterpriseForm', '企业客户管理 - 添加', 800, 470, 50, 50);
         }
         //修改
         function edit() {
             var key = CheckboxValue();
             if (IsEditdata(key)) {
                 var url = "/Enterprise/EnterpriseForm.aspx?key=" + key;
-                top.openDialog(url, 'EnterpriseForm', '企业客户管理 - 编辑', 820, 510, 50, 50);
+                top.openDialog(url, 'EnterpriseForm', '企业客户管理 - 编辑', 800,470, 50, 50);
             }
         }
         //主要经营人

@@ -42,7 +42,7 @@
             var key = CheckboxValue();
             if (IsEditdata(key)) {
                 var url = "/Contract/Contract_LDZJForm.aspx?UID=" + key;
-                top.openDialog(url, 'Contract_LDZJForm', '合同管理 - 流动资金借款合同', 1000, 610, 50, 50);
+                top.openDialog(url, 'Contract_LDZJForm', '合同管理 - 流动资金借款合同', 800, 400, 50, 50);
             }
         }
         //打印预览
@@ -58,7 +58,7 @@
         function EditFinance(UID) {
             if (IsEditdata(UID)) {
                 var url = "/Contract/Contract_LDZJFinance.aspx?UID=" + UID;
-                top.openDialog(url, 'Contract_LDZJFinance', '财务指标', 970, 630, 50, 50);
+                top.openDialog(url, 'Contract_LDZJFinance', '财务指标', 800, 530, 50, 50);
             }
         }
 
@@ -81,6 +81,12 @@
             if (IsEditdata(UID)) {
                 var url = "/Contract/Contract_LDZJGTInfo.aspx?UID=" + UID;
                 top.openDialog(url, 'Contract_LDZJGTInfo', '保证资料 ', 800, 510, 50, 50);
+            }
+        }
+        function EditUFinger(UID, ClassID) {
+            if (IsEditdata(UID)) {
+                var url = "/Contract/Contract_Finger.aspx?UID=" + UID + "&ClassID=" + ClassID;
+                top.openDialog(url, 'Contract_Finger', '指纹签名', 970, 630, 50, 50);
             }
         }
         //function submitaudit() {
@@ -129,6 +135,8 @@
                             <td style="width: 80px; text-align: center;">借款金额</td>
                             <td style="width: 80px; text-align: center;">借款期限</td>
                             <td style="width: 100px; text-align: center;">担保方式</td>
+                             <td style="width: 70px; text-align: center;">法定代表人</td>
+                            <td style="width: 70px; text-align: center;">担保人签名</td>
                             <td style="width: 70px; text-align: center;">财务信息</td>
                             <td style="width: 60px; text-align: center;">质押凭证</td>
                             <td style="width: 70px; text-align: center;">抵押凭证</td>
@@ -150,6 +158,16 @@
                                     <td style="width: 80px; text-align: center;"><%#Eval("E_Loan")%>万元</td>
                                     <td style="width: 80px; text-align: center;"><%#Eval("M_Loan_Years")%>年</td>
                                     <td style="width: 100px; text-align: center;"><%#Eval("E_GuaranteeType")%> </td>
+                                    <td style="width: 70px; text-align: center;">
+                                        <a onclick="EditUFinger('<%#Eval("UID")%>',1)">
+                                            <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />
+                                        </a>
+                                    </td>
+                                     <td style="width: 70px; text-align: center;">
+                                        <a onclick="EditUFinger('<%#Eval("UID")%>',3)">
+                                            <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />
+                                        </a>
+                                    </td>
                                     <td style="width: 70px; text-align: center;">
                                         <a onclick="EditFinance('<%#Eval("UID")%>')">
                                             <img src="../img/data_64.png" width="35" height="35" alt="" />

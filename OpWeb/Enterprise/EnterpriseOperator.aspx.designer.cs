@@ -190,7 +190,7 @@ namespace OpWeb.Enterprise {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText E_ChairMan_Sex;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect E_ChairMan_Sex;
         
         /// <summary>
         /// E_ChairMan_Limit 控件。
@@ -208,7 +208,7 @@ namespace OpWeb.Enterprise {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText E_ChairMan_Edu;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect E_ChairMan_Edu;
         
         /// <summary>
         /// E_ChairMan_Bad 控件。
@@ -244,7 +244,7 @@ namespace OpWeb.Enterprise {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText E_Manager_Sex;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect E_Manager_Sex;
         
         /// <summary>
         /// E_Manager_Limit 控件。
@@ -262,7 +262,7 @@ namespace OpWeb.Enterprise {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText E_Manager_Edu;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect E_Manager_Edu;
         
         /// <summary>
         /// E_Manager_Bad 控件。
@@ -298,7 +298,7 @@ namespace OpWeb.Enterprise {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText E_CFO_Sex;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect E_CFO_Sex;
         
         /// <summary>
         /// E_CFO_Limit 控件。
@@ -316,7 +316,7 @@ namespace OpWeb.Enterprise {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText E_CFO_Edu;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect E_CFO_Edu;
         
         /// <summary>
         /// E_CFO_Bad 控件。
