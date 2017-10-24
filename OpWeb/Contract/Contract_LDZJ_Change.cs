@@ -2,6 +2,7 @@
 using Aspose.Words.Drawing;
 using Busines;
 using Common.DotNetData;
+using Common.DotNetCode;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,10 +30,14 @@ namespace OpWeb.Contract
         private static Regex MortageReportRegex = new Regex(@"{MortageR:+[\w]+}");//复选框输出
         private static Regex MortageLeaderRegex = new Regex(@"{MortageL:+[\w]+}");//领导签名
 
+        private static Regex PledgeEstateRegex = new Regex(@"{MortagePE:+[\w]+}");//动产抵押
+        private static Regex PledgeEstateListRegex = new Regex(@"{MortagePET:+[\w]+}");//动产抵押表格
+
+        private static Regex PledgeMovableRegex = new Regex(@"{MortagePM:+[\w]+}");//房地产抵押
 
         private static Hashtable hu = new Hashtable();//用户基本信息
 
-       
+
         //获取图片大小
         private static void GetSize(string MName, out int _width, out int _height)
         {
@@ -121,7 +126,7 @@ namespace OpWeb.Contract
                     }
                 }
             }
-           
+
             return sb.ToString();
         }
 
@@ -234,7 +239,7 @@ namespace OpWeb.Contract
                         }
                     }
                 }
-               
+
             }
             return htmls;
         }
@@ -328,7 +333,7 @@ namespace OpWeb.Contract
             return result;
         }
 
-      
+
 
         //值输出
         public static string GetSingleExchange(Hashtable hm, string htmls)
@@ -349,6 +354,107 @@ namespace OpWeb.Contract
 
             return htmls;
         }
+        //动产抵押
+        public static string GetPledgeMovable(string UID, bool IsChange, string htmls)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("SELECT * FROM Pledge_Movable WHERE UID=@UID");
+            SqlParam[] param = new SqlParam[] { new SqlParam("@UID", UID) };
+
+            int TotalRow = 6;
+            //抵押人{MortagePE:PM_Pledgor}、抵押权人{MortagePE:PM_Pledgee}、法定代表人手印、签名、抵押人签章、年、月、日
+
+            //动产抵押清单{MortagePET:PledgeMovable}
+            if (IsChange)
+            {
+                DataTable dt = DataFactory.SqlDataBase().GetDataTableBySQL(sb, param);
+                if (DataTableHelper.IsExistRows(dt))
+                {
+                    StringBuilder sbRow = new StringBuilder();
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        sbRow.Append(GetPledgeMovableRow(dr));
+                    }
+                    sbRow.Append(GetPledgeMovableNull(TotalRow - dt.Rows.Count));
+                    htmls = htmls.Replace("{MortagePE:PM_Pledgor}", dt.Rows[0]["PM_Pledgor"].ToString());
+                    htmls = htmls.Replace("{MortagePE:PM_Pledgee}", dt.Rows[0]["PM_Pledgee"].ToString());
+                    htmls = htmls.Replace("{MortagePET:PledgeMovable}", sbRow.ToString());
+                }
+                else
+                {
+                    htmls = htmls.Replace("{MortagePE:PM_Pledgor}", "");
+                    htmls = htmls.Replace("{MortagePE:PM_Pledgee}", "");
+                    htmls = htmls.Replace("{MortagePET:PledgeMovable}", GetPledgeMovableNull(TotalRow));
+                }
+            }
+            else
+            {
+                htmls = htmls.Replace("{MortagePE:PM_Pledgor}", "");
+                htmls = htmls.Replace("{MortagePE:PM_Pledgee}", "");
+                htmls = htmls.Replace("{MortagePET:PledgeMovable}", GetPledgeMovableNull(TotalRow));
+
+            }
+
+            return htmls;
+        }
+
+        private static string GetPledgeMovableRow(DataRow dr)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat(@"<tr>
+          <td>{0}</td>
+          <td>{1}</td>
+          <td>{2}</td>
+          <td>{3}</td>
+          <td>{4}</td>
+          <td>{5}</td>
+          <td>{6}</td>
+          <td>{7}</td>
+          <td>{8}</td>
+          <td>{9}</td>
+          <td>{10}</td>
+          <td>{11}</td>
+          <td>{12}</td>
+        </tr>", dr["PM_Name"].ToString(), 
+        dr["PM_Deposit"].ToString(),
+        dr["PM_Model"].ToString(), 
+        dr["PM_Num"].ToString(), 
+        dr["PM_Quality"].ToString(), 
+        dr["PM_Value"].ToString(), 
+        dr["PM_Warrant"].ToString(), 
+        dr["PM_Org"].ToString(), 
+        dr["PM_Registration"].ToString(),
+        dr["PM_NO"].ToString(),
+        dr["PM_Odd"].ToString(),
+        dr["PM_Startstop"].ToString(),
+        dr["PM_Insurance"].ToString());
+            return sb.ToString();
+        }
+        private static string GetPledgeMovableNull(int TotalRow)
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < TotalRow; i++)
+            {
+                sb.Append(@"<tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>");
+            }
+            return sb.ToString();
+        }
+
+
 
     }
 }

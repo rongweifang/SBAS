@@ -42,7 +42,7 @@
             var key = CheckboxValue();
             if (IsEditdata(key)) {
                 var url = "/Contract/Contract_LDZJForm.aspx?UID=" + key;
-                top.openDialog(url, 'Contract_LDZJForm', '合同管理 - 流动资金借款合同', 800, 400, 50, 50);
+                top.openDialog(url, 'Contract_LDZJForm', '合同管理 - 流动资金借款合同', 800, 500, 50, 50);
             }
         }
         //打印预览
@@ -133,8 +133,8 @@
                             </td>
                             <td style="width: 200px; text-align: center;">借款人全称</td>
                             <td style="width: 80px; text-align: center;">借款金额</td>
-                            <td style="width: 80px; text-align: center;">借款期限</td>
-                            <td style="width: 100px; text-align: center;">担保方式</td>
+                            <td style="width: 70px; text-align: center;">借款期限</td>
+                            <td style="width: 70px; text-align: center;">担保方式</td>
                              <td style="width: 70px; text-align: center;">法定代表人</td>
                             <td style="width: 70px; text-align: center;">担保人签名</td>
                             <td style="width: 70px; text-align: center;">财务信息</td>
@@ -156,8 +156,8 @@
                                     </td>
                                     <td style="width: 200px; text-align: center;"><%#Eval("E_enterpriseName")%></td>
                                     <td style="width: 80px; text-align: center;"><%#Eval("E_Loan")%>万元</td>
-                                    <td style="width: 80px; text-align: center;"><%#Eval("M_Loan_Years")%>年</td>
-                                    <td style="width: 100px; text-align: center;"><%#Eval("E_GuaranteeType")%> </td>
+                                    <td style="width: 70px; text-align: center;"><%#Eval("M_Loan_Months")%>月</td>
+                                    <td style="width: 70px; text-align: center;"><%#Eval("E_GuaranteeType")%> </td>
                                     <td style="width: 70px; text-align: center;">
                                         <a onclick="EditUFinger('<%#Eval("UID")%>',1)">
                                             <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />

@@ -293,7 +293,7 @@
                     </div>
                 </div>
                 <div id="tab-4" class="tab-pane">
-                    <div class="ibox-content">
+                    <div class="ibox-content" style="height:390px;overflow:scroll;">
                         <table width="100%" id="Type1" border="1" cellspacing="2" cellpadding="3" style="text-align: center;">
                             <tbody>
                                 <tr>
@@ -484,23 +484,23 @@
         function CheckType()
         {
             var _type = "<%=Type%>";
-            if (_type=="保证") {
-                $("#Type1").show();
-                $("#Type2").hide();
-                $("#Type3").hide();
-            } else if (_type == "抵押") {
-                $("#Type1").hide();
-                $("#Type2").show();
-                $("#Type3").hide();
-            } else if (_type == "质押") {
-                $("#Type1").hide();
-                $("#Type2").hide();
-                $("#Type3").show();
-            } else {
-                $("#Type1").hide();
-                $("#Type2").hide();
-                $("#Type3").hide();
-            }
+            //if (_type=="保证") {
+            //    $("#Type1").show();
+            //    $("#Type2").hide();
+            //    $("#Type3").hide();
+            //} else if (_type == "抵押") {
+            //    $("#Type1").hide();
+            //    $("#Type2").show();
+            //    $("#Type3").hide();
+            //} else if (_type == "质押") {
+            //    $("#Type1").hide();
+            //    $("#Type2").hide();
+            //    $("#Type3").show();
+            //} else {
+            //    $("#Type1").hide();
+            //    $("#Type2").hide();
+            //    $("#Type3").hide();
+            //}
         }
     </script>
 </body>

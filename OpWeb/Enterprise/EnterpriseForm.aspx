@@ -51,7 +51,7 @@
                         <td>
                             <label class="control-label">企 业 名 称：</label></td>
                         <td colspan="3">
-                            <div class="input-group">
+                            <div class="input-group" style="width:100%">
                                 <input id="E_enterpriseName" name="E_enterpriseName" class="form-control" type="text" runat="server" />
                                 <span class="input-group-addon" style="background-color: cadetblue; cursor: pointer;"><i class="fa fa-gg"></i></span>
                             </div>

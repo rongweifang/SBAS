@@ -41,6 +41,7 @@ namespace OpWeb.Contract
         {
             PageContent = Contract_LDZJ_Change.GetHtmlContent(UID, documentType, documentSize);
             PageContent = Contract_LDZJ_Change.GetHtmlExchange(UID, PageContent, documentType);
+            PageContent = Contract_LDZJ_Change.GetPledgeMovable(UID, true, PageContent);
             PageContent = Contract_LDZJ_Change.ClearHtmlExchange(PageContent);
         }
 

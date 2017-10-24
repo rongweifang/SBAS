@@ -41,7 +41,7 @@
                 <li class="" style="display: none;" id="Type3"><a data-toggle="tab" href="#tab-6"><i class="fa fa-briefcase"></i>质押方式</a></li>
             </ul>
             <div style="clear: both"></div>
-            <div class="tab-content" style="height: 300px;">
+            <div class="tab-content" style="height: 390px;">
                 <div id="tab-1" class="tab-pane active">
                     <div class="ibox-content">
                         <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
@@ -95,6 +95,31 @@
                                 </tr>
                                 <tr>
                                     <td>
+                                        <label class="control-label">借款利率<span style="color: red">*</span>：</label></td>
+                                    <td>
+                                        <select class="form-control" name="M_Loan_Type" id="M_Loan_Type" runat="server">
+                                            <option value="1">固定利率</option>
+                                            <option value="2">浮动利率</option>
+                                        </select>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="input-group" id="TypeC1">
+                                            <span class="input-group-addon">年利率</span>
+                                            <input id="M_Rate_Year" name="M_Rate_Year" class="form-control" type="text" runat="server" />
+                                            <span class="input-group-addon">%</span>
+                                        </div>
+                                        <div class="input-group" id="TypeC2" style="display:none">
+                                            <span class="input-group-addon">浮动周期</span>
+                                            <input id="M_Loan_Period" name="M_Loan_Period" class="form-control" type="text" runat="server" />
+                                            <span class="input-group-addon">个月</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         <label class="control-label">开始时间<span style="color: red">*</span>：</label></td>
                                     <td>
                                         <input id="M_Reply_Begin" name="M_Reply_Begin" class="laydate-icon form-control layer-date" runat="server" /></td>
@@ -118,6 +143,20 @@
                                         <label class="control-label">还款资金来源<span style="color: red">*</span>：</label></td>
                                     <td>
                                         <input id="E_Earn" name="E_Earn" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">结息方式<span style="color: red">*</span>：</label></td>
+                                    <td>
+                                        <select class="form-control" name="M_SettlementType" id="M_SettlementType" runat="server">
+                                            <option value="1">按季结息</option>
+                                            <option value="2">按月结息</option>
+                                        </select></td>
+                                    <td> <label class="control-label">备注：</label></td>
+                                    <td><input id="M_SettlementMemo" name="M_SettlementMemo" class="form-control" type="text" runat="server" /></td>
                                 </tr>
                                 <tr>
                                     <td colspan="4" style="height: 5px;"></td>
@@ -182,20 +221,24 @@
                                         <input id="PlanUse_Money1" name="PlanUse_Money1" class="form-control" type="text" runat="server" /></td>
                                 </tr>
                                 <tr>
-                                	<td colspan="8" style="height: 5px;"></td>
+                                    <td colspan="8" style="height: 5px;"></td>
                                 </tr>
                                 <tr style="text-align: center;">
-                                  <td>②</td>
-                                  <td><input id="PlanUse_Year2" name="PlanUse_Year2" class="form-control" type="text" runat="server" /></td>
-                                  <td>&nbsp;</td>
-                                  <td><input id="PlanUse_Month2" name="PlanUse_Month2" class="form-control" type="text" runat="server" /></td>
-                                  <td>&nbsp;</td>
-                                  <td><input id="PlanUse_Day2" name="PlanUse_Day2" class="form-control" type="text" runat="server" /></td>
-                                  <td>&nbsp;</td>
-                                  <td><input id="PlanUse_Money2" name="PlanUse_Money2" class="form-control" type="text" runat="server" /></td>
+                                    <td>②</td>
+                                    <td>
+                                        <input id="PlanUse_Year2" name="PlanUse_Year2" class="form-control" type="text" runat="server" /></td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <input id="PlanUse_Month2" name="PlanUse_Month2" class="form-control" type="text" runat="server" /></td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <input id="PlanUse_Day2" name="PlanUse_Day2" class="form-control" type="text" runat="server" /></td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <input id="PlanUse_Money2" name="PlanUse_Money2" class="form-control" type="text" runat="server" /></td>
                                 </tr>
-                                 <tr>
-                                	<td colspan="8" style="height: 5px;"></td>
+                                <tr>
+                                    <td colspan="8" style="height: 5px;"></td>
                                 </tr>
                                 <tr style="text-align: center;">
                                     <td>③</td>
@@ -211,18 +254,22 @@
                                     <td>
                                         <input id="PlanUse_Money3" name="PlanUse_Money3" class="form-control" type="text" runat="server" /></td>
                                 </tr>
-                                 <tr>
-                                	<td colspan="8" style="height: 5px;"></td>
+                                <tr>
+                                    <td colspan="8" style="height: 5px;"></td>
                                 </tr>
                                 <tr style="text-align: center;">
-                                  <td>④</td>
-                                  <td><input id="PlanUse_Year4" name="PlanUse_Year4" class="form-control" type="text" runat="server" /></td>
-                                  <td>&nbsp;</td>
-                                  <td><input id="PlanUse_Month4" name="PlanUse_Month4" class="form-control" type="text" runat="server" /></td>
-                                  <td>&nbsp;</td>
-                                  <td><input id="PlanUse_Day4" name="PlanUse_Day4" class="form-control" type="text" runat="server" /></td>
-                                  <td>&nbsp;</td>
-                                  <td><input id="PlanUse_Money4" name="PlanUse_Money4" class="form-control" type="text" runat="server" /></td>
+                                    <td>④</td>
+                                    <td>
+                                        <input id="PlanUse_Year4" name="PlanUse_Year4" class="form-control" type="text" runat="server" /></td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <input id="PlanUse_Month4" name="PlanUse_Month4" class="form-control" type="text" runat="server" /></td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <input id="PlanUse_Day4" name="PlanUse_Day4" class="form-control" type="text" runat="server" /></td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <input id="PlanUse_Money4" name="PlanUse_Money4" class="form-control" type="text" runat="server" /></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -418,6 +465,18 @@
                 $("#Type3").hide();
             }
         }
+        //M_Loan_Type
+        $("#M_Loan_Type").change(function () {
+            var _value = this.value;
+            if (_value == "2") {
+                $("#TypeC1").hide();
+                $("#TypeC2").show();
+            } else {
+                $("#TypeC2").hide();
+                $("#TypeC1").show();
+            }
+
+        });
     </script>
     <script>
         $(document).ready(function () {

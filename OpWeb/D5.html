@@ -7,233 +7,252 @@
 </head>
 
 <body>
-<div class="DPage5">
 <h1>企事业单位流动资金贷款调查表</h1>
+ <div class="DPage5">
   <p align="right">单位：万元 </p>
-<div align="center">
-  <table width="100%" style="text-align: center; line-height: 138%;" border="1" cellspacing="0" cellpadding="0">
+<div class="RowLine">
+	<div class="W8">借款人全称</div>
+	<div class="CText">{Mortage:E_enterpriseName}</div>
+	<div class="cls"></div>
+</div>
+ <div class="RowLine">
+	<div class="W8">法定经营地址</div>
+	<div class="CText">{Mortage:E_address}</div>
+	<div class="cls"></div>
+</div>
+ <div class="RowLine">
+	<div class="W12">申请借款币种及金额</div>
+	<div class="CText"><span style="float: left;">（大写）</span>{Mortage:E_Loan_Cap}</div>
+	<div class="cls"></div>
+</div>
+  <div class="RowLine">
+  <div style="width: 40%;float: left;border:none;">
+	<div class="W5">借款期限</div>
+	<div class="CText">{Mortage:M_Loan_Months}月</div></div>
+	<div style="width: 60%;float: left;border:none;">
+	<div class="W5">贷款方式</div>
+	<div class="W5">{Mortage:E_GuaranteeType}</div>
+	<div class="W5">还款方式</div>
+	<div class="CText">{Mortage:E_Replay_Type}</div>
+	</div>
+	<div class="cls"></div>
+</div>
+ <div class="RowLine">
+  <div style="width: 40%;float: left;border:none;">
+	<div class="W5">贷款用途</div>
+	<div class="CText">{Mortage:E_Use}</div></div>
+	<div style="width: 60%;float: left;border:none;">
+	<div class="W8">是否欠息及金额:</div>
+	<div class="CText">我社（行）：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;他行：</div>
+	</div>
+	<div class="cls"></div>
+</div>
+ <div class="RowLine">
+  <div style="width: 50%;float: left;border:none;">
+	<div class="W12">本年度信用社授信:</div>
+	<div class="CText">&nbsp;</div></div>
+	<div style="width: 50%;float: left;border:none;">
+	<div class="W8">已占用信用总额:</div>
+	<div class="CText">&nbsp;</div>
+	</div>
+	<div class="cls"></div>
+</div>
+ <div class="RowLine">
+ 	<div style="float: left;width: 3em;">信用<br>
+        种类</div>
+ 	<div style="border:none;">
+ 		<div style="margin-left: 3em;border:none;border-bottom: solid 1px #000;">
+ 			<div class="W5">短期贷款</div>
+ 			<div class="W5">&nbsp;</div>
+ 			<div class="W5">中长期贷款</div>
+ 			<div class="W5">&nbsp;</div>
+ 			<div class="W5">承兑汇票</div>
+ 			<div class="W5">&nbsp;</div>
+ 			<div class="W5">其他</div>
+ 			<div class="CText">&nbsp;</div>
+ 		</div>
+ 		<div style="margin-left: 3em;;border:none">
+ 			<div class="W5">比年初</div>
+ 			<div class="W5">&nbsp;</div>
+ 			<div class="W5">比年初</div>
+ 			<div class="W5">&nbsp;</div>
+ 			<div class="W5">比年初</div>
+ 			<div class="W5">&nbsp;</div>
+ 			<div class="W5">比年初</div>
+ 			<div class="CText">&nbsp;</div>
+ 		</div>
+ 	</div>
+ 	<div class="cls"></div>
+ </div>
+ <div class="RowLine">
+ <div style="float: left;width: 3em;">五级<br>分类</div>
+ 	<div style="line-height: 45px;">
+ 	<span style="font-family: 'xinwei','华文新魏'">正常</span>
+	  </div>
+ <div class="cls"></div>
+    </div>
+ <div class="RowLine">
+ <div style="float: left;width: 3em;">四级<br>分类</div>
+ 	<div style="line-height: 45px;"><span style="font-family: 'xinwei','华文新魏'">正常</span></div>
+ <div class="cls"></div>
+    </div>
+ <div class="RowLine">
+ <div class="W7">本行开户性质</div>
+ 			<div class="W5">基本户</div>
+ 			<div class="W5">&nbsp;</div>
+ 			<div class="W5">一般账户</div>
+ 			<div class="W5">&nbsp;</div>
+ 			<div class="W12">责任信贷员（客户经理）</div>
+ 			<div class="CText">&nbsp;</div>
+	 </div>
+  <table width="100%" style="text-align: center; border-top:solid 1px #000;border-left:solid 1px #000;" border="0" cellspacing="0" cellpadding="0">
   <tbody>
-    </tbody>
-  <tbody>
     <tr>
-      <td colspan="8"> 借款人全称 </td>
-      <td colspan="20">{Mortage:E_enterpriseName}</td>
-    </tr>
-    <tr>
-      <td colspan="8">法定经营地址 </td>
-      <td colspan="20">{Mortage:E_address}</td>
-    </tr>
-    <tr>
-      <td colspan="13">申请借款币种及金额（大写） </td>
-      <td colspan="15">{Mortage:E_Loan_Cap}</td>
-    </tr>
-    <tr>
-      <td colspan="5">借款期限 </td>
-      <td colspan="9">{Mortage:M_Loan_Months}月</td>
-      <td>贷款方式 </td>
-      <td colspan="3">{Mortage:E_GuaranteeType}</td>
-      <td colspan="3">还款方式 </td>
-      <td colspan="7">{Mortage:E_Replay_Type}</td>
-    </tr>
-    <tr>
-      <td colspan="5">贷款用途 </td>
-      <td colspan="6">{Mortage:E_Use}</td>
-      <td colspan="4">是否欠息及金额:</td>
-      <td colspan="13">我社（行）：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;他行：</td>
-      </tr>
-    <tr>
-      <td colspan="13">本年度信用社授信:</td>
-      <td colspan="2">&nbsp;</td>
-      <td colspan="5">已占用信用总额:</td>
-      <td colspan="8">&nbsp;</td>
-    </tr>
-    <tr>
-      <td rowspan="2" colspan="2">信用<br>
-        种类 </td>
-      <td colspan="4">短期贷款 </td>
-      <td colspan="3">&nbsp;</td>
-      <td colspan="6">中长期贷款 </td>
-      <td colspan="3">承兑汇票 </td>
-      <td colspan="2">&nbsp;</td>
-      <td colspan="2">其他 </td>
-      <td colspan="6">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="4">比年初 </td>
-      <td colspan="3">&nbsp;</td>
-      <td colspan="5">比年初 </td>
-      <td>&nbsp;</td>
-      <td colspan="3">比年初 </td>
-      <td colspan="2">&nbsp;</td>
-      <td colspan="2">比年初 </td>
-      <td colspan="6">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="6">五级<br>
-        分类 </td>
-      <td colspan="22">{Mortage:EF_Level5}</td>
-    </tr>
-    <tr>
-      <td colspan="6">四级<br>
-        分类 </td>
-      <td colspan="22">{Mortage:EF_Level4}</td>
-    </tr>
-    <tr>
-      <td colspan="6">本行开户性质 </td>
-      <td colspan="3">基本户</td>
-      <td colspan="4">&nbsp;</td>
-      <td colspan="2">一般账户 </td>
-      <td colspan="12">责任信贷员（客户经理） </td>
-      <td>&nbsp;</td>
-      </tr>
-    <tr>
-      <td rowspan="18"><p>贷</p>
+      <td rowspan="18" style="width: 2em;"><p>贷</p>
         <p>款</p>
         <p>合</p>
         <p>法</p>
         <p>性</p>
         <p>认</p>
         <p>定 </p></td>
-      <td colspan="2" rowspan="5">借<br>
+      <td colspan="1" rowspan="5" style="width: 3em;">借<br>
         款<br>
         人<br>
         部<br>
         分 </td>
-      <td colspan="9">借款人主体是否<br>
+      <td colspan="2">借款人主体是否<br>
         符合法律规定 </td>
-      <td>&nbsp;</td>
+      <td><div class="W4"></div></td>
       <td>贷款用途<br>
         是否合法 </td>
-      <td>&nbsp;</td>
-      <td colspan="5">贷款卡编号<br>
+      <td><div class="W4"></div></td>
+      <td>贷款卡编号<br>
         及年检时间 </td>
-      <td colspan="8">&nbsp;</td>
+      <td><div class="W4"></div></td>
     </tr>
     <tr>
-      <td colspan="9">营业执照号码 </td>
-      <td colspan="2">&nbsp;</td>
+      <td colspan="2">营业执照号码 </td>
+      <td>&nbsp;</td>
       <td>有效期限 </td>
-      <td colspan="2">&nbsp;</td>
-      <td colspan="6">是否已年检 </td>
+      <td>&nbsp;</td>
+      <td>是否已年检 </td>
+      <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td colspan="2">法定代表人或委托<br>
+        人签名是否有效 </td>
+      <td>&nbsp;</td>
+      <td>法人公章<br>
+是否有效 </td>
+      <td>&nbsp;</td>
+      <td>借款是否需<br>
+        董事会同意 </td>
+      <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td colspan="2">是否需生产<br>
+        （经营）许可证 </td>
+      <td>&nbsp;</td>
+      <td>是否需进<br>
+出口批文 </td>
+      <td colspan="3">&nbsp;</td>
+      </tr>
+    <tr>
+      <td colspan="2">其它认定 </td>
       <td colspan="5">&nbsp;</td>
     </tr>
     <tr>
-      <td colspan="9">法定代表人或委托<br>
-        人签名是否有效 </td>
-      <td colspan="2">&nbsp;</td>
-      <td>法人公章<br>
-        是否有效 </td>
-      <td colspan="2">&nbsp;</td>
-      <td colspan="4">借款是否需<br>
-        董事会同意 </td>
-      <td colspan="7">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="9">是否需生产<br>
-        （经营）许可证 </td>
-      <td colspan="2">&nbsp;</td>
-      <td>是否需进<br>
-        出口批文 </td>
-      <td colspan="13">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="9">其它认定 </td>
-      <td colspan="16">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="2" rowspan="13">担<br>
+      <td colspan="1" rowspan="13" style="width: 3em;">担<br>
         保<br>
         合<br>
         法<br>
         性<br>
         认<br>
         定 </td>
-      <td colspan="9">担保人全称 </td>
-      <td colspan="16">&nbsp;</td>
+      <td colspan="2">担保人全称 </td>
+      <td colspan="5">&nbsp;</td>
     </tr>
     <tr>
-      <td colspan="9">营业执照号码 </td>
-      <td colspan="2">&nbsp;</td>
-      <td colspan="2">有效期限 </td>
+      <td colspan="2">营业执照号码 </td>
       <td>&nbsp;</td>
-      <td colspan="5">是否已年检 </td>
-      <td colspan="6">&nbsp;</td>
+      <td>有效期限 </td>
+      <td>&nbsp;</td>
+      <td>是否已年检</td>
+      <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td colspan="2">法定经营地址 </td>
+      <td colspan="5">&nbsp;</td>
     </tr>
     <tr>
-      <td colspan="9">法定经营地址 </td>
-      <td colspan="16">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="9">法定代表人姓名 </td>
+      <td colspan="2">法定代表人姓名 </td>
       <td colspan="2">&nbsp;</td>
-      <td colspan="6">身份证号码 </td>
-      <td colspan="8">&nbsp;</td>
+      <td colspan="2">身份证号码 </td>
+      <td colspan="-1">&nbsp;</td>
     </tr>
     <tr>
-      <td colspan="9">但保证人是否<br>
+      <td colspan="2">但保证人是否<br>
         具备担保资格 </td>
       <td colspan="2">&nbsp;</td>
-      <td colspan="6">有否董事会同<br>
+      <td colspan="2">有否董事会同<br>
         意保证文件 </td>
-      <td colspan="8">&nbsp;</td>
+      <td colspan="-1">&nbsp;</td>
     </tr>
     <tr>
-      <td colspan="9">其它认定 </td>
-      <td colspan="16">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="9">主要抵押物名称 </td>
+      <td colspan="2">其它认定 </td>
       <td colspan="5">&nbsp;</td>
-      <td colspan="9">抵押物评估价值 </td>
+    </tr>
+    <tr>
+      <td colspan="2">主要抵押物名称 </td>
       <td colspan="2">&nbsp;</td>
+      <td colspan="2">抵押物评估价值 </td>
+      <td>&nbsp;</td>
       </tr>
     <tr>
-      <td rowspan="2" colspan="4">抵押<br>
+      <td rowspan="2">抵押<br>
         形式 </td>
-      <td colspan="6">最高额抵押 </td>
-      <td colspan="2">&nbsp;</td>
-      <td rowspan="2" colspan="2">抵押物是否<br>
-        合法合规 </td>
-      <td colspan="4" rowspan="2">&nbsp;</td>
-      <td rowspan="2" colspan="5">抵押物是否<br>
-        重复抵押 </td>
-      <td rowspan="2" colspan="2">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="6">逐笔抵押 </td>
-      <td colspan="2">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="10">抵押物能否办理登记 </td>
-      <td colspan="2">&nbsp;</td>
-      <td colspan="2">是否附有
-        <br>
-        抵押物清单 </td>
-      <td colspan="11">&nbsp;</td>
-      </tr>
-    <tr>
-      <td colspan="10">抵押物是否出租 </td>
-      <td colspan="8">&nbsp;</td>
-      <td colspan="5">出租期限 </td>
-      <td colspan="2">&nbsp;</td>
-      </tr>
-    <tr>
-      <td colspan="11">质物所有人是否同意质押 </td>
+      <td>最高额抵押 </td>
       <td>&nbsp;</td>
-      <td colspan="11">出质人主体是否合法 </td>
+      <td rowspan="2">抵押物是否<br>
+合法合规 </td>
+      <td rowspan="2">&nbsp;</td>
+      <td rowspan="2">抵押物是否<br>
+重复抵押 </td>
+      <td rowspan="2">&nbsp;</td>
+      </tr>
+    <tr>
+      <td>逐笔抵押 </td>
+      <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td colspan="2">抵押物能否办理登记 </td>
+      <td>&nbsp;</td>
+      <td colspan="2">是否附有 <br>
+抵押物清单 </td>
       <td colspan="2">&nbsp;</td>
       </tr>
     <tr>
-      <td colspan="11">是否附有质物清单 </td>
+      <td colspan="2">抵押物是否出租 </td>
       <td>&nbsp;</td>
-      <td colspan="11">质物是否合法合规 </td>
       <td colspan="2">&nbsp;</td>
+      <td>出租期限 </td>
+      <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td colspan="3">质物所有人是否同意质押 </td>
+      <td>&nbsp;</td>
+      <td colspan="2">出质人主体是否合法 </td>
+      <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td colspan="3">是否附有质物清单 </td>
+      <td>&nbsp;</td>
+      <td colspan="2">质物是否合法合规 </td>
+      <td>&nbsp;</td>
       </tr>
   </tbody>
-  <tbody>
-  </tbody>
+
   </table>
 </div>
-	</div>
 </body>
 </html>

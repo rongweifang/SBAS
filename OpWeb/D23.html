@@ -6,29 +6,14 @@
 <style>
 	.HPrintPage  {width: 910px;height: 649px;line-height: 138%; text-align: center}
 	</style>
-<style type="text/css" media="print">
-<!--
-.HPrintPage  { 
 
-	margin-top: 130px;
-	margin-left: -120px;
-	transform:rotate(270deg);
--ms-transform:rotate(270deg); 	/* IE 9 */
--moz-transform:rotate(270deg); 	/* Firefox */
--webkit-transform:rotate(270deg); /* Safari 和 Chrome */
--o-transform:rotate(270deg); 
-	
-}
-
--->
-</style>
 </head>
 
 <body>
 <div class="HPrintPage">
 <h1>动产抵押清单</h1>
-<p style="text-align: left">抵 押 人（全称):  </p>
-<p style="text-align: left">抵押权人（全称): </p>
+<p style="text-align: left">抵 押 人（全称): {MortagePE:PM_Pledgor} </p>
+<p style="text-align: left">抵押权人（全称): {MortagePE:PM_Pledgee}</p>
 <table width="100%" border="1" cellspacing="0" cellpadding="0" style="text-align: center">
     <tbody>
         <tr>
@@ -44,10 +29,8 @@
           <td rowspan="2">权证名称</td>
           <td rowspan="2">权　证<br>
           签发单位</td>
-          <td rowspan="2"> 
-            登记机关</td>
-          <td rowspan="2"> 
-            编号</td>
+          <td rowspan="2">登记机关</td>
+          <td rowspan="2">编号</td>
           <td colspan="3">保险单 </td>
         </tr>
         <tr>
@@ -55,96 +38,7 @@
           <td>起止时间</td>
           <td>保险金额</td>
         </tr>
-        <tr>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-        </tr>
+        {MortagePET:PledgeMovable}
         <tr>
           <td colspan="4" style="text-align: left"><p>抵押人（盖章）
             <br>
@@ -154,28 +48,24 @@
             法定代表人<br>
             或授权代理人（签章）
            </p>
-            <p style="text-align: right;padding-right: 10px;">年     月     日</p></td>
-          <td colspan="5" style="text-align: left"><p>抵押权人（盖章）
-             
-             <br>
+            <p style="text-align: right;padding-right: 10px;">年 &nbsp; &nbsp;月 &nbsp; &nbsp; 日</p></td>
+          <td colspan="5" style="text-align: left"><p>抵押权人（盖章）<br>
             <br>
             <br>
             <br>
             <br>
-            经办人（签章）</p><p style="text-align: right;padding-right: 10px;">年     月     日</p>
+            经办人（签章）</p><p style="text-align: right;padding-right: 10px;">年 &nbsp; &nbsp;月 &nbsp; &nbsp;日</p>
            </td>
-          <td colspan="4" style="text-align: left"><p>主管部门意见:
-             
-             <br>
+          <td colspan="4" style="text-align: left"><p>主管部门意见: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
             <br>
             <br>
             <br>
 <br>
             主管部门（盖章）</p>
-             <p style="text-align: right;padding-right: 10px;">年     月     日</p></td>
+             <p style="text-align: right;padding-right: 10px;">年 &nbsp; &nbsp;月 &nbsp; &nbsp;日</p></td>
         </tr>
         <tr>
-          <td colspan="13">本淸单经核对无误，作为（     ）农信字（    )第   号合同组成部分，本清单一式（  ）份，各方各执一份，  份。</td>
+          <td colspan="13">本清单经核对无误，作为（ &nbsp; &nbsp;）农信字（ &nbsp; &nbsp;)第&nbsp;&nbsp;&nbsp;号合同组成部分，本清单一式（ &nbsp; &nbsp;）份，各方各执一份， &nbsp; &nbsp;份。</td>
         </tr>
         <tr>
           <td colspan="13" style="text-align: left">备注：</td>
