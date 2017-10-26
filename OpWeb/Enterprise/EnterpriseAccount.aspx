@@ -36,7 +36,13 @@
                             <td>
                                 <label class="control-label">在信用社开户种类：</label></td>
                             <td>
-                                <input id="AccountType" name="AccountType" class="form-control" type="text" runat="server" /></td>
+                                 <select class="form-control" id="AccountType" name="AccountType" runat="server">
+                                            <option selected>一般账户</option>
+                                            <option>基本户</option>
+                                            <option>专用账户</option>
+                                        </select>
+
+                            </td>
                             <td>
                                 <label class="control-label">账户号码：</label></td>
                             <td>
@@ -71,6 +77,22 @@
                                 <label class="control-label">贷款卡编码：</label></td>
                             <td>
                                 <input id="OtherNO" name="OtherNO" class="form-control" type="text" runat="server" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <label class="control-label">责任信贷员<br/>（客户经理）：</label></td>
+                            <td>
+                                <input id="E_Manager" name="E_Manager" class="form-control" type="text" runat="server" /></td>
+                            <td>
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td></td>

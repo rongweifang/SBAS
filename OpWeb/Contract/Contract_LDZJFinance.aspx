@@ -125,6 +125,73 @@
                 </div>
                 <div id="tab-2" class="tab-pane">
                     <div class="ibox-content">
+
+                        <div class="ibox-title">
+                            <h5>本年度企业信用情况</h5>
+                        </div>
+                        <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">四级分类：</label></td>
+                                    <td>
+                                        <select class="form-control" id="EF_TLevel4" name="EF_TLevel4" runat="server">
+                                            <option>正常</option>
+                                            <option>逾期</option>
+                                            <option>呆滞</option>
+                                            <option>呆账 </option>
+                                        </select></td>
+                                    <td>五级分类：</td>
+                                    <td>
+                                        <select class="form-control" id="EF_TLevel5" name="EF_TLevel5" runat="server">
+                                            <option>正常</option>
+                                            <option>关注</option>
+                                            <option>次级</option>
+                                            <option>可疑</option>
+                                            <option>损失</option>
+                                        </select></td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">是否欠息（我行）：</label></td>
+                                    <td>
+                                        <select class="form-control" id="EF_ISInterest" name="EF_ISInterest" runat="server">
+                                            <option>否</option>
+                                            <option>是</option>
+                                        </select></td>
+                                    <td>他行：</td>
+                                    <td>
+                                        <select class="form-control" id="EF_ISInterestOther" name="EF_ISInterestOther" runat="server">
+                                            <option selected></option>
+                                            <option>否</option>
+                                            <option>是</option>
+                                        </select></td>
+                                </tr>
+                                 <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="control-label">信用社授信：</label></td>
+                                    <td> <input id="EF_TCreditLine" name="EF_TCreditLine" class="form-control" type="text" runat="server" />
+                                        </td>
+                                    <td>已占用信用额：</td>
+                                    <td>
+                                        <input id="EF_TOccupy" name="EF_TOccupy" class="form-control" type="text" runat="server" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="ibox-title">
+                            <h5>上年度企业信用情况</h5>
+                        </div>
                         <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
                             <tbody>
                                 <tr>
@@ -132,30 +199,22 @@
                                         <label class="control-label">四级分类：</label></td>
                                     <td>
                                         <select class="form-control" id="EF_Level4" name="EF_Level4" runat="server">
+                                            <option selected></option>
                                             <option>正常</option>
                                             <option>逾期</option>
                                             <option>呆滞</option>
                                             <option>呆账 </option>
                                         </select></td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4" style="height: 5px;"></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label class="control-label">五级分类：</label></td>
+                                    <td>五级分类：</td>
                                     <td>
                                         <select class="form-control" id="EF_Level5" name="EF_Level5" runat="server">
+                                            <option selected></option>
                                             <option>正常</option>
                                             <option>关注</option>
                                             <option>次级</option>
                                             <option>可疑</option>
                                             <option>损失</option>
                                         </select></td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td colspan="4" style="height: 5px;"></td>
@@ -165,13 +224,15 @@
                                         <label class="control-label">贷款方式：</label></td>
                                     <td>
                                         <select class="form-control" id="EF_LoanType" name="EF_LoanType" runat="server">
-                                            <option>抵（质）押</option>
+                                            <option selected></option>
+                                            <option>抵押</option>
                                             <option>保证</option>
-                                            <option>欠息</option>
+                                            <option>质押</option>
                                             <option>信用</option>
                                         </select></td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
+                                    <td>欠息</td>
+                                    <td>
+                                        <input id="EF_Interest" name="EF_Interest" class="form-control" type="text" runat="server" /></td>
                                 </tr>
                                 <tr>
                                     <td colspan="4" style="height: 5px;"></td>
@@ -197,12 +258,15 @@
                                     <td>
                                         <input id="EF_Occupy" name="EF_Occupy" class="form-control" type="text" runat="server" /></td>
                                 </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div id="tab-3" class="tab-pane">
-                    <div class="ibox-content">
+                    <div class="ibox-content" style="height: 390px; overflow-x: hidden; overflow-y: auto;">
                         <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
                             <tbody>
                                 <tr>
@@ -293,7 +357,7 @@
                     </div>
                 </div>
                 <div id="tab-4" class="tab-pane">
-                    <div class="ibox-content" style="height:390px;overflow:scroll;">
+                    <div class="ibox-content">
                         <table width="100%" id="Type1" border="1" cellspacing="2" cellpadding="3" style="text-align: center;">
                             <tbody>
                                 <tr>
@@ -481,26 +545,25 @@
         </div>
     </form>
     <script>
-        function CheckType()
-        {
+        function CheckType() {
             var _type = "<%=Type%>";
-            //if (_type=="保证") {
-            //    $("#Type1").show();
-            //    $("#Type2").hide();
-            //    $("#Type3").hide();
-            //} else if (_type == "抵押") {
-            //    $("#Type1").hide();
-            //    $("#Type2").show();
-            //    $("#Type3").hide();
-            //} else if (_type == "质押") {
-            //    $("#Type1").hide();
-            //    $("#Type2").hide();
-            //    $("#Type3").show();
-            //} else {
-            //    $("#Type1").hide();
-            //    $("#Type2").hide();
-            //    $("#Type3").hide();
-            //}
+            if (_type == "保证") {
+                $("#Type1").show();
+                $("#Type2").hide();
+                $("#Type3").hide();
+            } else if (_type == "抵押") {
+                $("#Type1").hide();
+                $("#Type2").show();
+                $("#Type3").hide();
+            } else if (_type == "质押") {
+                $("#Type1").hide();
+                $("#Type2").hide();
+                $("#Type3").show();
+            } else {
+                $("#Type1").hide();
+                $("#Type2").hide();
+                $("#Type3").hide();
+            }
         }
     </script>
 </body>

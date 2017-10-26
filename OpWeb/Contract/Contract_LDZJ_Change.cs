@@ -172,7 +172,6 @@ namespace OpWeb.Contract
             return HtmlContent;
         }
 
-
         //替换审批报告
         public static string GetReportExchange(string UID, string HtmlContent)
         {
@@ -332,9 +331,6 @@ namespace OpWeb.Contract
             }
             return result;
         }
-
-
-
         //值输出
         public static string GetSingleExchange(Hashtable hm, string htmls)
         {
@@ -354,7 +350,10 @@ namespace OpWeb.Contract
 
             return htmls;
         }
-        //动产抵押
+        //抵押凭证
+        #region
+        //动产抵押P23
+        #region
         public static string GetPledgeMovable(string UID, bool IsChange, string htmls)
         {
             StringBuilder sb = new StringBuilder();
@@ -392,7 +391,6 @@ namespace OpWeb.Contract
                 htmls = htmls.Replace("{MortagePE:PM_Pledgor}", "");
                 htmls = htmls.Replace("{MortagePE:PM_Pledgee}", "");
                 htmls = htmls.Replace("{MortagePET:PledgeMovable}", GetPledgeMovableNull(TotalRow));
-
             }
 
             return htmls;
@@ -453,6 +451,45 @@ namespace OpWeb.Contract
             }
             return sb.ToString();
         }
+        #endregion
+        //房地产抵押清单P21--PledgeMovableRegex
+        public static string GetPledgeMovableExchange(string UID, string HtmlContent)
+        {
+            string htmls = HtmlContent;
+            Hashtable ht = DataFactory.SqlDataBase().GetHashtableById("Pledge_Estate", "UID", UID);
+            if (ht.Count > 0 && ht != null)
+            {
+                MatchCollection userMatchColl = PledgeMovableRegex.Matches(htmls);
+                if (userMatchColl.Count > 0)
+                {
+                    foreach (Match matchItem in userMatchColl)
+                    {
+                        string ContentDeal = matchItem.Value.Trim();
+                        string FieldDeal = ContentDeal.Replace("{MortagePM:", "").Replace("}", "");
+                        if (ht.Contains(FieldDeal.ToUpper()))
+                        {
+                            string _deal = string.IsNullOrEmpty(ht[FieldDeal.ToUpper()].ToString()) ? "&nbsp;" : ht[FieldDeal.ToUpper()].ToString();
+                            htmls = htmls.Replace(ContentDeal, "<span style=\"font-family: 'xinwei','华文新魏'\">" + _deal + "</span>");
+                        }
+                    }
+                }
+
+            }
+            return htmls;
+        }
+
+        #endregion
+        //质押凭证
+        #region
+        //质押凭证清单P20
+
+        //质押凭证清单P20
+
+        //权利质押清单P22
+
+        //单位定期存单质押清单P26
+
+        #endregion
 
 
 

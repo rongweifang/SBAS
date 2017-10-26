@@ -71,7 +71,8 @@
                                     <td>
                                         <label class="control-label">大写：</label></td>
                                     <td>
-                                        <input id="E_Loan_Cap" name="E_Loan_Cap" readonly="true" class="form-control" type="text" runat="server" /></td>
+                                        <input id="E_Loan_Cap" name="E_Loan_Cap" readonly="true" class="form-control" type="text" runat="server" />
+                                        <input id="E_Loan_W" name="E_Loan_W" readonly="true" type="hidden" runat="server" /></td>
                                 </tr>
                                 <tr>
                                     <td colspan="4" style="height: 5px;"></td>
@@ -82,6 +83,8 @@
                                     <td>
                                         <div class="input-group">
                                             <input id="M_Loan_Months" name="M_Loan_Months" class="form-control" type="text" runat="server" />
+                                            <input id="M_Loan_Days" name="M_Loan_Days" type="hidden" runat="server" />
+                                            <input id="M_Loan_Years" name="M_Loan_Years" type="hidden" runat="server" />
                                             <span class="input-group-addon">月</span>
                                         </div>
                                     </td>
@@ -195,6 +198,16 @@
                 <div id="tab-2" class="tab-pane">
                     <div class="ibox-content">
                         <table width="100%" border="0" cellspacing="3" cellpadding="2">
+                            <tr>
+                                <td width="80"><label class="control-label">提款方式：</label></td>
+                                <td>  <select class="form-control" name="PlanType" id="PlanType" runat="server">
+                                            <option value="1">一次性提款</option>
+                                            <option value="3">分期提款</option>
+                                        </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <table id="PlanTypeC1" width="100%" border="0" cellspacing="3" cellpadding="2">
                             <tbody>
                                 <tr style="text-align: center;">
                                     <td width="50">序 号</td>
@@ -270,6 +283,37 @@
                                     <td>&nbsp;</td>
                                     <td>
                                         <input id="PlanUse_Money4" name="PlanUse_Money4" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="PlanTypeC2" width="100%" border="0" cellspacing="3" cellpadding="2" style="display:none;">
+                            <tbody>
+                                <tr style="text-align: center;">
+                                    <td width="60">序 号</td>
+                                    <td>年</td>
+                                    <td>&nbsp;</td>
+                                    <td>月</td>
+                                    <td>&nbsp;</td>
+                                    <td>日</td>
+                                    <td>&nbsp;</td>
+                                    <td>金 额</td>
+                                </tr>
+                                <tr style="text-align: center;">
+                                    <td>①</td>
+                                    <td>
+                                        <input id="PlanDrawings_Year" name="PlanDrawings_Year" class="form-control" type="text" runat="server" /></td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <input id="PlanDrawings_Month" name="PlanDrawings_Month" class="form-control" type="text" runat="server" /></td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <input id="PlanDrawings_Day" name="PlanDrawings_Day" class="form-control" type="text" runat="server" /></td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <input id="PlanDrawings_Money" name="PlanDrawings_Money" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="8" style="height: 5px;"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -358,6 +402,10 @@
                                         <input id="GT_Address1" name="GT_Address1" class="form-control" type="text" runat="server" /></td>
                                 </tr>
                                 <tr>
+                                    <td colspan="4" style="text-align: center;height:5px;"></td>
+                                    
+                                </tr>
+                                <tr>
                                     <td style="text-align: center">②</td>
                                     <td>
                                         <input id="GT_Name2" name="GT_Name2" class="form-control" type="text" runat="server" /></td>
@@ -368,8 +416,86 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td width="110">
+                                        营业执照号码</td>
+                                    <td width="180"><input id="GT_creditCode" name="GT_creditCode" class="form-control" type="text" runat="server" /></td>
+                                    <td width="100">有效期限</td>
+                                    <td><input id="GT_Valid" name="GT_Valid" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        是否已年检</td>
+                                    <td><select class="form-control" name="GT_ISASDate" id="GT_ISASDate" runat="server">
+                                        <option selected></option>
+                                      <option>是</option>
+                                      <option>否</option>
+                                    </select></td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       法定代表人姓名</td>
+                                    <td>
+                                        <input id="GT_LegalUser" name="GT_LegalUser" class="form-control" type="text" runat="server" />
+                                    </td>
+                                    <td>
+                                        身份证号码</td>
+                                    <td>
+                                        <input id="GT_CardID" name="GT_CardID" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                               
+                              <tr>
+                                    <td>
+                                        是否具备<br/>担保资格</td>
+                                    <td><select class="form-control" name="GT_ISAllow" id="GT_ISAllow" runat="server">
+                                        <option selected></option>
+                                     <option>是</option>
+                                      <option>否</option>
+                                    </select></td>
+                                    <td>
+                                        有否董事会<br/>同意保证文件</td>
+                                    <td><select class="form-control" name="GT_ISFiles" id="GT_ISFiles" runat="server">
+                                        <option selected></option>
+                                     <option>是</option>
+                                      <option>否</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       其它认定</td>
+                                    <td colspan="3">
+                                    <input id="GT_Other" name="GT_Other" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
                     </div>
-                </div>
+              </div>
                 <div id="tab-5" class="tab-pane">
                     <div class="ibox-content">
                         <table width="100%" border="0" cellspacing="3" cellpadding="2">
@@ -393,6 +519,9 @@
                                         <input id="MG_Address1" name="MG_Address1" class="form-control" type="text" runat="server" /></td>
                                 </tr>
                                 <tr>
+                                    <td style="text-align: center;height:5px;" colspan="5"></td>
+                                </tr>
+                                <tr>
                                     <td style="text-align: center">②</td>
                                     <td>
                                         <input id="MG_Name2" name="MG_Name2" class="form-control" type="text" runat="server" /></td>
@@ -405,35 +534,151 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td width="160">
+                                        主要抵押物评估值</td>
+                                    <td width="200"><input id="MG_AssessMent" name="MG_AssessMent" class="form-control" type="text" runat="server" /></td>
+                                    <td width="160">抵押形式</td>
+                                    <td><select class="form-control" name="MG_Type" id="MG_Type" runat="server">
+                                      <option selected></option>
+                                      <option>最高额抵押</option>
+                                      <option>逐笔抵押</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>抵押物是否合法合规</td>
+                                    <td><select class="form-control" name="MG_ISLegal" id="MG_ISLegal" runat="server">
+                                        <option selected></option>
+                                      <option>是</option>
+                                      <option>否</option>
+                                    </select></td>
+                                    <td>抵押物是否重复抵押</td>
+                                    <td><select class="form-control" name="MG_ISRepeated" id="MG_ISRepeated" runat="server">
+                                      <option selected></option>
+                                      <option>是</option>
+                                      <option>否</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       抵押物能否办理登记</td>
+                                    <td>
+                                        <select class="form-control" name="MG_ISAllow" id="MG_ISAllow" runat="server">
+                                      <option selected></option>
+                                      <option>是</option>
+                                      <option>否</option>
+                                    </select>
+                                     
+                                    </td>
+                                    <td>
+                                        是否附有抵押物清单</td>
+                                    <td><select class="form-control" name="MG_ISList" id="MG_ISList" runat="server">
+                                      <option selected></option>
+                                      <option>是</option>
+                                      <option>否</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                               
+                              <tr>
+                                    <td>抵押物是否出租</td>
+                                    <td><select class="form-control" name="MG_ISRent" id="MG_ISRent" runat="server">
+                                        <option selected></option>
+                                     <option>是</option>
+                                      <option>否</option>
+                                    </select></td>
+                                    <td>出租限期</td>
+                                    <td><input id="MG_RentLimit" name="MG_RentLimit" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div id="tab-6" class="tab-pane">
                     <div class="ibox-content">
-                        <table width="100%" border="0" cellspacing="3" cellpadding="2">
+                        <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
                             <tbody>
-                                <tr style="text-align: center">
-                                    <td style="width: 50px;">序号</td>
-                                    <td style="width: 140px;">出质人全称</td>
-                                    <td style="width: 180px;">主要质物名称</td>
-                                    <td style="width: 80px;">现值</td>
-                                    <td>住址</td>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: center">①</td>
+                                    <td width="160"><span style="width: 140px;">出质人全称</span></td>
+                                    <td width="200"><input id="PG_Name" name="PG_Name" class="form-control" type="text" runat="server" /></td>
+                                    <td width="160"><span style="width: 180px;">主要质物名称</span></td>
+                                    <td><input id="PG_Pawn" name="PG_Pawn" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td><span style="width: 80px;">现值</span></td>
+                                    <td><input id="PG_Value" name="PG_Value" class="form-control" type="text" runat="server" /></td>
+                                    <td>住址</td>
+                                    <td><input id="PG_Address" name="PG_Address" class="form-control" type="text" runat="server" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>质物所有人是否同意质押</td>
                                     <td>
-                                        <input id="PG_Name" name="PG_Name" class="form-control" type="text" runat="server" /></td>
+                                        <select class="form-control" name="PG_ISAllow" id="PG_ISAllow" runat="server">
+                                      <option selected></option>
+                                      <option>是</option>
+                                      <option>否</option>
+                                    </select>
+                                     
+                                    </td>
                                     <td>
-                                        <input id="PG_Pawn" name="PG_Pawn" class="form-control" type="text" runat="server" /></td>
-                                    <td>
-                                        <input id="PG_Value" name="PG_Value" class="form-control" type="text" runat="server" /></td>
-                                    <td>
-                                        <input id="PG_Address" name="PG_Address" class="form-control" type="text" runat="server" /></td>
+                                        出质人主体是否合法 </td>
+                                    <td><select class="form-control" name="PG_ISUserLegal" id="PG_ISUserLegal" runat="server">
+                                      <option selected></option>
+                                      <option>是</option>
+                                      <option>否</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
+                                </tr>
+                               
+                              <tr>
+                                    <td>是否附有质物清单</td>
+                                    <td><select class="form-control" name="PG_ISList" id="PG_ISList" runat="server">
+                                        <option selected></option>
+                                     <option>是</option>
+                                      <option>否</option>
+                                    </select></td>
+                                    <td>质物是否合法合规</td>
+                                    <td><select class="form-control" name="PG_ISLegal" id="PG_ISLegal" runat="server">
+                                      <option selected></option>
+                                      <option>是</option>
+                                      <option>否</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="height: 5px;"></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-
-
                 </div>
             </div>
             <div class="form-group">
@@ -477,6 +722,29 @@
             }
 
         });
+
+        $("#PlanType").change(function () {
+            var _value = this.value;
+            if (_value == "1") {
+                $("#PlanTypeC1").hide();
+                $("#PlanTypeC2").show();
+            } else {
+                $("#PlanTypeC2").hide();
+                $("#PlanTypeC1").show();
+            }
+        });
+
+        function SPlanType() {
+            var _value = $("#PlanType").val();
+            if (_value == "1") {
+                $("#PlanTypeC1").hide();
+                $("#PlanTypeC2").show();
+            } else {
+                $("#PlanTypeC2").hide();
+                $("#PlanTypeC1").show();
+            }
+        }
+
     </script>
     <script>
         $(document).ready(function () {
@@ -487,6 +755,8 @@
 
                 $("#M_Reply_End").val(_year + "-" + _month + "-" + _day);
             }
+            SGuaranteeType();
+            SPlanType();
         });
         laydate.render({
             elem: '#M_Reply_Begin'
@@ -511,6 +781,7 @@
             var Pay = $(this).val();
             if ((/^(\+|-)?\d+$/.test(Pay)) && Pay > 0) {
                 $("#E_Loan_Cap").val(formatRMB(Pay));
+                $("#E_Loan_W").val(parseInt(Pay)/10000+'万');
                 return true;
             } else {
                 layer.msg("请输入正确的数值");
@@ -521,6 +792,8 @@
         $("#M_Loan_Months").keyup(function () {
             var months = $(this).val();
             if ((/^(\+|-)?\d+$/.test(months)) && months > 0) {
+                $("#M_Loan_Days").val(months * 30);
+                $("#M_Loan_Years").val(months /12);
 
             }
             else {

@@ -26,9 +26,6 @@
 <body>
     <form id="signupForm" runat="server">
         <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>企业信用信息</h5>
-            </div>
             <div class="ibox-content">
                 <table width="100%" border="0" cellspacing="2" cellpadding="3" style="text-align: center;">
                     <tbody>
@@ -56,7 +53,7 @@
                             <td>
                                 <input id="E_DecisionS" name="E_DecisionS" class="form-control" type="text" runat="server" /></td>
                         </tr>
-                          <tr>
+                        <tr>
                             <td></td>
                             <td></td>
                             <td>&nbsp;</td>
@@ -72,7 +69,7 @@
                             <td>
                                 <input id="E_Certificate" name="E_Certificate" class="form-control" type="text" runat="server" /></td>
                         </tr>
-                          <tr>
+                        <tr>
                             <td></td>
                             <td></td>
                             <td>&nbsp;</td>
@@ -86,9 +83,13 @@
                             <td>
                                 <label class="control-label">出资金额：</label></td>
                             <td>
-                                <input id="E_Contributive" name="E_Contributive" class="form-control" type="text" runat="server" /></td>
+                                <div class="input-group">
+                                    <input id="E_Contributive" name="E_Contributive" class="form-control" type="text" runat="server" />
+                                    <span class="input-group-addon">万</span>
+                                </div>
+                            </td>
                         </tr>
-                          <tr>
+                        <tr>
                             <td></td>
                             <td></td>
                             <td>&nbsp;</td>
@@ -103,6 +104,18 @@
                                 <label class="control-label">年检时间：</label></td>
                             <td>
                                 <input id="E_ASDate" name="E_ASDate" class="form-control" type="text" runat="server" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="control-label">企业历史沿革 ：</label></td>
+                            <td colspan="3">
+                                <input id="E_Evolution" name="E_Evolution" class="form-control" type="text" runat="server" /></td>
                         </tr>
                     </tbody>
                 </table>

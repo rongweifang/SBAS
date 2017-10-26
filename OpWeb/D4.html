@@ -8,14 +8,15 @@
 </head>
 
 <body>
-<div class="DPage4">
+
 <h1>借款人基本情况调查表</h1>
+<div class="DPage4">
 <p style="text-align: center;">
-<span style="float: right">金额单位：万元</span>
-年&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;日</p>
-<table border="1" cellspacing="0" cellpadding="0" style="text-align: center;line-height: 170%" width="100%">
+<span style="float: right;">金额单位：万元</span>
+{Mortage:M_YEAR}年&nbsp;{Mortage:M_MONTH}月&nbsp;{Mortage:M_DAY}日</p>
+<table width="100%" style="text-align: center; line-height: 170%;border-left: solid 1px #000;border-top: solid 1px #000;" border="0" cellspacing="0" cellpadding="0">
   <tbody><tr>
-    <td rowspan="9" style="text-align: center"><p>企</p>
+    <td style="text-align: center;" rowspan="9"><p>企</p>
       <p>&nbsp;</p>
       <p>业</p>
       <p>&nbsp;</p>
@@ -25,11 +26,11 @@
     <td colspan="8">企业近三年主要财务指标 </td>
   </tr>
   <tr>
-    <td colspan="2" class="first" style="width: 140px; height: 60px;"><p align="right" style="padding-right: 30px;">年份</p>
+    <td class="first" style="width: 140px; height: 60px;" colspan="2"><p align="right" style="padding-right: 30px;">年份</p>
       <p align="left" style="padding-left: 20px;">项目</p></td>
-    <td colspan="2">{Mortage:EF_Year1}年度 </td>
-    <td colspan="2">{Mortage:EF_Year2}年度 </td>
-    <td colspan="2">{Mortage:EF_Year3}年度 </td>
+    <td colspan="2">{Mortage:EF_Year1}</td>
+    <td colspan="2">{Mortage:EF_Year2}</td>
+    <td colspan="2">{Mortage:EF_Year3}</td>
   </tr>
   <tr>
     <td colspan="2">资产总额 </td>
@@ -85,7 +86,7 @@
       <p>用</p>
       <p>情</p>
       <p>况</p></td>
-    <td colspan="2" rowspan="2">&nbsp;</td>
+    <td rowspan="2" colspan="2">&nbsp;</td>
     <td colspan="2">农村信用社 </td>
     <td colspan="2">其他金融机构 </td>
     <td colspan="2">合计 </td>
@@ -174,7 +175,9 @@
   </tr>
   <tr>
     <td>贷款方式 </td>
-    <td colspan="6">{Mortage:EF_LoanType}</td>
+    <td colspan="4">{Mortage:EF_LoanType}</td>
+    <td>欠息</td>
+    <td>{Mortage:EF_Interest}</td>
   </tr>
 
   <tr>

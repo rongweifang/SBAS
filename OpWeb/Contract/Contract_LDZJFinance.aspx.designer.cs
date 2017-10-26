@@ -229,6 +229,60 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText EF_Guarantee;
         
         /// <summary>
+        /// EF_TLevel4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect EF_TLevel4;
+        
+        /// <summary>
+        /// EF_TLevel5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect EF_TLevel5;
+        
+        /// <summary>
+        /// EF_ISInterest 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect EF_ISInterest;
+        
+        /// <summary>
+        /// EF_ISInterestOther 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect EF_ISInterestOther;
+        
+        /// <summary>
+        /// EF_TCreditLine 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText EF_TCreditLine;
+        
+        /// <summary>
+        /// EF_TOccupy 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText EF_TOccupy;
+        
+        /// <summary>
         /// EF_Level4 控件。
         /// </summary>
         /// <remarks>
@@ -254,6 +308,15 @@ namespace OpWeb.Contract {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlSelect EF_LoanType;
+        
+        /// <summary>
+        /// EF_Interest 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText EF_Interest;
         
         /// <summary>
         /// EF_CreditType 控件。

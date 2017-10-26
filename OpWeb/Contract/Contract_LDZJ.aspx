@@ -155,7 +155,7 @@
                                         <input id="UUID" type="checkbox" value="<%#Eval("UID")%>" name="checkbox" />
                                     </td>
                                     <td style="width: 200px; text-align: center;"><%#Eval("E_enterpriseName")%></td>
-                                    <td style="width: 80px; text-align: center;"><%#Eval("E_Loan")%>万元</td>
+                                    <td style="width: 80px; text-align: center;"><%#Eval("E_Loan_W")%></td>
                                     <td style="width: 70px; text-align: center;"><%#Eval("M_Loan_Months")%>月</td>
                                     <td style="width: 70px; text-align: center;"><%#Eval("E_GuaranteeType")%> </td>
                                     <td style="width: 70px; text-align: center;">

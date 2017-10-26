@@ -7,12 +7,12 @@
 </head>
 
 <body>
-<div class="DPage3">
 <h1>借款人基本情况调查表</h1>
+<div class="DPage3">
 <p style="text-align: center;">
-<span style="float: right">金额单位：万元</span>
-年&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;日</p> 
-  <table width="100%" style="text-align: left; line-height: 160%;" border="1" cellspacing="0" cellpadding="0">
+<span style="float: right;">金额单位：万元</span>
+<span class="DateInput">{Mortage:M_YEAR}</span>年<span class="DateInput">{Mortage:M_MONTH}</span>月<span class="DateInput">{Mortage:M_DAY}</span>日</p> 
+  <table width="100%" style="text-align: left; line-height: 160%;border-left: solid 1px #000;border-top: solid 1px #000;" border="0" cellspacing="0" cellpadding="0">
     <tbody><tr>
       <td style="text-align: center;" colspan="3">借款人全称 </td>
       <td colspan="10">{Mortage:E_enterpriseName}</td>
@@ -24,14 +24,14 @@
     <tr>
       <td style="text-align: center;" colspan="3">注册资本金 </td>
       <td colspan="3">{Mortage:E_regCap}万</td>
-      <td style="text-align: center;" colspan="3">年度信用等级 </td>
+      <td style="text-align: center; white-space: nowrap;" colspan="3">年度信用等级</td>
       <td colspan="4">{Mortage:E_Rating}</td>
     </tr>
     <tr>
-      <td style="text-align: center;" colspan="3">基本账户行 </td>
-      <td colspan="3">{Mortage:E_BankDeposit}</td>
+      <td style="text-align: center;" colspan="3">基本账户行</td>
+      <td colspan="3" valign="middle" style="line-height: 85%; font-size: 9pt;">{Mortage:E_BankDeposit}</td>
       <td style="text-align: center;" colspan="3">基本账户号 </td>
-      <td colspan="4">{Mortage:E_BankAccount}</td>
+      <td colspan="4" valign="middle" style="line-height: 85%; font-size: 9pt;padding-left: 3px;">{Mortage:E_BankAccount}</td>
     </tr>
     <tr>
       <td style="text-align: center; white-space: nowrap; -ms-word-break: keep-all;" colspan="3">在信用社存款账号 </td>
@@ -41,12 +41,12 @@
       <td style="text-align: center;" colspan="3">营业执照号码 </td>
       <td colspan="5">{Mortage:E_creditCode}</td>
       <td style="text-align: center;" colspan="2">年检时间</td>
-      <td style="text-align: center;" colspan="3">{Mortage:E_openTo}</td>
+      <td style="text-align: center;" colspan="3">&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: center;" colspan="3">企事业单位性质 </td>
-      <td><div style="width: 60px; overflow: hidden; border-left-color: rgb(0, 0, 0); border-left-width: 1px; border-left-style: solid; float: left; white-space: nowrap;">{Mortage:E_enterpriseType}</div></td>
-      <td colspan="4">借款是否需董事会决议 </td>
+      <td><div style="width: 88px; overflow: hidden; float: left; white-space: nowrap;">{Mortage:E_enterpriseType}</div></td>
+      <td colspan="4" style="text-align: center; white-space: nowrap;">借款是否需董事会决议 </td>
       <td style="text-align: center;">{Mortage:E_Decision}</td>
       <td style="text-align: center;" colspan="3">董事会决议人数 </td>
       <td style="text-align: center;">{Mortage:E_DecisionS}</td>
@@ -54,14 +54,14 @@
     <tr>
       <td style="text-align: center;" colspan="3">主营业务 </td>
       <td colspan="5">{Mortage:E_business}</td>
-      <td style="text-align: center;" colspan="2">生产经营许可证<br>
-        号码 </td>
+      <td colspan="2" style="text-align: center; white-space: nowrap;">生产经营许可证<br>
+        号码</td>
       <td style="text-align: center;" colspan="3">{Mortage:E_Certificate}</td>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="2" colspan="3">最大出资人 </td>
       <td style="text-align: center;" colspan="2">名称 </td>
-      <td colspan="3">{Mortage:E_Sponsor}</td>
+      <td colspan="3" style="text-align: center;">{Mortage:E_Sponsor}</td>
       <td style="text-align: center;" rowspan="2">贷款<br>
         卡 </td>
       <td style="text-align: center;">编号 </td>
@@ -69,7 +69,7 @@
     </tr>
     <tr>
       <td style="text-align: center;" colspan="2">出资金额 </td>
-      <td colspan="3">{Mortage:E_Contributive}</td>
+      <td colspan="3" style="text-align: center;">{Mortage:E_Contributive}万</td>
       <td style="text-align: center;" colspan="2">年检时间 </td>
       <td style="text-align: center;" colspan="2">{Mortage:E_ASDate}</td>
     </tr>
@@ -85,7 +85,7 @@
       <td style="text-align: center;" rowspan="7"><p>分支</p>
       <p>机构 </p></td>
       <td style="text-align: center;" rowspan="3" colspan="4">名称 </td>
-      <td style="text-align: center;" rowspan="3" colspan="2">母公司<br>
+      <td rowspan="3" colspan="2" style="text-align: center; white-space: nowrap;">母公司<br>
       出资额 </td>
       <td style="text-align: center;" colspan="5">性质 </td>
     </tr>
@@ -201,8 +201,8 @@
       <td style="text-align: center;" colspan="3">{Mortage:E_CFO_ID}</td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align: center;">有无不良记录 </td>
-      <td colspan="4" style="text-align: center;">{Mortage:E_CFO_Bad}</td>
+      <td style="text-align: center;" colspan="2">有无不良记录 </td>
+      <td style="text-align: center;" colspan="4">{Mortage:E_CFO_Bad}</td>
       <td style="text-align: center;">任职<br>
         年限</td>
       <td style="text-align: center;" colspan="3">{Mortage:E_CFO_Limit}</td>

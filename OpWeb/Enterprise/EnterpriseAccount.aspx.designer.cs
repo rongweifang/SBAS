@@ -28,7 +28,7 @@ namespace OpWeb.Enterprise {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText AccountType;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect AccountType;
         
         /// <summary>
         /// AccountNO 控件。
@@ -65,6 +65,15 @@ namespace OpWeb.Enterprise {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText OtherNO;
+        
+        /// <summary>
+        /// E_Manager 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText E_Manager;
         
         /// <summary>
         /// Save 控件。

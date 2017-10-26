@@ -14,13 +14,13 @@ H1{font-size:20pt;}
 .DPage2 .ContentBox .ContentRow div{border-right: solid 1px #000;}
 .DPage3{font-size:11pt;line-height: 150%;}
 .DPage3 p{ line-height: 150%; margin:0; padding: 0;}
-.DPage3 td{ padding-top: 3px;}
+.DPage3 td{ padding-top: 3px;border-right: solid 1px #000;border-bottom: solid 1px #000;}
 .DPage4{font-size:11pt;line-height: 160%;}
 .DPage4 p{ line-height: 150%; margin:0; padding: 0;}
-.DPage4 td{ padding-top: 2px;padding-bottom: 3px;}
+.DPage4 td{ padding-top: 2px;padding-bottom: 3px;border-right: solid 1px #000;border-bottom: solid 1px #000;}
 .DPage5{font-size:11pt;}
 .DPage5 p{ line-height: 150%; margin:0; padding: 0;}
-.DPage5 td{border-right: solid 1px #000;border-bottom: solid 1px #000;line-height: 150%}
+.DPage5 td{border-right: solid 1px #000;border-bottom: solid 1px #000;line-height: 150%;padding-left: 3px;}
  .RowLine{text-align: center;border-top:solid 1px #000;border-left:solid 1px #000;line-height: 22.5px;}
 .RowLine div{border-right:solid 1px #000;}
 	.W4{width:4em;float: left;overflow: hidden;}
@@ -34,7 +34,13 @@ H1{font-size:20pt;}
  .CText{height: 22.5px;overflow: hidden;}
 	.cls{clear:both;height: 0;border: none;}
 .DPage6{font-size:11pt;line-height: 150%;}
-.DPage6 td{padding-top: 1px;}
+.DPage6 td{padding-top: 1px;border-right: solid 1px #000;border-bottom: solid 1px #000;}
+.DPage7{font-size:11pt;line-height: 150%;}
+.DPage7 td{padding-top: 1px;border-right: solid 1px #000;border-bottom: solid 1px #000;}
+.DPage8,.DPage8 p{font-size:11pt;line-height: 165%;}
+.DPage8 td{padding-top: 1px;border-right: solid 1px #000;border-bottom: solid 1px #000;text-align: center}
+.DPage9,.DPage9 p{font-size:11pt;line-height: 165%;}
+.DPage9 td{padding-top: 1px;border-right: solid 1px #000;border-bottom: solid 1px #000;text-align: center}
 .DPage10{font-size:11pt;line-height: 175%;padding-top: 2px;padding-bottom: 3px;}
 .DPage10 p{ line-height: 175%; margin:0; padding: 0;}
 .DPage11{font-size:11pt;line-height: 190%;text-indent: 2em;}

@@ -3,107 +3,89 @@
 <head>
 <meta charset="utf-8">
 <title>无标题文档</title>
-<style>
-	.HPrintPage  {width: 910px;height: 649px;line-height: 138%; text-align: center}
-	</style>
-<style type="text/css" media="print">
-<!--
-.HPrintPage  { 
-
-	margin-top: 130px;
-	margin-left: -120px;
-	transform:rotate(270deg);
--ms-transform:rotate(270deg); 	/* IE 9 */
--moz-transform:rotate(270deg); 	/* Firefox */
--webkit-transform:rotate(270deg); /* Safari 和 Chrome */
--o-transform:rotate(270deg); 
-	
-}
-
--->
-</style>
+<link href="/css/ContactTemp.css" rel="stylesheet" /><link href="/css/ContractPrint.css" media="print" rel="stylesheet" /><link href="/css/Contract_LDZJ.css" rel="stylesheet" /> <link href="/css/Contract_LDZJ_Print.css" media="print" rel="stylesheet" />
 </head>
 
 <body>
 <div class="HPrintPage">
 <h1>房地产抵押清单</h1>
-<p style="text-align: left">抵押人（全称):  </p>
-<p style="text-align: left">抵押权人（全称): </p>
+<p style="text-align: left;">抵押人（全称):  {MortagePM:PE_Preserver}</p>
+<p style="text-align: left;">抵押权人（全称): 察哈尔在右翼中旗农村信用合作联社营业部</p>
 <table border="1" cellspacing="0" cellpadding="0" width="100%" style="text-align: center;">
     <tbody>
       <tr>
         <td width="135">抵 押 物 名 称</td>
-        <td colspan="5"></td>
+        <td colspan="5">{MortagePM:PE_Name}</td>
       </tr>
       <tr>
-        <td>保     管     人</td>
-        <td colspan="2"></td>
-        <td width="167" style="text-align: center">产 权 或 使 用 权 人</td>
-        <td colspan="2"></td>
+        <td>保&nbsp;&nbsp;&nbsp; &nbsp;管&nbsp;&nbsp; &nbsp;&nbsp;人</td>
+        <td colspan="2">{MortagePM:PE_Preserver}</td>
+        <td width="167" style="text-align: center;">产 权 或 使 用 权 人</td>
+        <td colspan="2">{MortagePM:PE_User}</td>
       </tr>
       <tr>
-        <td>房  产  座  落</td>
-        <td colspan="2"></td>
+        <td>房&nbsp;&nbsp;产&nbsp;&nbsp;座&nbsp;&nbsp;落</td>
+        <td colspan="2">{MortagePM:PE_HPlace}</td>
         <td>土 地 座 落 及 地 号</td>
-        <td colspan="2"></td>
+        <td colspan="2">{MortagePM:PE_LPlace}</td>
       </tr>
       <tr>
-        <td>房  产  证  号</td>
-        <td colspan="2"></td>
+        <td>房&nbsp;&nbsp;产&nbsp;&nbsp;证&nbsp;&nbsp;号</td>
+        <td colspan="2">{MortagePM:PE_HNO}</td>
         <td>土地使用权类型及证号</td>
-        <td colspan="2"></td>
+        <td colspan="2">{MortagePM:PE_LType}</td>
       </tr>
       <tr>
-        <td>建  造  日  期</td>
-        <td colspan="2"></td>
-        <td style="text-align: center">使　用　 权　年 　限</td>
-        <td colspan="2">年    月至   年   月</td>
+        <td>建&nbsp;&nbsp;造&nbsp;&nbsp;日&nbsp;&nbsp;期</td>
+        <td colspan="2">{MortagePM:PE_HBuilt}</td>
+        <td style="text-align: center;">使　用　&nbsp;权　年&nbsp;　限</td>
+        <td colspan="2">{MortagePM:PE_LLimit}</td>
       </tr>
       <tr>
-        <td>建  筑  面  积</td>
-        <td colspan="2">平方米</td>
-        <td>土  地  使 用 面  积</td>
-        <td colspan="2">平方米</td>
+        <td>建&nbsp;&nbsp;筑&nbsp;&nbsp;面&nbsp;&nbsp;积</td>
+        <td colspan="2">&nbsp;{MortagePM:PE_HArea}&nbsp;平方米</td>
+        <td>土&nbsp;&nbsp;地&nbsp;&nbsp;使 用 面&nbsp;&nbsp;积</td>
+        <td colspan="2"> {MortagePM:PE_LUsable}平方米</td>
       </tr>
       <tr>
-        <td>建  筑  结  构</td>
-        <td colspan="2"></td>
+        <td>建&nbsp;&nbsp;筑&nbsp;&nbsp;结&nbsp;&nbsp;构</td>
+        <td colspan="2">{MortagePM:PE_HStruct}</td>
         <td>其 中 建 筑 占地面积</td>
-        <td colspan="2">平方米</td>
+        <td colspan="2">{MortagePM:PE_LArea}平方米</td>
       </tr>
       <tr>
-        <td>用    　　     途</td>
-        <td colspan="2"></td>
+        <td>用&nbsp;&nbsp;&nbsp;&nbsp;　　&nbsp;&nbsp;途</td>
+        <td colspan="2">{MortagePM:PE_HUse}</td>
         <td>用　　　　　　　途</td>
-        <td colspan="2"></td>
+        <td colspan="2">{MortagePM:PE_LUse}</td>
       </tr>
       <tr>
         <td>抵押、出租情况</td>
-        <td colspan="2"></td>
-        <td>抵　 押　 情　 况</td>
-        <td colspan="2"></td>
+        <td colspan="2">{MortagePM:PE_PledgeMemo}</td>
+        <td>抵 　&nbsp;押 　&nbsp;情 　&nbsp;况</td>
+        <td colspan="2">{MortagePM:PE_LAssess}</td>
       </tr>
       <tr>
         <td>房地产评估情况</td>
-        <td colspan="2"></td>
+        <td colspan="2">{MortagePM:PE_HAssess}</td>
         <td></td>
         <td colspan="2"></td>
       </tr>
       <tr>
         <td>保 险 单 号 码</td>
-        <td width="162"></td>
+        <td width="162">{MortagePM:PE_Odd}</td>
         <td width="138">起 止 日 期</td>
-        <td></td>
+        <td>{MortagePM:PE_Startstop}</td>
         <td width="138">保 险 金 额</td>
-        <td width="156"></td>
+        <td width="156">{MortagePM:PE_Insurance}</td>
       </tr>
       <tr>
-        <td colspan="2" style="text-align: left"><p>抵押人（盖章）<br>
+        <td style="text-align: left;" colspan="2"><p>抵押人（盖章）<br>
           <br>
           法定代表人
           <br>
-          或授权代理人（签章）        年    月    日</p></td>
-        <td colspan="2" style="text-align: left"><p>抵押权人（盖章）
+          或授权代理人（签章）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</p></td>
+        <td style="text-align: left;" colspan="2"><p>抵押权人（盖章）
           
           
           <br>
@@ -111,23 +93,23 @@
           经办人（签章）
           
           </p>
-          <p> 年    月    日</p></td>
-        <td colspan="2" style="text-align: left"><p>主管部门意见：
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</p></td>
+        <td style="text-align: left;" colspan="2"><p>主管部门意见：
           <br>
           <br>
           主管部门（盖章）
           </p>
-          <p> 年    月    日</p></td>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</p></td>
       </tr>
       <tr>
-        <td colspan="6" style="text-align: left">本清单经核对无误，作为（    ）农信    字（    ）第       号合同组成部分。本清单一式（    ），各执一份，       份。</td>
+        <td style="text-align: left;" colspan="6">本清单经核对无误，作为（&nbsp;&nbsp;&nbsp;&nbsp;）农信&nbsp;&nbsp;&nbsp;&nbsp;字（&nbsp;&nbsp;&nbsp;&nbsp;）第&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号合同组成部分。本清单一式（&nbsp;&nbsp;&nbsp;&nbsp;），各执一份，&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份。</td>
       </tr>
       <tr>
-        <td colspan="6" style="text-align: left">备注：</td>
+        <td style="text-align: left;" colspan="6">备注：</td>
       </tr>
     </tbody>
   </table>
-  <div style="text-align: right">  共    页，第    页</div>
+  <div style="text-align: right;">&nbsp;&nbsp;共&nbsp;&nbsp;&nbsp;&nbsp;页，第&nbsp;&nbsp;&nbsp;&nbsp;页</div>
 </div>
 </body>
 </html>

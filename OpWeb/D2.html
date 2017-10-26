@@ -10,7 +10,7 @@
 <h1>企事业单位流动资金借款申请书</h1>
    <div class="DPage2">
     <p align="Center">申请日期：<span class="DateInput">{Mortage:M_YEAR}</span>年<span class="DateInput">{Mortage:M_MONTH}</span>月<span class="DateInput">{Mortage:M_DAY}</span>日</p>
-    <p align="left">致：<span class="OrgInput"></span> 社（行）</p>
+    <p align="left">致：<span class="OrgInput"></span> <font face="华文新魏">联社营业部</font>社（行）</p>
     <div class="ContentBox">
         <div class="ContentRow">
             <div class="W10">借款申请人</div>
@@ -24,35 +24,35 @@
         </div>
 
         <div class="ContentRow">
-            <div  class="W10">经营范围</div>
-            <div style="width: 290px; overflow: hidden; float: left; white-space: nowrap; -ms-text-overflow: ellipsis;">{Mortage:E_operateScope}</div>
+            <div class="W10">经营范围</div>
+            <div style="width: 290px; overflow: hidden; float: left; white-space: nowrap; -ms-text-overflow: ellipsis;">{Mortage:E_business}</div>
             <div class="W7">法定代表人</div>
             <div>{Mortage:Card_Name}</div>
             <div class="cls"></div>
         </div>
         <div class="ContentRow">
-            <div  class="W10">联系人</div>
+            <div class="W10">联系人</div>
             <div class="W11">{Mortage:E_LinkMan}</div>
             <div class="W11">联系电话</div>
             <div style="padding-left: 3px;">{Mortage:E_LinkPhone}</div>
             <div class="cls"></div>
         </div>
         <div class="ContentRow">
-            <div  class="W10">基本账户开立行</div>
-            <div class="W11">{Mortage:E_BankDeposit}</div>
-            <div class="W11">基本账户号码</div>
-            <div>{Mortage:E_BankAccount}</div>
+            <div class="W8">基本账户开立行</div>
+            <div style="width: 250px;float: left; text-align: center; height: 23px;word-wrap:break-word;"><span style="display: inline-block;font-size: 8pt;line-height: 80%;">{Mortage:E_BankDeposit}</span></div>
+            <div class="W7">基本账户号码</div>
+            <div style="font-size: 8pt;">{Mortage:E_BankAccount}</div>
             <div class="cls"></div>
         </div>
         <div class="ContentRow">
-            <div style="white-space: nowrap;" class="W10">在信用社开立账户种类</div>
+            <div class="W10" style="white-space: nowrap;">在信用社开立账户种类</div>
             <div class="W11">{Mortage:AccountType}</div>
-            <div class="W11">账户号码</div>
+            <div class="W6">账户号码</div>
             <div>{Mortage:AccountNO}</div>
             <div class="cls"></div>
         </div>
         <div class="ContentRow">
-            <div  class="W10">已在信用社贷款余额</div>
+            <div class="W10">已在信用社贷款余额</div>
             <div class="W4">{Mortage:AccountBalance}</div>
             <div style="width: 9em; float: left;">其它金融机构贷款</div>
             <div class="W5">{Mortage:OtherLoan}</div>
@@ -61,19 +61,19 @@
             <div class="cls"></div>
         </div>
         <div class="ContentRow">
-            <div style="white-space: nowrap;" class="W10">借款金额（大写）</div>
+            <div class="W10" style="white-space: nowrap;">借款金额（大写）</div>
             <div class="W11">{Mortage:E_Loan_Cap}</div>
             <div class="W11">借款期限</div>
             <div>{Mortage:M_Loan_Months}月</div>
             <div class="cls"></div>
         </div>
         <div class="ContentRow">
-            <div  class="W10">借款用途</div>
+            <div class="W10">借款用途</div>
             <div>{Mortage:E_Use}</div>
             <div class="cls"></div>
         </div>
         <div class="ContentRow">
-            <div  class="W10">担保方式</div>
+            <div class="W10">担保方式</div>
             <div>{Mortage:E_GuaranteeType}</div>
             <div class="cls"></div>
         </div>
@@ -86,7 +86,7 @@
         </div>
        
     </div>
-    <table width="100%" style="border-left:solid 1px #000;" border="0" cellspacing="0" cellpadding="0">
+    <table width="100%" style="line-height: 120%; border-left-color: rgb(0, 0, 0); border-left-width: 1px; border-left-style: solid;" border="0" cellspacing="0" cellpadding="0">
                 <tbody>
                     <tr>
                         <td valign="middle" style="width: 5em;" rowspan="5" colspan="2">
@@ -98,6 +98,7 @@
                         <td style="width: 3em;">日 </td>
                         <td style="width: 5em;">金额 </td>
                         <td valign="middle" style="width: 5em;" rowspan="5">
+
                             分期<br>
                             还款<br>
                             计划
@@ -108,61 +109,61 @@
                         <td style="width: 5em;" colspan="2">金额 </td>
                     </tr>
                     <tr>
-                        <td  colspan="2">{Mortage:PlanUse_Year1}</td>
-                        <td  colspan="2">{Mortage:PlanUse_Month1}</td>
-                        <td >{Mortage:PlanUse_Day1}</td>
-                        <td >{Mortage:PlanUse_Money1}</td>
-                        <td  colspan="3">{Mortage:PlanRefund_Year1}</td>
-                        <td  colspan="2">{Mortage:PlanRefund_Month1}</td>
-                        <td >{Mortage:PlanRefund_Day1}</td>
-                        <td  colspan="2">{Mortage:PlanRefund_Money1}</td>
+                        <td colspan="2">{Mortage:PlanUse_Year1}</td>
+                        <td colspan="2">{Mortage:PlanUse_Month1}</td>
+                        <td>{Mortage:PlanUse_Day1}</td>
+                        <td>{Mortage:PlanUse_Money1}</td>
+                        <td colspan="3">{Mortage:PlanRefund_Year1}</td>
+                        <td colspan="2">{Mortage:PlanRefund_Month1}</td>
+                        <td>{Mortage:PlanRefund_Day1}</td>
+                        <td colspan="2">{Mortage:PlanRefund_Money1}</td>
                     </tr>
                     <tr>
-                        <td  colspan="2">{Mortage:PlanUse_Year2}</td>
-                        <td  colspan="2">{Mortage:PlanUse_Month2}</td>
-                        <td >{Mortage:PlanUse_Day2}</td>
-                        <td >{Mortage:PlanUse_Money2}</td>
-                        <td  colspan="3">{Mortage:PlanRefund_Year2}</td>
-                        <td  colspan="2">{Mortage:PlanRefund_Month2}</td>
-                        <td >{Mortage:PlanRefund_Day2}</td>
-                        <td  colspan="2">{Mortage:PlanRefund_Money2}</td>
+                        <td colspan="2">{Mortage:PlanUse_Year2}</td>
+                        <td colspan="2">{Mortage:PlanUse_Month2}</td>
+                        <td>{Mortage:PlanUse_Day2}</td>
+                        <td>{Mortage:PlanUse_Money2}</td>
+                        <td colspan="3">{Mortage:PlanRefund_Year2}</td>
+                        <td colspan="2">{Mortage:PlanRefund_Month2}</td>
+                        <td>{Mortage:PlanRefund_Day2}</td>
+                        <td colspan="2">{Mortage:PlanRefund_Money2}</td>
                     </tr>
                     <tr>
-                        <td  colspan="2">{Mortage:PlanUse_Year3}</td>
-                        <td  colspan="2">{Mortage:PlanUse_Month3}</td>
-                        <td >{Mortage:PlanUse_Day3}</td>
-                        <td >{Mortage:PlanUse_Money3}</td>
-                        <td  colspan="3">{Mortage:PlanRefund_Year3}</td>
-                        <td  colspan="2">{Mortage:PlanRefund_Month3}</td>
-                        <td >{Mortage:PlanRefund_Day3}</td>
-                        <td  colspan="2">{Mortage:PlanRefund_Money3}</td>
+                        <td colspan="2">{Mortage:PlanUse_Year3}</td>
+                        <td colspan="2">{Mortage:PlanUse_Month3}</td>
+                        <td>{Mortage:PlanUse_Day3}</td>
+                        <td>{Mortage:PlanUse_Money3}</td>
+                        <td colspan="3">{Mortage:PlanRefund_Year3}</td>
+                        <td colspan="2">{Mortage:PlanRefund_Month3}</td>
+                        <td>{Mortage:PlanRefund_Day3}</td>
+                        <td colspan="2">{Mortage:PlanRefund_Money3}</td>
                     </tr>
                     <tr>
-                        <td  colspan="2">{Mortage:PlanUse_Year4}</td>
-                        <td  colspan="2">{Mortage:PlanUse_Month4}</td>
-                        <td >{Mortage:PlanUse_Day4}</td>
-                        <td >{Mortage:PlanUse_Money4}</td>
-                        <td  colspan="3">{Mortage:PlanRefund_Year4}</td>
-                        <td  colspan="2">{Mortage:PlanRefund_Month4}</td>
-                        <td >{Mortage:PlanRefund_Day4}</td>
-                        <td  colspan="2">{Mortage:PlanRefund_Money4}</td>
+                        <td colspan="2">{Mortage:PlanUse_Year4}</td>
+                        <td colspan="2">{Mortage:PlanUse_Month4}</td>
+                        <td>{Mortage:PlanUse_Day4}</td>
+                        <td>{Mortage:PlanUse_Money4}</td>
+                        <td colspan="3">{Mortage:PlanRefund_Year4}</td>
+                        <td colspan="2">{Mortage:PlanRefund_Month4}</td>
+                        <td>{Mortage:PlanRefund_Day4}</td>
+                        <td colspan="2">{Mortage:PlanRefund_Money4}</td>
                     </tr>
                 </tbody>
             </table>
-             <div class="ContentBox" style="border-top:none;">
+             <div class="ContentBox" style="border-top-color: currentColor; border-top-width: medium; border-top-style: none;">
             <div class="ContentRow">
             <div class="W5">资产金额</div>
-            <div class="W4">{Mortage:E_Total}</div>
+            <div class="W6" style="font-size: 8pt;">{Mortage:E_Total}</div>
             <div class="W5">负债总额</div>
-            <div class="W4">{Mortage:E_Liabilities}</div>
+            <div class="W6" style="font-size: 8pt;">{Mortage:E_Liabilities}</div>
             <div class="W8">所有者权益总额</div>
-            <div class="W4">{Mortage:E_Equity}</div>
-            <div class="W5">资产负债率</div>
-            <div>{Mortage:E_DebtRatio}</div>
+            <div class="W7" style="font-size: 8pt;">{Mortage:E_Equity}</div>
+            <div class="W6">资产负债率</div>
+            <div style="font-size: 8pt;">{Mortage:E_DebtRatio}</div>
             <div class="cls"></div>
 				 </div>
         </div>
-    <table width="100%" style="border-left:solid 1px #000;" border="0" cellspacing="0" cellpadding="0">
+    <table width="100%" style="border-left-color: rgb(0, 0, 0); border-left-width: 1px; border-left-style: solid;" border="0" cellspacing="0" cellpadding="0">
                 <tbody>
                     <tr>
                         <td style="width: 2em;" rowspan="10">
@@ -172,76 +173,76 @@
                             <p>式 </p>
                         </td>
                         <td style="width: 3em;" rowspan="4">保证 </td>
-                        <td style="width: 10em;">保证人全称 </td>
-                        <td style="width: 10em;">{Mortage:GT_Name1}</td>
+                        <td style="width: 10em;">保证人全称</td>
+                        <td style="width: 10em;line-height: 85%;">{Mortage:GT_Name1}</td>
                         <td style="width: 4em;">住址 </td>
-                        <td>{Mortage:GT_Address1}</td>
+                        <td style="line-height: 85%;">{Mortage:GT_Address1}</td>
                     </tr>
                     <tr>
-                        <td >基本账户行及账号</td>
+                        <td>基本账户行及账号</td>
                         <td colspan="3">{Mortage:GT_Account1}</td>
                     </tr>
                     <tr>
-                        <td >保证人全称 </td>
-                        <td>{Mortage:GT_Name2}</td>
-                        <td >住址 </td>
-                        <td>{Mortage:GT_Address2}</td>
+                        <td>保证人全称 </td>
+                        <td style="line-height: 85%;">{Mortage:GT_Name2}</td>
+                        <td>住址 </td>
+                        <td style="line-height: 85%;">{Mortage:GT_Address2}</td>
                     </tr>
                     <tr>
-                        <td >基本账户行及账号 </td>
+                        <td>基本账户行及账号 </td>
                         <td colspan="3">{Mortage:GT_Account2}</td>
                     </tr>
                     <tr>
-                        <td  rowspan="4">抵押 </td>
-                        <td >抵押人全称 </td>
-                        <td>{Mortage:MG_Name1}</td>
-                        <td >住址 </td>
-                        <td>{Mortage:MG_Address1}</td>
+                        <td rowspan="4">抵押 </td>
+                        <td>抵押人全称 </td>
+                        <td style="line-height: 85%;">{Mortage:MG_Name1}</td>
+                        <td>住址 </td>
+                        <td style="line-height: 85%;">{Mortage:MG_Address1}</td>
                     </tr>
                     <tr>
-                        <td >主要抵押物名称 </td>
-                        <td>{Mortage:MG_Pawn1}</td>
-                        <td >现值 </td>
+                        <td>主要抵押物名称 </td>
+                        <td style="line-height: 120%;">{Mortage:MG_Pawn1}</td>
+                        <td>现值 </td>
                         <td>{Mortage:MG_Value1}</td>
                     </tr>
                     <tr>
-                        <td >抵押人全称 </td>
-                        <td>{Mortage:MG_Name2}</td>
-                        <td >住址 </td>
+                        <td>抵押人全称 </td>
+                        <td style="line-height: 85%;">{Mortage:MG_Name2}</td>
+                        <td style="line-height: 85%;">住址</td>
                         <td>{Mortage:MG_Address2}</td>
                     </tr>
                     <tr>
-                        <td >主要抵押物名称 </td>
+                        <td>主要抵押物名称 </td>
                         <td>{Mortage:MG_Pawn2}</td>
-                        <td >现值 </td>
+                        <td>现值 </td>
                         <td>{Mortage:MG_Value2}</td>
                     </tr>
                     <tr>
-                        <td  rowspan="2">质押 </td>
-                        <td >出质人全称 </td>
-                        <td>{Mortage:PG_Name}</td>
-                        <td >住址 </td>
-                        <td>{Mortage:PG_Address}</td>
+                        <td rowspan="2">质押 </td>
+                        <td>出质人全称 </td>
+                        <td style="line-height: 85%;">{Mortage:PG_Name}</td>
+                        <td>住址 </td>
+                        <td style="line-height: 85%;">{Mortage:PG_Address}</td>
                     </tr>
                     <tr>
-                        <td >主要质物名称 </td>
-                        <td>{Mortage:PG_Pawn}</td>
-                        <td >现值 </td>
+                        <td>主要质物名称 </td>
+                        <td style="line-height: 85%;">{Mortage:PG_Pawn}</td>
+                        <td>现值 </td>
                         <td>{Mortage:PG_Value}</td>
                     </tr>
                 </tbody>
             </table>
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-left:solid 1px #000;">
+    <table width="100%" style="border-left-color: rgb(0, 0, 0); border-left-width: 1px; border-left-style: solid;" border="0" cellspacing="0" cellpadding="0">
                 <tbody>
                     <tr>
-                        <td colspan="5" align="left">
+                        <td align="left" colspan="5">
                             <p>借款申请人（签章） </p>
-                            <p style="height: 65px">{MortageMF:F_L_U_1}{MortageMF:F_L_U_2}</p>
+                            <p style="height: 65px;">{MortageMF:F_L_U_1}{MortageMF:F_L_U_2}</p>
                             <p>法定代表人：<br>（授权代理人）</p>
                             <p align="right">年&nbsp;&nbsp; 月&nbsp;&nbsp;&nbsp; 日
                             </p>
                         </td>
-                        <td colspan="2" align="left">
+                        <td align="left" colspan="2">
                             <p>担保人意见：
                             </p><p>&nbsp; </p><p>
                                 担保人（签章）
@@ -251,7 +252,7 @@
                             </p>
                             <p align="right">年&nbsp;&nbsp; 月&nbsp;&nbsp;&nbsp; 日</p>
                         </td>
-                        <td colspan="5" align="left">
+                        <td align="left" colspan="5">
                             <p>担保人意见： </p>
                             <p>&nbsp;</p>
                             <p>担保人（签章） </p>
@@ -260,7 +261,7 @@
                             </p>
                             <p align="right">年&nbsp;&nbsp; 月&nbsp;&nbsp;&nbsp; 日</p>
                         </td>
-                        <td colspan="4" align="left">
+                        <td align="left" colspan="4">
                             <p>受理意见： </p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
