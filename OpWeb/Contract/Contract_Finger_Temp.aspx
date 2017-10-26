@@ -83,6 +83,7 @@
                             <td style="width: 160px; text-align: center;">应用合同</td>
                             <td style="width: 100px; text-align: center;">采集人</td>
                              <td style="width: 120px; text-align: center;">应用名称</td>
+                             <td style="width: 80px; text-align: center;">显示页码</td>
                              <td style="width: 140px; text-align: center;">指纹代码</td>
                              <td style="width: 140px; text-align: center;">签名代码</td>
                             <td>备注</td>
@@ -98,6 +99,7 @@
                                     <td style="width: 160px; text-align: center;"><%#Eval("ContractName")%></td>
                                     <td style="width: 100px; text-align: center;"><%#Eval("UserClass")%></td>
                                     <td style="width: 120px; text-align: center;"><%#Eval("FingerName")%></td>
+                                     <td style="width: 80px; text-align: center;"><%#Eval("CTPage")%></td>
                                     <td style="width: 140px; text-align: center;"><%#Eval("FingerCode")%></td>
                                     <td style="width: 140px; text-align: center;"><%#Eval("SignCode")%></td>
                                     <td><%#Eval("Memo")%></td>

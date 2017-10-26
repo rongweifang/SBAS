@@ -22,22 +22,22 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// rp_Item 控件。
+        /// PE_Pledgor 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_Item;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_Pledgor;
         
         /// <summary>
-        /// lb_title 控件。
+        /// PE_User 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_title;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_User;
         
         /// <summary>
         /// PE_Name 控件。
@@ -58,15 +58,6 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText PE_Preserver;
         
         /// <summary>
-        /// PE_User 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_User;
-        
-        /// <summary>
         /// PE_HPlace 控件。
         /// </summary>
         /// <remarks>
@@ -74,69 +65,6 @@ namespace OpWeb.Contract {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText PE_HPlace;
-        
-        /// <summary>
-        /// PE_HNO 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_HNO;
-        
-        /// <summary>
-        /// PE_HBuilt 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_HBuilt;
-        
-        /// <summary>
-        /// PE_HArea 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_HArea;
-        
-        /// <summary>
-        /// PE_HStruct 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_HStruct;
-        
-        /// <summary>
-        /// PE_HUse 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_HUse;
-        
-        /// <summary>
-        /// PE_PledgeMemo 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_PledgeMemo;
-        
-        /// <summary>
-        /// PE_HAssess 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_HAssess;
         
         /// <summary>
         /// PE_LPlace 控件。
@@ -148,6 +76,15 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText PE_LPlace;
         
         /// <summary>
+        /// PE_HNO 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_HNO;
+        
+        /// <summary>
         /// PE_LType 控件。
         /// </summary>
         /// <remarks>
@@ -155,6 +92,15 @@ namespace OpWeb.Contract {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText PE_LType;
+        
+        /// <summary>
+        /// PE_HBuilt 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_HBuilt;
         
         /// <summary>
         /// PE_LLimit 控件。
@@ -166,13 +112,13 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText PE_LLimit;
         
         /// <summary>
-        /// PE_LStartstop 控件。
+        /// PE_HArea 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_LStartstop;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_HArea;
         
         /// <summary>
         /// PE_LUsable 控件。
@@ -184,6 +130,15 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText PE_LUsable;
         
         /// <summary>
+        /// PE_HStruct 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_HStruct;
+        
+        /// <summary>
         /// PE_LArea 控件。
         /// </summary>
         /// <remarks>
@@ -191,6 +146,15 @@ namespace OpWeb.Contract {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText PE_LArea;
+        
+        /// <summary>
+        /// PE_HUse 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_HUse;
         
         /// <summary>
         /// PE_LUse 控件。
@@ -202,6 +166,15 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText PE_LUse;
         
         /// <summary>
+        /// PE_PledgeMemo 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_PledgeMemo;
+        
+        /// <summary>
         /// PE_LAssess 控件。
         /// </summary>
         /// <remarks>
@@ -211,13 +184,13 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText PE_LAssess;
         
         /// <summary>
-        /// PE_Odd 控件。
+        /// PE_HAssess 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_Odd;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_HAssess;
         
         /// <summary>
         /// PE_Startstop 控件。
@@ -229,6 +202,15 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText PE_Startstop;
         
         /// <summary>
+        /// PE_Odd 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PE_Odd;
+        
+        /// <summary>
         /// PE_Insurance 控件。
         /// </summary>
         /// <remarks>
@@ -238,12 +220,12 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText PE_Insurance;
         
         /// <summary>
-        /// btn_save 控件。
+        /// Save 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_save;
+        protected global::System.Web.UI.WebControls.LinkButton Save;
     }
 }

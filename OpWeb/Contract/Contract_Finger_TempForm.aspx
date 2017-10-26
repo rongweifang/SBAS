@@ -49,7 +49,13 @@
                         checkexpession="Num" style="width: 85%" />
                 </td>
             </tr>
-
+             <tr>
+                <th>显示页码：
+                </th>
+                <td> <input id="CTPage" runat="server" type="text" class="txt" datacol="yes" err="显示页码"
+                        checkexpession="Num" style="width: 85%" />
+                   </td>
+            </tr>
             <tr>
                 <th>采 集 人：
                 </th>

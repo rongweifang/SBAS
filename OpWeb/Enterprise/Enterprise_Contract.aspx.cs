@@ -58,6 +58,7 @@ namespace OpWeb.Enterprise
             {
                 ht["User_ID"] = RequestSession.GetSessionUser().UserId.ToString();
                 ht["User_Name"] = RequestSession.GetSessionUser().UserName.ToString();
+                ht["Organization_ID"] = RequestSession.GetSessionUser().OrganizationID.ToString();
             }
             else
             {
@@ -69,7 +70,7 @@ namespace OpWeb.Enterprise
             bool IsOk = DataFactory.SqlDataBase().Submit_AddOrEdit("Contract_LDZJ", "E_enterpriseID", EID, ht);
             if (IsOk)
             {
-                Hashtable htt = DataFactory.SqlDataBase().GetHashtableById("Contract_LDZJ", "E_enterpriseID", EID);
+                Hashtable htt = DataFactory.SqlDataBase().GetHashtableById("Contract_LDZJ", "E_enterpriseID", this.E_enterpriseID);
                 string _UID = htt["UID"].ToString();
                 int FingerNum = DataFactory.SqlDataBase().IsExist("Contract_Finger", "UID", _UID);
 

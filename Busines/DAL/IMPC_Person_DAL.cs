@@ -1919,7 +1919,7 @@ namespace Busines.DAL
                 string Users = "";
                 if (!string.IsNullOrEmpty(OrganizationID))
                 {
-                    strSql.AppendFormat(" AND OrganizationID = '{0}'", OrganizationID);
+                    strSql.AppendFormat(" AND Organization_ID Like '%{0}%'", OrganizationID);
                 }
                 //if (!string.IsNullOrEmpty(Users))
                 //{

@@ -51,7 +51,7 @@
             if (IsEditdata(key)) {
                 var url = "/Contract/Contract_LDZJPrintView.aspx?UID=" + key + "&documentType=Contract_LDZJ";
                 // window.open(url);
-                top.openDialog(url, 'Contract_LDZJPrintView', '企事业流动资金借款合同-打印预览', 710, 800, 50, 50);
+                top.openDialog(url, 'Contract_LDZJPrintView', '企事业流动资金借款合同-打印预览', 710, 600, 50, 50);
             }
         }
         //财务信息

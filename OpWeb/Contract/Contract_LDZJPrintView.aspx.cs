@@ -43,6 +43,7 @@ namespace OpWeb.Contract
             PageContent = Contract_LDZJ_Change.GetHtmlExchange(UID, PageContent, documentType);
             PageContent = Contract_LDZJ_Change.GetPledgeMovable(UID, true, PageContent);
             PageContent = Contract_LDZJ_Change.GetPledgeMovableExchange(UID, PageContent);//房地产抵押
+            PageContent = Contract_LDZJ_Change.GetFingerExchange(UID, PageContent);//指纹
             PageContent = Contract_LDZJ_Change.ClearHtmlExchange(PageContent);
         }
 

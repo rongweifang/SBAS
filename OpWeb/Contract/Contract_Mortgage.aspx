@@ -51,7 +51,7 @@
             if (IsEditdata(key)) {
                 var url = "/Contract/Contract_PrintView.aspx?UID=" + key + "&documentType=Contract_Mortgage";
                // window.open(url);
-                top.openDialog(url, 'Contract_PrintView', '按揭合同-打印预览', 710, 800, 50, 50);
+                top.openDialog(url, 'Contract_PrintView', '按揭合同-打印预览', 710, 600, 50, 50);
             }
         }
         function detailA3() {
@@ -59,7 +59,7 @@
             if (IsEditdata(key)) {
                 var url = "/Contract/Contract_PrintView.aspx?UID=" + key + "&documentType=Contract_Mortgage";
                // window.open(url);
-                top.openDialog(url, 'Contract_PrintView', '按揭合同A3-打印预览', 710, 800, 50, 50);
+                top.openDialog(url, 'Contract_PrintView', '按揭合同A3-打印预览', 710, 600, 50, 50);
             }
         }
         //打印
