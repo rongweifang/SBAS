@@ -293,6 +293,7 @@
     <Content Include="Contract\Contract_TemplateForm.aspx" />
     <Content Include="Contract\Contract_Type.aspx" />
     <Content Include="Contract\Contract_User.aspx" />
+    <Content Include="Contract\HtmlToImage.aspx" />
     <Content Include="Contract\User_Guarantee.aspx" />
     <Content Include="Contract\User_GuaranteeForm1.aspx" />
     <Content Include="Contract\User_GuaranteeForm2.aspx" />
@@ -489,6 +490,7 @@
     <Content Include="JS\contabs.js" />
     <Content Include="JS\content.js" />
     <Content Include="JS\hplus.js" />
+    <Content Include="JS\html2canvas.js" />
     <Content Include="JS\jquery-1.9.0.js" />
     <Content Include="JS\jquery-3.2.1.js" />
     <Content Include="JS\jquery-3.2.1.min.js" />
@@ -4274,6 +4276,13 @@
     </Compile>
     <Compile Include="Contract\Contract_User.aspx.designer.cs">
       <DependentUpon>Contract_User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\HtmlToImage.aspx.cs">
+      <DependentUpon>HtmlToImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contract\HtmlToImage.aspx.designer.cs">
+      <DependentUpon>HtmlToImage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contract\User_Guarantee.aspx.cs">
       <DependentUpon>User_Guarantee.aspx</DependentUpon>

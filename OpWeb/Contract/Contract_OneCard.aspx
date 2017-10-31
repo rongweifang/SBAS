@@ -69,8 +69,7 @@
         }
 
         //面谈记录EditInterview
-        function EditInterview(UID)
-        {
+        function EditInterview(UID) {
             if (IsEditdata(UID)) {
                 var url = "/Contract/User_Interview.aspx?UID=" + UID;
                 top.openDialog(url, 'User_Interview', '面谈记录', 900, 630, 50, 50);
@@ -106,12 +105,12 @@
                             <td style="width: 80px; text-align: center;">姓名</td>
                             <td style="width: 140px; text-align: center;">身份证号</td>
                             <td style="width: 80px; text-align: center;">授信金额(万)</td>
-                            <td style="width: 100px; text-align: center;">结算方式</td>
-                             <td style="width: 100px; text-align: center;">授信期限</td>
+                            <td style="width: 100px; text-align: center;">用户类型</td>
+                            <td style="width: 100px; text-align: center;">授信期限</td>
                             <td style="width: 70px; text-align: center;">指纹签名</td>
                             <td style="width: 60px; text-align: center;">配偶签名</td>
-                            <td style="width: 60px; text-align: center;">抵押物品</td>
                             <td style="width: 60px; text-align: center;">保证/抵押</td>
+                            <td style="width: 60px; text-align: center;">抵押物品</td>
                             <td style="width: 60px; text-align: center;">面谈记录</td>
                             <td style="width: 60px; text-align: center;">操作员</td>
                             <td style="width: 70px; text-align: center;">审批状态</td>
@@ -129,8 +128,8 @@
                                     <td style="width: 80px; text-align: center;"><%#Eval("Card_Name")%></td>
                                     <td style="width: 140px; text-align: center;"><%#Eval("Card_ID")%></td>
                                     <td style="width: 80px; text-align: center;"><%#Eval("M_Loan")%></td>
-                                    <td style="width: 100px; text-align: center;"><%#Eval("M_Replay_Type")%></td>
-                                    <td style="width: 100px; text-align: center;"> <%#Eval("M_Reply_End","{0:yyyy年M月d日}")%></td>
+                                    <td style="width: 100px; text-align: center;"><%#Eval("M_UserTypeName")%></td>
+                                    <td style="width: 100px; text-align: center;"><%#Eval("M_Reply_End","{0:yyyy年M月d日}")%></td>
                                     <td style="width: 70px; text-align: center;">
                                         <a onclick="EditUFinger('<%#Eval("UID")%>',1)">
                                             <img src="../img/fingerprint_default.png" width="35" height="35" alt="" />
@@ -142,13 +141,13 @@
                                         </a>
                                     </td>
                                     <td style="width: 60px; text-align: center;">
-                                        <a onclick="EditPledge('<%#Eval("UID")%>')">
-                                            <img src="../img/matte_square.png" width="35" height="35" alt="" />
+                                        <a onclick="EditGuarantee('<%#Eval("UID")%>')">
+                                            <img src="../img/matte_35.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>
                                     <td style="width: 60px; text-align: center;">
-                                        <a onclick="EditGuarantee('<%#Eval("UID")%>')">
-                                            <img src="../img/matte_35.png" width="35" height="35" alt="" />
+                                        <a onclick="EditPledge('<%#Eval("UID")%>')">
+                                            <img src="../img/matte_square.png" width="35" height="35" alt="" />
                                         </a>
                                     </td>
                                     <td style="width: 60px; text-align: center;">

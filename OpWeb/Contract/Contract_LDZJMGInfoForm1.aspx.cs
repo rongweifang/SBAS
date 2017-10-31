@@ -19,7 +19,7 @@ namespace OpWeb.Contract
     {
         //private string action;
         //private string PEID;
-        public string UID;
+       // public string UID;
         private string _key;
         bool IsEdit = false;
         protected void Page_Load(object sender, EventArgs e)
@@ -149,9 +149,16 @@ namespace OpWeb.Contract
             Hashtable ht = new Hashtable();
             ht = ControlBindHelper.GetWebControls(this.Page);
 
+
             if (!IsEdit)
             {
-                ht["PEID"] = this._key;
+                ht["UID"] = this._key;
+                ht["CreateUser"] = RequestSession.GetSessionUser().UserName.ToString();
+            }
+            else
+            {
+                ht["ModifyUser"] = RequestSession.GetSessionUser().UserName.ToString();
+                ht["ModifyDate"] = DateTime.Now.ToString();
             }
             string id = IsEdit ? this._key : "";
             bool IsOk = DataFactory.SqlDataBase().Submit_AddOrEdit("Pledge_Estate", "UID", id, ht);

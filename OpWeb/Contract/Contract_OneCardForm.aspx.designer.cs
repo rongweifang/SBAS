@@ -22,6 +22,15 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlForm signupForm;
         
         /// <summary>
+        /// M_UserType 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect M_UserType;
+        
+        /// <summary>
         /// M_CreditType 控件。
         /// </summary>
         /// <remarks>
@@ -94,6 +103,33 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlSelect M_VerifySub;
         
         /// <summary>
+        /// M_Rating 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect M_Rating;
+        
+        /// <summary>
+        /// M_Grade 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect M_Grade;
+        
+        /// <summary>
+        /// M_AgreementNO 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_AgreementNO;
+        
+        /// <summary>
         /// M_Memo 控件。
         /// </summary>
         /// <remarks>
@@ -112,24 +148,6 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText M_Source;
         
         /// <summary>
-        /// M_Rate_Year 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Rate_Year;
-        
-        /// <summary>
-        /// M_Rate_Month 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Rate_Month;
-        
-        /// <summary>
         /// M_Loan 控件。
         /// </summary>
         /// <remarks>
@@ -137,6 +155,24 @@ namespace OpWeb.Contract {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText M_Loan;
+        
+        /// <summary>
+        /// M_Loan_Cap 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Loan_Cap;
+        
+        /// <summary>
+        /// M_Replay_Type 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect M_Replay_Type;
         
         /// <summary>
         /// M_Reply_Begin 控件。
@@ -157,13 +193,22 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlInputText M_Reply_End;
         
         /// <summary>
-        /// M_Replay_Type 控件。
+        /// M_Rate_Year 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect M_Replay_Type;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Rate_Year;
+        
+        /// <summary>
+        /// M_Rate_Month 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Rate_Month;
         
         /// <summary>
         /// M_CardNO 控件。
@@ -173,6 +218,15 @@ namespace OpWeb.Contract {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText M_CardNO;
+        
+        /// <summary>
+        /// M_IssuingDate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_IssuingDate;
         
         /// <summary>
         /// M_AnnualFee 控件。
@@ -238,15 +292,6 @@ namespace OpWeb.Contract {
         protected global::System.Web.UI.HtmlControls.HtmlSelect M_Period;
         
         /// <summary>
-        /// M_Signed 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Signed;
-        
-        /// <summary>
         /// M_Use 控件。
         /// </summary>
         /// <remarks>
@@ -254,6 +299,15 @@ namespace OpWeb.Contract {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText M_Use;
+        
+        /// <summary>
+        /// M_Signed 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText M_Signed;
         
         /// <summary>
         /// Save 控件。

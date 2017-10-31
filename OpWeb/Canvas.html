@@ -1,0 +1,48 @@
+<html>  
+    <head>  
+        <meta name="layout" content="main">  
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+        <script type="text/javascript" src="js/jquery.min.js"></script>  
+        <script type="text/javascript" src="js/html2canvas.js"></script>  
+           
+        <script  type="text/javascript" >  
+        $(document).ready( function(){  
+              
+                       
+                        html2canvas(document.body, {  
+                        allowTaint: true,  
+                        taintTest: false,  
+                        onrendered: function(canvas) {  
+                            canvas.id = "mycanvas";  
+                            //document.body.appendChild(canvas);  
+                            //生成base64图片数据  
+                            var dataUrl = canvas.toDataURL();  
+							Q1.src=dataUrl;
+                          var newImg = document.createElement("img");  
+//                            newImg.src =  dataUrl;  
+//							newImg.width = 109;
+//							document.body.innerHTML="";
+//							
+//                            document.body.appendChild(newImg);  
+                        }  
+                   
+                });   
+               
+        });  
+           
+        </script>  
+    </head>  
+<body>  
+           
+        Hello!  
+        <div class="" style="background-color: #abc;">  
+            计算机天堂测试html5页面截图  
+            <br>jsjtt.com  
+        </div>  
+           
+        <textArea id="textArea" col="20" rows="10" ></textArea>  
+        <input class="example1" type="button" value="button">  
+    生成界面如下：  
+    <img id="Q1" src="" alt=""/>
+    </body>  
+</html>  

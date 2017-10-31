@@ -1,3 +1,60 @@
-﻿body ,p,td{
-	font-size:10pt;line-height: 175%;padding-top: 2px;padding-bottom: 3px;
+﻿body {font-size:12pt;}
+p,td,div{
+	font-size:12pt;line-height: 165%;padding-top: 0;padding-bottom: 0;margin: 0;
 }
+h1{line-height: 150%}
+span{text-indent:0; }
+table{border-top:solid 1px #000;border-left:solid 1px #000;}
+td{border-right:solid 1px #000;border-bottom:solid 1px #000;text-align: center;}
+p{text-indent: 2em;}
+.CPage1{font-size:13pt; }
+.CPage1 td{font-size:13pt; padding-top: 2px;padding-bottom: 2px;}
+.CPage2{font-size:12pt;}
+.CPage2 p{font-size:12pt;padding-top: 2px;padding-bottom: 2px;}
+.CPage2 table,.CPage2 td{
+	border: none;
+	text-align: left;
+}
+.CPage3,.CPage3 td,.CPage3 p{font-size:10pt;}
+.CPage3 td{padding-top: 2px;padding-bottom: 2px;}
+.CPage4 td{font-size:10pt;padding-top: 2px;padding-bottom: 2px;line-height: 30px;}
+.CPage4 p{font-size:10pt;}
+.CPage5 p{padding-top: 2px;padding-bottom: 2px;}
+.CPage6,.CPage6 p{padding-top: 2px;padding-bottom: 2px;}
+.CPage6 p{font-size:14pt;line-height: 180%;}
+.CPage7,.CPage7 p{line-height: 160%}
+.CPage8,.CPage8 p{line-height: 160%}
+.CPage8 p{padding-top: 2px;padding-bottom: 2px;}
+.CPage9,.CPage9 p{line-height: 160%}
+.CPage9 p{padding:0;}
+.CPage10,.CPage10 p{line-height: 165%}
+.CPage10 p{padding: 0;}
+.CPage11,.CPage11 p{line-height: 165%}
+.CPage11 p{padding: 0;}
+.CPage12,.CPage12 p{line-height: 165%}
+.CPage12 table,.CPage12 td{
+	border: none;
+	text-align: left;
+}
+.CPage12 p{padding-top: 2px;padding-bottom: 2px;}
+.CPage13,.CPage13 p{font-size:12pt;line-height: 160%}
+.CPage13 p{padding-top: 2px;padding-bottom: 2px;}
+.CPage14,.CPage14 p{font-size:12pt;line-height: 160%}
+.CPage14 p{padding-top: 2px;padding-bottom: 2px;}
+.CPage15,.CPage15 p{font-size:12pt;line-height: 160%}
+.CPage15 p{padding-top: 2px;padding-bottom: 2px;}
+.CPage16,.CPage16 p{font-size:12pt;line-height: 160%}
+.CPage16 p{padding-top: 2px;padding-bottom: 2px;}
+.CPage16 table,.CPage16 td{
+	border: none;
+	text-align: left;
+}
+.CPage17,.CPage17 p{font-size:12pt;line-height: 35px}
+.CPage20,.CPage20 p{font-size:12pt;line-height: 35px}
+.CPage20 table,.CPage20 td{
+	border: none;
+	text-align: left;
+}
+.CPage22 td{font-size: 11pt;line-height: 150%; padding-top: 2px;padding-bottom: 2px;}
+.CPage23 td{font-size: 11pt;line-height: 180%; padding-top: 2px;padding-bottom: 2px;}
+.CPage25 p{font-size: 11pt;line-height: 180%; padding-top: 2px;padding-bottom: 2px;}

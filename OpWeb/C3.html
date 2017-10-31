@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link href="/css/ContactTemp.css" rel="stylesheet" /><link href="/css/ContractPrint.css" media="print" rel="stylesheet" />
+<link href="/css/Contract_OneCard.css" rel="stylesheet">
+<link href="/css/Contract_OneCard_Print.css" media="print" rel="stylesheet">
+</head>
+
+<body>
+<h1>富民卡贷款调查表</h1>
+<div class="CPage3">
+<TABLE border="0" cellspacing="0" cellpadding="0" width="100%">
+  <TBODY>
+    <TR>
+      <TD colspan="2">借款人</TD>
+      <TD colspan="2">{Mortage:Card_Name}</TD>
+      <TD>性别</TD>
+      <TD>{Mortage:Card_Sex}</TD>
+      <TD colspan="2">身份证号码</TD>
+      <TD colspan="3">{Mortage:Card_Id}</TD>
+    </TR>
+    <TR>
+      <TD colspan="11" style="font-size: 11pt;font-weight: bold;font-family:黑体 ">贷前调查方式</TD>
+    </TR>
+    <TR>
+      <TD colspan="2">贷前调查方式</TD>
+      <TD colspan="9">{Mortage:M_surveyType}</TD>
+    </TR>
+    <TR>
+      <TD colspan="2">担保物核实</TD>
+      <TD colspan="9">{Mortage:M_VerifyOrg}</TD>
+    </TR>
+    <TR>
+      <TD colspan="2">信用记录查询</TD>
+      <TD colspan="9">{Mortage:M_VreditOrg}</TD>
+    </TR>
+    <TR>
+      <TD colspan="11" style="font-size: 11pt;font-weight: bold;font-family:黑体 ">借款人主体情况调查</TD>
+    </TR>
+    <TR>
+      <TD colspan="2">借款人基本<br>信息情况</TD>
+      <TD colspan="3">{Mortage:M_VerifyInfo}</TD>
+      <TD>信用记<br>
+      录情况</TD>
+      <TD colspan="2">{Mortage:M_VerifyCredit}</TD>
+      <TD>借款主体<br>
+      是否合法</TD>
+      <TD colspan="2">{Mortage:M_VerifySub}</TD>
+    </TR>
+    <TR>
+      <TD colspan="2">其他情况</TD>
+      <TD colspan="9"></TD>
+    </TR>
+    <TR>
+      <TD colspan="11" style="font-size: 11pt;font-weight: bold;font-family:黑体 ">担保合规性调查认定</TD>
+    </TR>
+    <TR>
+      <TD width="30" rowspan="8">保<br/>证</TD>
+      <TD>保证人姓名</TD>
+      <TD colspan="2">{MortageUG1:UG_Name}</TD>
+      <TD>性别</TD>
+      <TD>{MortageUG1:UG_Sex}</TD>
+      <TD colspan="2">身份证号码</TD>
+      <TD colspan="3">{MortageUG1:UG_Card_Id}</TD>
+    </TR>
+    <TR>
+      <TD>住址</TD>
+      <TD colspan="2">{MortageUG1:UG_Address}</TD>
+      <TD>电话</TD>
+      <TD colspan="2">{MortageUG1:UG_Tel}</TD>
+      <TD >工作单位</TD>
+      <TD colspan="3">{MortageUG1:UG_Company}</TD>
+    </TR>
+    <TR>
+      <TD width="85">学历</TD>
+      <TD style="width: 4em;">{MortageUG1:UG_Education}</TD>
+      <TD style="width: 3em;">学位</TD>
+      <TD style="width: 4em;">{MortageUG1:UG_Degree}</TD>
+      <TD style="width: 4em;">职称</TD>
+      <TD  style="width: 5em;">{MortageUG1:UG_Professional}</TD>
+      <TD style="width: 5em;">月均收入</TD>
+      <TD style="width: 5em;">{MortageUG1:UG_Income}元</TD>
+      <TD style="width: 5em;">担保次数</TD>
+      <TD>{MortageUG1:UG_GuaranteeCount}次</TD>
+    </TR>
+    <TR>
+      <TD>配偶姓名</TD>
+      <TD colspan="2">{MortageUG1:UG_MateName}</TD>
+      <TD colspan="2">身份证号码</TD>
+      <TD colspan="2">{MortageUG1:UG_MateID}</TD>
+      <TD>是否同意</TD>
+      <TD colspan="2">{MortageUG1:UG_IsAgree}</TD>
+    </TR>
+    <TR>
+      <TD>保证人姓名</TD>
+      <TD colspan="2">{MortageUG2:UG_Name}</TD>
+      <TD>性别</TD>
+      <TD>{MortageUG2:UG_Sex}</TD>
+      <TD colspan="2">身份证号码</TD>
+      <TD colspan="3">{MortageUG2:UG_Card_Id}</TD>
+    </TR>
+    <TR>
+      <TD>住址</TD>
+      <TD colspan="2">{MortageUG2:UG_Address}</TD>
+      <TD>电话</TD>
+      <TD colspan="2">{MortageUG2:UG_Tel}</TD>
+      <TD>工作单位</TD>
+      <TD colspan="3">{MortageUG2:UG_Company}</TD>
+    </TR>
+    <TR>
+      <TD>学历</TD>
+      <TD>{MortageUG2:UG_Education}</TD>
+      <TD>学位</TD>
+      <TD>{MortageUG2:UG_Degree}</TD>
+      <TD>职称</TD>
+      <TD>{MortageUG2:UG_Professional}</TD>
+      <TD>月均收入</TD>
+      <TD>{MortageUG2:UG_Income}元</TD>
+      <TD>担保次数</TD>
+      <TD>{MortageUG2:UG_GuaranteeCount}次</TD>
+    </TR>
+    <TR>
+      <TD>配偶姓名</TD>
+      <TD colspan="2">{MortageUG2:UG_MateName}</TD>
+      <TD colspan="2">身份证号码</TD>
+      <TD colspan="2">{MortageUG2:UG_MateID}</TD>
+      <TD>是否同意</TD>
+      <TD colspan="2">{MortageUG2:UG_IsAgree}</TD>
+    </TR>
+    <TR>
+      <TD width="30" rowspan="6">抵<br/>押</TD>
+      <TD>抵押人姓名</TD>
+      <TD colspan="2">{MortageUP1:UP_CardName}</TD>
+      <TD colspan="2">抵押物名称</TD>
+      <TD>{MortageUP1:UP_Name}</TD>
+      <TD>抵押物位置</TD>
+      <TD colspan="3">{MortageUP1:UP_Location}</TD>
+    </TR>
+    <TR>
+      <TD>预评估价值</TD>
+      <TD colspan="2">{MortageUP1:UP_Assess}元</TD>
+      <TD>抵押率</TD>
+      <TD>{MortageUP1:UP_Rate}%</TD>
+      <TD>是否出租 </TD>
+      <TD>{MortageUP1:UP_IsRent}</TD>
+      <TD>出租期限</TD>
+      <TD colspan="2">至{MortageUP1:UP_Expire}</TD>
+    </TR>
+    <TR>
+      <TD>其他认定情况</TD>
+      <TD colspan="9">{MortageUP1:UP_Memo}</TD>
+    </TR>
+    <TR>
+      <TD>抵押人姓名</TD>
+      <TD colspan="2">{MortageUP2:UP_CardName}</TD>
+      <TD colspan="2">抵押物名称</TD>
+      <TD>{MortageUP2:UP_Name}</TD>
+      <TD>抵押物位置</TD>
+      <TD colspan="3">{MortageUP2:UP_Location}</TD>
+    </TR>
+    <TR>
+      <TD>预评估价值</TD>
+      <TD colspan="2">{MortageUP2:UP_Assess}元</TD>
+      <TD>抵押率</TD>
+      <TD>{MortageUP2:UP_Rate}%</TD>
+      <TD>是否出租 </TD>
+      <TD>{MortageUP2:UP_IsRent}</TD>
+      <TD>出租期限</TD>
+      <TD colspan="2">至{MortageUP2:UP_Expire}</TD>
+    </TR>
+    <TR>
+      <TD>其他认定情况</TD>
+      <TD colspan="9">{MortageUP2:UP_Memo}</TD>
+    </TR>
+    <TR>
+      <TD colspan="11" style="font-size: 11pt;font-weight: bold;font-family:黑体 ">调查结论</TD>
+    </TR>
+    <TR>
+      <TD colspan="11" style="text-align: left;">还款来源分析:<br>
+        {Mortage:M_Source}<br></TD>
+    </TR>
+    <TR>
+      <TD colspan="11" style="text-align: left;"><p>调查结论:</p>
+        <p>&nbsp;</p>
+        <p>调查人签字:<span style="display: inline-block;width: 200px;"></span>调查人签字:</p>
+        <p align="right">{Mortage:M_YEAR}年{Mortage:M_MONTH}月{Mortage:M_DAY}日</p></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</div>
+</body>
+</html>

@@ -1937,8 +1937,8 @@ namespace Busines.DAL
         public DataTable GetOneCardListPage(StringBuilder SqlWhere, IList<SqlParam> IList_param, int pageIndex, int pageSize, ref int count)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("SELECT *  ");
-            strSql.Append("FROM Contract_OneCard U");
+            strSql.Append("SELECT U.*,UT.M_UserTypeName  ");
+            strSql.Append("FROM Contract_OneCard U LEFT JOIN User_Type UT ON U.M_UserType=UT.M_UserType");
             strSql.Append(SqlWhere);
             return DataFactory.SqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray<SqlParam>(), "createdate", "DESC", pageIndex, pageSize, ref count);
         }

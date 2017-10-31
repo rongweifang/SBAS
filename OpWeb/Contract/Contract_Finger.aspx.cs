@@ -19,6 +19,7 @@ namespace OpWeb.Contract
         private string UID, ClassID;
         public string _Vis = "block";
         public string FistFingerName = string.Empty;
+        public string ContractType;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(base.Request["UID"]) || string.IsNullOrEmpty(base.Request["ClassID"]))
@@ -45,6 +46,7 @@ namespace OpWeb.Contract
                 ControlBindHelper.BindRepeaterList(dt, this.rp_Item);
                 this.FID.Value = dt.Rows[0]["FID"].ToString();
                 this.FistFingerName = dt.Rows[0]["FingerName"].ToString();
+                this.ContractType = dt.Rows[0]["CONTRACTTYPE"].ToString();
             }
             else
             {

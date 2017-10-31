@@ -19,7 +19,7 @@ namespace OpWeb.Contract
     {
         private static string _Path = System.AppDomain.CurrentDomain.BaseDirectory + "FileTemplate\\";
 
-        private static Regex MortageRegexAll = new Regex(@"{Mortage+[\w]+:+[\w]+}");//所有标签
+        private static Regex MortageRegexAll = new Regex(@"{Mortage+\w{0,6}:+[\w]+}");//所有标签
         private static Regex MortageRegex = new Regex(@"{Mortage:+[\w]+}");//文字信息
         private static Regex MortageFRegex = new Regex(@"{MortageF:+[\w]+}");//指纹签名
         private static Regex MortageMRegex = new Regex(@"{MortageM:+[\w]+}");//婚姻状况声明
@@ -251,7 +251,7 @@ namespace OpWeb.Contract
                 foreach (Match matchItem in userMatchColl)
                 {
                     string ContentDeal = matchItem.Value.Trim();
-                    string FieldDeal = ContentDeal.Replace("{Mortage:", "").Replace("}", "");
+                    string FieldDeal = ContentDeal.Replace("{Mortage", "").Replace("}", "");
 
                     HtmlContent = HtmlContent.Replace(ContentDeal, "");
                 }

@@ -50,6 +50,12 @@ namespace OpWeb.Contract
                     ht["M_REPLY_END"] = NewDate.ToString("yyyy-MM-dd");
                 }
 
+                if (!string.IsNullOrEmpty(ht["M_ISSUINGDATE"].ToString()))
+                {
+                    NewDate = DateTime.Parse(ht["M_ISSUINGDATE"].ToString());
+                    ht["M_ISSUINGDATE"] = NewDate.ToString("yyyy-MM-dd");
+                }
+
                 ControlBindHelper.SetWebControls(this.Page, ht);
             }
         }

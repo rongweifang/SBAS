@@ -37,7 +37,13 @@
                             保证人
                         </div>
                         <div id="tab1" class="Tabremovesel" onclick="GetTabClick(this);panel(2);">
-                            抵押人
+                            抵(质)押人
+                        </div>
+                         <div id="tab2" class="Tabremovesel" onclick="GetTabClick(this);panel(3);">
+                            抵押清单
+                        </div>
+                         <div id="tab3" class="Tabremovesel" onclick="GetTabClick(this);panel(4);">
+                            其它财产
                         </div>
                     </td>
                 </tr>
